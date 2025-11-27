@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-share-pdf-summaries-with-team",
+  "seo": {
+    "title": "How to Share PDF Summaries with Your Team | SummarizePDF",
+    "description": "Collaborate on PDF summaries with your team. Share documents, add comments, and work together on document analysis. Team workspaces included. Try free!",
+    "keywords": [
+      "share pdf summaries",
+      "team pdf collaboration",
+      "share document summaries",
+      "collaborative pdf tool",
+      "team document sharing",
+      "pdf summary sharing"
+    ]
+  },
+  "hero": {
+    "headline": "Share PDF Summaries with Your Team Instantly",
+    "subheadline": "Collaborative workspaces for document summaries, comments, and team insights.",
+    "cta": "Create Team Workspace",
+    "ctaUrl": "/sign-up?source=hero&page=team-sharing"
+  },
+  "problem": {
+    "title": "Sharing Document Insights is Complicated",
+    "description": "You summarize a key document. Now you need to share it with your team. Email? Slack? Google Doc? Everyone has questions. Context gets lost. Collaboration is a mess.",
+    "painPoints": [
+      "Emailing summaries back and forth",
+      "No central place for team document insights",
+      "Can't collaborate on document analysis",
+      "Team members ask same questions repeatedly",
+      "Version control nightmare with multiple editors",
+      "No way to track who read what"
+    ]
+  },
+  "solution": {
+    "title": "Collaborate on Summaries in One Workspace",
+    "description": "SummarizePDF Team workspaces let your entire team access document summaries, add comments, ask questions, and collaborate on insights - all in one place.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Create Team Workspace",
+        "description": "Set up a shared workspace and invite team members. Everyone gets access to all documents.",
+        "icon": "users"
+      },
+      {
+        "step": 2,
+        "title": "Share Documents & Summaries",
+        "description": "Upload PDFs to the team workspace. Summaries are automatically shared with all members.",
+        "icon": "share-2"
+      },
+      {
+        "step": 3,
+        "title": "Comment & Collaborate",
+        "description": "Team members can add comments, highlights, and ask follow-up questions on any summary.",
+        "icon": "message-square"
+      },
+      {
+        "step": 4,
+        "title": "Track Engagement",
+        "description": "See who viewed which summaries and track team engagement with important documents.",
+        "icon": "bar-chart"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Central Knowledge Hub",
+      "description": "All document summaries in one place. No more searching emails or Slack for that summary.",
+      "icon": "database"
+    },
+    {
+      "title": "Real-Time Collaboration",
+      "description": "Team members can comment, ask questions, and share insights on any document summary.",
+      "icon": "users"
+    },
+    {
+      "title": "Permission Controls",
+      "description": "Manage who can view, edit, or share documents. Set permissions by user or role.",
+      "icon": "lock"
+    },
+    {
+      "title": "Activity Tracking",
+      "description": "See which documents have been reviewed and ensure critical materials get proper attention.",
+      "icon": "activity"
+    }
+  ],
+  "results": {
+    "title": "Teams Work Better Together",
+    "metrics": [
+      {
+        "value": "80%",
+        "label": "Less Email Back-and-Forth"
+      },
+      {
+        "value": "5x",
+        "label": "Faster Team Alignment"
+      },
+      {
+        "value": "100%",
+        "label": "Team Visibility"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Our investment team reviews 50+ pitch decks weekly. Team workspace means everyone sees the same summaries and can add their insights. No more duplicate work.",
+      "author": "Alex Turner",
+      "role": "Investment Associate",
+      "rating": 5
+    },
+    {
+      "quote": "Legal team of 15 attorneys sharing case summaries. Comments and collaboration features have transformed how we work on complex cases together.",
+      "author": "Katherine Lee",
+      "role": "Senior Attorney",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "How many team members can I add?",
+      "answer": "Team plan ($49/mo) includes up to 10 users. Need more? Contact sales for custom enterprise pricing with unlimited users."
+    },
+    {
+      "question": "Can I control who sees what documents?",
+      "answer": "Yes! Set permissions per document or folder. Choose who can view, comment, or edit each summary."
+    },
+    {
+      "question": "Does everyone need their own account?",
+      "answer": "Yes, but it's included! Team plan price covers up to 10 user accounts. Everyone gets their own login."
+    },
+    {
+      "question": "Can external people view summaries?",
+      "answer": "Yes. Generate shareable links for specific summaries. Recipients don't need accounts to view shared summaries."
+    },
+    {
+      "question": "Is there a team activity feed?",
+      "answer": "Yes! See recent activity: who uploaded documents, who commented, who asked questions. Keep everyone in sync."
+    },
+    {
+      "question": "Can I migrate from individual to team plan?",
+      "answer": "Absolutely. Upgrade anytime and invite team members. All your existing documents and summaries transfer automatically."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Start Team Workspace Free",
+    "href": "/sign-up?source=primary&page=team-sharing"
+  },
+  "secondaryCTA": {
+    "text": "See Team Pricing",
+    "href": "/pricing?source=secondary&page=team-sharing"
+  },
+  "finalCTA": {
+    "headline": "Bring Your Team Together",
+    "subheadline": "Join 800+ teams who collaborate on document summaries with shared workspaces.",
+    "cta": "Try Team Plan Free",
+    "ctaUrl": "/sign-up?source=final&page=team-sharing&plan=team"
+  }
+}

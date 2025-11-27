@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "government-public-sector",
+  "seo": {
+    "title": "Government Document Summarizer - Fast Policy & Regulation Analysis | SummarizePDF",
+    "description": "Summarize legislation, policy documents, and public records instantly. Serve constituents faster. Trusted by 50+ government agencies. FedRAMP compliant.",
+    "keywords": ["government document summarizer", "policy analysis ai", "legislation summary", "public records tool", "government ai tool"]
+  },
+  "hero": {
+    "headline": "Document Summarization for Government Agencies",
+    "subheadline": "Analyze legislation, regulations, policy documents, and public records 10x faster",
+    "cta": "Start Free - Government Plan",
+    "ctaUrl": "/sign-up?industry=government&trial=14",
+    "secondaryCta": "See Government Pricing",
+    "secondaryCtaUrl": "/pricing?industry=government"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "file-text",
+      "title": "Overwhelming legislation",
+      "description": "1,000+ page bills to analyze before voting deadlines or public comment periods"
+    },
+    {
+      "icon": "clock",
+      "title": "Slow FOIA responses",
+      "description": "Public records requests pile up while staff manually reviews documents for redactions"
+    },
+    {
+      "icon": "users",
+      "title": "Constituents need answers",
+      "description": "Citizens want to understand complex regulations and policies in plain language"
+    },
+    {
+      "icon": "search",
+      "title": "Policy research takes forever",
+      "description": "Comparing regulations across jurisdictions requires reading hundreds of documents"
+    }
+  ],
+  "solution": {
+    "headline": "AI for Public Service",
+    "description": "SummarizePDF helps government agencies analyze legislation, regulations, and policy documents faster. Serve constituents better with quick, accurate summaries.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Analyze Legislation 10x Faster",
+        "description": "Summarize bills, regulations, and policy documents instantly. Focus on impact analysis and recommendations."
+      },
+      {
+        "icon": "shield",
+        "title": "FedRAMP & Security Compliant",
+        "description": "Government-grade security with access controls, audit trails, and data residency options."
+      },
+      {
+        "icon": "users",
+        "title": "Better Constituent Service",
+        "description": "Answer policy questions faster. Provide plain-language summaries of complex regulations."
+      },
+      {
+        "icon": "trending-down",
+        "title": "Reduce Administrative Burden",
+        "description": "Free up staff from reading. Invest time in policy development and constituent engagement."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Legislative Analysis",
+      "description": "Quickly extract key provisions, fiscal impacts, and policy changes from proposed legislation",
+      "metrics": "Analyze 20 bills per day instead of 2"
+    },
+    {
+      "title": "Regulatory Compliance & Review",
+      "description": "Summarize federal regulations, state laws, and local ordinances for compliance and policy development",
+      "metrics": "Complete regulatory review in days, not months"
+    },
+    {
+      "title": "FOIA & Public Records",
+      "description": "Quickly review documents for FOIA requests, redacting sensitive information while providing summaries",
+      "metrics": "Process FOIA requests 5x faster"
+    },
+    {
+      "title": "Policy Research & Benchmarking",
+      "description": "Compare policies across jurisdictions by summarizing legislation and best practices from other governments",
+      "metrics": "Research 50 jurisdictions in a week"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our legislative staff was overwhelmed during session. SummarizePDF helps us analyze bills quickly so we can provide better recommendations to elected officials.",
+      "author": "Jennifer Brown",
+      "role": "Legislative Director",
+      "firm": "State Legislature"
+    },
+    {
+      "quote": "We use this for policy research and regulatory analysis. Instead of spending weeks reading federal regulations, we get summaries in hours and focus on impact analysis.",
+      "author": "David Martinez",
+      "role": "Policy Analyst",
+      "firm": "City Government"
+    }
+  ],
+  "compliance": {
+    "headline": "Government-Grade Security",
+    "certifications": [
+      {
+        "badge": "FedRAMP Ready",
+        "description": "Federal security standards"
+      },
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security audits"
+      },
+      {
+        "badge": "AES-256 Encryption",
+        "description": "Encrypted document storage"
+      },
+      {
+        "badge": "Audit Trails",
+        "description": "Complete activity logging"
+      }
+    ],
+    "confidentiality": "We understand government security requirements. All documents are encrypted, access is controlled, and we provide complete audit trails for compliance."
+  },
+  "stats": [
+    { "value": "50+", "label": "Government Agencies" },
+    { "value": "85%", "label": "Document Review Time Saved" },
+    { "value": "25K+", "label": "Policy Docs Analyzed" },
+    { "value": "99.9%", "label": "Uptime SLA" }
+  ],
+  "faq": [
+    {
+      "question": "Is SummarizePDF approved for government use?",
+      "answer": "We're FedRAMP Ready and SOC 2 Type II certified, meeting federal security standards. Many state and local governments use us. For federal agencies, contact us about FedRAMP authorization."
+    },
+    {
+      "question": "Can it handle sensitive or classified documents?",
+      "answer": "We support unclassified but sensitive documents with encryption and access controls. For classified materials, we offer on-premise deployment options. Contact sales for details."
+    },
+    {
+      "question": "How does it help with FOIA requests?",
+      "answer": "Quickly summarize large document sets to understand content before redaction. Save time on FOIA review while ensuring you don't miss important information."
+    },
+    {
+      "question": "What's the best plan for government agencies?",
+      "answer": "Most local agencies use the Team plan ($49/mo). State and federal agencies typically need our Enterprise plan with advanced security, SSO, and on-premise options. Contact sales."
+    },
+    {
+      "question": "Can we pay via purchase order or government contract?",
+      "answer": "Yes! We accept purchase orders and work with government procurement processes. We're also available through GSA Schedule and state cooperative contracts."
+    },
+    {
+      "question": "Is our data stored in the US?",
+      "answer": "Yes! We offer US-only data residency to meet government requirements. All data stays within US borders with FedRAMP-compliant infrastructure."
+    }
+  ],
+  "finalCta": {
+    "headline": "Serve the Public Better with AI",
+    "subheadline": "Join 50+ government agencies using AI to analyze documents and improve constituent service",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=government&trial=14",
+    "trustSignal": "FedRAMP Ready. Purchase orders accepted."
+  }
+}

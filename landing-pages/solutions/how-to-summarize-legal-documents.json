@@ -1,0 +1,179 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-summarize-legal-documents",
+  "seo": {
+    "title": "How to Summarize Legal Documents & Contracts | SummarizePDF",
+    "description": "Summarize contracts, agreements, and legal documents in minutes. AI extracts key terms, obligations, dates, and risks. Perfect for lawyers. Try free!",
+    "keywords": [
+      "summarize legal documents",
+      "contract summary ai",
+      "legal document summarizer",
+      "contract review tool",
+      "legal pdf summary",
+      "summarize contracts"
+    ]
+  },
+  "hero": {
+    "headline": "Summarize Legal Documents & Contracts in Minutes",
+    "subheadline": "AI extracts key terms, obligations, dates, parties, and risk clauses automatically.",
+    "cta": "Summarize Legal Docs",
+    "ctaUrl": "/sign-up?source=hero&page=legal-docs"
+  },
+  "problem": {
+    "title": "Legal Documents Take Forever to Review",
+    "description": "You have a 100-page contract to review by Friday. Dense legal language. Hidden clauses. Complex obligations. You need to find the important terms, but every paragraph seems critical. This will take days.",
+    "painPoints": [
+      "100+ page contracts take hours to review",
+      "Critical clauses buried in legal language",
+      "Need to identify obligations and liabilities",
+      "Tracking dates and deadlines is tedious",
+      "Can't quickly assess contract risk",
+      "Multiple contracts to review simultaneously"
+    ]
+  },
+  "solution": {
+    "title": "AI Extracts Every Critical Legal Element",
+    "description": "SummarizePDF is trained on legal documents. It identifies parties, terms, obligations, dates, payment terms, liability clauses, and potential risks automatically.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Legal Document",
+        "description": "Add any contract, agreement, legal brief, or other legal document to SummarizePDF.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Extracts Legal Elements",
+        "description": "AI identifies parties, key terms, obligations, payment terms, dates, liability clauses, and termination conditions.",
+        "icon": "search"
+      },
+      {
+        "step": 3,
+        "title": "Get Structured Summary",
+        "description": "Receive organized summary with sections: Parties, Terms, Obligations, Payment, Dates, Risks, Termination.",
+        "icon": "file-text"
+      },
+      {
+        "step": 4,
+        "title": "Flag Unusual Clauses",
+        "description": "Ask 'Are there any unusual liability clauses?' or 'What are the termination conditions?' to identify risks.",
+        "icon": "alert-triangle"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Structured Legal Summaries",
+      "description": "Summaries organized by legal elements: parties, terms, obligations, payment, dates, liability, termination.",
+      "icon": "layout"
+    },
+    {
+      "title": "Risk Identification",
+      "description": "AI flags potentially problematic clauses, unusual terms, and asymmetric obligations.",
+      "icon": "shield"
+    },
+    {
+      "title": "Date & Deadline Extraction",
+      "description": "Automatically extract all dates, deadlines, renewal dates, and time-sensitive obligations.",
+      "icon": "calendar"
+    },
+    {
+      "title": "Clause Comparison",
+      "description": "Compare specific clauses across multiple contracts. Find inconsistencies and standard vs non-standard terms.",
+      "icon": "git-compare"
+    }
+  },
+  "legalFeatures": [
+    {
+      "feature": "Party Identification",
+      "description": "Extract all contracting parties, their roles, and legal entities automatically."
+    },
+    {
+      "feature": "Obligation Tracking",
+      "description": "Identify all obligations for each party. Track what each side must do, when, and under what conditions."
+    },
+    {
+      "feature": "Payment Terms",
+      "description": "Extract payment amounts, schedules, conditions, penalties, and invoicing requirements."
+    },
+    {
+      "feature": "Liability & Indemnification",
+      "description": "Flag all liability clauses, indemnification terms, limitation of liability, and warranty disclaimers."
+    },
+    {
+      "feature": "Termination & Renewal",
+      "description": "Extract termination conditions, notice periods, renewal terms, and exit clauses."
+    }
+  ],
+  "results": {
+    "title": "Review Contracts 10x Faster",
+    "metrics": [
+      {
+        "value": "90%",
+        "label": "Faster Contract Review"
+      },
+      {
+        "value": "100%",
+        "label": "Key Term Extraction"
+      },
+      {
+        "value": "15 min",
+        "label": "Average Review Time"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "As in-house counsel, I review 30+ contracts monthly. SummarizePDF extracts all key terms and flags risky clauses automatically. Cut my review time from 3 hours to 30 minutes per contract.",
+      "author": "Jessica Turner",
+      "role": "General Counsel",
+      "rating": 5
+    },
+    {
+      "quote": "M&A due diligence involves reviewing hundreds of contracts. This tool helped us extract key obligations and identify problems 10x faster. Essential for our team.",
+      "author": "David Cohen",
+      "role": "Corporate Attorney",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "Does it replace legal review?",
+      "answer": "No, it accelerates legal review. AI extracts key information so attorneys can focus on analysis and risk assessment rather than reading every page."
+    },
+    {
+      "question": "What types of legal documents work?",
+      "answer": "Contracts, agreements, NDAs, leases, employment agreements, service agreements, legal briefs, court documents, and more."
+    },
+    {
+      "question": "Can it identify non-standard clauses?",
+      "answer": "Yes! Ask questions like 'Are there any unusual liability terms?' to flag clauses that deviate from standard language."
+    },
+    {
+      "question": "Is my legal data secure?",
+      "answer": "Absolutely. Enterprise-grade encryption, SOC 2 compliant, attorney-client privilege maintained. Documents never used for training."
+    },
+    {
+      "question": "Can I compare multiple contracts?",
+      "answer": "Yes! Pro and Team plans support contract comparison. Upload multiple contracts and compare specific clauses across all of them."
+    },
+    {
+      "question": "Which plan is best for law firms?",
+      "answer": "Team plan ($49/mo) includes 10 users, unlimited documents, contract comparison, and advanced security features. Custom enterprise pricing available."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Summarize Legal Docs Now",
+    "href": "/sign-up?source=primary&page=legal-docs"
+  },
+  "secondaryCTA": {
+    "text": "See Legal Features",
+    "href": "#legal-features"
+  },
+  "finalCTA": {
+    "headline": "Review Contracts Faster and Better",
+    "subheadline": "Join 1,200+ legal professionals who accelerate contract review with AI.",
+    "cta": "Try Free - 5 Documents",
+    "ctaUrl": "/sign-up?source=final&page=legal-docs"
+  }
+}

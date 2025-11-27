@@ -1,0 +1,191 @@
+{
+  "pageType": "feature",
+  "slug": "api-access",
+  "seo": {
+    "title": "PDF Summarization API - Developer Integration | SummarizePDF",
+    "description": "Integrate AI-powered PDF summarization into your app with our REST API. Simple, powerful, and scalable. Developer-friendly docs and SDKs. Try free!",
+    "keywords": ["pdf api", "summarization api", "document api", "pdf summary api", "rest api pdf", "developer api"]
+  },
+  "hero": {
+    "headline": "PDF Summarization API for Developers",
+    "subheadline": "Integrate AI-powered summarization into your application. Simple REST API, comprehensive docs, and client libraries for every language.",
+    "cta": "Get API Access",
+    "ctaUrl": "/sign-up?source=feature-api-access",
+    "secondaryCta": "View API Docs",
+    "secondaryCtaUrl": "#docs"
+  },
+  "benefits": [
+    {
+      "title": "Simple REST API",
+      "description": "Clean, intuitive API design. Make your first API call in under 5 minutes with our quick start guide.",
+      "icon": "code"
+    },
+    {
+      "title": "Production-Ready",
+      "description": "Built for scale with 99.9% uptime SLA. Rate limiting, caching, and automatic retries built-in.",
+      "icon": "server"
+    },
+    {
+      "title": "Comprehensive Docs",
+      "description": "Detailed documentation, code examples, and SDKs for JavaScript, Python, Ruby, PHP, and Go.",
+      "icon": "book-open"
+    },
+    {
+      "title": "Webhooks & Callbacks",
+      "description": "Get notified when processing completes. Perfect for async workflows and long documents.",
+      "icon": "bell"
+    }
+  ],
+  "codeExample": {
+    "title": "Summarize a PDF in 3 Lines of Code",
+    "language": "javascript",
+    "code": "const summary = await summarizePDF.create({\n  file: 'document.pdf',\n  type: 'bullet-points'\n});\n\nconsole.log(summary.content);"
+  },
+  "features": [
+    {
+      "title": "Multiple Summary Types",
+      "description": "Access bullet points, executive summaries, detailed analysis via API parameters.",
+      "endpoint": "POST /v1/summaries"
+    },
+    {
+      "title": "Batch Processing",
+      "description": "Submit multiple documents in one API call for parallel processing.",
+      "endpoint": "POST /v1/batch"
+    },
+    {
+      "title": "Chat API",
+      "description": "Ask questions about uploaded documents programmatically.",
+      "endpoint": "POST /v1/chat"
+    },
+    {
+      "title": "OCR Support",
+      "description": "Automatically extracts text from scanned PDFs and images.",
+      "endpoint": "POST /v1/ocr"
+    },
+    {
+      "title": "Webhooks",
+      "description": "Receive notifications when processing completes or encounters errors.",
+      "endpoint": "POST /v1/webhooks"
+    },
+    {
+      "title": "Export Formats",
+      "description": "Get summaries in JSON, Markdown, HTML, or plain text.",
+      "endpoint": "GET /v1/summaries/:id/export"
+    }
+  ],
+  "sdks": [
+    {
+      "language": "JavaScript/TypeScript",
+      "package": "npm install @summarizepdf/sdk",
+      "docs": "/docs/sdk/javascript"
+    },
+    {
+      "language": "Python",
+      "package": "pip install summarizepdf",
+      "docs": "/docs/sdk/python"
+    },
+    {
+      "language": "Ruby",
+      "package": "gem install summarizepdf",
+      "docs": "/docs/sdk/ruby"
+    },
+    {
+      "language": "PHP",
+      "package": "composer require summarizepdf/sdk",
+      "docs": "/docs/sdk/php"
+    },
+    {
+      "language": "Go",
+      "package": "go get github.com/summarizepdf/go-sdk",
+      "docs": "/docs/sdk/go"
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Document Management Systems",
+      "description": "Auto-summarize uploaded documents for quick previews and search indexing."
+    },
+    {
+      "title": "Research Platforms",
+      "description": "Provide paper summaries to help researchers discover relevant content faster."
+    },
+    {
+      "title": "Legal Tech",
+      "description": "Summarize case files, contracts, and legal documents for attorney review."
+    },
+    {
+      "title": "EdTech Apps",
+      "description": "Generate study guides and summaries for educational content."
+    },
+    {
+      "title": "Knowledge Bases",
+      "description": "Create searchable summaries of all documentation and resources."
+    },
+    {
+      "title": "CRM & Sales Tools",
+      "description": "Summarize proposals, contracts, and client documents automatically."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "10M+", "label": "API Calls/Month" },
+      { "value": "99.9%", "label": "API Uptime" },
+      { "value": "1,000+", "label": "Developers" },
+      { "value": "<100ms", "label": "Avg Response Time" }
+    ],
+    "testimonial": {
+      "quote": "The SummarizePDF API transformed our document management system. We now auto-summarize every uploaded document, making search and discovery 10x better for our users.",
+      "author": "Alex Kumar",
+      "role": "CTO, DocFlow",
+      "avatar": "AK"
+    }
+  },
+  "faq": [
+    {
+      "question": "What's included in the API?",
+      "answer": "Full access to all summarization features: bullet points, executive summaries, detailed analysis, chat/Q&A, OCR, batch processing, and more."
+    },
+    {
+      "question": "How is API usage priced?",
+      "answer": "Pro plan includes 500 API calls/month. Team plan includes 5,000 calls/month. Additional calls are $0.10 per summary. Volume discounts available."
+    },
+    {
+      "question": "Is there a free tier for testing?",
+      "answer": "Yes! All plans include API access. Free plan gets 10 API calls/month for testing. Upgrade when ready for production."
+    },
+    {
+      "question": "What's the rate limit?",
+      "answer": "Pro: 100 requests/minute. Team: 1,000 requests/minute. Enterprise: Custom limits. All plans include burst capacity."
+    },
+    {
+      "question": "Do you have SDKs or just REST API?",
+      "answer": "We provide official SDKs for JavaScript, Python, Ruby, PHP, and Go. Plus comprehensive REST API docs for any language."
+    },
+    {
+      "question": "How do webhooks work?",
+      "answer": "Register a webhook URL and we'll POST to it when processing completes. Perfect for async workflows with long documents."
+    },
+    {
+      "question": "What's the SLA for API uptime?",
+      "answer": "99.9% uptime SLA for Pro and Team plans. Enterprise plans get 99.99% SLA with dedicated infrastructure."
+    },
+    {
+      "question": "Can I process documents asynchronously?",
+      "answer": "Yes! Submit documents and receive a job ID. Poll for completion or use webhooks for notifications."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["10 API calls/month", "Basic REST API", "Community support"],
+    "paidFeatures": ["500-5,000 calls/month", "All endpoints", "Webhooks", "SDKs", "Priority support", "99.9% SLA"],
+    "ctaText": "View API Pricing",
+    "ctaUrl": "/pricing?source=feature-api-access"
+  },
+  "finalCta": {
+    "headline": "Build Smarter Apps with AI-Powered Summarization",
+    "subheadline": "Integrate our API in minutes. Scale to millions of documents.",
+    "cta": "Get API Key Free",
+    "ctaUrl": "/sign-up?source=feature-api-access-final",
+    "secondaryCta": "View Documentation",
+    "secondaryCtaUrl": "/docs/api"
+  }
+}

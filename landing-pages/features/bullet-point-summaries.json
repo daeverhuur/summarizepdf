@@ -1,0 +1,108 @@
+{
+  "pageType": "feature",
+  "slug": "bullet-point-summaries",
+  "seo": {
+    "title": "Bullet Point PDF Summaries - Key Takeaways Instantly | SummarizePDF",
+    "description": "Get bullet point summaries of any PDF. Extract key takeaways, main points, and action items in seconds. Perfect for quick reads. Start free!",
+    "keywords": ["bullet point summary", "key takeaways pdf", "pdf highlights", "quick summary", "main points extractor", "pdf key points"]
+  },
+  "hero": {
+    "headline": "Extract Key Takeaways in Bullet Points",
+    "subheadline": "Get scannable, actionable bullet points from any PDF. Perfect for busy professionals who need insights fast.",
+    "cta": "Try Bullet Summaries Free",
+    "ctaUrl": "/sign-up?source=feature-bullet-points",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "benefits": [
+    {
+      "title": "Scannable & Actionable",
+      "description": "Get key points in clear, concise bullet format. Perfect for quick reviews before meetings or presentations.",
+      "icon": "list"
+    },
+    {
+      "title": "No Fluff, Just Facts",
+      "description": "AI extracts only the most important information. Skip the filler and get straight to what matters.",
+      "icon": "target"
+    },
+    {
+      "title": "Perfect for Busy Professionals",
+      "description": "Review documents in minutes, not hours. Make faster decisions with clear, organized key points.",
+      "icon": "briefcase"
+    },
+    {
+      "title": "Customizable Detail Level",
+      "description": "Choose between high-level overviews or detailed breakdowns. Get exactly what you need.",
+      "icon": "sliders"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Upload Your Document",
+      "description": "Drop any PDF file into SummarizePDF. Works with reports, papers, books, and more."
+    },
+    {
+      "step": 2,
+      "title": "Select Bullet Point Format",
+      "description": "Choose bullet point summary style. AI will extract key takeaways in scannable format."
+    },
+    {
+      "step": 3,
+      "title": "Get Organized Key Points",
+      "description": "Receive categorized bullet points with main themes, findings, and action items."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "30,000+", "label": "Bullet Summaries Created" },
+      { "value": "85%", "label": "Time Saved" },
+      { "value": "4.9/5", "label": "Feature Rating" },
+      { "value": "3 min", "label": "Avg. Review Time" }
+    ],
+    "testimonial": {
+      "quote": "The bullet point summaries are perfect for my weekly research reviews. I can scan 20 papers in the time it used to take me to read 2.",
+      "author": "Michael Torres",
+      "role": "Product Manager",
+      "avatar": "MT"
+    }
+  },
+  "useCases": [
+    "Meeting preparation",
+    "Research paper reviews",
+    "Business report analysis",
+    "Book chapter summaries",
+    "Client proposal reviews",
+    "Market research reports"
+  ],
+  "faq": [
+    {
+      "question": "How many bullet points will I get?",
+      "answer": "The number varies based on document length and complexity. Typically 5-15 key points for shorter documents, 20-30 for longer reports. You can adjust detail level in settings."
+    },
+    {
+      "question": "Can I customize the bullet point format?",
+      "answer": "Yes! Choose between brief highlights (3-5 points), standard summaries (10-15 points), or detailed breakdowns (20+ points with categories)."
+    },
+    {
+      "question": "Are bullet points organized by topic?",
+      "answer": "Absolutely. AI automatically categorizes key points by theme, making it easy to find specific information quickly."
+    },
+    {
+      "question": "Can I export bullet summaries?",
+      "answer": "Yes! Export to PDF, Markdown, or DOCX. All formats preserve bullet structure and organization."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["10 bullet summaries/month", "Standard detail level", "Export to PDF"],
+    "paidFeatures": ["Unlimited summaries", "Custom detail levels", "Category organization", "All export formats"],
+    "ctaText": "Compare Plans",
+    "ctaUrl": "/pricing?source=feature-bullet-points"
+  },
+  "finalCta": {
+    "headline": "Stop Reading Everything. Start Scanning Key Points.",
+    "subheadline": "Get scannable, actionable bullet summaries from any PDF in seconds.",
+    "cta": "Start Free Trial",
+    "ctaUrl": "/sign-up?source=feature-bullet-points-final"
+  }
+}

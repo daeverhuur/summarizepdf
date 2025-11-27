@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-search-within-pdf-content",
+  "seo": {
+    "title": "How to Search Within PDF Content with AI | SummarizePDF",
+    "description": "Find any information in your PDFs instantly with AI-powered semantic search. No more Ctrl+F frustration. Get intelligent answers from your documents. Try free!",
+    "keywords": [
+      "search pdf content",
+      "pdf search tool",
+      "find information in pdf",
+      "pdf semantic search",
+      "search inside pdf",
+      "pdf document search"
+    ]
+  },
+  "hero": {
+    "headline": "Search Within Any PDF Like Talking to an Expert",
+    "subheadline": "Ask questions, get answers. AI finds exactly what you're looking for instantly.",
+    "cta": "Start Searching Smarter",
+    "ctaUrl": "/sign-up?source=hero&page=pdf-search"
+  },
+  "problem": {
+    "title": "PDF Search is Broken",
+    "description": "You need to find specific information in a 300-page manual. Ctrl+F returns 47 matches. You click through each one. Still can't find what you need. Sound familiar?",
+    "painPoints": [
+      "Ctrl+F returns too many irrelevant results",
+      "Can't find information without exact keywords",
+      "Searching multiple PDFs is tedious",
+      "Need to understand concepts, not just find words",
+      "Information scattered across many pages",
+      "No way to search for related concepts"
+    ]
+  },
+  "solution": {
+    "title": "AI Understands What You're Looking For",
+    "description": "Instead of keyword matching, SummarizePDF uses AI to understand your question and find relevant information across your entire PDF library.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Your PDFs",
+        "description": "Add any number of PDF documents to your SummarizePDF workspace.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "Ask Natural Questions",
+        "description": "Ask questions like 'What are the warranty terms?' instead of searching for keywords.",
+        "icon": "message-circle"
+      },
+      {
+        "step": 3,
+        "title": "AI Finds Relevant Content",
+        "description": "Our AI understands context and finds all relevant information, even if exact words don't match.",
+        "icon": "search"
+      },
+      {
+        "step": 4,
+        "title": "Get Instant Answers",
+        "description": "Receive answers with page references so you can verify the source information.",
+        "icon": "check-square"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Semantic Search, Not Keyword Matching",
+      "description": "Find information by meaning, not just exact word matches. Ask naturally and get relevant answers.",
+      "icon": "brain"
+    },
+    {
+      "title": "Search Entire Document Library",
+      "description": "Ask questions across all your PDFs simultaneously. Find information anywhere in your collection.",
+      "icon": "database"
+    },
+    {
+      "title": "Works with Scanned Documents",
+      "description": "OCR technology makes even scanned PDFs and images fully searchable.",
+      "icon": "file-text"
+    },
+    {
+      "title": "Save Search History",
+      "description": "Keep track of questions and answers. Never lose important information you've found.",
+      "icon": "bookmark"
+    }
+  },
+  "results": {
+    "title": "Find Information 10x Faster",
+    "metrics": [
+      {
+        "value": "10x",
+        "label": "Faster Information Retrieval"
+      },
+      {
+        "value": "95%",
+        "label": "Search Accuracy"
+      },
+      {
+        "value": "Instant",
+        "label": "Answer Speed"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "I manage a library of 200+ technical manuals. Finding specific procedures used to take 30 minutes. Now I just ask a question and get the answer in seconds.",
+      "author": "Mark Stevens",
+      "role": "Operations Manager",
+      "rating": 5
+    },
+    {
+      "quote": "Legal research involves searching hundreds of case documents. This semantic search is a game-changer. It understands legal concepts, not just keywords.",
+      "author": "Patricia Johnson",
+      "role": "Legal Researcher",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "How is this different from Ctrl+F?",
+      "answer": "Ctrl+F only finds exact word matches. Our AI understands meaning and context, so you can find information even if the exact words don't appear in the document."
+    },
+    {
+      "question": "Can I search multiple PDFs at once?",
+      "answer": "Yes! Upload multiple documents and ask questions. AI will search across all of them and tell you which document contains the answer."
+    },
+    {
+      "question": "Does it work with scanned documents?",
+      "answer": "Absolutely. We use advanced OCR to extract text from scanned PDFs and images, making them fully searchable."
+    },
+    {
+      "question": "Can I search by concept, not just keywords?",
+      "answer": "Yes! Ask 'What are the safety requirements?' and AI will find all relevant safety information, regardless of specific wording."
+    },
+    {
+      "question": "Are page references included?",
+      "answer": "Yes. Every answer includes page numbers so you can verify the source and read more context if needed."
+    },
+    {
+      "question": "What's included in each plan?",
+      "answer": "Free: 5 searches/month. Starter ($9/mo): 50 searches. Pro ($19/mo): 200 searches + multi-document search. Team ($49/mo): unlimited."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Start Searching PDFs Now",
+    "href": "/sign-up?source=primary&page=pdf-search"
+  },
+  "secondaryCTA": {
+    "text": "See How It Works",
+    "href": "#how-it-works"
+  },
+  "finalCTA": {
+    "headline": "Stop Wasting Time Searching PDFs",
+    "subheadline": "Join 8,000+ users who find information 10x faster with AI-powered search.",
+    "cta": "Try Free - 5 Searches Included",
+    "ctaUrl": "/sign-up?source=final&page=pdf-search"
+  }
+}

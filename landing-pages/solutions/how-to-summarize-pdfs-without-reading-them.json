@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-summarize-pdfs-without-reading-them",
+  "seo": {
+    "title": "How to Summarize PDFs Without Reading Them | SummarizePDF",
+    "description": "Get comprehensive PDF summaries without reading a single page. AI extracts all key information instantly. Perfect for busy professionals. Try free!",
+    "keywords": [
+      "summarize pdf without reading",
+      "pdf summary without reading",
+      "ai pdf summarizer",
+      "instant pdf summary",
+      "pdf summary tool",
+      "quick pdf overview"
+    ]
+  },
+  "hero": {
+    "headline": "Summarize Any PDF Without Reading It",
+    "subheadline": "Get all the key information from any document without opening a single page.",
+    "cta": "Get Instant Summaries",
+    "ctaUrl": "/sign-up?source=hero&page=without-reading"
+  },
+  "problem": {
+    "title": "No Time to Read Everything",
+    "description": "Your boss sends a 200-page report. 'Review this by tomorrow.' You have 3 meetings today. There's literally no time to read it all. What do you do?",
+    "painPoints": [
+      "No time to read lengthy documents",
+      "Need to understand content quickly for meetings",
+      "Can't skim without missing important details",
+      "Deadline pressure with unread materials",
+      "Information overload from multiple documents",
+      "Need quick overview before deep dive"
+    ]
+  },
+  "solution": {
+    "title": "Let AI Do the Reading",
+    "description": "Upload any PDF and get a comprehensive summary with all the key points, conclusions, and important details - without reading a single page yourself.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Your PDF",
+        "description": "Drop any PDF into SummarizePDF. Any size, any length.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Reads Every Page",
+        "description": "Our AI analyzes the entire document and identifies key information, arguments, and conclusions.",
+        "icon": "book-open"
+      },
+      {
+        "step": 3,
+        "title": "Get Complete Summary",
+        "description": "Receive a comprehensive summary covering main points, supporting details, and conclusions.",
+        "icon": "file-text"
+      },
+      {
+        "step": 4,
+        "title": "Dive Deeper if Needed",
+        "description": "Ask questions about specific sections or topics to get targeted information.",
+        "icon": "zoom-in"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Understand Documents Instantly",
+      "description": "Know what any PDF is about in 2 minutes without reading a single page.",
+      "icon": "zap"
+    },
+    {
+      "title": "Show Up Prepared",
+      "description": "Never walk into a meeting unprepared. Get the overview you need fast.",
+      "icon": "briefcase"
+    },
+    {
+      "title": "Process Multiple Documents",
+      "description": "Summarize 10 documents in the time it used to take to read 1.",
+      "icon": "layers"
+    },
+    {
+      "title": "Decide What to Read",
+      "description": "Use summaries to prioritize which documents deserve your full attention.",
+      "icon": "filter"
+    }
+  },
+  "results": {
+    "title": "Save Hours Every Week",
+    "metrics": [
+      {
+        "value": "2 min",
+        "label": "Average Summary Time"
+      },
+      {
+        "value": "100%",
+        "label": "Accuracy Rate"
+      },
+      {
+        "value": "10x",
+        "label": "More Documents Processed"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "I receive 5-10 lengthy reports weekly. No time to read them all. SummarizePDF gives me the key points instantly so I know what's important and what can wait.",
+      "author": "Rachel Kim",
+      "role": "Executive Director",
+      "rating": 5
+    },
+    {
+      "quote": "As a consultant, I need to quickly understand client documents. This tool lets me walk into meetings fully briefed without spending hours reading beforehand.",
+      "author": "Tom Anderson",
+      "role": "Management Consultant",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "Will I miss important information?",
+      "answer": "No. Our AI is designed to extract all key information, main arguments, important data, and conclusions. Nothing critical gets left out."
+    },
+    {
+      "question": "How detailed are the summaries?",
+      "answer": "Summaries are comprehensive yet concise - typically 1-2 pages covering all major points. You can adjust detail level or ask for more specific information."
+    },
+    {
+      "question": "Can I use summaries for work presentations?",
+      "answer": "Absolutely! Many users create presentations and reports based on our summaries. The information is accurate and complete."
+    },
+    {
+      "question": "What if I need to reference the original?",
+      "answer": "Every summary includes page references so you can quickly find the original content if needed."
+    },
+    {
+      "question": "Does it work with scanned PDFs?",
+      "answer": "Yes! Our OCR technology extracts text from scanned documents and images, then summarizes them."
+    },
+    {
+      "question": "How much does it cost?",
+      "answer": "Free plan: 5 summaries/month. Starter ($9/mo): 50 summaries. Pro ($19/mo): 200 summaries. See all plans."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Start Summarizing Free",
+    "href": "/sign-up?source=primary&page=without-reading"
+  },
+  "secondaryCTA": {
+    "text": "See How It Works",
+    "href": "#how-it-works"
+  },
+  "finalCTA": {
+    "headline": "Never Waste Time Reading Again",
+    "subheadline": "Join 15,000+ professionals who understand documents instantly with AI summaries.",
+    "cta": "Get Started Free",
+    "ctaUrl": "/sign-up?source=final&page=without-reading"
+  }
+}

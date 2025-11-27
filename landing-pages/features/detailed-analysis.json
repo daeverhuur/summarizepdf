@@ -1,0 +1,112 @@
+{
+  "pageType": "feature",
+  "slug": "detailed-analysis",
+  "seo": {
+    "title": "Detailed PDF Analysis - Section-by-Section Breakdown | SummarizePDF",
+    "description": "Get detailed, section-by-section analysis of any PDF. Deep dive into complex documents with AI-powered insights. Perfect for research and analysis. Try free!",
+    "keywords": ["detailed pdf analysis", "document breakdown", "section analysis", "deep document review", "pdf deep dive", "comprehensive pdf summary"]
+  },
+  "hero": {
+    "headline": "Deep-Dive Analysis for Complex Documents",
+    "subheadline": "Get section-by-section breakdowns, key arguments, supporting evidence, and critical insights from any PDF.",
+    "cta": "Start Detailed Analysis",
+    "ctaUrl": "/sign-up?source=feature-detailed-analysis",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "benefits": [
+    {
+      "title": "Section-by-Section Breakdown",
+      "description": "AI analyzes each section individually, providing detailed insights for every chapter, heading, and argument.",
+      "icon": "layers"
+    },
+    {
+      "title": "Identify Key Arguments",
+      "description": "Extract main thesis, supporting arguments, evidence, and counterarguments. Perfect for academic research.",
+      "icon": "search"
+    },
+    {
+      "title": "Critical Analysis",
+      "description": "Go beyond summarization. AI identifies strengths, weaknesses, gaps, and implications in the document.",
+      "icon": "eye"
+    },
+    {
+      "title": "Navigate Complex Documents",
+      "description": "Understand research papers, legal documents, and technical reports without getting lost in complexity.",
+      "icon": "compass"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Upload Complex Document",
+      "description": "Upload research papers, technical reports, legal documents, or any PDF requiring deep analysis."
+    },
+    {
+      "step": 2,
+      "title": "AI Performs Deep Analysis",
+      "description": "Our AI breaks down each section, analyzing arguments, evidence, methodology, and conclusions."
+    },
+    {
+      "step": 3,
+      "title": "Get Comprehensive Breakdown",
+      "description": "Receive detailed analysis with section summaries, key insights, and critical evaluation."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "10,000+", "label": "Deep Analyses Performed" },
+      { "value": "95%", "label": "Research Accuracy" },
+      { "value": "4.9/5", "label": "Academic Rating" },
+      { "value": "5x", "label": "Faster Than Manual" }
+    ],
+    "testimonial": {
+      "quote": "The detailed analysis feature is invaluable for my PhD research. I can now analyze multiple papers thoroughly in the time it used to take me to read one.",
+      "author": "Dr. James Patterson",
+      "role": "PhD Candidate, MIT",
+      "avatar": "JP"
+    }
+  },
+  "useCases": [
+    "Academic research papers",
+    "Legal document review",
+    "Technical documentation",
+    "Market research reports",
+    "Scientific publications",
+    "Policy documents"
+  ],
+  "faq": [
+    {
+      "question": "How detailed are the analyses?",
+      "answer": "Very detailed! Each section gets its own summary, key points, arguments, evidence, and critical evaluation. Analysis length typically matches 30-50% of original document length."
+    },
+    {
+      "question": "Can I analyze technical or scientific papers?",
+      "answer": "Absolutely. Our AI is trained on academic and technical content, understanding complex terminology, methodologies, and scientific arguments."
+    },
+    {
+      "question": "Does it identify strengths and weaknesses?",
+      "answer": "Yes! Critical analysis mode evaluates argument quality, evidence strength, methodology soundness, and logical consistency."
+    },
+    {
+      "question": "How long does detailed analysis take?",
+      "answer": "Typically 1-2 minutes for standard papers, 3-5 minutes for lengthy documents. Much faster than manual analysis!"
+    },
+    {
+      "question": "Can I customize analysis focus?",
+      "answer": "Yes! Specify focus areas like methodology, findings, arguments, or implications. Pro plans offer custom analysis templates."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["5 detailed analyses/month", "Standard analysis", "Section breakdowns"],
+    "paidFeatures": ["Unlimited analyses", "Critical evaluation", "Custom focus areas", "Analysis templates"],
+    "ctaText": "See Pricing Plans",
+    "ctaUrl": "/pricing?source=feature-detailed-analysis"
+  },
+  "finalCta": {
+    "headline": "Stop Struggling with Complex Documents",
+    "subheadline": "Get section-by-section analysis with AI-powered deep dives into any PDF.",
+    "cta": "Start Analyzing Free",
+    "ctaUrl": "/sign-up?source=feature-detailed-analysis-final"
+  }
+}

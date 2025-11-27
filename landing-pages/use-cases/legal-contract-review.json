@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "legal-contract-review",
+  "seo": {
+    "title": "AI Legal Contract Summarizer - Review Contracts 10x Faster | SummarizePDF",
+    "description": "Quickly review legal contracts with AI. Extract key terms, obligations, dates, and risks. Perfect for lawyers, paralegals, and business professionals.",
+    "keywords": ["legal contract summarizer", "contract review AI", "legal document summary", "contract analysis tool", "AI for lawyers", "legal tech"]
+  },
+  "hero": {
+    "headline": "Review 100-Page Contracts in Minutes",
+    "subheadline": "AI extracts key terms, obligations, deadlines, and potential risks so you never miss critical details.",
+    "cta": "Analyze Your First Contract Free",
+    "ctaUrl": "/sign-up?use-case=legal-contracts&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Lawyers, Paralegals, Legal Teams, Business Professionals",
+  "painPoints": [
+    "Reading lengthy contracts takes hours of billable time",
+    "Missing critical clauses buried in dense legal text",
+    "Tracking obligations and deadlines across multiple contracts",
+    "Client pressure to review contracts quickly",
+    "Expensive associate time spent on initial contract review"
+  ],
+  "solution": {
+    "title": "AI-Powered Contract Intelligence",
+    "description": "Our AI is trained on legal documents to identify key clauses, obligations, payment terms, termination conditions, and potential risks.",
+    "features": [
+      {
+        "title": "Key Terms Extraction",
+        "description": "Automatically identifies parties, effective dates, payment terms, and duration."
+      },
+      {
+        "title": "Obligation Tracking",
+        "description": "Extracts all obligations and responsibilities for each party."
+      },
+      {
+        "title": "Risk Identification",
+        "description": "Flags unusual clauses, indemnification terms, and liability limits."
+      },
+      {
+        "title": "Critical Dates",
+        "description": "Highlights deadlines, renewal dates, and termination periods."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "10x Faster Initial Review",
+      "description": "Get contract summaries in minutes instead of hours.",
+      "icon": "clock"
+    },
+    {
+      "title": "Never Miss Key Clauses",
+      "description": "AI flags important terms and potential risks.",
+      "icon": "alert-triangle"
+    },
+    {
+      "title": "Save Legal Fees",
+      "description": "Reduce associate time on routine contract review.",
+      "icon": "dollar-sign"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Contract PDF",
+      "description": "Drop your contract or NDA"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Terms",
+      "description": "Identifies clauses, obligations, and risks"
+    },
+    {
+      "step": 3,
+      "title": "Get Executive Summary",
+      "description": "Receive structured summary with flagged concerns"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "25,000+", "label": "Contracts Reviewed" },
+      { "value": "80%", "label": "Time Saved" },
+      { "value": "4.9/5", "label": "Legal Professional Rating" }
+    ],
+    "testimonial": {
+      "quote": "SummarizePDF has become essential to our contract review workflow. Junior associates use it for initial review, saving our firm 20+ billable hours per week. The risk flagging is remarkably accurate.",
+      "author": "Jennifer Martinez, Esq.",
+      "role": "Partner, Corporate Law Firm"
+    }
+  },
+  "faq": [
+    {
+      "question": "Is this accurate for legal contracts?",
+      "answer": "Our AI achieves 95%+ accuracy in extracting key terms. However, AI summaries are for initial review only - always have qualified legal counsel review important contracts."
+    },
+    {
+      "question": "What types of contracts does it support?",
+      "answer": "All contract types: NDAs, employment agreements, vendor contracts, service agreements, leases, licensing agreements, and more."
+    },
+    {
+      "question": "Is my data secure and confidential?",
+      "answer": "Yes! We use enterprise-grade encryption, never train on your data, and comply with attorney-client privilege requirements."
+    },
+    {
+      "question": "Can it identify unusual or risky clauses?",
+      "answer": "Yes! Our AI flags clauses that deviate from standard terms, including unusual indemnification, liability limits, and termination conditions."
+    },
+    {
+      "question": "What's included in Team plan pricing?",
+      "answer": "Team plans include unlimited contracts, priority processing, bulk uploads, and admin controls for managing firm access."
+    }
+  ],
+  "pricing": {
+    "highlight": "Professional pricing for legal teams",
+    "ctaText": "See Legal Team Pricing",
+    "ctaUrl": "/pricing?use-case=legal"
+  },
+  "finalCta": {
+    "headline": "Ready to Speed Up Contract Review?",
+    "subheadline": "Join law firms saving 20+ hours per week on contract analysis",
+    "buttonText": "Start Free Trial - For Legal Teams",
+    "buttonUrl": "/sign-up?use-case=legal-contracts&trial=14"
+  }
+}

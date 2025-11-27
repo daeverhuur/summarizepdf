@@ -1,0 +1,186 @@
+{
+  "pageType": "comparison",
+  "slug": "summarizepdf-vs-consensus",
+  "seo": {
+    "title": "SummarizePDF vs Consensus AI - Best Research Tool 2025",
+    "description": "Compare SummarizePDF to Consensus for research paper analysis. See which offers better features for your research workflow. Try both free!",
+    "keywords": [
+      "consensus ai alternative",
+      "consensus vs summarizepdf",
+      "research paper ai tool",
+      "consensus comparison",
+      "academic research ai",
+      "research summarizer",
+      "paper analysis tool"
+    ]
+  },
+  "hero": {
+    "headline": "SummarizePDF vs Consensus AI",
+    "subheadline": "Your documents vs research database search",
+    "verdict": "Different tools for different needs: Consensus searches research databases, SummarizePDF analyzes your own documents. Many researchers use both."
+  },
+  "comparisonTable": {
+    "features": [
+      "Search Research Database",
+      "Upload Your Own PDFs",
+      "Batch Processing",
+      "Citation Extraction",
+      "Document Organization",
+      "Multi-Document Synthesis",
+      "Export Your Summaries",
+      "Consensus Meter",
+      "Paper Discovery",
+      "Free Plan",
+      "Premium Price",
+      "Primary Use Case"
+    ],
+    "summarizepdf": [
+      "No - upload your own docs",
+      "Yes - unlimited PDFs",
+      "Process 50+ PDFs at once",
+      "Automatic citation formatting",
+      "Projects, folders, tags, search",
+      "Compare and synthesize your PDFs",
+      "PDF, Word, Markdown, JSON",
+      "Not applicable",
+      "Not included",
+      "10 PDFs/month",
+      "$9-19/mo",
+      "Analyze your own documents"
+    ],
+    "competitor": [
+      "Yes - 200M+ papers",
+      "Limited",
+      "Search results only",
+      "Paper metadata provided",
+      "Saved searches",
+      "Shows research consensus",
+      "Limited",
+      "Yes - core feature",
+      "Yes - main purpose",
+      "10 searches/month",
+      "$11.99-27/mo",
+      "Discover research papers"
+    ]
+  },
+  "advantages": [
+    {
+      "title": "Analyze Your Own Documents",
+      "description": "Consensus searches public research. SummarizePDF analyzes YOUR documents - internal reports, proprietary research, textbooks, or any PDFs you already have.",
+      "icon": "upload"
+    },
+    {
+      "title": "True Batch Processing",
+      "description": "Upload and process dozens of your own PDFs simultaneously. Perfect for literature reviews when you've already collected your papers.",
+      "icon": "layers"
+    },
+    {
+      "title": "Complete Control",
+      "description": "Not limited to published research papers. Analyze textbooks, technical reports, legal documents, business reports - any PDF you own.",
+      "icon": "shield"
+    },
+    {
+      "title": "Better Organization",
+      "description": "Create projects, organize by topic, tag documents, and export your work. Purpose-built for managing your document library.",
+      "icon": "folder-tree"
+    }
+  },
+  "whenToUseCompetitor": "Use Consensus when you need to discover research papers, see scientific consensus on topics, or search through 200M+ published papers. Perfect for initial research and literature discovery.",
+  "whenToUseSummarizePDF": "Use SummarizePDF when you already have PDFs to analyze - whether research papers, reports, ebooks, or any documents. Perfect for processing your collected literature or analyzing proprietary documents.",
+  "complementaryTools": {
+    "headline": "Better Together: Use Both Tools",
+    "workflow": [
+      {
+        "step": 1,
+        "tool": "Consensus",
+        "action": "Search research database to find relevant papers"
+      },
+      {
+        "step": 2,
+        "tool": "Download PDFs",
+        "action": "Download the papers you want to read in-depth"
+      },
+      {
+        "step": 3,
+        "tool": "SummarizePDF",
+        "action": "Upload all PDFs and batch summarize them"
+      },
+      {
+        "step": 4,
+        "tool": "SummarizePDF",
+        "action": "Extract citations, organize, and synthesize findings"
+      }
+    ],
+    "description": "Many researchers use Consensus for discovery and SummarizePDF for deep analysis of their collected papers."
+  },
+  "useCases": {
+    "bestForConsensus": [
+      "Finding papers on a research topic",
+      "Understanding scientific consensus",
+      "Discovering recent research",
+      "Quick answer to research questions",
+      "Exploring new research areas"
+    ],
+    "bestForSummarizepdf": [
+      "Analyzing your paper collection",
+      "Processing textbooks or ebooks",
+      "Analyzing internal company reports",
+      "Literature review synthesis",
+      "Processing proprietary documents"
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "I use Consensus to find papers and SummarizePDF to analyze them. Consensus shows me what exists, SummarizePDF helps me deeply understand the papers I collect.",
+      "author": "Dr. Amanda Foster",
+      "role": "Postdoctoral Researcher",
+      "rating": 5
+    },
+    {
+      "quote": "Consensus is great for discovery, but I needed a tool to analyze my 100+ collected papers. SummarizePDF's batch processing was exactly what I needed for my literature review.",
+      "author": "Carlos Mendez",
+      "role": "PhD Candidate, Economics",
+      "rating": 5
+    }
+  ],
+  "pricing": {
+    "consensus": "$11.99-27/mo for premium search and unlimited queries",
+    "summarizepdf": "Free (10 PDFs/mo), $9-19/mo for unlimited PDF analysis"
+  },
+  "faq": [
+    {
+      "question": "Should I use Consensus or SummarizePDF?",
+      "answer": "They serve different purposes! Use Consensus to search and discover research papers from 200M+ papers. Use SummarizePDF to deeply analyze your own PDFs. Many researchers use both tools together."
+    },
+    {
+      "question": "Can SummarizePDF search research databases like Consensus?",
+      "answer": "No - SummarizePDF doesn't search databases. It's designed to analyze PDFs you upload. Think of Consensus as your discovery tool and SummarizePDF as your analysis tool."
+    },
+    {
+      "question": "Can I upload my own PDFs to Consensus?",
+      "answer": "Consensus is primarily a search tool for published research. SummarizePDF is purpose-built for uploading and analyzing your own document collection, whether research papers or any other PDFs."
+    },
+    {
+      "question": "Which is better for literature reviews?",
+      "answer": "Use both! Consensus helps you find relevant papers. SummarizePDF helps you batch process and synthesize the papers you collect. The combination is powerful for comprehensive literature reviews."
+    }
+  ],
+  "finalCta": {
+    "headline": "Analyze Your Document Collection",
+    "subheadline": "Already have PDFs? Process and understand them in minutes with AI",
+    "primaryButton": {
+      "text": "Upload Your PDFs Free",
+      "href": "/sign-up?source=vs-consensus&trial=14"
+    },
+    "secondaryButton": {
+      "text": "See How It Works",
+      "href": "/pricing?source=vs-consensus"
+    },
+    "trustSignals": [
+      "Free plan available",
+      "Process your own documents",
+      "Batch processing included",
+      "Works with any PDF"
+    ]
+  }
+}

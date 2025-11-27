@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "medical-research-papers",
+  "seo": {
+    "title": "Medical Research Summarizer - Extract Clinical Findings Fast | SummarizePDF",
+    "description": "Quickly summarize medical research papers and clinical studies with AI. Extract methodology, patient data, results, and conclusions. Perfect for medical professionals.",
+    "keywords": ["medical research summarizer", "clinical study summary", "medical paper AI", "healthcare research tool", "clinical trial summary"]
+  },
+  "hero": {
+    "headline": "Summarize Medical Research 10x Faster",
+    "subheadline": "AI extracts methodology, patient data, clinical outcomes, and statistical significance from medical papers and clinical studies.",
+    "cta": "Summarize Medical Research Free",
+    "ctaUrl": "/sign-up?use-case=medical-research&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Medical Professionals, Clinical Researchers, Healthcare Providers",
+  "painPoints": [
+    "Reading lengthy clinical studies takes hours away from patient care",
+    "Extracting statistical significance from dense results sections",
+    "Keeping up with new medical research in your specialty",
+    "Understanding complex methodology and patient selection",
+    "Staying current with evidence-based medicine"
+  ],
+  "solution": {
+    "title": "AI Trained on Medical Literature",
+    "description": "Our AI understands medical terminology, clinical methodology, patient outcomes, and statistical analysis to extract what matters most.",
+    "features": [
+      {
+        "title": "Methodology Extraction",
+        "description": "Patient selection, study design, and intervention protocols."
+      },
+      {
+        "title": "Clinical Outcomes",
+        "description": "Primary and secondary endpoints with statistical significance."
+      },
+      {
+        "title": "Patient Data",
+        "description": "Demographics, sample size, and baseline characteristics."
+      },
+      {
+        "title": "Safety & Adverse Events",
+        "description": "Identifies reported side effects and safety concerns."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Stay Evidence-Based",
+      "description": "Keep up with latest research in your specialty.",
+      "icon": "heart"
+    },
+    {
+      "title": "Better Clinical Decisions",
+      "description": "Quick access to study outcomes and methodology.",
+      "icon": "check-circle"
+    },
+    {
+      "title": "Save 10+ Hours/Week",
+      "description": "More time for patient care, less for reading.",
+      "icon": "clock"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Medical Paper",
+      "description": "Clinical study, systematic review, or case report"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Study",
+      "description": "Extracts methodology, outcomes, and significance"
+    },
+    {
+      "step": 3,
+      "title": "Get Clinical Summary",
+      "description": "Structured summary with key findings"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "15,000+", "label": "Medical Papers Summarized" },
+      { "value": "10 hrs", "label": "Saved Per Week" },
+      { "value": "4.9/5", "label": "Healthcare Professional Rating" }
+    ],
+    "testimonial": {
+      "quote": "As a busy physician, I can't spend hours reading every new study. SummarizePDF helps me stay current with evidence-based medicine while focusing on patient care. The clinical outcome extraction is excellent.",
+      "author": "Dr. James Wilson, MD",
+      "role": "Cardiologist, Academic Medical Center"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with all medical specialties?",
+      "answer": "Yes! Our AI understands medical research across all specialties: cardiology, oncology, neurology, psychiatry, surgery, and more."
+    },
+    {
+      "question": "Can it extract statistical significance?",
+      "answer": "Absolutely! The AI identifies p-values, confidence intervals, hazard ratios, and other statistical measures."
+    },
+    {
+      "question": "What about systematic reviews and meta-analyses?",
+      "answer": "Yes! We support all types of medical literature including RCTs, observational studies, systematic reviews, and case reports."
+    },
+    {
+      "question": "Is it HIPAA compliant?",
+      "answer": "Yes! We maintain HIPAA compliance for healthcare organizations. Enterprise plans include BAA agreements."
+    },
+    {
+      "question": "Can I share summaries with colleagues?",
+      "answer": "Yes! Team plans support secure sharing within your healthcare organization."
+    }
+  ],
+  "pricing": {
+    "highlight": "Special pricing for medical professionals",
+    "ctaText": "See Healthcare Pricing",
+    "ctaUrl": "/pricing?use-case=medical-research"
+  },
+  "finalCta": {
+    "headline": "Ready to Stay Current with Medical Research?",
+    "subheadline": "Join healthcare professionals saving 10+ hours per week",
+    "buttonText": "Start Free Trial - For Medical Professionals",
+    "buttonUrl": "/sign-up?use-case=medical-research&trial=14"
+  }
+}

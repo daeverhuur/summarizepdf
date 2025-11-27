@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "academia-education",
+  "seo": {
+    "title": "Academic PDF Summarizer for Students & Researchers - Read Papers 10x Faster | SummarizePDF",
+    "description": "Summarize research papers, textbooks, and academic articles instantly. Trusted by 50,000+ students and professors. Free plan available. Start studying smarter today!",
+    "keywords": ["academic paper summarizer", "research paper summary", "textbook summary ai", "student study tool", "literature review tool", "dissertation research"]
+  },
+  "hero": {
+    "headline": "Academic Summarization for Students & Researchers",
+    "subheadline": "Read research papers, textbooks, and academic articles 10x faster with AI",
+    "cta": "Start Free - Student Plan",
+    "ctaUrl": "/sign-up?industry=education&trial=14",
+    "secondaryCta": "See Student Pricing",
+    "secondaryCtaUrl": "/pricing?industry=education"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "book-open",
+      "title": "Reading lists are overwhelming",
+      "description": "100+ pages per week across multiple courses. You spend all your time reading, none analyzing."
+    },
+    {
+      "icon": "clock",
+      "title": "Literature reviews take forever",
+      "description": "Reading 50+ papers for your thesis while the deadline approaches"
+    },
+    {
+      "icon": "search",
+      "title": "Finding relevant research is hard",
+      "description": "Downloading dozens of papers to find the 3 that actually relate to your topic"
+    },
+    {
+      "icon": "file-text",
+      "title": "Textbooks are dense and boring",
+      "description": "Falling asleep trying to read 50-page chapters the night before the exam"
+    }
+  ],
+  "solution": {
+    "headline": "AI That Understands Academic Writing",
+    "description": "SummarizePDF is trained on scholarly articles, research papers, and textbooks. Get accurate summaries that preserve methodology, findings, and theoretical frameworks.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Complete Reading Lists in Hours, Not Days",
+        "description": "Summarize 50-page papers in 2 minutes. Spend time on critical thinking, not skimming."
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "Better Grades, Less Stress",
+        "description": "Understand complex concepts faster. Focus on analysis and writing instead of endless reading."
+      },
+      {
+        "icon": "bookmark",
+        "title": "Build Your Research Library",
+        "description": "Organize summaries by course, topic, or research question. Never lose track of key papers."
+      },
+      {
+        "icon": "dollar-sign",
+        "title": "Free Plan for Students",
+        "description": "Get started free with 100 pages/month. Upgrade when you need more for thesis research."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Literature Review for Thesis/Dissertation",
+      "description": "Quickly assess dozens of papers to find relevant studies and identify research gaps",
+      "metrics": "Complete literature review in 2 weeks instead of 2 months"
+    },
+    {
+      "title": "Course Reading & Study Guides",
+      "description": "Summarize assigned readings, textbook chapters, and academic articles before class",
+      "metrics": "Finish weekly reading lists in 1/3 the time"
+    },
+    {
+      "title": "Research Paper Writing",
+      "description": "Extract key findings and quotes from sources to support your arguments",
+      "metrics": "Write better papers with more sources in less time"
+    },
+    {
+      "title": "Exam Preparation",
+      "description": "Create study guides from lecture notes, textbooks, and supplementary readings",
+      "metrics": "Study smarter with concise summaries of key concepts"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "SummarizePDF saved my PhD. I had to review 200+ papers for my literature review. With AI summaries, I finished in 3 weeks instead of 3 months.",
+      "author": "Emma Thompson",
+      "role": "PhD Candidate",
+      "firm": "Stanford University"
+    },
+    {
+      "quote": "As a professor, I use this to quickly review student submissions and stay current with research in my field. It's become essential to my workflow.",
+      "author": "Dr. James Rodriguez",
+      "role": "Associate Professor",
+      "firm": "MIT"
+    }
+  ],
+  "compliance": {
+    "headline": "Designed for Academic Integrity",
+    "certifications": [
+      {
+        "badge": "Citation Preservation",
+        "description": "All summaries include source references"
+      },
+      {
+        "badge": "No Plagiarism",
+        "description": "Original summaries, not copy-paste"
+      },
+      {
+        "badge": "Secure Storage",
+        "description": "Your research stays private and encrypted"
+      },
+      {
+        "badge": "Study Aid Tool",
+        "description": "Designed to enhance learning, not replace it"
+      }
+    ],
+    "confidentiality": "We support academic integrity. Use summaries as study aids and research tools, not as substitutes for reading and critical thinking."
+  },
+  "stats": [
+    { "value": "50,000+", "label": "Students & Researchers" },
+    { "value": "80%", "label": "Reading Time Saved" },
+    { "value": "2M+", "label": "Papers Summarized" },
+    { "value": "4.8/5", "label": "Student Rating" }
+  ],
+  "faq": [
+    {
+      "question": "Is using SummarizePDF considered cheating?",
+      "answer": "No! SummarizePDF is a study aid tool, like taking notes or using a highlighter. It helps you understand material faster, but you still need to read, analyze, and think critically. Always cite your original sources."
+    },
+    {
+      "question": "What's included in the free plan for students?",
+      "answer": "The free plan includes 100 pages per month, perfect for weekly reading lists. Upgrade to Starter ($9/mo) for 250 pages if you're doing thesis research or heavy coursework."
+    },
+    {
+      "question": "Can I use this for group projects?",
+      "answer": "Absolutely! The Team plan ($49/mo) lets study groups share and collaborate on summarized research. Perfect for group assignments and lab projects."
+    },
+    {
+      "question": "Does it work with textbooks and course materials?",
+      "answer": "Yes! Upload PDFs of textbook chapters, lecture notes, course readers, and academic articles. It handles all academic content formats."
+    },
+    {
+      "question": "How accurate are the summaries?",
+      "answer": "Our AI preserves key concepts, methodologies, and findings from academic papers. However, always read the original source for critical assignments and verify important details."
+    },
+    {
+      "question": "Do you offer student discounts?",
+      "answer": "Yes! Start free with our student plan. Need more pages? Use code STUDENT20 for 20% off paid plans with a .edu email address."
+    }
+  ],
+  "finalCta": {
+    "headline": "Study Smarter, Not Harder",
+    "subheadline": "Join 50,000+ students and researchers using AI to read faster and learn better",
+    "cta": "Start Free Today",
+    "ctaUrl": "/sign-up?industry=education",
+    "trustSignal": "Free plan. No credit card required. Cancel anytime."
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "pageType": "feature",
+  "slug": "ocr-support",
+  "seo": {
+    "title": "OCR PDF Summarization - Summarize Scanned Documents | SummarizePDF",
+    "description": "Summarize scanned PDFs and images with AI-powered OCR. Extract text from scanned documents, photos, and image-based PDFs. Try free!",
+    "keywords": ["ocr pdf summary", "scanned pdf summary", "image to text pdf", "ocr summarizer", "scan to summary", "image pdf summarizer"]
+  },
+  "hero": {
+    "headline": "Summarize Scanned PDFs and Images",
+    "subheadline": "AI-powered OCR extracts text from scanned documents, photos, and image-based PDFs. Get summaries from any document, even non-searchable ones.",
+    "cta": "Try OCR Summarization",
+    "ctaUrl": "/sign-up?source=feature-ocr-support",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "benefits": [
+    {
+      "title": "Summarize Any Document",
+      "description": "Works with scanned PDFs, photos of documents, screenshots, and image-based files. No text layer required.",
+      "icon": "camera"
+    },
+    {
+      "title": "High-Accuracy OCR",
+      "description": "Advanced OCR technology accurately extracts text from low-quality scans, handwritten notes, and complex layouts.",
+      "icon": "target"
+    },
+    {
+      "title": "Preserves Formatting",
+      "description": "Maintains document structure, headings, and paragraphs even from scanned images.",
+      "icon": "layout"
+    },
+    {
+      "title": "Multi-Language Support",
+      "description": "OCR works with documents in 50+ languages. Automatically detects and processes text in any language.",
+      "icon": "globe"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Upload Scanned Document",
+      "description": "Upload scanned PDFs, photos, screenshots, or any image-based document."
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Text",
+      "description": "Advanced OCR technology extracts text from images, preserving structure and formatting."
+    },
+    {
+      "step": 3,
+      "title": "Get Summary",
+      "description": "AI summarizes extracted text just like regular PDFs. Get bullet points, briefs, or detailed analysis."
+    }
+  ],
+  "supportedFormats": [
+    {
+      "type": "Scanned PDFs",
+      "description": "Image-based PDFs without text layers from scanners or copiers.",
+      "icon": "file"
+    },
+    {
+      "type": "Photos",
+      "description": "Phone photos of documents, whiteboards, notes, or printed materials.",
+      "icon": "camera"
+    },
+    {
+      "type": "Screenshots",
+      "description": "Screenshots of digital documents, presentations, or web pages.",
+      "icon": "monitor"
+    },
+    {
+      "type": "Mixed PDFs",
+      "description": "PDFs with both text and scanned images. OCR processes image pages.",
+      "icon": "layers"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "25,000+", "label": "Scanned PDFs Processed" },
+      { "value": "98%", "label": "OCR Accuracy" },
+      { "value": "50+", "label": "Languages Supported" },
+      { "value": "4.8/5", "label": "OCR Quality Rating" }
+    ],
+    "testimonial": {
+      "quote": "The OCR feature is incredible! I can now summarize old scanned research papers and handwritten notes that I thought were lost forever. It's like magic.",
+      "author": "Prof. Elizabeth Morgan",
+      "role": "History Professor",
+      "avatar": "EM"
+    }
+  },
+  "useCases": [
+    "Historical documents",
+    "Scanned research papers",
+    "Legal case files",
+    "Medical records",
+    "Handwritten notes",
+    "Old books and archives",
+    "Whiteboard photos",
+    "Receipt and invoice summaries"
+  ],
+  "features": [
+    {
+      "title": "Automatic Detection",
+      "description": "SummarizePDF automatically detects when OCR is needed. No manual settings required."
+    },
+    {
+      "title": "Language Detection",
+      "description": "AI automatically identifies document language and applies appropriate OCR processing."
+    },
+    {
+      "title": "Table Extraction",
+      "description": "Extracts data from tables in scanned documents, preserving structure and relationships."
+    },
+    {
+      "title": "Handwriting Recognition",
+      "description": "Advanced AI recognizes handwritten text in notes, forms, and annotations (Pro plans)."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How accurate is the OCR?",
+      "answer": "Our OCR achieves 98%+ accuracy on high-quality scans and 90%+ on low-quality or handwritten documents. Quality improves with better source images."
+    },
+    {
+      "question": "What file formats are supported?",
+      "answer": "Upload scanned PDFs, JPG, PNG, TIFF, or any common image format. We handle all of them."
+    },
+    {
+      "question": "Does it work with handwritten documents?",
+      "answer": "Yes! Our AI can recognize printed and handwritten text. Handwriting recognition works best with clear, legible writing (Pro plans)."
+    },
+    {
+      "question": "Can it handle documents in different languages?",
+      "answer": "Absolutely. OCR supports 50+ languages including English, Spanish, French, German, Chinese, Japanese, Arabic, and more."
+    },
+    {
+      "question": "Does OCR cost extra?",
+      "answer": "OCR is included in all plans! No extra charges for processing scanned documents."
+    },
+    {
+      "question": "How long does OCR processing take?",
+      "answer": "Typically 30-60 seconds for standard documents. Large or complex documents may take 2-3 minutes."
+    },
+    {
+      "question": "Can I edit the extracted text?",
+      "answer": "Yes! View and edit extracted text before generating summaries. Fix any OCR errors or make corrections (Starter plans and above)."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["Basic OCR", "10 scanned docs/month", "Auto language detection"],
+    "paidFeatures": ["Unlimited OCR", "Handwriting recognition", "Text editing", "Table extraction", "Priority processing"],
+    "ctaText": "Compare Plans",
+    "ctaUrl": "/pricing?source=feature-ocr-support"
+  },
+  "finalCta": {
+    "headline": "Don't Let Scanned Documents Slow You Down",
+    "subheadline": "Summarize any document - even scanned ones - with AI-powered OCR.",
+    "cta": "Start Summarizing Scans",
+    "ctaUrl": "/sign-up?source=feature-ocr-support-final"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "nonprofit-organizations",
+  "seo": {
+    "title": "PDF Summarizer for Nonprofits - Fast Grant & Report Review | SummarizePDF",
+    "description": "Summarize grant applications, research, and compliance documents instantly. Maximize impact with limited resources. 50% nonprofit discount. Start free!",
+    "keywords": ["nonprofit document tool", "grant proposal summarizer", "nonprofit research tool", "impact report analyzer", "nonprofit productivity software"]
+  },
+  "hero": {
+    "headline": "Document Summarization for Nonprofit Organizations",
+    "subheadline": "Review grants, research, and compliance docs 10x faster. Maximize mission impact with AI.",
+    "cta": "Start Free - Nonprofit Plan",
+    "ctaUrl": "/sign-up?industry=nonprofit&trial=14",
+    "secondaryCta": "Get 50% Nonprofit Discount",
+    "secondaryCtaUrl": "/pricing?industry=nonprofit"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "dollar-sign",
+      "title": "Limited staff and resources",
+      "description": "Small team juggling fundraising, programs, and compliance. No time to read everything."
+    },
+    {
+      "icon": "file-text",
+      "title": "Grant research is overwhelming",
+      "description": "Hundreds of potential grants to review. Each RFP is 50+ pages of requirements."
+    },
+    {
+      "icon": "clock",
+      "title": "Tight grant deadlines",
+      "description": "Funder wants proposal by next week. You need to read their guidelines, past grants, and research."
+    },
+    {
+      "icon": "trending-up",
+      "title": "Proving impact takes time",
+      "description": "Need to digest research and reports to demonstrate program effectiveness for donors"
+    }
+  ],
+  "solution": {
+    "headline": "AI That Helps Nonprofits Do More with Less",
+    "description": "SummarizePDF helps nonprofits research grants, understand requirements, and prove impact faster. Spend time on your mission, not endless reading.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Research Grants 10x Faster",
+        "description": "Summarize RFPs, funder guidelines, and past grants to find perfect matches instantly."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Prove Impact with Research",
+        "description": "Quickly digest studies and reports that demonstrate your program's effectiveness."
+      },
+      {
+        "icon": "dollar-sign",
+        "title": "50% Nonprofit Discount",
+        "description": "We support nonprofits. Get 50% off all paid plans with 501(c)(3) verification."
+      },
+      {
+        "icon": "users",
+        "title": "More Time for Mission Work",
+        "description": "Spend less time on admin, more time serving your community."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Grant Research & Applications",
+      "description": "Quickly review RFPs, funder priorities, and past grant awards to find best-fit opportunities",
+      "metrics": "Research 50 grants per week instead of 5"
+    },
+    {
+      "title": "Program Research & Evaluation",
+      "description": "Summarize academic research and best practices to design effective programs and prove impact",
+      "metrics": "Build better programs backed by evidence"
+    },
+    {
+      "title": "Compliance & Reporting",
+      "description": "Digest regulatory requirements and funder reports for grant compliance and nonprofit governance",
+      "metrics": "Stay compliant without full-time staff"
+    },
+    {
+      "title": "Fundraising & Donor Research",
+      "description": "Analyze donor annual reports and foundation guidelines to personalize outreach and proposals",
+      "metrics": "Write better proposals, win more grants"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our tiny team of 3 was drowning in grant research. SummarizePDF helps us review 10x more funding opportunities and write better proposals. We've increased our grant success rate by 40%.",
+      "author": "Maria Gonzalez",
+      "role": "Executive Director",
+      "firm": "Community Education Nonprofit"
+    },
+    {
+      "quote": "We use this to research program effectiveness and prove impact to donors. Instead of spending weeks reading studies, we get summaries in hours and focus on delivering programs.",
+      "author": "James Wilson",
+      "role": "Program Director",
+      "firm": "Health Access Organization"
+    }
+  ],
+  "compliance": {
+    "headline": "Nonprofit-Friendly & Secure",
+    "certifications": [
+      {
+        "badge": "50% Discount",
+        "description": "Special pricing for 501(c)(3) orgs"
+      },
+      {
+        "badge": "Secure Storage",
+        "description": "Protect donor and beneficiary data"
+      },
+      {
+        "badge": "Free Plan",
+        "description": "100 pages/month at no cost"
+      },
+      {
+        "badge": "Mission Driven",
+        "description": "We support nonprofits making impact"
+      }
+    ],
+    "confidentiality": "We understand donor confidentiality and beneficiary privacy. All documents are encrypted and secure."
+  },
+  "stats": [
+    { "value": "75+", "label": "Nonprofits Using Daily" },
+    { "value": "80%", "label": "Grant Research Time Saved" },
+    { "value": "10K+", "label": "Grant RFPs Reviewed" },
+    { "value": "4.8/5", "label": "Nonprofit Rating" }
+  ],
+  "faq": [
+    {
+      "question": "How do I get the 50% nonprofit discount?",
+      "answer": "Email us proof of your 501(c)(3) status (IRS determination letter) and we'll apply 50% off any paid plan. We're committed to supporting nonprofits."
+    },
+    {
+      "question": "What's included in the free plan?",
+      "answer": "Free plan includes 100 pages/month - perfect for small nonprofits just starting. With the 50% discount, Starter is only $4.50/mo and Pro is $9.50/mo."
+    },
+    {
+      "question": "Can our whole team use it?",
+      "answer": "Absolutely! The Team plan (normally $49/mo, $24.50 with nonprofit discount) includes unlimited users. Perfect for small nonprofit teams."
+    },
+    {
+      "question": "What types of documents can we summarize?",
+      "answer": "All nonprofit materials: grant RFPs, funder guidelines, research studies, impact reports, donor annual reports, compliance documents, program evaluations, and more."
+    },
+    {
+      "question": "How does it help with grant writing?",
+      "answer": "Quickly understand funder priorities, review past successful grants, and research program effectiveness to write stronger, evidence-based proposals."
+    },
+    {
+      "question": "Is our donor data secure?",
+      "answer": "Yes! All documents are encrypted and private. We never share your data or use it for AI training. Perfect for protecting donor and beneficiary information."
+    }
+  ],
+  "finalCta": {
+    "headline": "Maximize Your Mission Impact with AI",
+    "subheadline": "Join 75+ nonprofits using AI to research grants and programs more efficiently",
+    "cta": "Start Free Today",
+    "ctaUrl": "/sign-up?industry=nonprofit",
+    "trustSignal": "Free plan. 50% nonprofit discount. No credit card required."
+  }
+}

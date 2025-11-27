@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "patent-document-review",
+  "seo": {
+    "title": "Patent Summarizer - Extract Claims & Prior Art Fast | SummarizePDF",
+    "description": "Quickly summarize patent documents with AI. Extract claims, technical details, and prior art. Perfect for patent attorneys and R&D teams.",
+    "keywords": ["patent summarizer", "patent analysis AI", "patent claim extraction", "prior art tool", "patent research AI", "IP analysis"]
+  },
+  "hero": {
+    "headline": "Analyze Patent Documents 10x Faster",
+    "subheadline": "AI extracts claims, technical specifications, prior art, and inventor details so you can evaluate IP faster.",
+    "cta": "Analyze Your First Patent Free",
+    "ctaUrl": "/sign-up?use-case=patent-review&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Patent Attorneys, IP Professionals, R&D Teams",
+  "painPoints": [
+    "Reading 50+ page patent applications takes hours",
+    "Extracting key claims from complex legal language",
+    "Conducting prior art searches across hundreds of patents",
+    "Understanding technical specifications quickly",
+    "Evaluating patent portfolios during due diligence"
+  ],
+  "solution": {
+    "title": "AI-Powered Patent Intelligence",
+    "description": "Our AI understands patent structure to extract independent claims, dependent claims, technical specifications, and cited prior art.",
+    "features": [
+      {
+        "title": "Claim Extraction",
+        "description": "Automatically separates independent and dependent claims."
+      },
+      {
+        "title": "Technical Summary",
+        "description": "Extracts key technical features and innovations."
+      },
+      {
+        "title": "Prior Art Identification",
+        "description": "Lists all cited patents and references."
+      },
+      {
+        "title": "Inventor & Assignee",
+        "description": "Identifies ownership and filing details."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "10x Faster Patent Review",
+      "description": "Analyze patents in minutes, not hours.",
+      "icon": "clock"
+    },
+    {
+      "title": "Better Prior Art Research",
+      "description": "Review 100+ patents for comprehensive searches.",
+      "icon": "search"
+    },
+    {
+      "title": "Faster Freedom to Operate",
+      "description": "Accelerate FTO analysis and IP due diligence.",
+      "icon": "shield"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Patent Document",
+      "description": "Patent application or granted patent"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Structure",
+      "description": "Extracts claims, tech details, and prior art"
+    },
+    {
+      "step": 3,
+      "title": "Get IP Summary",
+      "description": "Clear overview of patent scope and claims"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "18,000+", "label": "Patents Analyzed" },
+      { "value": "85%", "label": "Time Saved" },
+      { "value": "4.8/5", "label": "IP Professional Rating" }
+    ],
+    "testimonial": {
+      "quote": "Freedom to operate searches used to take weeks. SummarizePDF helps our team analyze 50+ patents per day. The claim extraction is remarkably accurate and saves us billable hours.",
+      "author": "Jennifer Liu, Esq.",
+      "role": "Patent Attorney, IP Law Firm"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with both US and international patents?",
+      "answer": "Yes! We support patents from USPTO, EPO, WIPO, and patent offices worldwide."
+    },
+    {
+      "question": "Can it distinguish independent and dependent claims?",
+      "answer": "Absolutely! Our AI understands patent claim structure and separates independent claims from dependent claims."
+    },
+    {
+      "question": "Does it extract technical drawings?",
+      "answer": "Yes! The AI references figures and identifies key technical components shown in drawings."
+    },
+    {
+      "question": "Can I analyze patent portfolios in bulk?",
+      "answer": "Yes! Pro and Team plans support batch processing for prior art searches and portfolio analysis."
+    },
+    {
+      "question": "Is it secure for confidential patent work?",
+      "answer": "Yes! Enterprise-grade security, attorney-client privilege protection, and we never train on your data."
+    }
+  ],
+  "pricing": {
+    "highlight": "Professional pricing for IP teams",
+    "ctaText": "See IP Professional Pricing",
+    "ctaUrl": "/pricing?use-case=patent-review"
+  },
+  "finalCta": {
+    "headline": "Ready to Accelerate Patent Research?",
+    "subheadline": "Join IP professionals saving 85% of patent review time",
+    "buttonText": "Start Free Trial - For IP Teams",
+    "buttonUrl": "/sign-up?use-case=patent-review&trial=14"
+  }
+}

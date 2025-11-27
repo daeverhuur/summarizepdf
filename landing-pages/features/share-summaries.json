@@ -1,0 +1,152 @@
+{
+  "pageType": "feature",
+  "slug": "share-summaries",
+  "seo": {
+    "title": "Share PDF Summaries via Link - Instant Collaboration | SummarizePDF",
+    "description": "Share PDF summaries instantly with a secure link. Perfect for teams, clients, and collaborators. No account required to view. Try free!",
+    "keywords": ["share pdf summary", "share document link", "collaborate on pdfs", "share summary link", "pdf collaboration", "document sharing"]
+  },
+  "hero": {
+    "headline": "Share Summaries with Anyone, Instantly",
+    "subheadline": "Generate a secure link and share PDF summaries with team members, clients, or collaborators. No account required to view.",
+    "cta": "Start Sharing Free",
+    "ctaUrl": "/sign-up?source=feature-share-summaries",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "benefits": [
+    {
+      "title": "One-Click Sharing",
+      "description": "Generate a secure shareable link in one click. Copy and share via email, Slack, or any platform.",
+      "icon": "share-2"
+    },
+    {
+      "title": "No Account Required",
+      "description": "Recipients can view summaries without signing up or logging in. Perfect for clients and external collaborators.",
+      "icon": "users"
+    },
+    {
+      "title": "Control Access",
+      "description": "Set permissions, expiration dates, and password protection. Revoke access anytime.",
+      "icon": "lock"
+    },
+    {
+      "title": "Professional Presentation",
+      "description": "Shared summaries display beautifully on any device. Recipients see a clean, professional view.",
+      "icon": "monitor"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Generate Summary",
+      "description": "Create any type of summary from your PDF - bullet points, executive brief, or detailed analysis."
+    },
+    {
+      "step": 2,
+      "title": "Click Share",
+      "description": "Click the share button to generate a secure, unique link. Customize permissions if needed."
+    },
+    {
+      "step": 3,
+      "title": "Send Link",
+      "description": "Copy the link and share via email, Slack, Teams, or any messaging platform."
+    }
+  ],
+  "features": [
+    {
+      "title": "Public & Private Links",
+      "description": "Create public links anyone can view, or private links requiring password authentication.",
+      "icon": "eye"
+    },
+    {
+      "title": "Expiration Dates",
+      "description": "Set automatic expiration for time-sensitive shares. Links expire after specified date.",
+      "icon": "calendar"
+    },
+    {
+      "title": "Access Tracking",
+      "description": "See who viewed your summaries and when. Track engagement on shared content (Pro plans).",
+      "icon": "activity"
+    },
+    {
+      "title": "Revoke Access",
+      "description": "Revoke shared links anytime. Previously shared links stop working immediately.",
+      "icon": "x-circle"
+    },
+    {
+      "title": "Embed Options",
+      "description": "Embed summaries in websites, notion pages, or internal tools with iframe code (Pro plans).",
+      "icon": "code"
+    },
+    {
+      "title": "Team Sharing",
+      "description": "Share directly with team members. They get edit access and can add notes or highlights.",
+      "icon": "users"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "100,000+", "label": "Summaries Shared" },
+      { "value": "50,000+", "label": "Monthly Views" },
+      { "value": "4.9/5", "label": "Sharing Experience" },
+      { "value": "95%", "label": "Client Satisfaction" }
+    ],
+    "testimonial": {
+      "quote": "Sharing summaries with clients has transformed our consulting process. They love getting concise briefs instead of 50-page reports, and I love how easy it is to share.",
+      "author": "David Kim",
+      "role": "Strategy Consultant",
+      "avatar": "DK"
+    }
+  },
+  "useCases": [
+    "Client deliverables",
+    "Team collaboration",
+    "Executive briefings",
+    "Research sharing",
+    "Student study groups",
+    "External partnerships"
+  ],
+  "faq": [
+    {
+      "question": "Do recipients need an account to view summaries?",
+      "answer": "No! Public links work for anyone without requiring sign-up or login. They just click and view instantly."
+    },
+    {
+      "question": "Can I password-protect shared links?",
+      "answer": "Yes! Set a password when creating the share link. Recipients will need to enter the password to view the summary."
+    },
+    {
+      "question": "Can I revoke access to shared summaries?",
+      "answer": "Absolutely. Revoke any shared link anytime from your sharing dashboard. The link stops working immediately."
+    },
+    {
+      "question": "How long do share links last?",
+      "answer": "By default, links don't expire. You can optionally set expiration dates (1 day, 1 week, 1 month, custom) for time-sensitive shares."
+    },
+    {
+      "question": "Can I track who viewed my summaries?",
+      "answer": "Pro and Team plans include view analytics showing who viewed your summaries, when, and how long they spent viewing."
+    },
+    {
+      "question": "Can shared recipients download the summary?",
+      "answer": "You control this! Choose whether recipients can view only, or also download/export the summary."
+    },
+    {
+      "question": "Is sharing secure?",
+      "answer": "Yes! All share links use encryption, and you control access with passwords, expiration, and revocation. Your original PDFs are never shared unless you choose to."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["Public link sharing", "Basic permissions", "Manual revocation"],
+    "paidFeatures": ["Password protection", "Expiration dates", "View analytics", "Embed options", "Team sharing"],
+    "ctaText": "See All Plans",
+    "ctaUrl": "/pricing?source=feature-share-summaries"
+  },
+  "finalCta": {
+    "headline": "Stop Emailing PDF Attachments. Start Sharing Smart Links.",
+    "subheadline": "Share professional summaries with anyone in one click. No accounts required.",
+    "cta": "Start Sharing Free",
+    "ctaUrl": "/sign-up?source=feature-share-summaries-final"
+  }
+}

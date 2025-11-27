@@ -1,0 +1,124 @@
+{
+  "pageType": "feature",
+  "slug": "chat-with-pdf",
+  "seo": {
+    "title": "Chat with PDF - Ask Questions About Any Document | SummarizePDF",
+    "description": "Ask questions about any PDF and get instant AI answers. Chat with research papers, reports, books, and more. Interactive document analysis. Try free!",
+    "keywords": ["chat with pdf", "ask pdf questions", "interactive pdf", "pdf chatbot", "document qa", "pdf question answering"]
+  },
+  "hero": {
+    "headline": "Ask Any Question About Your PDF",
+    "subheadline": "Chat with your documents like talking to an expert. Get instant answers, find specific information, and explore content interactively.",
+    "cta": "Start Chatting with PDFs",
+    "ctaUrl": "/sign-up?source=feature-chat-pdf",
+    "secondaryCta": "Watch Demo",
+    "secondaryCtaUrl": "#demo"
+  },
+  "benefits": [
+    {
+      "title": "Instant Answers",
+      "description": "Ask questions in plain English and get accurate answers pulled directly from your document in seconds.",
+      "icon": "message-circle"
+    },
+    {
+      "title": "Deep Understanding",
+      "description": "AI understands context, nuance, and relationships between concepts. Get intelligent answers, not just keyword matches.",
+      "icon": "brain"
+    },
+    {
+      "title": "Find Information Fast",
+      "description": "Skip searching and scrolling. Ask where specific information is and get direct quotes with page numbers.",
+      "icon": "zap"
+    },
+    {
+      "title": "Conversational Follow-ups",
+      "description": "Ask follow-up questions, request clarifications, or explore topics deeper. AI remembers conversation context.",
+      "icon": "repeat"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Upload Your PDF",
+      "description": "Drop any PDF into SummarizePDF. AI processes the content and prepares it for interactive chat."
+    },
+    {
+      "step": 2,
+      "title": "Ask Your Questions",
+      "description": "Type questions in natural language. Ask about findings, methods, arguments, or specific details."
+    },
+    {
+      "step": 3,
+      "title": "Get Instant Answers",
+      "description": "Receive accurate answers with direct quotes and page references. Ask follow-ups anytime."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "100,000+", "label": "Questions Answered" },
+      { "value": "4.9/5", "label": "Answer Accuracy" },
+      { "value": "8 sec", "label": "Avg Response Time" },
+      { "value": "90%", "label": "User Satisfaction" }
+    ],
+    "testimonial": {
+      "quote": "Chat with PDF is a game-changer for legal research. I can now interrogate case documents and find precedents in seconds instead of hours.",
+      "author": "Amanda Richardson",
+      "role": "Legal Associate",
+      "avatar": "AR"
+    }
+  },
+  "useCases": [
+    "Research paper analysis",
+    "Legal document review",
+    "Technical documentation Q&A",
+    "Study guide creation",
+    "Contract analysis",
+    "Book comprehension"
+  ],
+  "exampleQuestions": [
+    "What is the main conclusion of this research?",
+    "What methodology did the authors use?",
+    "Where does it mention [specific topic]?",
+    "What evidence supports the main argument?",
+    "Can you explain section 3 in simpler terms?",
+    "What are the limitations of this study?"
+  ],
+  "faq": [
+    {
+      "question": "How accurate are the answers?",
+      "answer": "Very accurate! AI answers are grounded in the document content with direct quotes and page references. Powered by Google Gemini for maximum accuracy."
+    },
+    {
+      "question": "Can I ask follow-up questions?",
+      "answer": "Absolutely! AI remembers conversation context, so you can ask follow-ups, request clarifications, or explore topics deeper."
+    },
+    {
+      "question": "What types of questions can I ask?",
+      "answer": "Any question about the document: factual questions, explanations, summaries, comparisons, locations of information, and more."
+    },
+    {
+      "question": "Does it work with technical or academic PDFs?",
+      "answer": "Yes! Our AI understands complex terminology, scientific concepts, and academic language across all fields."
+    },
+    {
+      "question": "Can I chat with multiple PDFs at once?",
+      "answer": "Pro and Team plans support multi-document chat, letting you ask questions across your entire document library."
+    },
+    {
+      "question": "Are conversations saved?",
+      "answer": "Yes! All chat history is saved with each document, so you can return anytime and continue the conversation."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["10 chat sessions/month", "Basic Q&A", "Single document chat"],
+    "paidFeatures": ["Unlimited chat", "Multi-document Q&A", "Advanced context", "Export conversations"],
+    "ctaText": "Compare Plans",
+    "ctaUrl": "/pricing?source=feature-chat-pdf"
+  },
+  "finalCta": {
+    "headline": "Stop Searching. Start Asking.",
+    "subheadline": "Chat with any PDF and get instant answers to your questions. Try it free today.",
+    "cta": "Start Free Trial",
+    "ctaUrl": "/sign-up?source=feature-chat-pdf-final"
+  }
+}

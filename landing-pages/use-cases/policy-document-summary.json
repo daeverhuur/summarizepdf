@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "policy-document-summary",
+  "seo": {
+    "title": "Policy Document Summarizer - Understand Policies Faster | SummarizePDF",
+    "description": "Quickly summarize policy documents and compliance manuals with AI. Extract key requirements, obligations, and deadlines. Perfect for compliance and HR teams.",
+    "keywords": ["policy document summarizer", "compliance tool AI", "policy manual summary", "HR policy tool", "regulatory compliance AI"]
+  },
+  "hero": {
+    "headline": "Understand Policy Documents in Minutes",
+    "subheadline": "AI extracts key requirements, obligations, and compliance deadlines from dense policy manuals and regulatory documents.",
+    "cta": "Summarize Policy Docs Free",
+    "ctaUrl": "/sign-up?use-case=policy-docs&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Compliance Officers, HR Managers, Legal Teams",
+  "painPoints": [
+    "Reading 200+ page policy manuals is overwhelming",
+    "Extracting specific requirements from regulatory documents",
+    "Training employees on complex policies",
+    "Tracking compliance deadlines and obligations",
+    "Keeping up with policy updates and changes"
+  ],
+  "solution": {
+    "title": "AI-Powered Policy Intelligence",
+    "description": "Our AI identifies key requirements, obligations, exceptions, deadlines, and compliance steps from any policy or regulatory document.",
+    "features": [
+      {
+        "title": "Requirement Extraction",
+        "description": "Automatically lists all key requirements and obligations."
+      },
+      {
+        "title": "Deadline Tracking",
+        "description": "Identifies compliance deadlines and reporting periods."
+      },
+      {
+        "title": "Exception Identification",
+        "description": "Flags exemptions and special cases in policies."
+      },
+      {
+        "title": "Change Summaries",
+        "description": "Highlights what changed in policy updates."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "10x Faster Policy Review",
+      "description": "Understand requirements in minutes, not days.",
+      "icon": "clock"
+    },
+    {
+      "title": "Better Compliance",
+      "description": "Never miss critical requirements or deadlines.",
+      "icon": "shield"
+    },
+    {
+      "title": "Easier Training",
+      "description": "Clear summaries for employee education.",
+      "icon": "users"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Policy Document",
+      "description": "HR manual, compliance guide, or regulation"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Requirements",
+      "description": "Obligations, deadlines, and exceptions"
+    },
+    {
+      "step": 3,
+      "title": "Get Compliance Summary",
+      "description": "Structured guide with key requirements"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "20,000+", "label": "Policies Summarized" },
+      { "value": "80%", "label": "Time Saved" },
+      { "value": "4.9/5", "label": "Compliance Officer Rating" }
+    ],
+    "testimonial": {
+      "quote": "New regulations used to take our compliance team days to understand. SummarizePDF helps us extract key requirements in minutes, ensuring we never miss critical compliance deadlines.",
+      "author": "Lisa Anderson",
+      "role": "Chief Compliance Officer, Financial Services"
+    }
+  },
+  "faq": [
+    {
+      "question": "What types of policy documents does it support?",
+      "answer": "All types: HR policies, compliance manuals, regulatory guidelines, government regulations, industry standards, and corporate policies."
+    },
+    {
+      "question": "Can it identify compliance deadlines?",
+      "answer": "Yes! Our AI extracts all dates, deadlines, reporting periods, and time-sensitive requirements from policy documents."
+    },
+    {
+      "question": "Does it work with updated policies?",
+      "answer": "Yes! Upload both old and new versions to get a summary of what changed, making policy updates easier to communicate."
+    },
+    {
+      "question": "Can I share summaries with employees?",
+      "answer": "Absolutely! Team plans include sharing features perfect for distributing policy summaries to staff."
+    },
+    {
+      "question": "Is it secure for sensitive policies?",
+      "answer": "Yes! Enterprise-grade encryption, SOC 2 compliance, and we never train on your data."
+    }
+  ],
+  "pricing": {
+    "highlight": "Built for compliance and HR teams",
+    "ctaText": "See Team Pricing",
+    "ctaUrl": "/pricing?use-case=policy-compliance"
+  },
+  "finalCta": {
+    "headline": "Ready to Simplify Policy Management?",
+    "subheadline": "Join compliance teams saving 80% of policy review time",
+    "buttonText": "Start Free Trial - For Compliance Teams",
+    "buttonUrl": "/sign-up?use-case=policy-docs&trial=14"
+  }
+}

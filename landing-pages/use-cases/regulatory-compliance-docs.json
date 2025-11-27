@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "regulatory-compliance-docs",
+  "seo": {
+    "title": "Regulatory Compliance Summarizer - Extract Requirements Fast | SummarizePDF",
+    "description": "Quickly summarize regulatory documents with AI. Extract compliance requirements, deadlines, and obligations. Perfect for compliance teams and regulated industries.",
+    "keywords": ["regulatory compliance AI", "compliance document summary", "regulatory requirement tool", "compliance deadline tracker", "regulatory analysis"]
+  },
+  "hero": {
+    "headline": "Understand Regulatory Documents in Minutes",
+    "subheadline": "AI extracts compliance requirements, deadlines, reporting obligations, and penalties from complex regulatory documents.",
+    "cta": "Analyze Regulatory Docs Free",
+    "ctaUrl": "/sign-up?use-case=regulatory-compliance&trial=14",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?use-case=compliance"
+  },
+  "targetAudience": "Compliance Officers, Regulatory Affairs, Legal Teams",
+  "painPoints": [
+    "Reading 300+ page regulatory documents is overwhelming",
+    "Extracting specific compliance requirements from dense text",
+    "Tracking changing regulations across jurisdictions",
+    "Missing compliance deadlines buried in documents",
+    "Training staff on complex regulatory requirements"
+  ],
+  "solution": {
+    "title": "AI-Powered Regulatory Intelligence",
+    "description": "Our AI identifies key requirements, obligations, deadlines, exemptions, and penalties from any regulatory document.",
+    "features": [
+      {
+        "title": "Requirement Extraction",
+        "description": "Automatically lists all compliance requirements and obligations."
+      },
+      {
+        "title": "Deadline Identification",
+        "description": "Identifies effective dates, compliance deadlines, and reporting periods."
+      },
+      {
+        "title": "Exemption Analysis",
+        "description": "Flags exemptions and special circumstances."
+      },
+      {
+        "title": "Penalty Overview",
+        "description": "Extracts non-compliance consequences and enforcement actions."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "90% Faster Document Review",
+      "description": "Understand regulations in hours, not days.",
+      "icon": "clock"
+    },
+    {
+      "title": "Never Miss Deadlines",
+      "description": "All compliance dates clearly identified.",
+      "icon": "calendar"
+    },
+    {
+      "title": "Reduce Compliance Risk",
+      "description": "Comprehensive requirement extraction.",
+      "icon": "shield"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Regulatory Document",
+      "description": "Federal rules, industry standards, or guidelines"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Requirements",
+      "description": "Obligations, deadlines, and exemptions"
+    },
+    {
+      "step": 3,
+      "title": "Get Compliance Roadmap",
+      "description": "Structured guide for implementation"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "8,000+", "label": "Regulations Analyzed" },
+      { "value": "90%", "label": "Time Saved" },
+      { "value": "4.9/5", "label": "Compliance Officer Rating" }
+    ],
+    "testimonial": {
+      "quote": "New regulations used to take our team weeks to analyze and implement. SummarizePDF extracts all requirements and deadlines in minutes, giving us a clear compliance roadmap immediately.",
+      "author": "Robert Chen",
+      "role": "VP of Compliance, Healthcare Organization"
+    }
+  },
+  "faq": [
+    {
+      "question": "What types of regulations does it support?",
+      "answer": "All types: federal regulations (CFR), state laws, industry standards (ISO, FDA), international regulations (GDPR, MiFID), and more."
+    },
+    {
+      "question": "Can it track regulation changes?",
+      "answer": "Yes! Upload both old and new versions to get a summary of what changed and new compliance requirements."
+    },
+    {
+      "question": "Does it identify compliance deadlines?",
+      "answer": "Absolutely! The AI extracts effective dates, implementation deadlines, and reporting periods."
+    },
+    {
+      "question": "Can I get alerts for new regulations?",
+      "answer": "Team and Enterprise plans include monitoring features for regulatory updates in your industry."
+    },
+    {
+      "question": "Is it secure for sensitive compliance data?",
+      "answer": "Yes! Enterprise-grade security, SOC 2 compliance, and we never train on your data."
+    }
+  ],
+  "pricing": {
+    "highlight": "Enterprise-ready compliance solution",
+    "ctaText": "See Compliance Pricing",
+    "ctaUrl": "/pricing?use-case=regulatory-compliance"
+  },
+  "finalCta": {
+    "headline": "Ready to Simplify Regulatory Compliance?",
+    "subheadline": "Join compliance teams saving 90% of document review time",
+    "buttonText": "Start Free Trial - For Compliance Teams",
+    "buttonUrl": "/sign-up?use-case=regulatory-compliance&trial=14"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "pageType": "feature",
+  "slug": "batch-upload",
+  "seo": {
+    "title": "Batch PDF Upload - Summarize Multiple PDFs at Once | SummarizePDF",
+    "description": "Upload and summarize multiple PDFs simultaneously. Process 10, 50, or 100+ documents at once. Perfect for research and bulk processing. Try free!",
+    "keywords": ["batch pdf upload", "bulk pdf summary", "multiple pdf summarizer", "batch document processing", "mass pdf summary", "upload multiple pdfs"]
+  },
+  "hero": {
+    "headline": "Summarize 100+ PDFs at Once",
+    "subheadline": "Upload multiple documents simultaneously and get all summaries in minutes. Perfect for literature reviews, research, and bulk processing.",
+    "cta": "Start Batch Processing",
+    "ctaUrl": "/sign-up?source=feature-batch-upload",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?source=feature-batch-upload"
+  },
+  "benefits": [
+    {
+      "title": "Process Documents in Parallel",
+      "description": "Upload 10, 50, or 100+ PDFs at once. Our AI processes them simultaneously for maximum speed.",
+      "icon": "layers"
+    },
+    {
+      "title": "Save Massive Time",
+      "description": "What used to take days now takes minutes. Summarize your entire research library in one session.",
+      "icon": "clock"
+    },
+    {
+      "title": "Automatic Organization",
+      "description": "Batch uploads are automatically organized into collections. Keep everything from one project together.",
+      "icon": "folder"
+    },
+    {
+      "title": "Progress Tracking",
+      "description": "Real-time dashboard shows processing status. See which documents are complete and which are in queue.",
+      "icon": "activity"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Select Multiple Files",
+      "description": "Drag and drop up to 100 PDFs at once, or select a folder to upload all documents inside."
+    },
+    {
+      "step": 2,
+      "title": "Choose Summary Type",
+      "description": "Select bullet points, executive summaries, or detailed analysis for all documents."
+    },
+    {
+      "step": 3,
+      "title": "AI Processes Everything",
+      "description": "Our AI processes documents in parallel. Track progress in real-time dashboard."
+    },
+    {
+      "step": 4,
+      "title": "Review Results",
+      "description": "All summaries appear in your library organized by batch. Export all at once or individually."
+    }
+  ],
+  "features": [
+    {
+      "title": "Parallel Processing",
+      "description": "Process up to 100 documents simultaneously for maximum speed.",
+      "icon": "zap"
+    },
+    {
+      "title": "Folder Upload",
+      "description": "Upload entire folders at once. Maintains folder structure in your library.",
+      "icon": "folder-open"
+    },
+    {
+      "title": "Batch Settings",
+      "description": "Apply same summary settings to all documents. Or customize individually.",
+      "icon": "settings"
+    },
+    {
+      "title": "Progress Dashboard",
+      "description": "Real-time status updates. See processing progress, completed, and queued documents.",
+      "icon": "bar-chart"
+    },
+    {
+      "title": "Error Handling",
+      "description": "If any document fails, others continue processing. Retry failed documents easily.",
+      "icon": "alert-circle"
+    },
+    {
+      "title": "Batch Export",
+      "description": "Export all summaries at once as separate files or combined into single document.",
+      "icon": "download"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "10,000+", "label": "Batch Jobs Completed" },
+      { "value": "500,000+", "label": "Documents Processed" },
+      { "value": "20x", "label": "Faster Than Sequential" },
+      { "value": "4.9/5", "label": "Batch Feature Rating" }
+    ],
+    "testimonial": {
+      "quote": "Batch upload changed my PhD research process. I uploaded 200 papers on Friday afternoon, came back Monday, and had summaries of my entire literature review ready to go.",
+      "author": "Kevin Zhang",
+      "role": "PhD Candidate",
+      "avatar": "KZ"
+    }
+  },
+  "useCases": [
+    "Literature reviews",
+    "Legal discovery",
+    "Market research analysis",
+    "Academic research",
+    "Company document processing",
+    "Client file reviews",
+    "Historical archive digitization"
+  ],
+  "comparisonTable": {
+    "title": "Batch Upload vs Sequential Processing",
+    "rows": [
+      {
+        "metric": "Process 50 PDFs",
+        "sequential": "4-5 hours",
+        "batch": "15-20 minutes",
+        "improvement": "15x faster"
+      },
+      {
+        "metric": "Manual Effort",
+        "sequential": "Upload each file individually",
+        "batch": "One drag-and-drop",
+        "improvement": "50x less effort"
+      },
+      {
+        "metric": "Organization",
+        "sequential": "Manual tagging/filing",
+        "batch": "Auto-organized",
+        "improvement": "Automatic"
+      },
+      {
+        "metric": "Error Recovery",
+        "sequential": "Start over",
+        "batch": "Retry failed only",
+        "improvement": "Resilient"
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "How many PDFs can I upload at once?",
+      "answer": "Starter plan: 10 PDFs. Pro plan: 50 PDFs. Team plan: 100 PDFs per batch. You can run multiple batches back-to-back."
+    },
+    {
+      "question": "How long does batch processing take?",
+      "answer": "Processing speed depends on document size and count. Typically: 10 docs = 5 min, 50 docs = 15 min, 100 docs = 30 min. All processed in parallel."
+    },
+    {
+      "question": "Can I apply different settings to each document?",
+      "answer": "Yes! After upload, you can customize summary type, detail level, and other settings for individual documents before processing."
+    },
+    {
+      "question": "What happens if one document fails?",
+      "answer": "Other documents continue processing normally. Failed documents appear in your dashboard where you can retry them with one click."
+    },
+    {
+      "question": "Can I upload folders to maintain organization?",
+      "answer": "Absolutely! Upload entire folders and we'll preserve the folder structure in your library. Great for project organization."
+    },
+    {
+      "question": "Is batch upload available on the free plan?",
+      "answer": "Free plan supports uploading 1 document at a time. Batch upload is available on Starter, Pro, and Team plans."
+    },
+    {
+      "question": "Can I export all summaries from a batch at once?",
+      "answer": "Yes! Use batch export to download all summaries as individual files (ZIP) or combined into one document."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["1 document at a time", "Sequential processing"],
+    "paidFeatures": ["Batch upload (10-100)", "Parallel processing", "Progress dashboard", "Batch export", "Folder upload"],
+    "ctaText": "See All Plans",
+    "ctaUrl": "/pricing?source=feature-batch-upload"
+  },
+  "finalCta": {
+    "headline": "Stop Uploading One PDF at a Time",
+    "subheadline": "Upload 10, 50, or 100+ documents at once and get all summaries in minutes.",
+    "cta": "Start Batch Processing",
+    "ctaUrl": "/sign-up?source=feature-batch-upload-final"
+  }
+}

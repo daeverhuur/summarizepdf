@@ -1,0 +1,179 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-quickly-understand-technical-documents",
+  "seo": {
+    "title": "How to Quickly Understand Technical Documents | SummarizePDF",
+    "description": "Understand complex technical documents in minutes with AI. Get clear explanations of specifications, APIs, manuals, and engineering docs. Try free!",
+    "keywords": [
+      "understand technical documents",
+      "technical document summary",
+      "simplify technical writing",
+      "technical documentation tool",
+      "understand specs",
+      "technical manual summary"
+    ]
+  },
+  "hero": {
+    "headline": "Understand Complex Technical Documents in Minutes",
+    "subheadline": "AI translates technical jargon into clear explanations you can actually understand.",
+    "cta": "Simplify Technical Docs",
+    "ctaUrl": "/sign-up?source=hero&page=technical-docs"
+  },
+  "problem": {
+    "title": "Technical Documents Are Incomprehensible",
+    "description": "You receive a 200-page technical specification. It's full of jargon, acronyms, and complex diagrams. You're not an engineer. You need to understand this for tomorrow's meeting. Help.",
+    "painPoints": [
+      "Technical jargon and acronyms everywhere",
+      "Complex specifications hard to understand",
+      "API documentation is overwhelming",
+      "Engineering documents assume expert knowledge",
+      "Can't ask questions to the document",
+      "Need simplified explanations fast"
+    ]
+  },
+  "solution": {
+    "title": "AI Explains Technical Content Clearly",
+    "description": "SummarizePDF not only summarizes technical documents but also explains complex concepts in simple language and answers your questions about technical details.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Technical Document",
+        "description": "Add any technical spec, API doc, manual, or engineering document to SummarizePDF.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "Get Plain-Language Summary",
+        "description": "AI creates summary that explains technical concepts without jargon. Acronyms defined, concepts clarified.",
+        "icon": "book-open"
+      },
+      {
+        "step": 3,
+        "title": "Ask Questions",
+        "description": "Ask 'What does this specification mean?' or 'How does this system work?' Get clear explanations.",
+        "icon": "help-circle"
+      },
+      {
+        "step": 4,
+        "title": "Extract Key Requirements",
+        "description": "AI identifies critical requirements, specifications, and technical constraints automatically.",
+        "icon": "check-square"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Plain-Language Explanations",
+      "description": "Technical jargon translated into clear, understandable language. Perfect for non-technical stakeholders.",
+      "icon": "message-circle"
+    },
+    {
+      "title": "Acronym Dictionary",
+      "description": "AI automatically identifies and defines all acronyms and technical terms in the document.",
+      "icon": "book"
+    },
+    {
+      "title": "Requirement Extraction",
+      "description": "Automatically extract key requirements, specifications, and constraints from technical docs.",
+      "icon": "list"
+    },
+    {
+      "title": "Technical Q&A",
+      "description": "Ask questions about how systems work, what specs mean, or why something is designed a certain way.",
+      "icon": "message-square"
+    }
+  },
+  "documentTypes": [
+    {
+      "type": "API Documentation",
+      "helpsWith": "Understand endpoints, parameters, authentication methods, and response formats"
+    },
+    {
+      "type": "Technical Specifications",
+      "helpsWith": "Extract requirements, constraints, and system architectures in plain language"
+    },
+    {
+      "type": "Engineering Reports",
+      "helpsWith": "Understand methodologies, test results, and technical findings"
+    },
+    {
+      "type": "Product Manuals",
+      "helpsWith": "Find installation instructions, troubleshooting steps, and operational procedures"
+    },
+    {
+      "type": "White Papers",
+      "helpsWith": "Understand technical innovations, architectures, and implementation details"
+    }
+  ],
+  "results": {
+    "title": "Make Technical Docs Accessible",
+    "metrics": [
+      {
+        "value": "95%",
+        "label": "Easier to Understand"
+      },
+      {
+        "value": "10x",
+        "label": "Faster Comprehension"
+      },
+      {
+        "value": "Plain",
+        "label": "Language Explanations"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "As product manager, I review technical specs weekly but I'm not an engineer. SummarizePDF translates all the technical jargon into language I understand. Game-changer.",
+      "author": "Brian Foster",
+      "role": "Product Manager",
+      "rating": 5
+    },
+    {
+      "quote": "Reviewing vendor technical documentation for procurement. This tool helps me understand complex specs and extract key requirements without needing engineering background.",
+      "author": "Sandra Williams",
+      "role": "Procurement Specialist",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "I'm not technical - will this help me?",
+      "answer": "Absolutely! That's exactly who this is for. AI explains technical concepts in plain language without assuming prior knowledge."
+    },
+    {
+      "question": "Does it work with API documentation?",
+      "answer": "Yes! Particularly good with API docs. AI explains endpoints, parameters, authentication, and provides usage examples."
+    },
+    {
+      "question": "Can it extract specific requirements?",
+      "answer": "Yes. Ask questions like 'What are the performance requirements?' or 'What are the security specifications?' to extract specific details."
+    },
+    {
+      "question": "Does it explain diagrams and tables?",
+      "answer": "AI can read and explain technical tables and some diagrams. Provides context about what data represents and what it means."
+    },
+    {
+      "question": "Can I use it for compliance reviews?",
+      "answer": "Yes! Many users review technical compliance documents. AI helps identify if specifications meet regulatory requirements."
+    },
+    {
+      "question": "What plans support technical documents?",
+      "answer": "All plans! Free: 5 docs/month. Starter ($9/mo): 50 docs. Pro ($19/mo): 200 docs with advanced technical analysis."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Understand Technical Docs",
+    "href": "/sign-up?source=primary&page=technical-docs"
+  },
+  "secondaryCTA": {
+    "text": "See How It Works",
+    "href": "#how-it-works"
+  },
+  "finalCTA": {
+    "headline": "Stop Being Intimidated by Technical Docs",
+    "subheadline": "Join 7,000+ non-technical professionals who understand complex docs with AI explanations.",
+    "cta": "Try Free - 5 Documents",
+    "ctaUrl": "/sign-up?source=final&page=technical-docs"
+  }
+}

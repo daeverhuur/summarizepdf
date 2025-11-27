@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "consulting-firms",
+  "seo": {
+    "title": "Document Summarizer for Consultants - Fast Client Research & Analysis | SummarizePDF",
+    "description": "Analyze client documents, industry reports, and research faster. Deliver insights in half the time. Trusted by 150+ consulting firms. Start free trial!",
+    "keywords": ["consulting document analysis", "client research tool", "industry report summary", "management consulting ai", "strategy consulting tool"]
+  },
+  "hero": {
+    "headline": "Document Analysis for Management Consultants",
+    "subheadline": "Analyze client materials, industry reports, and research 10x faster. Deliver insights that matter.",
+    "cta": "Start Free - Consulting Plan",
+    "ctaUrl": "/sign-up?industry=consulting&trial=14",
+    "secondaryCta": "See Consulting Pricing",
+    "secondaryCtaUrl": "/pricing?industry=consulting"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "Tight project timelines",
+      "description": "Client wants insights by Friday. You have 200 pages of documents to read by Wednesday."
+    },
+    {
+      "icon": "file-text",
+      "title": "Information overload",
+      "description": "Client dumps 50 strategy documents, annual reports, and market research on your team"
+    },
+    {
+      "icon": "dollar-sign",
+      "title": "Billable hours under pressure",
+      "description": "Clients question high bills for document review and research tasks"
+    },
+    {
+      "icon": "users",
+      "title": "Junior consultants drowning in reading",
+      "description": "Associates spend 70% of their time reading instead of analyzing and problem-solving"
+    }
+  ],
+  "solution": {
+    "headline": "AI That Accelerates Consulting Work",
+    "description": "SummarizePDF helps consultants extract insights from client documents, industry reports, and competitive intelligence faster. Focus on strategic thinking, not reading.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "10x Faster Client Research",
+        "description": "Summarize annual reports, strategy docs, and market research instantly. Get to insights faster."
+      },
+      {
+        "icon": "briefcase",
+        "title": "Reduce Junior Staff Burden",
+        "description": "Free up your team from endless reading. Let them focus on analysis and client deliverables."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Deliver More Value to Clients",
+        "description": "When you spend less time reading, you spend more time solving client problems."
+      },
+      {
+        "icon": "users",
+        "title": "Team Knowledge Sharing",
+        "description": "Build a firm library of summarized industry research and competitive intelligence."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Client Due Diligence & Onboarding",
+      "description": "Quickly digest client annual reports, strategy presentations, and background materials before kickoff",
+      "metrics": "Cut client research time from 2 days to 2 hours"
+    },
+    {
+      "title": "Industry & Market Research",
+      "description": "Summarize Gartner reports, McKinsey studies, and competitive intelligence for insights and recommendations",
+      "metrics": "Review 50+ research reports in a day"
+    },
+    {
+      "title": "Client Deliverable Preparation",
+      "description": "Extract key data and insights from multiple sources to support your strategic recommendations",
+      "metrics": "Create better decks with more evidence in less time"
+    },
+    {
+      "title": "Proposal & RFP Response",
+      "description": "Quickly analyze RFP documents and client requirements to craft winning proposals",
+      "metrics": "Respond to more RFPs with higher win rates"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our analysts were spending 60% of their time reading client documents. SummarizePDF cut that to 15%. Now they focus on insights and recommendations. Our clients love the faster turnaround.",
+      "author": "Michael Chen",
+      "role": "Principal",
+      "firm": "Strategy Consulting Firm"
+    },
+    {
+      "quote": "We use SummarizePDF for competitive intelligence and industry research. Instead of junior consultants reading 200-page reports, we get AI summaries and spend time on strategic thinking.",
+      "author": "Sarah Johnson",
+      "role": "Managing Director",
+      "firm": "Management Consulting Boutique"
+    }
+  ],
+  "compliance": {
+    "headline": "Client Confidentiality Guaranteed",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security audits"
+      },
+      {
+        "badge": "NDA Protected",
+        "description": "Encrypted client documents"
+      },
+      {
+        "badge": "Access Controls",
+        "description": "Team permissions and audit logs"
+      },
+      {
+        "badge": "No AI Training",
+        "description": "Client data never trains our models"
+      }
+    ],
+    "confidentiality": "We understand client confidentiality requirements. All documents are encrypted, access is controlled, and we never use your client data for AI training."
+  },
+  "stats": [
+    { "value": "150+", "label": "Consulting Firms" },
+    { "value": "80%", "label": "Research Time Saved" },
+    { "value": "75K+", "label": "Client Docs Analyzed" },
+    { "value": "4.8/5", "label": "Consultant Rating" }
+  ],
+  "faq": [
+    {
+      "question": "Is client data secure and confidential?",
+      "answer": "Absolutely! We're SOC 2 Type II certified with enterprise-grade encryption. All client documents are encrypted at rest and in transit. We never share data or use it for AI training. Perfect for NDAs."
+    },
+    {
+      "question": "Can our whole consulting team collaborate?",
+      "answer": "Yes! The Team plan ($49/mo) allows unlimited users to share and organize summarized research. Build a firm-wide knowledge base of industry reports and competitive intelligence."
+    },
+    {
+      "question": "What types of documents can you summarize?",
+      "answer": "All consulting materials: client annual reports, strategy presentations, market research, competitive analysis, RFPs, industry studies, and more. If it's a PDF, we can summarize it."
+    },
+    {
+      "question": "How accurate are the summaries for strategic work?",
+      "answer": "Our AI is trained on business and strategy documents. It excels at extracting key findings, metrics, and insights. However, always apply your consulting judgment and verify critical details."
+    },
+    {
+      "question": "What plan is best for consulting teams?",
+      "answer": "Most boutique firms use the Team plan ($49/mo) for unlimited users and shared libraries. Large consulting firms should consider our Enterprise plan with advanced security and SSO. Contact sales."
+    },
+    {
+      "question": "Can we export summaries for client deliverables?",
+      "answer": "Yes! Export as PDF, Word, or plain text. Include your firm's branding and incorporate summaries into client presentations and reports."
+    }
+  ],
+  "finalCta": {
+    "headline": "Deliver Better Insights, Faster",
+    "subheadline": "Join 150+ consulting firms using AI to analyze documents and serve clients better",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=consulting&trial=14",
+    "trustSignal": "No credit card required. Cancel anytime."
+  }
+}

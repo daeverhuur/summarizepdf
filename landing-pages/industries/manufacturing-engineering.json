@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "manufacturing-engineering",
+  "seo": {
+    "title": "PDF Summarizer for Engineers - Fast Technical Doc & Standard Review | SummarizePDF",
+    "description": "Summarize technical specs, safety standards, and engineering reports instantly. Design faster, stay compliant. Trusted by 100+ engineering teams. Start free!",
+    "keywords": ["engineering document summarizer", "technical specification ai", "manufacturing compliance tool", "engineering standards review", "technical documentation tool"]
+  },
+  "hero": {
+    "headline": "Document Summarization for Manufacturing & Engineering",
+    "subheadline": "Review technical specs, safety standards, and engineering reports 10x faster with AI",
+    "cta": "Start Free - Engineering Plan",
+    "ctaUrl": "/sign-up?industry=engineering&trial=14",
+    "secondaryCta": "See Engineering Pricing",
+    "secondaryCtaUrl": "/pricing?industry=engineering"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "file-text",
+      "title": "Massive technical documentation",
+      "description": "500-page spec sheets, standards, and compliance docs for every component and process"
+    },
+    {
+      "icon": "clock",
+      "title": "Design reviews take forever",
+      "description": "Engineers spend hours reading supplier specs and technical reports before making decisions"
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Compliance is complex",
+      "description": "ISO standards, safety regulations, and industry specs constantly updated"
+    },
+    {
+      "icon": "search",
+      "title": "Finding relevant standards",
+      "description": "Which sections of a 1000-page standard actually apply to your product?"
+    }
+  ],
+  "solution": {
+    "headline": "AI Built for Technical Documentation",
+    "description": "SummarizePDF understands engineering terminology, technical specs, and industry standards. Extract critical requirements, tolerances, and compliance details instantly.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Review Specs 10x Faster",
+        "description": "Summarize datasheets, technical reports, and standards in minutes. Accelerate design cycles."
+      },
+      {
+        "icon": "shield",
+        "title": "Stay Compliant Easier",
+        "description": "Quickly digest ISO, ASME, and safety standards to ensure compliance without endless reading."
+      },
+      {
+        "icon": "settings",
+        "title": "Better Vendor Selection",
+        "description": "Compare supplier specs and capabilities faster to make informed sourcing decisions."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Faster Time to Market",
+        "description": "Less time reading documentation = faster design, testing, and production."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Technical Specification Review",
+      "description": "Quickly extract key specs, tolerances, and requirements from component datasheets and supplier documentation",
+      "metrics": "Evaluate 50 components per day instead of 5"
+    },
+    {
+      "title": "Standards & Compliance Research",
+      "description": "Summarize ISO, ASME, OSHA, and industry standards to ensure products meet regulatory requirements",
+      "metrics": "Complete compliance review in days, not months"
+    },
+    {
+      "title": "Engineering Report Analysis",
+      "description": "Digest test reports, failure analysis, and quality control documents to identify issues and improvements",
+      "metrics": "Root cause analysis 5x faster"
+    },
+    {
+      "title": "Supplier & Vendor Evaluation",
+      "description": "Compare technical capabilities and certifications from supplier qualification documents",
+      "metrics": "Better sourcing decisions in half the time"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our design engineers were spending 40% of their time reading supplier specs and standards. SummarizePDF cut that to 10%. We're shipping products faster and our team is happier.",
+      "author": "Robert Chen",
+      "role": "Engineering Manager",
+      "firm": "Manufacturing Company"
+    },
+    {
+      "quote": "For ISO compliance, we need to reference dozens of standards. This tool helps us quickly find relevant sections and requirements without reading 1000-page documents cover to cover.",
+      "author": "Lisa Anderson",
+      "role": "Quality Engineer",
+      "firm": "Automotive Supplier"
+    }
+  ],
+  "compliance": {
+    "headline": "Secure Technical Documentation",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Enterprise security standards"
+      },
+      {
+        "badge": "IP Protected",
+        "description": "Your designs stay confidential"
+      },
+      {
+        "badge": "No AI Training",
+        "description": "Specs never train our models"
+      },
+      {
+        "badge": "Access Controls",
+        "description": "Team permissions and audit logs"
+      }
+    ],
+    "confidentiality": "We understand IP protection. All technical documents are encrypted and confidential. We never share your data or use it for AI training."
+  },
+  "stats": [
+    { "value": "100+", "label": "Engineering Teams" },
+    { "value": "75%", "label": "Spec Review Time Saved" },
+    { "value": "50K+", "label": "Technical Docs Analyzed" },
+    { "value": "4.7/5", "label": "Engineer Rating" }
+  ],
+  "faq": [
+    {
+      "question": "Can it handle complex technical specifications?",
+      "answer": "Yes! Our AI is trained on engineering documentation and understands technical terminology, units, tolerances, and standards. Perfect for datasheets, specs, and compliance docs."
+    },
+    {
+      "question": "Are our technical documents and IP protected?",
+      "answer": "Absolutely! SOC 2 certified with encrypted storage. All technical documents are confidential and never used for AI training. Your IP stays protected."
+    },
+    {
+      "question": "What types of engineering documents can you summarize?",
+      "answer": "All of them: technical specifications, datasheets, standards (ISO, ASME, etc.), test reports, supplier qualifications, safety docs, quality control reports, and more."
+    },
+    {
+      "question": "How does it help with ISO compliance?",
+      "answer": "Quickly extract relevant requirements from lengthy ISO standards instead of reading hundreds of pages. Find applicable sections faster and ensure compliance."
+    },
+    {
+      "question": "What plan is best for engineering teams?",
+      "answer": "Most small teams use the Pro plan ($19/mo). Engineering departments should consider the Team plan ($49/mo) for collaboration. Large manufacturers need Enterprise with advanced security."
+    },
+    {
+      "question": "Can we export summaries for design documentation?",
+      "answer": "Yes! Export as PDF or Word to include in design reviews, compliance reports, and technical documentation."
+    }
+  ],
+  "finalCta": {
+    "headline": "Design Faster, Stay Compliant",
+    "subheadline": "Join 100+ engineering teams using AI to review specs and standards more efficiently",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=engineering&trial=14",
+    "trustSignal": "No credit card required. Cancel anytime."
+  }
+}

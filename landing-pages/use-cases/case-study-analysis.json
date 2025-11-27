@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "case-study-analysis",
+  "seo": {
+    "title": "Case Study Summarizer - Extract Key Insights Instantly | SummarizePDF",
+    "description": "Quickly summarize business case studies with AI. Extract challenges, solutions, results, and key learnings. Perfect for MBA students and consultants.",
+    "keywords": ["case study summarizer", "business case AI", "MBA case tool", "case study analysis", "consulting case prep"]
+  },
+  "hero": {
+    "headline": "Analyze Case Studies 10x Faster",
+    "subheadline": "AI extracts the problem, solution, results, and key learnings from business case studies so you can prepare faster.",
+    "cta": "Summarize Your First Case Free",
+    "ctaUrl": "/sign-up?use-case=case-studies&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "MBA Students, Business Consultants, Corporate Training",
+  "painPoints": [
+    "Reading 40-page case studies takes hours before class",
+    "Extracting the key problem and solution from dense text",
+    "Preparing for case interviews with limited time",
+    "Teaching case studies to large groups",
+    "Comparing multiple cases for analysis"
+  ],
+  "solution": {
+    "title": "AI That Understands Business Cases",
+    "description": "Our AI identifies the central problem, stakeholders, solutions implemented, outcomes achieved, and key takeaways from any case study.",
+    "features": [
+      {
+        "title": "Problem Identification",
+        "description": "Extracts the core business challenge or decision point."
+      },
+      {
+        "title": "Solution Analysis",
+        "description": "Summarizes the approach taken and alternatives considered."
+      },
+      {
+        "title": "Results Extraction",
+        "description": "Identifies quantitative outcomes and business impact."
+      },
+      {
+        "title": "Key Learnings",
+        "description": "Highlights strategic insights and takeaways."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Prep Cases 10x Faster",
+      "description": "Read summaries in minutes instead of hours.",
+      "icon": "clock"
+    },
+    {
+      "title": "Better Class Discussions",
+      "description": "Understand key issues before class starts.",
+      "icon": "users"
+    },
+    {
+      "title": "Ace Case Interviews",
+      "description": "Practice more cases in less time.",
+      "icon": "briefcase"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Case Study",
+      "description": "Harvard case, industry report, or scenario"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Structure",
+      "description": "Extracts problem, solution, and results"
+    },
+    {
+      "step": 3,
+      "title": "Get Strategic Summary",
+      "description": "Key insights and business learnings"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "40,000+", "label": "Cases Analyzed" },
+      { "value": "10x", "label": "Faster Prep Time" },
+      { "value": "4.9/5", "label": "MBA Student Rating" }
+    ],
+    "testimonial": {
+      "quote": "MBA case prep used to dominate my evenings. SummarizePDF helps me understand cases in 10 minutes instead of 2 hours. I'm more prepared for discussions and have better work-life balance.",
+      "author": "Priya Sharma",
+      "role": "MBA Student, Wharton"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with Harvard Business School cases?",
+      "answer": "Yes! We support case studies from HBS, Kellogg, Stanford, INSEAD, and all major business schools."
+    },
+    {
+      "question": "Can it help with case interview prep?",
+      "answer": "Absolutely! Quickly analyze practice cases to understand problem-solving frameworks and strategic approaches."
+    },
+    {
+      "question": "Does it extract financial data?",
+      "answer": "Yes! The AI identifies key metrics, financial performance, and quantitative outcomes from cases."
+    },
+    {
+      "question": "Can I compare multiple cases?",
+      "answer": "Yes! Pro plans support batch processing to compare strategies across multiple case studies."
+    },
+    {
+      "question": "Do you offer student discounts?",
+      "answer": "Yes! Special pricing for students with valid .edu email addresses."
+    }
+  ],
+  "pricing": {
+    "highlight": "Student-friendly pricing for MBA prep",
+    "ctaText": "See Student Pricing",
+    "ctaUrl": "/pricing?use-case=case-studies"
+  },
+  "finalCta": {
+    "headline": "Ready to Master Case Studies?",
+    "subheadline": "Join MBA students preparing cases 10x faster",
+    "buttonText": "Start Free Trial - For Students",
+    "buttonUrl": "/sign-up?use-case=case-studies&trial=14"
+  }
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with PDF - SummarizePDF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes bounce-dots {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    .animate-slide-in { animation: slideIn 0.3s ease-out; }
+    .animate-slide-in-right { animation: slideInRight 0.3s ease-out; }
+
+    .typing-indicator span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #64748b;
+      animation: bounce-dots 1.4s infinite ease-in-out both;
+    }
+
+    .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+  </style>
+</head>
+<body class="bg-gray-50 h-screen overflow-hidden">
+  <div class="flex h-full">
+    <!-- Left Panel - PDF Viewer -->
+    <div class="w-1/2 bg-slate-900 border-r border-slate-700 flex flex-col">
+      <!-- PDF Header -->
+      <div class="bg-slate-800 border-b border-slate-700 p-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <a href="#" class="p-2 hover:bg-slate-700 rounded-lg transition-colors">
+              <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+            </a>
+            <div>
+              <h2 class="text-white font-semibold text-sm">Research_Paper_AI_Ethics.pdf</h2>
+              <p class="text-slate-400 text-xs">42 pages</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="p-2 hover:bg-slate-700 rounded-lg transition-colors" title="Zoom out">
+              <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
+              </svg>
+            </button>
+            <button class="p-2 hover:bg-slate-700 rounded-lg transition-colors" title="Zoom in">
+              <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+              </svg>
+            </button>
+            <button class="p-2 hover:bg-slate-700 rounded-lg transition-colors" title="Download">
+              <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF Content Area -->
+      <div class="flex-1 overflow-auto p-8 bg-slate-800">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-2xl p-12">
+          <!-- Simulated PDF Content -->
+          <h1 class="text-2xl font-bold text-slate-900 mb-4">Ethical Implications of Artificial Intelligence</h1>
+          <p class="text-sm text-slate-600 mb-6">John Doe, Jane Smith · University of Technology · 2024</p>
+
+          <h2 class="text-lg font-bold text-slate-900 mb-3">Abstract</h2>
+          <p class="text-slate-700 mb-6 leading-relaxed">
+            This research paper explores the ethical implications of artificial intelligence systems in modern society. We present a comprehensive framework for evaluating AI ethics across multiple dimensions including fairness, transparency, accountability, and privacy.
+          </p>
+
+          <h2 class="text-lg font-bold text-slate-900 mb-3">1. Introduction</h2>
+          <p class="text-slate-700 mb-4 leading-relaxed">
+            The rapid advancement of artificial intelligence technologies has brought unprecedented opportunities and challenges to society. As AI systems become increasingly integrated into critical decision-making processes, questions about their ethical implications have moved from theoretical discussions to urgent practical concerns.
+          </p>
+          <p class="text-slate-700 mb-6 leading-relaxed">
+            This paper examines the ethical landscape of AI development and deployment, identifying key challenges and proposing frameworks for responsible AI governance. Our analysis draws from recent case studies, regulatory developments, and stakeholder perspectives.
+          </p>
+
+          <h2 class="text-lg font-bold text-slate-900 mb-3">2. Literature Review</h2>
+          <p class="text-slate-700 mb-4 leading-relaxed">
+            Previous research has identified several core ethical concerns in AI systems. Notable contributions include work on algorithmic fairness (Smith et al., 2023), explainable AI (Johnson, 2022), and AI safety (Brown & Davis, 2024).
+          </p>
+
+          <div class="h-32 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400 text-sm mb-6">
+            [Continued PDF content...]
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Navigation -->
+      <div class="bg-slate-800 border-t border-slate-700 p-4">
+        <div class="flex items-center justify-between">
+          <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm">
+            Previous
+          </button>
+          <span class="text-slate-300 text-sm">Page 1 of 42</span>
+          <button class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel - Chat Interface -->
+    <div class="w-1/2 bg-white flex flex-col">
+      <!-- Chat Header -->
+      <div class="bg-white border-b border-slate-200 p-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-bold text-slate-900">Chat with PDF</h2>
+            <p class="text-sm text-slate-600">Ask questions about this document</p>
+          </div>
+          <button class="p-2 hover:bg-slate-100 rounded-lg transition-colors">
+            <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Suggested Questions -->
+      <div class="p-4 bg-slate-50 border-b border-slate-200">
+        <p class="text-xs font-semibold text-slate-600 mb-3">SUGGESTED QUESTIONS</p>
+        <div class="flex flex-wrap gap-2">
+          <button class="px-3 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-700 transition-colors">
+            What are the main ethical concerns?
+          </button>
+          <button class="px-3 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-700 transition-colors">
+            Summarize the key findings
+          </button>
+          <button class="px-3 py-2 bg-white hover:bg-slate-100 border border-slate-200 rounded-lg text-sm text-slate-700 transition-colors">
+            What are the recommendations?
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="flex-1 overflow-y-auto p-6 space-y-6">
+        <!-- AI Message -->
+        <div class="flex gap-3 animate-slide-in">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="bg-slate-100 rounded-2xl rounded-tl-sm p-4">
+              <p class="text-slate-800 leading-relaxed">
+                Hello! I'm ready to help you understand this document. You can ask me questions about any part of the PDF, request summaries, or explore specific topics in detail.
+              </p>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 ml-2">AI Assistant · Just now</p>
+          </div>
+        </div>
+
+        <!-- User Message -->
+        <div class="flex gap-3 justify-end animate-slide-in-right">
+          <div class="flex-1 max-w-2xl">
+            <div class="bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl rounded-tr-sm p-4">
+              <p class="text-white leading-relaxed">
+                What are the main ethical challenges discussed in this paper?
+              </p>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 mr-2 text-right">You · 2 min ago</p>
+          </div>
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" class="w-8 h-8 rounded-full flex-shrink-0" alt="User" />
+        </div>
+
+        <!-- AI Response with Page References -->
+        <div class="flex gap-3 animate-slide-in">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="bg-slate-100 rounded-2xl rounded-tl-sm p-4">
+              <p class="text-slate-800 leading-relaxed mb-3">
+                The paper identifies three primary ethical challenges in AI systems:
+              </p>
+              <ol class="space-y-2 mb-3">
+                <li class="flex gap-2">
+                  <span class="font-semibold text-blue-600">1.</span>
+                  <span class="text-slate-800"><strong>Algorithmic bias</strong> - AI systems can perpetuate and amplify existing societal biases in decision-making processes.</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="font-semibold text-blue-600">2.</span>
+                  <span class="text-slate-800"><strong>Lack of transparency</strong> - Deep learning models often function as "black boxes," making it difficult to understand their decision-making processes.</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="font-semibold text-blue-600">3.</span>
+                  <span class="text-slate-800"><strong>Concentration of power</strong> - AI capabilities are increasingly concentrated among large technology companies, raising concerns about accountability.</span>
+                </li>
+              </ol>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs text-slate-500">Referenced from:</span>
+                <button class="px-2 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded text-xs font-medium transition-colors">
+                  Page 3
+                </button>
+                <button class="px-2 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded text-xs font-medium transition-colors">
+                  Page 7
+                </button>
+                <button class="px-2 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded text-xs font-medium transition-colors">
+                  Page 12
+                </button>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 ml-2">AI Assistant · 1 min ago</p>
+          </div>
+        </div>
+
+        <!-- User Follow-up -->
+        <div class="flex gap-3 justify-end animate-slide-in-right">
+          <div class="flex-1 max-w-2xl">
+            <div class="bg-gradient-to-br from-blue-500 to-violet-500 rounded-2xl rounded-tr-sm p-4">
+              <p class="text-white leading-relaxed">
+                Can you explain more about algorithmic bias?
+              </p>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 mr-2 text-right">You · 30 sec ago</p>
+          </div>
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" class="w-8 h-8 rounded-full flex-shrink-0" alt="User" />
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="flex gap-3 animate-slide-in">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="bg-slate-100 rounded-2xl rounded-tl-sm p-4 inline-block">
+              <div class="typing-indicator flex gap-1">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 ml-2">AI is typing...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="border-t border-slate-200 p-4">
+        <div class="flex items-end gap-3">
+          <div class="flex-1">
+            <textarea
+              placeholder="Ask a question about this document..."
+              rows="3"
+              class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+            ></textarea>
+          </div>
+          <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            </svg>
+            Send
+          </button>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Press Enter to send, Shift + Enter for new line</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

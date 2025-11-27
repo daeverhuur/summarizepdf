@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-batch-process-multiple-pdfs",
+  "seo": {
+    "title": "How to Batch Process & Summarize Multiple PDFs | SummarizePDF",
+    "description": "Summarize hundreds of PDFs at once with batch processing. Upload folders of documents and get all summaries in minutes. Perfect for large projects. Try free!",
+    "keywords": [
+      "batch process pdfs",
+      "summarize multiple pdfs",
+      "bulk pdf summarizer",
+      "batch pdf summary",
+      "process multiple documents",
+      "pdf batch processing"
+    ]
+  },
+  "hero": {
+    "headline": "Batch Process & Summarize Hundreds of PDFs at Once",
+    "subheadline": "Upload an entire folder of documents. Get all summaries in minutes, not days.",
+    "cta": "Start Batch Processing",
+    "ctaUrl": "/sign-up?source=hero&page=batch-process"
+  },
+  "problem": {
+    "title": "Processing PDFs One-by-One is Torture",
+    "description": "You have 200 PDF files in a folder. Each needs summarizing. Opening each one, uploading one-by-one, waiting... It's going to take all week. There has to be a better way.",
+    "painPoints": [
+      "Processing hundreds of PDFs one at a time",
+      "Takes days to summarize large document sets",
+      "Can't scale manual document processing",
+      "Need summaries of entire archives",
+      "Managing large research libraries",
+      "Repetitive upload and wait process"
+    ]
+  },
+  "solution": {
+    "title": "Process Entire Folders in One Click",
+    "description": "Upload multiple PDFs simultaneously or even entire folders. SummarizePDF processes all documents in parallel and delivers summaries for every file.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Multiple PDFs",
+        "description": "Drag and drop an entire folder or select multiple PDF files at once. No limit on batch size.",
+        "icon": "folder"
+      },
+      {
+        "step": 2,
+        "title": "AI Processes in Parallel",
+        "description": "Our infrastructure processes all documents simultaneously. 10 files or 1,000 files - same speed.",
+        "icon": "cpu"
+      },
+      {
+        "step": 3,
+        "title": "Get All Summaries",
+        "description": "Receive organized summaries for every document. Download as single report or individual files.",
+        "icon": "download"
+      },
+      {
+        "step": 4,
+        "title": "Search Across All Documents",
+        "description": "Ask questions that search across your entire batch of documents to find information anywhere.",
+        "icon": "search"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Process 100+ PDFs in Minutes",
+      "description": "What used to take a week now takes 10 minutes. Parallel processing handles massive batches instantly.",
+      "icon": "zap"
+    },
+    {
+      "title": "Maintain Organization",
+      "description": "Summaries keep original filenames and structure. Easy to match summaries to source documents.",
+      "icon": "folder-tree"
+    },
+    {
+      "title": "Export All Summaries",
+      "description": "Download all summaries as single consolidated report or individual files. Excel export available.",
+      "icon": "file-spreadsheet"
+    },
+    {
+      "title": "Cross-Document Search",
+      "description": "Ask questions that search across all documents in your batch. Find information anywhere instantly.",
+      "icon": "database"
+    }
+  },
+  "results": {
+    "title": "Scale Your Document Processing",
+    "metrics": [
+      {
+        "value": "1000+",
+        "label": "PDFs in One Batch"
+      },
+      {
+        "value": "95%",
+        "label": "Time Saved"
+      },
+      {
+        "value": "Parallel",
+        "label": "Processing Speed"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "We needed to summarize 800 legal discovery documents. Did it think it would take weeks. With batch processing, we had all summaries in under an hour. Incredible.",
+      "author": "Steven Wright",
+      "role": "Legal Operations",
+      "rating": 5
+    },
+    {
+      "quote": "Research librarian managing 5,000+ academic papers. Batch processing let me create a searchable summary database of our entire collection in one weekend.",
+      "author": "Maria Rodriguez",
+      "role": "Research Librarian",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "How many PDFs can I process at once?",
+      "answer": "Pro plan: up to 200 files per batch. Team plan: unlimited batch size. Process thousands of documents in one upload."
+    },
+    {
+      "question": "How long does batch processing take?",
+      "answer": "Documents are processed in parallel. 100 documents take about the same time as 10 documents - typically 5-10 minutes total."
+    },
+    {
+      "question": "Can I organize summaries by folders?",
+      "answer": "Yes! Upload folder structures and we preserve the organization. Summaries match the original folder hierarchy."
+    },
+    {
+      "question": "Can I export all summaries at once?",
+      "answer": "Absolutely. Export as single consolidated PDF, individual files, Excel spreadsheet, or CSV. Choose your format."
+    },
+    {
+      "question": "Does batch processing work with scanned PDFs?",
+      "answer": "Yes! Our OCR technology works in batch mode. Process hundreds of scanned documents at once."
+    },
+    {
+      "question": "Which plan includes batch processing?",
+      "answer": "Pro plan ($19/mo): up to 200 files per batch. Team plan ($49/mo): unlimited batch size. Free and Starter: single files only."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Start Batch Processing",
+    "href": "/sign-up?source=primary&page=batch-process"
+  },
+  "secondaryCTA": {
+    "text": "See Pro Pricing",
+    "href": "/pricing?source=secondary&page=batch-process"
+  },
+  "finalCTA": {
+    "headline": "Stop Processing Files One-by-One",
+    "subheadline": "Join 500+ teams who process thousands of documents in minutes with batch processing.",
+    "cta": "Try Free - Get Started",
+    "ctaUrl": "/sign-up?source=final&page=batch-process"
+  }
+}

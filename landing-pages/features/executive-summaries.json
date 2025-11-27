@@ -1,0 +1,112 @@
+{
+  "pageType": "feature",
+  "slug": "executive-summaries",
+  "seo": {
+    "title": "Executive PDF Summaries - Professional Document Briefs | SummarizePDF",
+    "description": "Generate executive summaries of any PDF document. Perfect for business reports, proposals, and presentations. Professional briefs in seconds. Try free!",
+    "keywords": ["executive summary", "business summary pdf", "professional brief", "document synopsis", "report summary", "pdf executive brief"]
+  },
+  "hero": {
+    "headline": "Professional Executive Summaries for Any PDF",
+    "subheadline": "Generate polished, paragraph-style briefs perfect for executives, stakeholders, and decision-makers.",
+    "cta": "Create Executive Summary",
+    "ctaUrl": "/sign-up?source=feature-executive-summaries",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?source=feature-executive-summaries"
+  },
+  "benefits": [
+    {
+      "title": "Board-Ready Summaries",
+      "description": "AI generates professional, well-written summaries suitable for executive presentations and reports.",
+      "icon": "file-text"
+    },
+    {
+      "title": "Captures Strategic Insights",
+      "description": "Focus on big-picture themes, key findings, and strategic implications - not just facts.",
+      "icon": "trending-up"
+    },
+    {
+      "title": "Saves Executive Time",
+      "description": "Decision-makers get the insights they need without reading full documents. Make faster, informed decisions.",
+      "icon": "clock"
+    },
+    {
+      "title": "Professional Formatting",
+      "description": "Summaries follow standard executive brief format with clear structure and polished language.",
+      "icon": "award"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Upload Business Document",
+      "description": "Upload reports, proposals, research, or any business PDF that needs executive review."
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Strategic Content",
+      "description": "Our AI identifies key themes, findings, recommendations, and business implications."
+    },
+    {
+      "step": 3,
+      "title": "Get Professional Brief",
+      "description": "Receive a polished executive summary ready for presentations, emails, or reports."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "15,000+", "label": "Executive Briefs Created" },
+      { "value": "92%", "label": "Client Satisfaction" },
+      { "value": "30 min", "label": "Saved Per Document" },
+      { "value": "4.9/5", "label": "Professional Rating" }
+    ],
+    "testimonial": {
+      "quote": "Our executives love getting executive summaries instead of 50-page reports. SummarizePDF has transformed how we present information to leadership.",
+      "author": "Jennifer Martinez",
+      "role": "Chief of Staff",
+      "avatar": "JM"
+    }
+  },
+  "useCases": [
+    "Board meeting preparation",
+    "Stakeholder reports",
+    "Client proposals",
+    "Market research briefs",
+    "Quarterly business reviews",
+    "Investment memos"
+  ],
+  "faq": [
+    {
+      "question": "How long are executive summaries?",
+      "answer": "Typically 250-500 words (1-2 pages), capturing the most important themes and findings. Length adjusts based on source document complexity."
+    },
+    {
+      "question": "What makes this different from regular summaries?",
+      "answer": "Executive summaries focus on strategic insights, business implications, and high-level themes rather than detailed facts. Perfect for decision-makers."
+    },
+    {
+      "question": "Can I customize the executive summary format?",
+      "answer": "Yes! Choose formatting preferences, tone (formal/conversational), and focus areas (findings, recommendations, implications)."
+    },
+    {
+      "question": "Is the output professional enough for presentations?",
+      "answer": "Absolutely. Our AI is trained on executive communication standards, producing polished, professional briefs suitable for any business setting."
+    },
+    {
+      "question": "Can I share executive summaries with my team?",
+      "answer": "Yes! Share via link, export to PDF/DOCX, or save to your team library. Pro and Team plans include collaboration features."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["10 executive summaries/month", "Standard format", "PDF export"],
+    "paidFeatures": ["Unlimited summaries", "Custom formatting", "Team sharing", "Priority processing"],
+    "ctaText": "View All Plans",
+    "ctaUrl": "/pricing?source=feature-executive-summaries"
+  },
+  "finalCta": {
+    "headline": "Give Your Executives the Briefs They Deserve",
+    "subheadline": "Stop sending 50-page reports. Start delivering professional executive summaries.",
+    "cta": "Start Creating Briefs Free",
+    "ctaUrl": "/sign-up?source=feature-executive-summaries-final"
+  }
+}

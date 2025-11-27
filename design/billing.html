@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing - SummarizePDF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+
+    @keyframes progressFill {
+      from { width: 0%; }
+    }
+
+    .animate-progress {
+      animation: progressFill 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-6xl mx-auto p-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-slate-900 mb-2">Billing & Subscription</h1>
+      <p class="text-slate-600">Manage your plan, usage, and payment methods</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Current Plan Card -->
+        <div class="bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl p-8 border-2 border-blue-200 shadow-sm">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <h2 class="text-2xl font-bold text-slate-900">Pro Plan</h2>
+                <span class="px-3 py-1 bg-green-100 text-green-600 text-sm font-bold rounded-full">
+                  Active
+                </span>
+              </div>
+              <p class="text-slate-600">Billed monthly</p>
+            </div>
+            <div class="text-right">
+              <p class="text-4xl font-bold text-slate-900">$19</p>
+              <p class="text-slate-600 text-sm">per month</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-white font-bold rounded-xl transition-all transform hover:scale-105">
+              Upgrade to Team
+            </button>
+            <button class="px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 font-medium rounded-xl border border-slate-200 transition-all">
+              Change Plan
+            </button>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-blue-200">
+            <div class="flex items-center justify-between">
+              <p class="text-sm text-slate-600">Next billing date</p>
+              <p class="font-semibold text-slate-900">January 15, 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Usage Meters -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+          <h3 class="text-xl font-bold text-slate-900 mb-6">Usage This Month</h3>
+
+          <div class="space-y-6">
+            <!-- Summaries Usage -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-slate-700">Summaries Created</span>
+                <span class="text-sm font-bold text-slate-900">142 / ∞</span>
+              </div>
+              <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-blue-500 to-violet-500 rounded-full animate-progress" style="width: 85%"></div>
+              </div>
+              <p class="text-xs text-slate-500 mt-1">Unlimited on Pro plan</p>
+            </div>
+
+            <!-- Chat Questions Usage -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-slate-700">Chat Questions</span>
+                <span class="text-sm font-bold text-slate-900">487 / ∞</span>
+              </div>
+              <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-progress" style="width: 62%"></div>
+              </div>
+              <p class="text-xs text-slate-500 mt-1">Unlimited questions available</p>
+            </div>
+
+            <!-- Storage Usage -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-slate-700">Storage Used</span>
+                <span class="text-sm font-bold text-slate-900">4.2 GB / 50 GB</span>
+              </div>
+              <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-progress" style="width: 8.4%"></div>
+              </div>
+              <p class="text-xs text-slate-500 mt-1">91.6% remaining</p>
+            </div>
+
+            <!-- API Calls (if applicable) -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-slate-700">API Calls</span>
+                <span class="text-sm font-bold text-slate-900">1,247 / 10,000</span>
+              </div>
+              <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-violet-500 to-purple-500 rounded-full animate-progress" style="width: 12.47%"></div>
+              </div>
+              <p class="text-xs text-slate-500 mt-1">Resets in 14 days</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment History -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+          <h3 class="text-xl font-bold text-slate-900 mb-6">Payment History</h3>
+
+          <div class="space-y-3">
+            <!-- Payment Row -->
+            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Pro Plan - December 2024</p>
+                  <p class="text-sm text-slate-500">Dec 15, 2024 · Visa ****4242</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="font-bold text-slate-900">$19.00</span>
+                <button class="p-2 hover:bg-slate-200 rounded-lg transition-colors">
+                  <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Pro Plan - November 2024</p>
+                  <p class="text-sm text-slate-500">Nov 15, 2024 · Visa ****4242</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="font-bold text-slate-900">$19.00</span>
+                <button class="p-2 hover:bg-slate-200 rounded-lg transition-colors">
+                  <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-900">Pro Plan - October 2024</p>
+                  <p class="text-sm text-slate-500">Oct 15, 2024 · Visa ****4242</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="font-bold text-slate-900">$19.00</span>
+                <button class="p-2 hover:bg-slate-200 rounded-lg transition-colors">
+                  <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-8">
+        <!-- Payment Method -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 mb-4">Payment Method</h3>
+          <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-xl mb-4">
+            <div class="w-14 h-10 bg-slate-900 rounded flex items-center justify-center">
+              <span class="text-white text-xs font-bold">VISA</span>
+            </div>
+            <div>
+              <p class="font-medium text-slate-900">•••• 4242</p>
+              <p class="text-xs text-slate-500">Expires 12/25</p>
+            </div>
+          </div>
+          <button class="w-full px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-900 font-medium rounded-lg transition-colors">
+            Update Payment Method
+          </button>
+        </div>
+
+        <!-- Subscription Actions -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 mb-4">Manage Subscription</h3>
+          <div class="space-y-3">
+            <button class="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-white font-medium rounded-lg transition-all text-left flex items-center justify-between">
+              <span>Switch to Yearly</span>
+              <span class="text-xs bg-white/20 px-2 py-1 rounded">Save 20%</span>
+            </button>
+            <button class="w-full px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-900 font-medium rounded-lg transition-colors text-left">
+              Update Billing Info
+            </button>
+            <button class="w-full px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-900 font-medium rounded-lg transition-colors text-left">
+              Download Invoices
+            </button>
+            <button class="w-full px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 font-medium rounded-lg transition-colors text-left">
+              Cancel Subscription
+            </button>
+          </div>
+        </div>
+
+        <!-- Support Card -->
+        <div class="bg-gradient-to-br from-blue-50 to-violet-50 rounded-2xl p-6 border border-blue-200">
+          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Need Help?</h3>
+          <p class="text-sm text-slate-600 mb-4">Our support team is here to assist you with any billing questions.</p>
+          <button class="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-white font-bold rounded-lg transition-all">
+            Contact Support
+          </button>
+        </div>
+
+        <!-- Plan Comparison Link -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 mb-2">Compare Plans</h3>
+          <p class="text-sm text-slate-600 mb-4">See what's included in each tier and find the perfect plan for you.</p>
+          <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-2">
+            View All Plans
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "journalism-media",
+  "seo": {
+    "title": "PDF Summarizer for Journalists - Fast Document & Report Analysis | SummarizePDF",
+    "description": "Summarize government reports, research studies, and source documents instantly. Break stories faster. Trusted by 100+ journalists. Start free trial!",
+    "keywords": ["journalist document tool", "investigative journalism ai", "government report summarizer", "research tool for reporters", "media research software"]
+  },
+  "hero": {
+    "headline": "Document Summarization for Journalists & Media",
+    "subheadline": "Analyze government reports, research studies, and source documents 10x faster with AI",
+    "cta": "Start Free - Journalist Plan",
+    "ctaUrl": "/sign-up?industry=journalism&trial=14",
+    "secondaryCta": "See Journalist Pricing",
+    "secondaryCtaUrl": "/pricing?industry=journalism"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "Racing against deadlines",
+      "description": "Story breaks at 9am, editor wants draft by noon. You have 200 pages of reports to read."
+    },
+    {
+      "icon": "file-text",
+      "title": "Government docs are massive",
+      "description": "FOIA request returns 500 pages. Finding the newsworthy details is like finding a needle in a haystack."
+    },
+    {
+      "icon": "search",
+      "title": "Source verification takes time",
+      "description": "Cross-referencing facts across dozens of reports and studies before publication"
+    },
+    {
+      "icon": "trending-up",
+      "title": "Competition is fierce",
+      "description": "Whoever analyzes the report first breaks the story. Speed matters."
+    }
+  ],
+  "solution": {
+    "headline": "AI That Helps You Break Stories Faster",
+    "description": "SummarizePDF helps journalists extract newsworthy details from government reports, research studies, and source documents instantly. Beat the competition to the story.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Analyze Reports 10x Faster",
+        "description": "Summarize government filings, research papers, and legal docs in minutes. Break stories before competitors."
+      },
+      {
+        "icon": "search",
+        "title": "Find the Story Buried in Data",
+        "description": "AI highlights key findings, statistics, and newsworthy details you might miss."
+      },
+      {
+        "icon": "shield",
+        "title": "Protect Source Confidentiality",
+        "description": "Encrypted storage and private summaries. Your sources and research stay confidential."
+      },
+      {
+        "icon": "bookmark",
+        "title": "Build Your Research Library",
+        "description": "Save and organize summaries by beat or story for quick reference."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Investigative Reporting",
+      "description": "Quickly analyze government reports, court filings, and FOIA responses to uncover newsworthy details",
+      "metrics": "Break stories 5x faster than reading manually"
+    },
+    {
+      "title": "Research & Fact-Checking",
+      "description": "Summarize academic studies, expert reports, and source documents to verify facts and build context",
+      "metrics": "Cross-reference 50 sources in hours, not days"
+    },
+    {
+      "title": "Beat Coverage",
+      "description": "Stay current with industry reports, regulatory filings, and policy documents for your beat",
+      "metrics": "Cover more stories without missing details"
+    },
+    {
+      "title": "Data Journalism",
+      "description": "Extract statistics and trends from lengthy research reports and government data releases",
+      "metrics": "Turn data into stories faster"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "I cover city hall and there are dozens of 200-page reports released weekly. SummarizePDF helps me find the newsworthy details in minutes instead of hours. I've broken multiple stories thanks to this tool.",
+      "author": "Emily Santos",
+      "role": "City Hall Reporter",
+      "firm": "Major Metropolitan Newspaper"
+    },
+    {
+      "quote": "For investigative pieces, I'm reading hundreds of pages of court documents and government filings. This AI cuts my research time by 75%. I can focus on interviews and writing instead of endless reading.",
+      "author": "Marcus Johnson",
+      "role": "Investigative Journalist",
+      "firm": "National News Organization"
+    }
+  ],
+  "compliance": {
+    "headline": "Source Protection & Security",
+    "certifications": [
+      {
+        "badge": "Encrypted Storage",
+        "description": "Protect source documents and research"
+      },
+      {
+        "badge": "Private & Secure",
+        "description": "Your work stays confidential"
+      },
+      {
+        "badge": "No AI Training",
+        "description": "Source materials never train our AI"
+      },
+      {
+        "badge": "SOC 2 Certified",
+        "description": "Enterprise-grade security"
+      }
+    ],
+    "confidentiality": "We understand source confidentiality. All documents are encrypted and private. We never share your research or use it for AI training."
+  },
+  "stats": [
+    { "value": "100+", "label": "Journalists Using Daily" },
+    { "value": "80%", "label": "Research Time Saved" },
+    { "value": "25K+", "label": "Reports Analyzed" },
+    { "value": "4.9/5", "label": "Journalist Rating" }
+  },
+  "faq": [
+    {
+      "question": "Are my sources and research protected?",
+      "answer": "Absolutely! All documents are encrypted and stored securely. We never share your data or use it for AI training. Perfect for protecting confidential sources and investigative work."
+    },
+    {
+      "question": "Can it handle government and legal documents?",
+      "answer": "Yes! Our AI is trained on government reports, court filings, regulatory documents, and legal language. Perfect for FOIA responses and investigative reporting."
+    },
+    {
+      "question": "How does it help with fact-checking?",
+      "answer": "Quickly summarize source documents and research studies to verify facts and claims. Cross-reference multiple sources in a fraction of the time."
+    },
+    {
+      "question": "What's included in the free plan?",
+      "answer": "Free plan includes 100 pages/month - perfect for freelance journalists. Full-time reporters typically need the Starter ($9/mo) or Pro plan ($19/mo) for heavy research."
+    },
+    {
+      "question": "Can newsrooms get team pricing?",
+      "answer": "Yes! The Team plan ($49/mo) allows unlimited journalists to collaborate and share research. Enterprise newsrooms get custom pricing with advanced features. Contact sales."
+    },
+    {
+      "question": "Can I export summaries for my stories?",
+      "answer": "Yes! Export as PDF, Word, or plain text. Use summaries as research notes or include verified quotes and statistics in your articles."
+    }
+  ],
+  "finalCta": {
+    "headline": "Break Stories Faster with AI",
+    "subheadline": "Join 100+ journalists using AI to analyze documents and uncover newsworthy details faster",
+    "cta": "Start Free Today",
+    "ctaUrl": "/sign-up?industry=journalism",
+    "trustSignal": "Free plan available. No credit card required."
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "legal-professionals",
+  "seo": {
+    "title": "PDF Summarizer for Lawyers & Law Firms - Review Documents 10x Faster | SummarizePDF",
+    "description": "Save hours on contract review, case law research, and discovery. AI-powered PDF summarization trusted by 500+ law firms. Secure, accurate, GDPR compliant.",
+    "keywords": ["legal document summarizer", "contract review ai", "case law summary", "legal research tool", "pdf summarizer for lawyers", "discovery document review", "legal brief summary"]
+  },
+  "hero": {
+    "headline": "Legal Document Summarization for Law Firms",
+    "subheadline": "Review contracts, briefs, discovery documents, and case files 10x faster with AI",
+    "cta": "Start Free Trial - Legal Plan",
+    "ctaUrl": "/sign-up?industry=legal&trial=14",
+    "secondaryCta": "See Legal Pricing",
+    "secondaryCtaUrl": "/pricing?industry=legal"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "Hours spent on document review",
+      "description": "Paralegals and associates spend 60% of their time reading lengthy contracts and discovery materials"
+    },
+    {
+      "icon": "file-text",
+      "title": "Information overload in discovery",
+      "description": "Thousands of pages in discovery make finding key facts like finding a needle in a haystack"
+    },
+    {
+      "icon": "dollar-sign",
+      "title": "High billable hour costs",
+      "description": "Clients push back on high bills for document review and research tasks"
+    },
+    {
+      "icon": "search",
+      "title": "Case law research takes too long",
+      "description": "Finding relevant precedents requires reading dozens of full court opinions"
+    }
+  ],
+  "solution": {
+    "headline": "AI That Understands Legal Language",
+    "description": "SummarizePDF is trained to understand legal terminology, contract structures, and case law citations. Get accurate summaries that preserve critical details.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "90% Time Savings on Document Review",
+        "description": "Summarize 100-page contracts in under 2 minutes. Focus on analysis, not reading."
+      },
+      {
+        "icon": "shield",
+        "title": "Bank-Level Security & Confidentiality",
+        "description": "SOC 2 certified, attorney-client privilege protected. Your documents never train our AI."
+      },
+      {
+        "icon": "check-circle",
+        "title": "Citation Preservation",
+        "description": "All summaries include page references so you can verify and cite sources accurately."
+      },
+      {
+        "icon": "users",
+        "title": "Team Collaboration",
+        "description": "Share summaries across your firm. Build a knowledge base of summarized precedents."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Contract Review & Due Diligence",
+      "description": "Quickly identify key terms, obligations, and red flags in M&A agreements, leases, and vendor contracts",
+      "metrics": "Review 50+ contracts per day instead of 5"
+    },
+    {
+      "title": "Discovery Document Analysis",
+      "description": "Summarize depositions, emails, and exhibits to find smoking guns and build your case strategy",
+      "metrics": "Process 1,000+ page discovery sets in hours"
+    },
+    {
+      "title": "Case Law Research",
+      "description": "Get concise summaries of court opinions, focusing on holdings, reasoning, and distinguishing factors",
+      "metrics": "Research 20 cases in the time it took to read 2"
+    },
+    {
+      "title": "Client Matter Briefings",
+      "description": "Generate executive summaries of complex legal documents for clients who need the key points",
+      "metrics": "Improve client communication and satisfaction"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "SummarizePDF cut our contract review time by 75%. We've gone from 8 hours per M&A deal to 2 hours. Game changer for due diligence.",
+      "author": "Jennifer Martinez",
+      "role": "Partner, Corporate Law",
+      "firm": "Martinez & Associates"
+    },
+    {
+      "quote": "In discovery, we're now able to process thousands of documents and find the key evidence in a fraction of the time. Our clients are thrilled with the reduced costs.",
+      "author": "Robert Chen",
+      "role": "Litigation Associate",
+      "firm": "Major Law Firm"
+    }
+  ],
+  "compliance": {
+    "headline": "Built for Legal Compliance",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security audits and compliance"
+      },
+      {
+        "badge": "GDPR Compliant",
+        "description": "EU data protection standards"
+      },
+      {
+        "badge": "AES-256 Encryption",
+        "description": "Military-grade document security"
+      },
+      {
+        "badge": "No AI Training",
+        "description": "Your documents never train our models"
+      }
+    ],
+    "confidentiality": "We understand attorney-client privilege. All documents are encrypted at rest and in transit. We never share or use your data for AI training."
+  },
+  "stats": [
+    { "value": "500+", "label": "Law Firms Using SummarizePDF" },
+    { "value": "75%", "label": "Average Time Savings" },
+    { "value": "1M+", "label": "Legal Documents Summarized" },
+    { "value": "99.9%", "label": "Uptime SLA" }
+  ],
+  "faq": [
+    {
+      "question": "Is SummarizePDF secure enough for confidential legal documents?",
+      "answer": "Absolutely. We're SOC 2 Type II certified with bank-level encryption. Your documents are encrypted in transit and at rest, and we never use your data to train AI models. Many law firms use us for highly sensitive M&A deals and litigation."
+    },
+    {
+      "question": "How accurate are the summaries for complex legal documents?",
+      "answer": "Our AI is specifically trained on legal language and maintains high accuracy. However, we always recommend attorney review of summaries before relying on them for critical decisions. Think of it as a highly intelligent paralegal draft."
+    },
+    {
+      "question": "Can multiple attorneys collaborate on the same documents?",
+      "answer": "Yes! Our Team plan allows unlimited users to share and collaborate on summarized documents. Build a firm-wide knowledge base of contracts, cases, and research."
+    },
+    {
+      "question": "What's included in the Legal plan?",
+      "answer": "The Pro plan ($19/mo) includes 500 pages/month, priority support, and advanced features. The Team plan ($49/mo) adds unlimited users, shared workspaces, and custom retention policies. See full pricing details."
+    },
+    {
+      "question": "How does billing work for law firms?",
+      "answer": "We offer monthly and annual billing. Annual plans save 20%. Enterprise firms can pay via invoice and get custom contracts. Contact sales for firm-wide licensing."
+    },
+    {
+      "question": "Can I export summaries for client deliverables?",
+      "answer": "Yes! Export summaries as PDF, Word, or plain text. Include your firm's branding and use them in client memos and briefings."
+    }
+  ],
+  "finalCta": {
+    "headline": "Ready to Transform Your Legal Practice?",
+    "subheadline": "Join 500+ law firms using AI to review documents faster and serve clients better",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=legal&trial=14",
+    "trustSignal": "No credit card required. Cancel anytime."
+  }
+}

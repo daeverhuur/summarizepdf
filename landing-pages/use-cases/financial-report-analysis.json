@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "financial-report-analysis",
+  "seo": {
+    "title": "Financial Report Summarizer - Extract Key Metrics Instantly | SummarizePDF",
+    "description": "Analyze financial reports and earnings statements with AI. Extract revenue, profits, key metrics, and management insights in minutes. Perfect for investors and analysts.",
+    "keywords": ["financial report summarizer", "earnings report AI", "financial analysis tool", "investor research", "10-K summary", "earnings summary"]
+  },
+  "hero": {
+    "headline": "Analyze Financial Reports 10x Faster",
+    "subheadline": "Extract revenue, profits, key metrics, and management commentary from earnings reports and 10-Ks in minutes.",
+    "cta": "Analyze Your First Report Free",
+    "ctaUrl": "/sign-up?use-case=financial-reports&trial=14",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?use-case=financial"
+  },
+  "targetAudience": "Investors, Financial Analysts, Portfolio Managers",
+  "painPoints": [
+    "Reading 200+ page 10-K reports takes hours",
+    "Extracting key metrics from dense financial documents",
+    "Keeping up with earnings season across multiple companies",
+    "Finding management's discussion buried in reports",
+    "Comparing metrics across different reporting formats"
+  ],
+  "solution": {
+    "title": "AI That Speaks Finance",
+    "description": "Our AI is trained on financial documents to extract revenue, profits, margins, growth rates, and forward guidance automatically.",
+    "features": [
+      {
+        "title": "Key Metrics Extraction",
+        "description": "Automatically pulls revenue, EPS, margins, cash flow, and growth rates."
+      },
+      {
+        "title": "Management Commentary",
+        "description": "Summarizes MD&A sections and CEO statements."
+      },
+      {
+        "title": "Risk Factors",
+        "description": "Identifies key risks and challenges mentioned in reports."
+      },
+      {
+        "title": "Forward Guidance",
+        "description": "Extracts management projections and future outlook."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Analyze 10+ Reports Per Day",
+      "description": "Cover more stocks during earnings season.",
+      "icon": "trending-up"
+    },
+    {
+      "title": "Never Miss Key Metrics",
+      "description": "AI extracts all important financial data.",
+      "icon": "bar-chart"
+    },
+    {
+      "title": "Faster Investment Decisions",
+      "description": "Get insights in minutes, not hours.",
+      "icon": "zap"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Financial Report",
+      "description": "10-K, 10-Q, or earnings presentation"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Metrics",
+      "description": "Revenue, profits, margins, and guidance"
+    },
+    {
+      "step": 3,
+      "title": "Get Investment Summary",
+      "description": "Structured summary with key insights"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "15,000+", "label": "Reports Analyzed" },
+      { "value": "90%", "label": "Time Saved" },
+      { "value": "4.8/5", "label": "Analyst Rating" }
+    ],
+    "testimonial": {
+      "quote": "During earnings season, I used to struggle to keep up with all the reports. SummarizePDF lets me analyze 20+ reports per day. The metric extraction is incredibly accurate and saves me hours.",
+      "author": "David Park",
+      "role": "Investment Analyst, Hedge Fund"
+    }
+  },
+  "faq": [
+    {
+      "question": "What types of financial reports does it support?",
+      "answer": "All formats: 10-K, 10-Q, 8-K, earnings presentations, annual reports, investor presentations, and analyst calls transcripts."
+    },
+    {
+      "question": "Can it extract specific financial metrics?",
+      "answer": "Yes! Revenue, net income, EPS, EBITDA, margins, cash flow, debt levels, and custom metrics specific to each industry."
+    },
+    {
+      "question": "Does it work for international companies?",
+      "answer": "Yes! We support financial reports from companies worldwide in multiple languages and accounting standards (GAAP, IFRS)."
+    },
+    {
+      "question": "How accurate is the metric extraction?",
+      "answer": "Our AI achieves 98%+ accuracy on standard financial metrics. Always verify critical numbers for investment decisions."
+    },
+    {
+      "question": "Can I compare metrics across multiple reports?",
+      "answer": "Pro and Team plans support batch processing and comparative analysis across multiple periods and companies."
+    }
+  ],
+  "pricing": {
+    "highlight": "Professional pricing for investors and analysts",
+    "ctaText": "See Analyst Pricing",
+    "ctaUrl": "/pricing?use-case=financial"
+  },
+  "finalCta": {
+    "headline": "Ready to Speed Up Financial Analysis?",
+    "subheadline": "Join investors analyzing 10x more reports during earnings season",
+    "buttonText": "Start Free Trial - For Analysts",
+    "buttonUrl": "/sign-up?use-case=financial-reports&trial=14"
+  }
+}

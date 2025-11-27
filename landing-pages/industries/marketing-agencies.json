@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "marketing-agencies",
+  "seo": {
+    "title": "PDF Summarizer for Marketing Agencies - Fast Client & Competitor Research | SummarizePDF",
+    "description": "Summarize client briefs, market research, and competitor reports instantly. Deliver campaigns faster. Trusted by 200+ agencies. Start free trial!",
+    "keywords": ["marketing agency tool", "client brief summarizer", "market research ai", "competitor analysis tool", "agency productivity software"]
+  },
+  "hero": {
+    "headline": "Document Summarization for Marketing Agencies",
+    "subheadline": "Analyze client briefs, market research, and competitor campaigns 10x faster with AI",
+    "cta": "Start Free - Agency Plan",
+    "ctaUrl": "/sign-up?industry=marketing-agency&trial=14",
+    "secondaryCta": "See Agency Pricing",
+    "secondaryCtaUrl": "/pricing?industry=marketing-agency"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "Tight campaign deadlines",
+      "description": "Client wants strategy presentation by Friday. You have 100 pages of market research to read by Wednesday."
+    },
+    {
+      "icon": "file-text",
+      "title": "Overwhelming client briefs",
+      "description": "New client dumps 50 PDFs: brand guidelines, past campaigns, market data, competitor analysis"
+    },
+    {
+      "icon": "search",
+      "title": "Competitor research takes forever",
+      "description": "Analyzing 20 competitor campaigns requires downloading and reading dozens of case studies"
+    },
+    {
+      "icon": "users",
+      "title": "Junior staff drowning in reading",
+      "description": "Account managers spend 60% of their time reading instead of creating campaigns"
+    }
+  ],
+  "solution": {
+    "headline": "AI That Accelerates Agency Work",
+    "description": "SummarizePDF helps marketing agencies extract insights from client docs, market research, and competitor campaigns faster. Focus on creative strategy, not reading.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "10x Faster Client Onboarding",
+        "description": "Summarize brand guides, past campaigns, and market data instantly. Start creating faster."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Better Campaign Insights",
+        "description": "Extract key trends from market research and competitor analysis in minutes."
+      },
+      {
+        "icon": "users",
+        "title": "Free Up Creative Time",
+        "description": "Your team spends less time reading, more time creating winning campaigns."
+      },
+      {
+        "icon": "briefcase",
+        "title": "Win More Pitches",
+        "description": "Faster research = better pitch decks with deeper competitive analysis."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Client Brief & Onboarding",
+      "description": "Quickly digest brand guidelines, past campaign reports, and client background materials",
+      "metrics": "Onboard new clients in 1 day instead of 1 week"
+    },
+    {
+      "title": "Market Research & Insights",
+      "description": "Summarize industry reports, consumer studies, and trend analyses to inform campaign strategy",
+      "metrics": "Review 50 research reports in a day"
+    },
+    {
+      "title": "Competitive Campaign Analysis",
+      "description": "Analyze competitor marketing materials, case studies, and campaign reports to identify opportunities",
+      "metrics": "Understand competitive landscape 5x faster"
+    },
+    {
+      "title": "Pitch Preparation",
+      "description": "Extract insights from prospect research and industry data to create winning pitch presentations",
+      "metrics": "Deliver better pitches, win more clients"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our account team was spending 50% of their time reading client docs and market research. SummarizePDF cut that to 10%. Now they focus on strategy and creative, which is what clients pay for.",
+      "author": "Jessica Thompson",
+      "role": "Creative Director",
+      "firm": "Digital Marketing Agency"
+    },
+    {
+      "quote": "We use this for pitch prep and competitive analysis. Instead of junior staff spending days reading, we get AI summaries in hours and deliver better insights to clients. Game changer.",
+      "author": "Marcus Williams",
+      "role": "Managing Partner",
+      "firm": "Brand Strategy Agency"
+    }
+  ],
+  "compliance": {
+    "headline": "Client Confidentiality Protected",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security audits"
+      },
+      {
+        "badge": "NDA Protected",
+        "description": "Encrypted client documents"
+      },
+      {
+        "badge": "Team Collaboration",
+        "description": "Shared workspaces for agencies"
+      },
+      {
+        "badge": "No AI Training",
+        "description": "Client data never trains our models"
+      }
+    ],
+    "confidentiality": "We understand client confidentiality. All documents are encrypted and private. We never share your client data or use it for AI training."
+  },
+  "stats": [
+    { "value": "200+", "label": "Marketing Agencies" },
+    { "value": "75%", "label": "Research Time Saved" },
+    { "value": "100K+", "label": "Client Docs Analyzed" },
+    { "value": "4.8/5", "label": "Agency Rating" }
+  ],
+  "faq": [
+    {
+      "question": "Is client data secure and confidential?",
+      "answer": "Absolutely! SOC 2 Type II certified with encrypted storage. All client documents are private and never used for AI training. Perfect for NDAs and confidential campaigns."
+    },
+    {
+      "question": "Can our whole agency team collaborate?",
+      "answer": "Yes! The Team plan ($49/mo) allows unlimited users to share and organize research. Perfect for account teams, strategists, and creatives to collaborate."
+    },
+    {
+      "question": "What types of marketing documents can you summarize?",
+      "answer": "All of them: client briefs, brand guidelines, market research reports, competitor case studies, industry trend reports, RFPs, campaign performance reports, and more."
+    },
+    {
+      "question": "How does it help with client pitches?",
+      "answer": "Quickly research prospects, competitors, and industry trends to create data-backed pitch presentations. Win more clients with deeper insights in less time."
+    },
+    {
+      "question": "What plan is best for agencies?",
+      "answer": "Most boutique agencies use the Team plan ($49/mo) for unlimited users. Large agencies should consider our Enterprise plan with advanced features and white-label options. Contact sales."
+    },
+    {
+      "question": "Can we export summaries for client deliverables?",
+      "answer": "Yes! Export as PDF, Word, or plain text. Add your agency branding and include summaries in strategy decks and client reports."
+    }
+  ],
+  "finalCta": {
+    "headline": "Create Better Campaigns, Faster",
+    "subheadline": "Join 200+ agencies using AI to research faster and deliver better results to clients",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=marketing-agency&trial=14",
+    "trustSignal": "No credit card required. Cancel anytime."
+  }
+}

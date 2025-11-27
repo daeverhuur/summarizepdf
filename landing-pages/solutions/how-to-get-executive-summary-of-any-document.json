@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-get-executive-summary-of-any-document",
+  "seo": {
+    "title": "How to Get Executive Summary of Any PDF | SummarizePDF",
+    "description": "Generate professional executive summaries from any PDF document in seconds. Perfect for busy executives and decision-makers. Try free today!",
+    "keywords": [
+      "executive summary pdf",
+      "create executive summary",
+      "pdf executive summary generator",
+      "executive summary tool",
+      "business document summary",
+      "executive brief"
+    ]
+  },
+  "hero": {
+    "headline": "Get Executive Summaries of Any Document Instantly",
+    "subheadline": "Professional executive briefs from any PDF in under 60 seconds.",
+    "cta": "Create Executive Summary",
+    "ctaUrl": "/sign-up?source=hero&page=executive-summary"
+  },
+  "problem": {
+    "title": "Executives Don't Have Time to Read Everything",
+    "description": "You're in back-to-back meetings. Your team sends 10 reports. Board meeting is tomorrow. You need the key insights now, not a 50-page document.",
+    "painPoints": [
+      "No time to read full reports before decisions",
+      "Need high-level overview for board meetings",
+      "Team members overwhelm you with details",
+      "Missing forest for the trees in lengthy documents",
+      "Can't delegate reading to anyone else",
+      "Need to extract business implications quickly"
+    ]
+  },
+  "solution": {
+    "title": "AI Creates Executive Summaries for You",
+    "description": "SummarizePDF extracts the most critical business information and presents it in a clean, executive-friendly format focused on insights and implications.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Business Document",
+        "description": "Drop any report, proposal, analysis, or briefing document into SummarizePDF.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Identifies Key Insights",
+        "description": "Our AI extracts main findings, recommendations, risks, and business implications.",
+        "icon": "brain"
+      },
+      {
+        "step": 3,
+        "title": "Get Executive Brief",
+        "description": "Receive a 1-page executive summary with key points, recommendations, and action items.",
+        "icon": "file-text"
+      },
+      {
+        "step": 4,
+        "title": "Make Informed Decisions",
+        "description": "Use the summary to make quick decisions or prepare for strategic discussions.",
+        "icon": "check-circle"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Make Faster Decisions",
+      "description": "Get the information you need to decide in 60 seconds instead of 60 minutes.",
+      "icon": "zap"
+    },
+    {
+      "title": "Focus on What Matters",
+      "description": "Executive summaries highlight business implications, not operational details.",
+      "icon": "target"
+    },
+    {
+      "title": "Be Prepared for Meetings",
+      "description": "Walk into any meeting with a clear understanding of all materials.",
+      "icon": "calendar"
+    },
+    {
+      "title": "Share with Leadership",
+      "description": "Forward clean executive briefs to board members and stakeholders.",
+      "icon": "share-2"
+    }
+  },
+  "results": {
+    "title": "Trusted by Executives Worldwide",
+    "metrics": [
+      {
+        "value": "60 sec",
+        "label": "To Executive Summary"
+      },
+      {
+        "value": "95%",
+        "label": "Time Saved"
+      },
+      {
+        "value": "1-page",
+        "label": "Concise Format"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "As CEO, I receive 20+ reports weekly. SummarizePDF gives me the executive summary I need in seconds. I can make informed decisions without drowning in details.",
+      "author": "Jennifer Walsh",
+      "role": "CEO, Tech Startup",
+      "rating": 5
+    },
+    {
+      "quote": "Before board meetings, I need to review dozens of reports. This tool creates perfect executive briefs that I can actually use in the boardroom.",
+      "author": "Robert Chang",
+      "role": "Board Member",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "What's included in an executive summary?",
+      "answer": "Key findings, main recommendations, business implications, risks/opportunities, and action items - everything an executive needs to make decisions."
+    },
+    {
+      "question": "How long are the executive summaries?",
+      "answer": "Typically 1 page (300-500 words), focused on high-level insights. You can request more or less detail as needed."
+    },
+    {
+      "question": "Can I customize the summary format?",
+      "answer": "Yes! You can specify what to focus on: 'Focus on financial implications' or 'Highlight strategic risks' to get targeted summaries."
+    },
+    {
+      "question": "Does it work with financial reports?",
+      "answer": "Absolutely. Works great with financial statements, earnings reports, market analysis, and other business documents."
+    },
+    {
+      "question": "Can I share summaries with my team?",
+      "answer": "Yes! Export summaries as PDF or share links. Team plan includes collaborative workspaces for sharing insights."
+    },
+    {
+      "question": "What plans support executive summaries?",
+      "answer": "All plans! Free: 5/month. Starter ($9/mo): 50/month. Pro ($19/mo): 200/month. Team ($49/mo): unlimited."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Create Executive Summary Now",
+    "href": "/sign-up?source=primary&page=executive-summary"
+  },
+  "secondaryCTA": {
+    "text": "See Team Pricing",
+    "href": "/pricing?source=secondary&page=executive-summary"
+  },
+  "finalCTA": {
+    "headline": "Lead with Better Information",
+    "subheadline": "Join 2,000+ executives who make faster decisions with AI-powered executive summaries.",
+    "cta": "Try Free - 5 Summaries Included",
+    "ctaUrl": "/sign-up?source=final&page=executive-summary"
+  }
+}

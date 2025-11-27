@@ -1,0 +1,175 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-save-time-on-literature-reviews",
+  "seo": {
+    "title": "How to Save Time on Literature Reviews with AI | SummarizePDF",
+    "description": "Complete literature reviews 10x faster with AI. Summarize dozens of papers, extract findings, compare studies instantly. Perfect for researchers. Try free!",
+    "keywords": [
+      "literature review tool",
+      "fast literature review",
+      "ai literature review",
+      "systematic review tool",
+      "research paper review",
+      "academic literature review"
+    ]
+  },
+  "hero": {
+    "headline": "Complete Literature Reviews 10x Faster with AI",
+    "subheadline": "Summarize dozens of papers, extract findings, and compare studies in minutes.",
+    "cta": "Speed Up Literature Review",
+    "ctaUrl": "/sign-up?source=hero&page=literature-review"
+  },
+  "problem": {
+    "title": "Literature Reviews Take Weeks",
+    "description": "You need to review 50 papers for your dissertation. Each is 30+ pages. Reading them all will take a month. Your advisor wants the lit review next week. Panic sets in.",
+    "painPoints": [
+      "Reading 50+ papers takes months",
+      "Extracting findings from each study manually",
+      "Creating comparison tables is tedious",
+      "Missing important details buried in papers",
+      "Hard to identify gaps in literature",
+      "Overwhelmed by volume of papers"
+    ]
+  },
+  "solution": {
+    "title": "AI Accelerates Every Step of Literature Review",
+    "description": "SummarizePDF helps you rapidly screen papers, extract key findings, identify methodologies, and create comparison tables - cutting literature review time by 90%.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Batch Upload Papers",
+        "description": "Upload all papers for your literature review at once. Process dozens simultaneously.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Extracts Key Information",
+        "description": "For each paper, AI identifies research question, methods, sample size, findings, and conclusions.",
+        "icon": "brain"
+      },
+      {
+        "step": 3,
+        "title": "Generate Comparison Table",
+        "description": "Export structured data with all papers' key information in Excel. Perfect for systematic reviews.",
+        "icon": "table"
+      },
+      {
+        "step": 4,
+        "title": "Identify Gaps & Themes",
+        "description": "AI helps identify common themes, contradictions, and gaps in the literature.",
+        "icon": "lightbulb"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Rapid Paper Screening",
+      "description": "Quickly screen dozens of papers by reading AI summaries. Identify most relevant studies 10x faster.",
+      "icon": "filter"
+    },
+    {
+      "title": "Structured Data Extraction",
+      "description": "Automatically extract methods, sample sizes, findings, and conclusions from every paper.",
+      "icon": "database"
+    },
+    {
+      "title": "Comparison Tables",
+      "description": "Generate comparison tables showing all studies' characteristics. Export to Excel for analysis.",
+      "icon": "grid"
+    },
+    {
+      "title": "Theme Identification",
+      "description": "AI identifies common themes, conflicting findings, and gaps in literature across all papers.",
+      "icon": "compass"
+    }
+  ],
+  "literatureReviewFeatures": [
+    {
+      "feature": "PRISMA Workflow Support",
+      "description": "Track papers through screening, eligibility, and inclusion stages for systematic reviews."
+    },
+    {
+      "feature": "Quality Assessment",
+      "description": "Score papers on methodology quality criteria. Filter by quality scores."
+    },
+    {
+      "feature": "Synthesis Reports",
+      "description": "AI generates synthesis reports summarizing findings across all included studies."
+    },
+    {
+      "feature": "Citation Network",
+      "description": "Visualize citation relationships between papers. Identify seminal works and recent developments."
+    }
+  ],
+  "results": {
+    "title": "Transform Your Literature Review Process",
+    "metrics": [
+      {
+        "value": "90%",
+        "label": "Time Saved"
+      },
+      {
+        "value": "50+",
+        "label": "Papers Reviewed"
+      },
+      {
+        "value": "1 Week",
+        "label": "Full Lit Review"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Literature review for my dissertation would have taken 3 months. With SummarizePDF, I completed it in 2 weeks. AI extracted all the key info I needed for my comparison table.",
+      "author": "Dr. Lisa Chen",
+      "role": "PhD Student, Harvard",
+      "rating": 5
+    },
+    {
+      "quote": "Systematic review of 150 clinical trials. Extraction of sample sizes, interventions, and outcomes was automatic. Saved our team literally hundreds of hours.",
+      "author": "Prof. Michael Brown",
+      "role": "Medical Researcher",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "Does it work for systematic reviews?",
+      "answer": "Yes! Supports systematic review workflows including PRISMA stages, quality assessment, and structured data extraction."
+    },
+    {
+      "question": "Can it generate comparison tables?",
+      "answer": "Absolutely. Export all papers' key characteristics (methods, findings, etc.) to Excel for easy comparison and analysis."
+    },
+    {
+      "question": "How many papers can I review?",
+      "answer": "Pro plan: 200 papers. Team plan: 1,000+ papers. Perfect for comprehensive literature reviews and meta-analyses."
+    },
+    {
+      "question": "Does it identify research gaps?",
+      "answer": "Yes! AI analyzes all papers and highlights common themes, contradictions, and areas lacking research."
+    },
+    {
+      "question": "Can I collaborate with coauthors?",
+      "answer": "Yes! Team plan includes shared workspaces. Multiple researchers can screen papers and extract data collaboratively."
+    },
+    {
+      "question": "What about citation management?",
+      "answer": "Export citations in any format (APA, BibTeX, etc.). Integrates with Zotero, Mendeley, and other reference managers."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Start Literature Review",
+    "href": "/sign-up?source=primary&page=literature-review"
+  },
+  "secondaryCTA": {
+    "text": "See Academic Pricing",
+    "href": "/pricing?source=secondary&page=literature-review"
+  },
+  "finalCTA": {
+    "headline": "Stop Drowning in Literature",
+    "subheadline": "Join 3,500+ researchers who complete literature reviews 10x faster with AI.",
+    "cta": "Try Free - 5 Papers Included",
+    "ctaUrl": "/sign-up?source=final&page=literature-review"
+  }
+}

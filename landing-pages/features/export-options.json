@@ -1,0 +1,166 @@
+{
+  "pageType": "feature",
+  "slug": "export-options",
+  "seo": {
+    "title": "Export PDF Summaries - PDF, Markdown, DOCX & More | SummarizePDF",
+    "description": "Export your PDF summaries in multiple formats: PDF, Markdown, DOCX, TXT, and more. Perfect for reports, presentations, and documentation. Try free!",
+    "keywords": ["export pdf summary", "download summary", "pdf to word", "markdown export", "summary export formats", "save pdf summary"]
+  },
+  "hero": {
+    "headline": "Export Summaries in Any Format You Need",
+    "subheadline": "Get your summaries as PDF, Word docs, Markdown, or plain text. Perfect for reports, presentations, and documentation.",
+    "cta": "Start Exporting Free",
+    "ctaUrl": "/sign-up?source=feature-export-options",
+    "secondaryCta": "See All Formats",
+    "secondaryCtaUrl": "#formats"
+  },
+  "benefits": [
+    {
+      "title": "Multiple Export Formats",
+      "description": "Export as PDF, DOCX, Markdown, TXT, or HTML. Choose the format that works best for your workflow.",
+      "icon": "download"
+    },
+    {
+      "title": "Professional Formatting",
+      "description": "Exports are beautifully formatted and ready to use in presentations, reports, or documentation.",
+      "icon": "file-text"
+    },
+    {
+      "title": "Preserve Formatting",
+      "description": "Headings, bullet points, and structure are preserved. No manual reformatting required.",
+      "icon": "layout"
+    },
+    {
+      "title": "One-Click Export",
+      "description": "Download any summary in seconds. Export individual summaries or batch export your entire library.",
+      "icon": "zap"
+    }
+  ],
+  "formats": [
+    {
+      "format": "PDF",
+      "description": "Professional PDF documents perfect for sharing, printing, or archiving.",
+      "icon": "file",
+      "useCases": ["Client reports", "Executive briefs", "Presentations"]
+    },
+    {
+      "format": "Microsoft Word (DOCX)",
+      "description": "Editable Word documents for further customization and collaboration.",
+      "icon": "file-text",
+      "useCases": ["Team editing", "Report drafts", "Document templates"]
+    },
+    {
+      "format": "Markdown",
+      "description": "Clean Markdown files for developers, bloggers, and technical documentation.",
+      "icon": "code",
+      "useCases": ["GitHub repos", "Technical docs", "Blog posts"]
+    },
+    {
+      "format": "Plain Text (TXT)",
+      "description": "Simple text files compatible with any application or platform.",
+      "icon": "align-left",
+      "useCases": ["Notes", "Quick sharing", "Universal compatibility"]
+    },
+    {
+      "format": "HTML",
+      "description": "Web-ready HTML for embedding in websites or applications.",
+      "icon": "globe",
+      "useCases": ["Websites", "Email newsletters", "Web apps"]
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Generate Your Summary",
+      "description": "Create bullet point, executive, or detailed summaries of any PDF."
+    },
+    {
+      "step": 2,
+      "title": "Choose Export Format",
+      "description": "Select PDF, DOCX, Markdown, TXT, or HTML based on your needs."
+    },
+    {
+      "step": 3,
+      "title": "Download Instantly",
+      "description": "Get beautifully formatted documents ready for immediate use."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "500,000+", "label": "Exports Downloaded" },
+      { "value": "5 formats", "label": "Export Options" },
+      { "value": "100%", "label": "Formatting Preserved" },
+      { "value": "4.9/5", "label": "Export Quality Rating" }
+    ],
+    "testimonial": {
+      "quote": "The Word export feature is perfect for my consulting work. I can generate summaries, export to DOCX, add my branding, and send to clients in minutes.",
+      "author": "Rachel Thompson",
+      "role": "Management Consultant",
+      "avatar": "RT"
+    }
+  },
+  "features": [
+    {
+      "title": "Single Export",
+      "description": "Export individual summaries with one click. Perfect for sharing specific documents."
+    },
+    {
+      "title": "Batch Export",
+      "description": "Export multiple summaries at once. Combine into a single document or download as separate files."
+    },
+    {
+      "title": "Custom Branding",
+      "description": "Add your logo, company name, and custom headers/footers to exported documents (Pro plans)."
+    },
+    {
+      "title": "Template Support",
+      "description": "Create export templates with custom formatting, styles, and layouts (Pro plans)."
+    }
+  ],
+  "useCases": [
+    "Client reports and deliverables",
+    "Research paper summaries",
+    "Executive presentations",
+    "Technical documentation",
+    "Blog content creation",
+    "Study guides and notes"
+  ],
+  "faq": [
+    {
+      "question": "Which export formats are available?",
+      "answer": "All plans include PDF, DOCX, Markdown, TXT, and HTML exports. Choose the format that best fits your workflow."
+    },
+    {
+      "question": "Is formatting preserved in exports?",
+      "answer": "Yes! Headings, bullet points, paragraphs, and document structure are preserved in all formats."
+    },
+    {
+      "question": "Can I customize the exported documents?",
+      "answer": "Pro and Team plans support custom branding, templates, and formatting options. Free and Starter plans get standard formatted exports."
+    },
+    {
+      "question": "Can I export multiple summaries at once?",
+      "answer": "Yes! Batch export allows you to download multiple summaries as individual files or combine them into a single document."
+    },
+    {
+      "question": "Are exports high quality for printing?",
+      "answer": "Absolutely. PDF exports are high-resolution and optimized for professional printing and presentation."
+    },
+    {
+      "question": "Can I export chat conversations?",
+      "answer": "Yes! Export your chat Q&A sessions along with summaries in any format. Great for creating study guides or FAQs."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["PDF export", "TXT export", "Standard formatting"],
+    "paidFeatures": ["All export formats", "Batch export", "Custom branding", "Export templates"],
+    "ctaText": "Compare Plans",
+    "ctaUrl": "/pricing?source=feature-export-options"
+  },
+  "finalCta": {
+    "headline": "Export Summaries in Your Favorite Format",
+    "subheadline": "PDF, Word, Markdown, TXT, or HTML. Get professional exports in one click.",
+    "cta": "Start Exporting Free",
+    "ctaUrl": "/sign-up?source=feature-export-options-final"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-speed-up-document-review",
+  "seo": {
+    "title": "How to Speed Up Document Review by 90% with AI | SummarizePDF",
+    "description": "Stop spending hours reviewing contracts, reports, and proposals. AI-powered document review helps you understand key points in minutes. Try free today!",
+    "keywords": [
+      "speed up document review",
+      "fast document review",
+      "document review automation",
+      "ai document review",
+      "quick document analysis",
+      "document review tool"
+    ]
+  },
+  "hero": {
+    "headline": "Speed Up Document Review by 90%",
+    "subheadline": "Review contracts, reports, and proposals in minutes instead of hours.",
+    "cta": "Start Reviewing Faster",
+    "ctaUrl": "/sign-up?source=hero&page=document-review"
+  },
+  "problem": {
+    "title": "Document Review is Slowing You Down",
+    "description": "Your inbox is full of contracts, reports, and proposals. Each requires hours of careful review. Your to-do list keeps growing. You're falling behind.",
+    "painPoints": [
+      "Spending 3-5 hours reviewing each contract",
+      "Missing critical clauses buried in legal documents",
+      "No time to review all incoming documents",
+      "Can't keep up with document volume",
+      "Team waiting on your review to proceed",
+      "Risk of approving documents without thorough review"
+    ]
+  },
+  "solution": {
+    "title": "AI Reviews Documents in Minutes",
+    "description": "SummarizePDF analyzes any document and extracts key terms, obligations, risks, and important clauses instantly.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Document",
+        "description": "Drop contracts, reports, proposals, or any PDF into SummarizePDF.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Extracts Key Information",
+        "description": "Our AI identifies critical terms, obligations, dates, parties, and important clauses.",
+        "icon": "search"
+      },
+      {
+        "step": 3,
+        "title": "Get Review Summary",
+        "description": "Receive a structured summary highlighting key points, risks, and action items.",
+        "icon": "check-square"
+      },
+      {
+        "step": 4,
+        "title": "Focus on What Matters",
+        "description": "Read only the critical sections flagged by AI instead of the entire document.",
+        "icon": "target"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Review 10x Faster",
+      "description": "Complete document reviews in 15 minutes that used to take 3 hours.",
+      "icon": "zap"
+    },
+    {
+      "title": "Never Miss Critical Details",
+      "description": "AI flags important clauses, risks, and obligations automatically.",
+      "icon": "alert-circle"
+    },
+    {
+      "title": "Handle More Volume",
+      "description": "Review 10 documents per day instead of 2. Clear your backlog faster.",
+      "icon": "trending-up"
+    },
+    {
+      "title": "Consistent Reviews",
+      "description": "AI applies the same thorough review process to every document.",
+      "icon": "repeat"
+    }
+  ],
+  "results": {
+    "title": "Proven Results Across Industries",
+    "metrics": [
+      {
+        "value": "90%",
+        "label": "Faster Reviews"
+      },
+      {
+        "value": "15 min",
+        "label": "Average Review Time"
+      },
+      {
+        "value": "5x",
+        "label": "More Docs Reviewed"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "As a legal counsel, I review 20+ contracts weekly. SummarizePDF highlights the important clauses immediately. I've cut my review time from 2 hours to 20 minutes per contract.",
+      "author": "David Park",
+      "role": "Legal Counsel",
+      "rating": 5
+    },
+    {
+      "quote": "Our procurement team reviews hundreds of vendor proposals. This tool helps us quickly identify compliant proposals and flag issues. Game-changer for our workflow.",
+      "author": "Lisa Wong",
+      "role": "Procurement Manager",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "What types of documents can I review?",
+      "answer": "Any PDF document: contracts, legal agreements, business reports, proposals, RFPs, compliance documents, financial statements, and more."
+    },
+    {
+      "question": "Does it replace human review?",
+      "answer": "No, it accelerates human review. AI extracts key information so you can focus on critical sections instead of reading every page."
+    },
+    {
+      "question": "Can it identify risks and red flags?",
+      "answer": "Yes! You can ask specific questions like 'What are the liability clauses?' or 'Are there any unusual terms?' to identify potential risks."
+    },
+    {
+      "question": "How secure is my document data?",
+      "answer": "Enterprise-grade encryption. Your documents are never shared or used for training. SOC 2 compliant."
+    },
+    {
+      "question": "Can my team collaborate on reviews?",
+      "answer": "Yes! Team plan ($49/mo) includes shared workspaces, comments, and collaborative review features."
+    },
+    {
+      "question": "What's included in the free plan?",
+      "answer": "5 document reviews per month up to 50 pages each. Perfect for trying the tool before upgrading."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Speed Up Reviews Now",
+    "href": "/sign-up?source=primary&page=document-review"
+  },
+  "secondaryCTA": {
+    "text": "See Team Pricing",
+    "href": "/pricing?source=secondary&page=document-review"
+  },
+  "finalCTA": {
+    "headline": "Stop Drowning in Document Reviews",
+    "subheadline": "Join 3,000+ professionals who review documents 90% faster with AI.",
+    "cta": "Try Free - No Credit Card",
+    "ctaUrl": "/sign-up?source=final&page=document-review"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "technology-startups",
+  "seo": {
+    "title": "PDF Summarizer for Tech Startups - Fast Research & Documentation | SummarizePDF",
+    "description": "Summarize technical docs, research papers, and competitor analysis instantly. Build faster with AI. Trusted by 500+ startups. 50% off for YC companies!",
+    "keywords": ["startup document tool", "tech research summarizer", "product documentation ai", "startup productivity tool", "technical paper summary"]
+  },
+  "hero": {
+    "headline": "Document Summarization for Tech Startups",
+    "subheadline": "Research faster, build smarter. Summarize technical papers, docs, and competitor analysis with AI.",
+    "cta": "Start Free - Startup Plan",
+    "ctaUrl": "/sign-up?industry=tech-startup&trial=14",
+    "secondaryCta": "See Startup Pricing",
+    "secondaryCtaUrl": "/pricing?industry=tech-startup"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "No time for deep research",
+      "description": "Moving fast to hit product-market fit. Can't spend days reading academic papers and technical docs."
+    },
+    {
+      "icon": "file-text",
+      "title": "Competitor research is tedious",
+      "description": "Need to understand 20 competitors but their pitch decks and whitepapers are 50+ pages each"
+    },
+    {
+      "icon": "code",
+      "title": "Technical documentation overload",
+      "description": "Evaluating APIs, SDKs, and frameworks requires reading hundreds of pages of docs"
+    },
+    {
+      "icon": "trending-up",
+      "title": "Investor decks need backing",
+      "description": "Need market research and data to support your pitch but don't have time to read reports"
+    }
+  ],
+  "solution": {
+    "headline": "Ship Faster with AI Research",
+    "description": "SummarizePDF helps startups move fast without missing important details. Research competitors, understand technical docs, and back your pitch with data - all 10x faster.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "10x Faster Product Research",
+        "description": "Summarize technical papers, API docs, and whitepapers instantly. Ship features faster."
+      },
+      {
+        "icon": "users",
+        "title": "Know Your Competition",
+        "description": "Quickly analyze competitor pitch decks, blog posts, and documentation to stay ahead."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Better Fundraising Decks",
+        "description": "Back your pitch with market research summaries and competitive analysis."
+      },
+      {
+        "icon": "dollar-sign",
+        "title": "Startup-Friendly Pricing",
+        "description": "Free plan to start. 50% off for YC and accelerator companies. Scale as you grow."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Product Research & Development",
+      "description": "Quickly digest technical papers, research studies, and documentation to inform product decisions",
+      "metrics": "Evaluate 20 solutions in the time it took to read 2"
+    },
+    {
+      "title": "Competitive Intelligence",
+      "description": "Summarize competitor whitepapers, blog posts, pitch decks, and documentation to understand their strategy",
+      "metrics": "Stay ahead of competitive landscape"
+    },
+    {
+      "title": "Fundraising Preparation",
+      "description": "Extract market data and insights from industry reports to support your investor pitch",
+      "metrics": "Build better pitch decks with solid data"
+    },
+    {
+      "title": "Technical Integration Research",
+      "description": "Quickly understand third-party APIs, SDKs, and technical documentation before integration",
+      "metrics": "Ship integrations 3x faster"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "As a founder, I don't have time to read 50-page whitepapers. SummarizePDF helps me research competitors and evaluate technologies in minutes instead of hours. Essential tool for moving fast.",
+      "author": "Alex Chen",
+      "role": "Founder & CEO",
+      "firm": "AI Startup (YC S23)"
+    },
+    {
+      "quote": "We used SummarizePDF to research our market and competitors for our Series A deck. Saved us weeks of work and helped us raise $5M. Worth every penny.",
+      "author": "Sarah Martinez",
+      "role": "Co-Founder",
+      "firm": "SaaS Startup"
+    }
+  ],
+  "compliance": {
+    "headline": "Secure & Startup-Friendly",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Enterprise security from day one"
+      },
+      {
+        "badge": "Fast Support",
+        "description": "Founders get priority help"
+      },
+      {
+        "badge": "No Lock-In",
+        "description": "Cancel anytime, export all data"
+      },
+      {
+        "badge": "YC Discount",
+        "description": "50% off for accelerator companies"
+      }
+    ],
+    "confidentiality": "Your research and competitive intelligence stay private. We never share your data or use it for AI training."
+  },
+  "stats": [
+    { "value": "500+", "label": "Startups Using SummarizePDF" },
+    { "value": "80%", "label": "Research Time Saved" },
+    { "value": "50K+", "label": "Docs Summarized" },
+    { "value": "4.9/5", "label": "Founder Rating" }
+  ],
+  "faq": [
+    {
+      "question": "What's included in the free plan for startups?",
+      "answer": "Free plan includes 100 pages/month - perfect for weekly competitor research and technical docs. Upgrade to Starter ($9/mo) when you need more."
+    },
+    {
+      "question": "Do you offer discounts for YC or accelerator companies?",
+      "answer": "Yes! 50% off all paid plans for YC, Techstars, and other accelerator companies. Just email us with proof of acceptance."
+    },
+    {
+      "question": "Can our whole team use it?",
+      "answer": "Absolutely! The Team plan ($49/mo or $24.50 with accelerator discount) includes unlimited users. Perfect for early-stage teams."
+    },
+    {
+      "question": "What types of documents can we summarize?",
+      "answer": "Anything: technical papers, API docs, competitor pitch decks, market research reports, whitepapers, blog posts (as PDF), investor memos, and more."
+    },
+    {
+      "question": "How does it compare to just reading?",
+      "answer": "Get the key insights from a 50-page whitepaper in 2 minutes instead of 2 hours. You still get all the important details, just 10x faster."
+    },
+    {
+      "question": "Is our competitive research secure?",
+      "answer": "Yes! SOC 2 certified with encryption. Your competitive intelligence is private and never used to train our AI. Perfect for stealth mode."
+    }
+  ],
+  "finalCta": {
+    "headline": "Ship Faster with AI-Powered Research",
+    "subheadline": "Join 500+ startups using AI to research faster and build smarter products",
+    "cta": "Start Free Today",
+    "ctaUrl": "/sign-up?industry=tech-startup",
+    "trustSignal": "Free plan. 50% off for YC companies. No credit card required."
+  }
+}

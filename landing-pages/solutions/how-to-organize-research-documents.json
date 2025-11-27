@@ -1,0 +1,175 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-organize-research-documents",
+  "seo": {
+    "title": "How to Organize Research Documents & PDFs | SummarizePDF",
+    "description": "Organize hundreds of research papers with AI-powered tagging, folders, and search. Build searchable research libraries. Perfect for academics. Try free!",
+    "keywords": [
+      "organize research documents",
+      "research paper organization",
+      "pdf research library",
+      "organize academic papers",
+      "research document management",
+      "pdf organization tool"
+    ]
+  },
+  "hero": {
+    "headline": "Organize Your Research Document Library with AI",
+    "subheadline": "Auto-tagging, smart folders, and searchable summaries for your entire research collection.",
+    "cta": "Start Organizing Free",
+    "ctaUrl": "/sign-up?source=hero&page=research-organization"
+  },
+  "problem": {
+    "title": "Research Papers Are Chaos",
+    "description": "You have 300 PDFs in a folder named 'Research'. Filenames like 'paper_final_v3.pdf'. You need that study about X. Where is it? What was it called? You're drowning in disorganization.",
+    "painPoints": [
+      "Hundreds of papers with unhelpful filenames",
+      "No way to find relevant papers quickly",
+      "Can't remember which paper had which information",
+      "Folder structure doesn't match research needs",
+      "Searching filenames returns nothing useful",
+      "Losing track of important papers"
+    ]
+  },
+  "solution": {
+    "title": "AI Organizes Your Entire Research Library",
+    "description": "SummarizePDF automatically analyzes, tags, and organizes every research paper. Build a searchable library where you can find any paper or any information instantly.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Your Research Papers",
+        "description": "Add all your PDFs to SummarizePDF. Batch upload entire folders at once.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Analyzes & Tags",
+        "description": "AI automatically extracts topics, methods, findings and creates intelligent tags for every paper.",
+        "icon": "tag"
+      },
+      {
+        "step": 3,
+        "title": "Create Smart Folders",
+        "description": "Organize by topic, methodology, publication year, or any criteria. Papers can be in multiple folders.",
+        "icon": "folder"
+      },
+      {
+        "step": 4,
+        "title": "Search & Discover",
+        "description": "Find papers by content, not just filename. Search across summaries, tags, and full text.",
+        "icon": "search"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Auto-Tagging & Metadata",
+      "description": "AI extracts authors, publication year, methods, topics, and key findings automatically. No manual tagging.",
+      "icon": "tag"
+    },
+    {
+      "title": "Smart Folder Organization",
+      "description": "Create folders by topic, methodology, or research question. Papers can belong to multiple folders.",
+      "icon": "folder-tree"
+    },
+    {
+      "title": "Full-Text Search",
+      "description": "Search across all paper summaries and content. Find any information in your library instantly.",
+      "icon": "search"
+    },
+    {
+      "title": "Citation Management",
+      "description": "Export citations in APA, MLA, Chicago, or BibTeX format directly from your organized library.",
+      "icon": "quote"
+    }
+  ],
+  "organizationFeatures": [
+    {
+      "feature": "Automatic Topic Extraction",
+      "description": "AI identifies main topics and creates tags like 'machine learning', 'clinical trials', 'meta-analysis'"
+    },
+    {
+      "feature": "Custom Collections",
+      "description": "Create collections for literature reviews, projects, or research areas. Easy to share with collaborators."
+    },
+    {
+      "feature": "Related Paper Suggestions",
+      "description": "AI suggests related papers from your library based on content similarity."
+    },
+    {
+      "feature": "Research Timeline View",
+      "description": "Visualize your research collection by publication date. Track field evolution over time."
+    }
+  ],
+  "results": {
+    "title": "Build Your Research Library",
+    "metrics": [
+      {
+        "value": "1000+",
+        "label": "Papers Organized"
+      },
+      {
+        "value": "Auto",
+        "label": "Tagging"
+      },
+      {
+        "value": "Instant",
+        "label": "Search"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "PhD student with 500+ papers. Finally have them organized properly with auto-tags and smart folders. Can actually find papers I need now. Revolutionary for my research.",
+      "author": "Dr. Maya Patel",
+      "role": "PhD Candidate, MIT",
+      "rating": 5
+    },
+    {
+      "quote": "Research team managing 2,000+ papers across multiple projects. Organization features and collections have transformed our literature management workflow.",
+      "author": "Prof. James Wilson",
+      "role": "Research Professor",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "How many papers can I organize?",
+      "answer": "Free: 5 papers. Starter: 50 papers. Pro: 200 papers. Team: 1,000+ papers with unlimited organization features."
+    },
+    {
+      "question": "Does it extract citation information?",
+      "answer": "Yes! AI extracts authors, title, journal, year, DOI when available. Export citations in any format (APA, MLA, BibTeX, etc.)."
+    },
+    {
+      "question": "Can I create custom tags?",
+      "answer": "Yes! AI creates automatic tags, and you can add your own custom tags for personal organization."
+    },
+    {
+      "question": "Can I share collections with collaborators?",
+      "answer": "Yes! Team plan includes shared collections. Collaborate with coauthors or research group members."
+    },
+    {
+      "question": "Does it work with reference managers like Zotero?",
+      "answer": "Yes! Export your organized library to Zotero, Mendeley, EndNote, or any reference manager via BibTeX."
+    },
+    {
+      "question": "Can I import existing organization?",
+      "answer": "Yes. Upload PDFs with existing folder structure and we preserve the organization while adding AI enhancements."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Organize Research Library",
+    "href": "/sign-up?source=primary&page=research-organization"
+  },
+  "secondaryCTA": {
+    "text": "See Pro Features",
+    "href": "/pricing?source=secondary&page=research-organization"
+  },
+  "finalCTA": {
+    "headline": "Build Your Perfect Research Library",
+    "subheadline": "Join 4,000+ researchers who organized their papers with AI-powered tools.",
+    "cta": "Try Free - 5 Papers Included",
+    "ctaUrl": "/sign-up?source=final&page=research-organization"
+  }
+}

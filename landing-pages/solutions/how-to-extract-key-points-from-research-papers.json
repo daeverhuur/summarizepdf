@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-extract-key-points-from-research-papers",
+  "seo": {
+    "title": "How to Extract Key Points from Research Papers Fast | SummarizePDF",
+    "description": "Extract main findings, methodology, and conclusions from any research paper in minutes. AI-powered tool for researchers, students, and academics. Try free!",
+    "keywords": [
+      "extract key points from research paper",
+      "research paper summary",
+      "academic paper summarizer",
+      "extract findings from paper",
+      "research paper key points",
+      "summarize scientific paper"
+    ]
+  },
+  "hero": {
+    "headline": "Extract Key Points from Research Papers in Minutes",
+    "subheadline": "Get methodology, findings, and conclusions from any academic paper instantly.",
+    "cta": "Try It Free",
+    "ctaUrl": "/sign-up?source=hero&page=research-papers"
+  },
+  "problem": {
+    "title": "Research Papers Take Forever to Read",
+    "description": "You need to review 20 papers for your literature review. Each is 30+ pages of dense academic writing. You're drowning in information.",
+    "painPoints": [
+      "Reading dozens of 30+ page papers takes weeks",
+      "Dense academic language is hard to parse",
+      "Finding the key findings buried in text",
+      "Extracting methodology details takes hours",
+      "Comparing multiple papers is overwhelming",
+      "Missing critical information in long papers"
+    ]
+  },
+  "solution": {
+    "title": "AI Extracts What Matters",
+    "description": "SummarizePDF is trained on millions of academic papers. It knows exactly what information researchers need and extracts it automatically.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Research Paper PDF",
+        "description": "Drop any academic paper, journal article, or thesis into SummarizePDF.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Analyzes Structure",
+        "description": "Our AI identifies abstract, methodology, results, discussion, and conclusions.",
+        "icon": "brain"
+      },
+      {
+        "step": 3,
+        "title": "Get Structured Summary",
+        "description": "Receive key points organized by section: research question, methods, findings, implications.",
+        "icon": "list"
+      },
+      {
+        "step": 4,
+        "title": "Ask Specific Questions",
+        "description": "Chat with the paper to clarify methodology, compare results, or understand complex concepts.",
+        "icon": "message-square"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Review 10x More Papers",
+      "description": "Understand the key findings of 20 papers in the time it used to take to read 2.",
+      "icon": "trending-up"
+    },
+    {
+      "title": "Structured Academic Summaries",
+      "description": "Get organized summaries with research question, methodology, findings, and conclusions clearly separated.",
+      "icon": "layout"
+    },
+    {
+      "title": "Understand Complex Methods",
+      "description": "AI explains methodology and statistical approaches in plain language.",
+      "icon": "book-open"
+    },
+    {
+      "title": "Compare Studies Easily",
+      "description": "Extract key points from multiple papers and compare findings side-by-side.",
+      "icon": "git-compare"
+    }
+  ],
+  "results": {
+    "title": "Trusted by Researchers Worldwide",
+    "metrics": [
+      {
+        "value": "50,000+",
+        "label": "Papers Summarized"
+      },
+      {
+        "value": "90%",
+        "label": "Faster Literature Reviews"
+      },
+      {
+        "value": "4.8/5",
+        "label": "Researcher Rating"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "As a PhD student, I review hundreds of papers. SummarizePDF extracts exactly what I need: methods, results, and implications. It's cut my literature review time by 80%.",
+      "author": "Dr. Emily Thompson",
+      "role": "PhD Candidate, Stanford",
+      "rating": 5
+    },
+    {
+      "quote": "I used this for my meta-analysis of 150 studies. The structured summaries made data extraction so much easier. Saved me months of work.",
+      "author": "Prof. James Lee",
+      "role": "Research Professor",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "Does it work with all academic journals?",
+      "answer": "Yes! Works with papers from any journal, conference proceedings, preprints, dissertations, and theses in PDF format."
+    },
+    {
+      "question": "Can it extract specific data points?",
+      "answer": "Absolutely. After the initial summary, ask questions like 'What was the sample size?' or 'What statistical methods were used?' to extract specific details."
+    },
+    {
+      "question": "How accurate are the summaries?",
+      "answer": "Our AI is trained specifically on academic papers and has 95%+ accuracy in extracting key findings, methodology, and conclusions."
+    },
+    {
+      "question": "Can I use it for literature reviews?",
+      "answer": "Yes! Many researchers use SummarizePDF to quickly review dozens of papers and identify the most relevant studies for their literature review."
+    },
+    {
+      "question": "Does it work with papers in other languages?",
+      "answer": "Currently optimized for English papers. Support for other languages coming soon."
+    },
+    {
+      "question": "What's the pricing for academic users?",
+      "answer": "Starter plan ($9/mo) includes 50 papers. Pro plan ($19/mo) includes 200 papers. Special academic discounts available."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Start Extracting Key Points",
+    "href": "/sign-up?source=primary&page=research-papers"
+  },
+  "secondaryCTA": {
+    "text": "See Academic Pricing",
+    "href": "/pricing?source=secondary&page=research-papers"
+  },
+  "finalCTA": {
+    "headline": "Speed Up Your Research Today",
+    "subheadline": "Join 5,000+ researchers who extract key findings 10x faster with AI.",
+    "cta": "Try Free - 5 Papers Included",
+    "ctaUrl": "/sign-up?source=final&page=research-papers"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "healthcare-medical",
+  "seo": {
+    "title": "Medical PDF Summarizer for Healthcare Professionals - Fast Research Review | SummarizePDF",
+    "description": "Doctors and medical researchers: Summarize clinical studies, patient records, and research papers in seconds. HIPAA compliant, secure, trusted by 300+ healthcare orgs.",
+    "keywords": ["medical document summarizer", "clinical study summary", "research paper ai", "hipaa compliant pdf tool", "medical literature review", "patient record summarizer"]
+  },
+  "hero": {
+    "headline": "Medical Document Summarization for Healthcare",
+    "subheadline": "Review clinical studies, patient records, and research papers 10x faster with HIPAA-compliant AI",
+    "cta": "Start Free - Healthcare Plan",
+    "ctaUrl": "/sign-up?industry=healthcare&trial=14",
+    "secondaryCta": "See Healthcare Pricing",
+    "secondaryCtaUrl": "/pricing?industry=healthcare"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "No time to read research",
+      "description": "10,000+ medical papers published daily. Impossible to stay current with latest evidence."
+    },
+    {
+      "icon": "file-text",
+      "title": "Lengthy patient records",
+      "description": "Reviewing years of medical history takes hours you don't have between appointments"
+    },
+    {
+      "icon": "search",
+      "title": "Literature review bottleneck",
+      "description": "Research projects stall while reading hundreds of papers to find relevant studies"
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Critical details hidden",
+      "description": "Missing important findings buried in 50-page clinical trial reports"
+    }
+  ],
+  "solution": {
+    "headline": "AI Trained on Medical Literature",
+    "description": "SummarizePDF understands medical terminology, study methodologies, and clinical significance. Get accurate summaries that preserve critical findings and statistical data.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Read 20 Papers in the Time of 1",
+        "description": "Summarize systematic reviews, RCTs, and case studies instantly. Focus on clinical application."
+      },
+      {
+        "icon": "shield",
+        "title": "HIPAA Compliant & Secure",
+        "description": "BAA available, encrypted storage, audit logs. Patient data stays protected."
+      },
+      {
+        "icon": "check-circle",
+        "title": "Extract Key Statistics",
+        "description": "Automatically highlight p-values, confidence intervals, and outcomes. No more hunting through tables."
+      },
+      {
+        "icon": "bookmark",
+        "title": "Build Your Evidence Library",
+        "description": "Save and organize summaries by specialty, condition, or research question."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Clinical Research & Literature Review",
+      "description": "Quickly assess methodology, results, and clinical significance of studies for systematic reviews and meta-analyses",
+      "metrics": "Complete literature reviews 5x faster"
+    },
+    {
+      "title": "Patient Chart Review",
+      "description": "Get concise summaries of lengthy patient histories, lab results, and consult notes before appointments",
+      "metrics": "Prepare for patient visits in 2 minutes instead of 20"
+    },
+    {
+      "title": "Clinical Trial Documentation",
+      "description": "Summarize protocols, consent forms, and adverse event reports for IRB submissions and monitoring",
+      "metrics": "Reduce documentation review time by 80%"
+    },
+    {
+      "title": "Evidence-Based Practice",
+      "description": "Stay current with latest guidelines and research without spending hours reading journals",
+      "metrics": "Review 50+ papers per week vs. 5"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "As a busy cardiologist, I can't read every new study. SummarizePDF helps me stay current with research while spending more time with patients.",
+      "author": "Dr. Sarah Patel",
+      "role": "Cardiologist",
+      "firm": "Metro Heart Institute"
+    },
+    {
+      "quote": "Our research team uses SummarizePDF for literature reviews. We went from 3 months to 3 weeks for our last systematic review. Incredible time savings.",
+      "author": "Dr. Michael Chang",
+      "role": "Research Director",
+      "firm": "University Medical Center"
+    }
+  ],
+  "compliance": {
+    "headline": "Healthcare-Grade Security & Compliance",
+    "certifications": [
+      {
+        "badge": "HIPAA Compliant",
+        "description": "BAA available for covered entities"
+      },
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security and privacy audits"
+      },
+      {
+        "badge": "AES-256 Encryption",
+        "description": "End-to-end document protection"
+      },
+      {
+        "badge": "Audit Logs",
+        "description": "Track all document access and activity"
+      }
+    ],
+    "confidentiality": "We understand PHI protection requirements. All patient data is encrypted, access is logged, and we provide Business Associate Agreements for HIPAA compliance."
+  },
+  "stats": [
+    { "value": "300+", "label": "Healthcare Organizations" },
+    { "value": "85%", "label": "Research Time Saved" },
+    { "value": "500K+", "label": "Medical Papers Summarized" },
+    { "value": "99.9%", "label": "Platform Uptime" }
+  ],
+  "faq": [
+    {
+      "question": "Is SummarizePDF HIPAA compliant?",
+      "answer": "Yes! We offer Business Associate Agreements (BAA), maintain HIPAA-compliant infrastructure, and encrypt all PHI. Our platform is used by hospitals and research institutions nationwide."
+    },
+    {
+      "question": "How accurate is the AI for medical terminology?",
+      "answer": "Our AI is trained on medical literature and understands clinical terminology, drug names, and study designs. Summaries preserve key statistics and clinical findings. However, always apply clinical judgment."
+    },
+    {
+      "question": "Can I use this for patient records with PHI?",
+      "answer": "Yes, with a signed BAA. We encrypt all data, provide audit logs, and never use your documents to train our AI. Many hospitals use us for chart review."
+    },
+    {
+      "question": "What's the best plan for medical researchers?",
+      "answer": "The Pro plan ($19/mo) is perfect for individual researchers with 500 pages/month. Research teams should consider our Team plan ($49/mo) for collaboration and shared libraries."
+    },
+    {
+      "question": "Can I export summaries with citations?",
+      "answer": "Absolutely! Export as PDF, Word, or plain text with automatic page references. Perfect for research papers and clinical documentation."
+    },
+    {
+      "question": "Do you offer institutional pricing?",
+      "answer": "Yes! We provide custom enterprise pricing for hospitals, universities, and large research organizations. Contact sales for institutional licensing."
+    }
+  ],
+  "finalCta": {
+    "headline": "Spend Less Time Reading, More Time Healing",
+    "subheadline": "Join 300+ healthcare organizations using AI to stay current with research and improve patient care",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=healthcare&trial=14",
+    "trustSignal": "HIPAA compliant. No credit card required."
+  }
+}

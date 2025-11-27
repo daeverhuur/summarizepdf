@@ -1,0 +1,148 @@
+{
+  "pageType": "feature",
+  "slug": "document-library",
+  "seo": {
+    "title": "Document Library - Organize & Save PDF Summaries | SummarizePDF",
+    "description": "Save, organize, and search all your PDF summaries in one place. Personal document library with folders, tags, and smart search. Try free!",
+    "keywords": ["document library", "pdf organizer", "summary storage", "document management", "pdf library", "organize summaries"]
+  },
+  "hero": {
+    "headline": "Your Personal Document Library",
+    "subheadline": "Save, organize, and search all your PDF summaries in one secure place. Never lose important information again.",
+    "cta": "Start Building Your Library",
+    "ctaUrl": "/sign-up?source=feature-document-library",
+    "secondaryCta": "See Features",
+    "secondaryCtaUrl": "#features"
+  },
+  "benefits": [
+    {
+      "title": "Everything in One Place",
+      "description": "All your PDFs, summaries, and chat histories stored securely in your personal library. Access from anywhere.",
+      "icon": "folder"
+    },
+    {
+      "title": "Smart Organization",
+      "description": "Organize with folders, tags, and collections. AI auto-tags documents based on content and topics.",
+      "icon": "grid"
+    },
+    {
+      "title": "Powerful Search",
+      "description": "Find any document instantly with semantic search. Search by content, not just file names.",
+      "icon": "search"
+    },
+    {
+      "title": "Never Lose Information",
+      "description": "Your summaries, highlights, and notes are saved forever. Build a knowledge base that grows with you.",
+      "icon": "shield"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Summarize & Save",
+      "description": "Every PDF you summarize is automatically saved to your library with full summary and chat history."
+    },
+    {
+      "step": 2,
+      "title": "Organize Your Way",
+      "description": "Create folders, add tags, and organize documents however makes sense for your workflow."
+    },
+    {
+      "step": 3,
+      "title": "Search & Retrieve",
+      "description": "Use semantic search to find documents by topic, content, or keywords. AI understands what you're looking for."
+    }
+  ],
+  "features": [
+    {
+      "title": "Automatic Saving",
+      "description": "Every summary is auto-saved. No manual filing or organizing required.",
+      "icon": "save"
+    },
+    {
+      "title": "Folders & Collections",
+      "description": "Create unlimited folders and collections to organize documents by project, topic, or client.",
+      "icon": "folder-open"
+    },
+    {
+      "title": "Smart Tagging",
+      "description": "AI automatically tags documents based on content. Add custom tags anytime.",
+      "icon": "tag"
+    },
+    {
+      "title": "Semantic Search",
+      "description": "Search by meaning, not just keywords. Find documents even if you don't remember exact terms.",
+      "icon": "search"
+    },
+    {
+      "title": "Recent & Favorites",
+      "description": "Quick access to recently viewed and favorited documents. Pin important items to top.",
+      "icon": "star"
+    },
+    {
+      "title": "Cloud Sync",
+      "description": "Access your library from any device. Everything syncs in real-time.",
+      "icon": "cloud"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "250,000+", "label": "Documents Saved" },
+      { "value": "5,000+", "label": "Active Libraries" },
+      { "value": "99.9%", "label": "Uptime" },
+      { "value": "4.8/5", "label": "Organization Rating" }
+    ],
+    "testimonial": {
+      "quote": "My document library has become my second brain. I can find any research paper or summary from the last 2 years in seconds. It's transformed my productivity.",
+      "author": "Dr. Marcus Lee",
+      "role": "Senior Researcher",
+      "avatar": "ML"
+    }
+  },
+  "useCases": [
+    "Research paper archives",
+    "Client document storage",
+    "Project documentation",
+    "Academic reading lists",
+    "Legal case files",
+    "Personal knowledge base"
+  ],
+  "faq": [
+    {
+      "question": "How many documents can I save?",
+      "answer": "Free plan allows 50 documents. Starter gets 500, Pro gets unlimited. All plans include unlimited storage for summaries and chat history."
+    },
+    {
+      "question": "Are my documents private and secure?",
+      "answer": "Absolutely. Your library is private by default. We use enterprise-grade encryption and never share your data. You can share specific documents if you choose."
+    },
+    {
+      "question": "Can I organize documents into folders?",
+      "answer": "Yes! Create unlimited folders and sub-folders. Drag and drop documents to organize them however you like."
+    },
+    {
+      "question": "How does semantic search work?",
+      "answer": "Instead of matching exact keywords, semantic search understands meaning. Search for 'machine learning studies' and find documents about AI research, neural networks, etc."
+    },
+    {
+      "question": "Can I access my library from multiple devices?",
+      "answer": "Yes! Your library syncs across all devices in real-time. Access from web, desktop, or mobile."
+    },
+    {
+      "question": "What happens to my original PDFs?",
+      "answer": "Original PDFs are stored securely along with summaries. Download originals anytime or re-process with different summary types."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["50 documents", "Basic folders", "Simple search"],
+    "paidFeatures": ["Unlimited documents", "Smart tagging", "Semantic search", "Team sharing"],
+    "ctaText": "See All Plans",
+    "ctaUrl": "/pricing?source=feature-document-library"
+  },
+  "finalCta": {
+    "headline": "Build Your Personal Knowledge Base",
+    "subheadline": "Never lose important information again. Start organizing your PDFs today.",
+    "cta": "Create Free Library",
+    "ctaUrl": "/sign-up?source=feature-document-library-final"
+  }
+}

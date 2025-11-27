@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SummarizePDF - Design System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Design System for SummarizePDF */
+
+    :root {
+      /* Primary Colors - Blue/Purple Gradient */
+      --color-primary: #3B82F6;
+      --color-primary-hover: #2563EB;
+      --color-primary-light: #DBEAFE;
+      --color-secondary: #8B5CF6;
+      --color-secondary-hover: #7C3AED;
+      --color-accent: #06B6D4;
+
+      /* Backgrounds */
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F9FAFB;
+      --bg-tertiary: #F3F4F6;
+      --bg-dark: #0F172A;
+      --bg-dark-secondary: #1E293B;
+      --bg-dark-tertiary: #334155;
+
+      /* Text Colors */
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --text-on-dark: #F1F5F9;
+
+      /* Borders */
+      --border-light: #E2E8F0;
+      --border-medium: #CBD5E1;
+      --border-dark: #475569;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+      --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-success: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      --gradient-dark: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+
+      /* Spacing Scale */
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+
+      /* Border Radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+
+      /* Typography Scale */
+      --font-xs: 0.75rem;
+      --font-sm: 0.875rem;
+      --font-base: 1rem;
+      --font-lg: 1.125rem;
+      --font-xl: 1.25rem;
+      --font-2xl: 1.5rem;
+      --font-3xl: 1.875rem;
+      --font-4xl: 2.25rem;
+      --font-5xl: 3rem;
+      --font-6xl: 3.75rem;
+
+      /* Animation Durations */
+      --duration-fast: 150ms;
+      --duration-normal: 300ms;
+      --duration-slow: 500ms;
+
+      /* Animation Easings */
+      --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dark {
+      --bg-primary: #0F172A;
+      --bg-secondary: #1E293B;
+      --bg-tertiary: #334155;
+      --text-primary: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-muted: #64748B;
+      --border-light: #334155;
+      --border-medium: #475569;
+    }
+
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* ANIMATION CLASSES */
+
+    /* Fade In */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn var(--duration-normal) var(--ease-in-out);
+    }
+
+    /* Slide Up */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-up {
+      animation: slideUp var(--duration-normal) var(--ease-in-out);
+    }
+
+    /* Slide Down */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-down {
+      animation: slideDown var(--duration-normal) var(--ease-in-out);
+    }
+
+    /* Scale In */
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-scale-in {
+      animation: scaleIn var(--duration-normal) var(--ease-spring);
+    }
+
+    /* Bounce In */
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 0.6s var(--ease-bounce);
+    }
+
+    /* Pulse */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Spin */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+
+    /* Progress Bar Fill */
+    @keyframes progressFill {
+      from {
+        width: 0%;
+      }
+    }
+
+    .animate-progress {
+      animation: progressFill 1s var(--ease-in-out) forwards;
+    }
+
+    /* Typewriter */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid #3B82F6;
+      white-space: nowrap;
+      animation:
+        typing 3.5s steps(40, end),
+        blink 0.75s step-end infinite;
+    }
+
+    /* Shake */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+      20%, 40%, 60%, 80% { transform: translateX(10px); }
+    }
+
+    .animate-shake {
+      animation: shake 0.5s;
+    }
+
+    /* Float */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Gradient Animation */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+    }
+
+    /* Shimmer (Skeleton Loading) */
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .animate-shimmer {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    .dark .animate-shimmer {
+      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+      background-size: 1000px 100%;
+    }
+
+    /* Hover Lift */
+    .hover-lift {
+      transition: transform var(--duration-normal) var(--ease-in-out),
+                  box-shadow var(--duration-normal) var(--ease-in-out);
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Hover Scale */
+    .hover-scale {
+      transition: transform var(--duration-fast) var(--ease-in-out);
+    }
+
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hover Glow */
+    .hover-glow {
+      transition: box-shadow var(--duration-normal) var(--ease-in-out);
+    }
+
+    .hover-glow:hover {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Drag Over Animation */
+    .drag-over {
+      border-color: #3B82F6;
+      background-color: rgba(59, 130, 246, 0.05);
+      transform: scale(1.02);
+      transition: all var(--duration-normal) var(--ease-spring);
+    }
+
+    /* Success Animation */
+    @keyframes successPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    .animate-success {
+      animation: successPulse 0.6s var(--ease-bounce);
+    }
+
+    /* Page Transition */
+    .page-transition-enter {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    .page-transition-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity var(--duration-normal) var(--ease-in-out),
+                  transform var(--duration-normal) var(--ease-in-out);
+    }
+
+    /* Stagger Children */
+    .stagger-children > * {
+      animation: slideUp var(--duration-normal) var(--ease-in-out);
+      animation-fill-mode: both;
+    }
+
+    .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+    .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+    .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+    .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+    .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+    .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+  </style>
+</head>
+<body class="bg-gray-50 p-8">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-5xl font-extrabold text-slate-900 mb-4">SummarizePDF Design System</h1>
+    <p class="text-xl text-slate-600 mb-12">Modern, animated UI components for AI-powered PDF summarization</p>
+
+    <!-- Color Palette -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Color Palette</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div>
+          <div class="h-32 bg-blue-500 rounded-xl mb-3 shadow-lg"></div>
+          <p class="font-semibold text-slate-900">Primary Blue</p>
+          <p class="text-sm text-slate-600">#3B82F6</p>
+        </div>
+        <div>
+          <div class="h-32 bg-violet-500 rounded-xl mb-3 shadow-lg"></div>
+          <p class="font-semibold text-slate-900">Secondary Purple</p>
+          <p class="text-sm text-slate-600">#8B5CF6</p>
+        </div>
+        <div>
+          <div class="h-32 bg-cyan-500 rounded-xl mb-3 shadow-lg"></div>
+          <p class="font-semibold text-slate-900">Accent Cyan</p>
+          <p class="text-sm text-slate-600">#06B6D4</p>
+        </div>
+        <div>
+          <div class="h-32 bg-gradient-to-br from-blue-500 to-violet-500 rounded-xl mb-3 shadow-lg"></div>
+          <p class="font-semibold text-slate-900">Gradient Primary</p>
+          <p class="text-sm text-slate-600">Blue → Purple</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Typography</h2>
+      <div class="space-y-4 bg-white p-8 rounded-xl shadow-sm">
+        <h1 class="text-6xl font-extrabold text-slate-900">Heading 1 - 60px</h1>
+        <h2 class="text-5xl font-bold text-slate-900">Heading 2 - 48px</h2>
+        <h3 class="text-4xl font-bold text-slate-900">Heading 3 - 36px</h3>
+        <h4 class="text-3xl font-semibold text-slate-900">Heading 4 - 30px</h4>
+        <h5 class="text-2xl font-semibold text-slate-900">Heading 5 - 24px</h5>
+        <p class="text-xl text-slate-600">Body Large - 20px</p>
+        <p class="text-base text-slate-600">Body Regular - 16px</p>
+        <p class="text-sm text-slate-500">Body Small - 14px</p>
+        <p class="text-xs text-slate-400">Caption - 12px</p>
+      </div>
+    </section>
+
+    <!-- Animation Examples -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Animations</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="w-16 h-16 bg-blue-500 rounded-xl animate-slide-up mb-4"></div>
+          <p class="font-semibold text-slate-900">Slide Up</p>
+          <p class="text-sm text-slate-600">Entry animation</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="w-16 h-16 bg-violet-500 rounded-xl animate-scale-in mb-4"></div>
+          <p class="font-semibold text-slate-900">Scale In</p>
+          <p class="text-sm text-slate-600">Modal animation</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="w-16 h-16 bg-cyan-500 rounded-xl animate-bounce-in mb-4"></div>
+          <p class="font-semibold text-slate-900">Bounce In</p>
+          <p class="text-sm text-slate-600">Success feedback</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="w-16 h-16 bg-blue-500 rounded-xl animate-float mb-4"></div>
+          <p class="font-semibold text-slate-900">Float</p>
+          <p class="text-sm text-slate-600">Continuous motion</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-violet-500 rounded-xl animate-gradient mb-4"></div>
+          <p class="font-semibold text-slate-900">Gradient Shift</p>
+          <p class="text-sm text-slate-600">Background animation</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <div class="w-16 h-16 bg-slate-200 rounded-xl animate-shimmer mb-4"></div>
+          <p class="font-semibold text-slate-900">Shimmer</p>
+          <p class="text-sm text-slate-600">Loading skeleton</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Scale -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Spacing Scale</h2>
+      <div class="bg-white p-8 rounded-xl shadow-sm space-y-4">
+        <div class="flex items-center gap-4">
+          <div class="w-1 h-8 bg-blue-500"></div>
+          <span class="text-slate-600">4px - XS</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-2 h-8 bg-blue-500"></div>
+          <span class="text-slate-600">8px - SM</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-4 h-8 bg-blue-500"></div>
+          <span class="text-slate-600">16px - MD</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-6 h-8 bg-blue-500"></div>
+          <span class="text-slate-600">24px - LG</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-8 h-8 bg-blue-500"></div>
+          <span class="text-slate-600">32px - XL</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-8 bg-blue-500"></div>
+          <span class="text-slate-600">48px - 2XL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Border Radius -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Border Radius</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="text-center">
+          <div class="w-24 h-24 bg-blue-500 rounded-md mx-auto mb-3"></div>
+          <p class="text-sm text-slate-600">6px - SM</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-blue-500 rounded-lg mx-auto mb-3"></div>
+          <p class="text-sm text-slate-600">12px - LG</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-blue-500 rounded-xl mx-auto mb-3"></div>
+          <p class="text-sm text-slate-600">16px - XL</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-blue-500 rounded-2xl mx-auto mb-3"></div>
+          <p class="text-sm text-slate-600">24px - 2XL</p>
+        </div>
+        <div class="text-center">
+          <div class="w-24 h-24 bg-blue-500 rounded-full mx-auto mb-3"></div>
+          <p class="text-sm text-slate-600">Full</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shadows -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Elevation (Shadows)</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <p class="font-semibold text-slate-900">Small</p>
+          <p class="text-sm text-slate-600">Subtle elevation</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <p class="font-semibold text-slate-900">Medium</p>
+          <p class="text-sm text-slate-600">Card elevation</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+          <p class="font-semibold text-slate-900">Large</p>
+          <p class="text-sm text-slate-600">Hover state</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-2xl">
+          <p class="font-semibold text-slate-900">Extra Large</p>
+          <p class="text-sm text-slate-600">Modal overlay</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

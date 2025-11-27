@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "pharmaceutical",
+  "seo": {
+    "title": "Pharma Document Summarizer - Fast Clinical Trial & Research Review | SummarizePDF",
+    "description": "Summarize clinical trials, research papers, and regulatory documents instantly. Accelerate drug development. Trusted by pharma companies. Start free trial!",
+    "keywords": ["pharmaceutical document summarizer", "clinical trial summary", "drug research ai", "regulatory document analysis", "pharma research tool"]
+  },
+  "hero": {
+    "headline": "Pharmaceutical Document Summarization",
+    "subheadline": "Analyze clinical trials, research papers, and regulatory filings 10x faster with AI",
+    "cta": "Start Free - Pharma Plan",
+    "ctaUrl": "/sign-up?industry=pharmaceutical&trial=14",
+    "secondaryCta": "See Pharma Pricing",
+    "secondaryCtaUrl": "/pricing?industry=pharmaceutical"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "file-text",
+      "title": "Overwhelming research volume",
+      "description": "Thousands of clinical studies published monthly. Impossible to stay current with competitive landscape."
+    },
+    {
+      "icon": "clock",
+      "title": "Regulatory submission pressure",
+      "description": "FDA submissions require analyzing hundreds of clinical trial reports and safety data"
+    },
+    {
+      "icon": "search",
+      "title": "Literature review bottleneck",
+      "description": "Drug development teams stall while reading competitor trials and prior art"
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Safety signal detection",
+      "description": "Finding adverse events buried in 500-page clinical study reports"
+    }
+  ],
+  "solution": {
+    "headline": "AI Trained on Medical & Pharma Literature",
+    "description": "SummarizePDF understands clinical trial design, pharmacology, and regulatory language. Extract efficacy data, safety signals, and study design instantly.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Analyze Trials 10x Faster",
+        "description": "Summarize clinical study reports, protocols, and results instantly. Accelerate competitive intelligence."
+      },
+      {
+        "icon": "shield",
+        "title": "21 CFR Part 11 Compliant",
+        "description": "Audit trails, electronic signatures, data integrity. Ready for regulatory scrutiny."
+      },
+      {
+        "icon": "activity",
+        "title": "Extract Safety Signals",
+        "description": "Automatically highlight adverse events, contraindications, and drug interactions."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Accelerate Drug Development",
+        "description": "Faster literature review = faster IND submissions and clinical trial design."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Clinical Trial Analysis",
+      "description": "Quickly extract endpoints, efficacy data, safety profiles, and patient demographics from CSRs and publications",
+      "metrics": "Review 50 trials per week instead of 5"
+    },
+    {
+      "title": "Competitive Intelligence",
+      "description": "Monitor competitor pipeline by summarizing their clinical trial registrations, publications, and investor reports",
+      "metrics": "Stay ahead of competitive landscape"
+    },
+    {
+      "title": "Regulatory Submission Prep",
+      "description": "Summarize clinical data, preclinical studies, and literature for IND, NDA, and BLA submissions",
+      "metrics": "Reduce submission prep time by 70%"
+    },
+    {
+      "title": "Pharmacovigilance & Safety",
+      "description": "Identify adverse events and safety signals from clinical trial reports and post-market surveillance data",
+      "metrics": "Detect safety signals 5x faster"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our medical affairs team uses SummarizePDF to stay current with clinical literature. We went from reading 10 papers per week to 100. It's transformed how we monitor the competitive landscape.",
+      "author": "Dr. Elizabeth Foster",
+      "role": "VP Medical Affairs",
+      "firm": "Biotech Company"
+    },
+    {
+      "quote": "Regulatory submissions are faster because we can analyze competitor trials and safety data in a fraction of the time. This tool is essential for our clinical development team.",
+      "author": "Dr. James Park",
+      "role": "Clinical Development Director",
+      "firm": "Pharmaceutical Company"
+    }
+  ],
+  "compliance": {
+    "headline": "Pharma-Grade Compliance & Security",
+    "certifications": [
+      {
+        "badge": "21 CFR Part 11",
+        "description": "Electronic records and signatures"
+      },
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security audits"
+      },
+      {
+        "badge": "HIPAA Compliant",
+        "description": "BAA available for clinical data"
+      },
+      {
+        "badge": "Audit Trails",
+        "description": "Complete activity tracking"
+      }
+    ],
+    "confidentiality": "We understand pharma compliance requirements. All clinical data is encrypted, access is logged, and we provide audit trails for FDA inspections and validation."
+  },
+  "stats": [
+    { "value": "25+", "label": "Pharma & Biotech Companies" },
+    { "value": "90%", "label": "Literature Review Time Saved" },
+    { "value": "10K+", "label": "Clinical Trials Analyzed" },
+    { "value": "99.9%", "label": "Uptime SLA" }
+  ],
+  "faq": [
+    {
+      "question": "Is SummarizePDF validated for pharma use?",
+      "answer": "We're 21 CFR Part 11 compliant with audit trails and electronic records. Many pharma companies use us for competitive intelligence and literature review. For GxP systems, we offer validation support packages."
+    },
+    {
+      "question": "Can it handle clinical study reports (CSRs)?",
+      "answer": "Absolutely! Our AI is trained on clinical trial language and understands study design, endpoints, efficacy, and safety data. Perfect for CSR analysis."
+    },
+    {
+      "question": "How does it help with pharmacovigilance?",
+      "answer": "The AI automatically highlights adverse events, drug interactions, and safety signals from clinical reports and literature. Your safety team can triage signals faster."
+    },
+    {
+      "question": "What plan is best for pharma companies?",
+      "answer": "Medical affairs teams typically use the Pro plan ($19/mo). Clinical development and regulatory teams need our Team plan ($49/mo). Enterprise pharma needs custom plans with validation support. Contact sales."
+    },
+    {
+      "question": "Can we use this for FDA submissions?",
+      "answer": "Yes! Export summaries with citations and page references for regulatory documents. We provide audit trails and validation documentation for Part 11 compliance."
+    },
+    {
+      "question": "Is clinical trial data secure?",
+      "answer": "Very secure! SOC 2 certified with AES-256 encryption, access controls, and audit logs. Your clinical data is never shared or used for AI training."
+    }
+  ],
+  "finalCta": {
+    "headline": "Accelerate Drug Development with AI",
+    "subheadline": "Join pharma companies using AI to analyze clinical data and stay ahead of competition",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=pharmaceutical&trial=14",
+    "trustSignal": "21 CFR Part 11 compliant. No credit card required."
+  }
+}

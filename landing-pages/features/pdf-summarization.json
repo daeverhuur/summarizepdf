@@ -1,0 +1,112 @@
+{
+  "pageType": "feature",
+  "slug": "pdf-summarization",
+  "seo": {
+    "title": "AI PDF Summarization - Instant Document Summaries | SummarizePDF",
+    "description": "Instantly summarize any PDF document with AI. Get key insights from research papers, reports, and books in seconds. Try free - no credit card required!",
+    "keywords": ["pdf summarizer", "ai pdf summary", "document summarization", "pdf summary tool", "summarize pdf online", "ai document reader"]
+  },
+  "hero": {
+    "headline": "Summarize Any PDF in Seconds with AI",
+    "subheadline": "Upload any document and get intelligent summaries instantly. Research papers, reports, books - we handle it all.",
+    "cta": "Start Summarizing Free",
+    "ctaUrl": "/sign-up?source=feature-pdf-summarization",
+    "secondaryCta": "See Pricing & Plans",
+    "secondaryCtaUrl": "/pricing?source=feature-pdf-summarization"
+  },
+  "benefits": [
+    {
+      "title": "Instant AI Summaries",
+      "description": "Upload any PDF and get a comprehensive summary in under 30 seconds. No more hours of reading.",
+      "icon": "zap"
+    },
+    {
+      "title": "Understand Complex Documents",
+      "description": "AI extracts the key points, main arguments, and critical insights from even the most complex PDFs.",
+      "icon": "brain"
+    },
+    {
+      "title": "Save Hours Every Week",
+      "description": "Stop reading entire documents. Get the information you need 10x faster with AI-powered summaries.",
+      "icon": "clock"
+    },
+    {
+      "title": "Perfect Accuracy",
+      "description": "Powered by Google's latest Gemini AI, our summaries are accurate, contextual, and comprehensive.",
+      "icon": "check-circle"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Upload Your PDF",
+      "description": "Drag and drop any PDF file or paste a URL. We support files up to 100MB."
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Content",
+      "description": "Our AI reads and understands your document, extracting key themes and insights."
+    },
+    {
+      "step": 3,
+      "title": "Get Your Summary",
+      "description": "Receive a clear, concise summary in seconds. Export, share, or save to your library."
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "50,000+", "label": "PDFs Summarized" },
+      { "value": "5,000+", "label": "Active Users" },
+      { "value": "4.8/5", "label": "User Rating" },
+      { "value": "10x", "label": "Faster Than Reading" }
+    ],
+    "testimonial": {
+      "quote": "SummarizePDF has completely changed how I do research. I can now review 10 papers in the time it used to take me to read one.",
+      "author": "Dr. Sarah Chen",
+      "role": "Research Scientist",
+      "avatar": "SC"
+    }
+  },
+  "useCases": [
+    "Research paper analysis",
+    "Business report summaries",
+    "Book chapter breakdowns",
+    "Legal document reviews",
+    "Technical documentation",
+    "Academic textbooks"
+  ],
+  "faq": [
+    {
+      "question": "How long does it take to summarize a PDF?",
+      "answer": "Most PDFs are summarized in 10-30 seconds, depending on length. Even 100+ page documents are processed in under a minute."
+    },
+    {
+      "question": "What types of PDFs can I summarize?",
+      "answer": "We support all PDF types including research papers, books, reports, presentations, and scanned documents with OCR."
+    },
+    {
+      "question": "How accurate are the AI summaries?",
+      "answer": "Our AI is powered by Google Gemini, providing highly accurate summaries that capture key themes, arguments, and insights. We recommend reviewing summaries for critical decisions."
+    },
+    {
+      "question": "Can I summarize multiple PDFs at once?",
+      "answer": "Yes! Pro and Team plans support batch upload, allowing you to process multiple documents simultaneously."
+    },
+    {
+      "question": "Is there a file size limit?",
+      "answer": "Free users can upload files up to 10MB. Paid plans support files up to 100MB per document."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["10 summaries/month", "Basic summaries", "Export to PDF"],
+    "paidFeatures": ["Unlimited summaries", "All summary types", "Priority processing", "Batch upload"],
+    "ctaText": "See All Plans",
+    "ctaUrl": "/pricing?source=feature-pdf-summarization"
+  },
+  "finalCta": {
+    "headline": "Ready to Summarize Smarter?",
+    "subheadline": "Join 5,000+ users who save hours every week with AI-powered PDF summaries.",
+    "cta": "Start Free - No Credit Card Required",
+    "ctaUrl": "/sign-up?source=feature-pdf-summarization-final"
+  }
+}

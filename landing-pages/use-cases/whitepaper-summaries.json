@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "whitepaper-summaries",
+  "seo": {
+    "title": "Whitepaper Summarizer - Extract Key Insights in Minutes | SummarizePDF",
+    "description": "Quickly summarize technical whitepapers with AI. Extract key concepts, benefits, and technical details. Perfect for tech professionals and decision makers.",
+    "keywords": ["whitepaper summarizer", "technical whitepaper AI", "whitepaper analysis", "tech document summary", "whitepaper tool"]
+  },
+  "hero": {
+    "headline": "Understand Whitepapers 10x Faster",
+    "subheadline": "AI extracts key concepts, technical details, benefits, and use cases from lengthy whitepapers so you can evaluate solutions quickly.",
+    "cta": "Summarize Your First Whitepaper Free",
+    "ctaUrl": "/sign-up?use-case=whitepapers&trial=14",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?use-case=whitepapers"
+  },
+  "targetAudience": "Tech Professionals, Product Managers, Business Analysts",
+  "painPoints": [
+    "Reading 50+ page technical whitepapers takes hours",
+    "Evaluating multiple vendor solutions is time-consuming",
+    "Extracting technical specifications from marketing language",
+    "Understanding blockchain, AI, and emerging tech quickly",
+    "Keeping up with industry trends and new technologies"
+  ],
+  "solution": {
+    "title": "AI That Cuts Through Marketing Fluff",
+    "description": "Our AI separates technical substance from marketing language, extracting key concepts, architectures, benefits, and limitations.",
+    "features": [
+      {
+        "title": "Technical Concept Extraction",
+        "description": "Identifies core technology, architecture, and methodology."
+      },
+      {
+        "title": "Benefit Analysis",
+        "description": "Separates real benefits from marketing claims."
+      },
+      {
+        "title": "Use Case Identification",
+        "description": "Extracts practical applications and examples."
+      },
+      {
+        "title": "Limitation Recognition",
+        "description": "Identifies constraints and technical requirements."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Evaluate Tech 10x Faster",
+      "description": "Understand new solutions in minutes.",
+      "icon": "zap"
+    },
+    {
+      "title": "Better Tech Decisions",
+      "description": "Compare vendors with clear summaries.",
+      "icon": "check-circle"
+    },
+    {
+      "title": "Stay Current",
+      "description": "Keep up with emerging technologies.",
+      "icon": "trending-up"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Whitepaper",
+      "description": "Technical docs, solution briefs, or research"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Key Content",
+      "description": "Technology, benefits, and use cases"
+    },
+    {
+      "step": 3,
+      "title": "Get Technical Summary",
+      "description": "Clear overview with actionable insights"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "20,000+", "label": "Whitepapers Summarized" },
+      { "value": "10x", "label": "Faster Evaluation" },
+      { "value": "4.8/5", "label": "Tech Professional Rating" }
+    ],
+    "testimonial": {
+      "quote": "Evaluating new technologies used to mean reading dozens of whitepapers. SummarizePDF helps me quickly understand what's real vs. marketing hype. Essential for staying current in tech.",
+      "author": "Kevin Park",
+      "role": "CTO, SaaS Startup"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with blockchain and crypto whitepapers?",
+      "answer": "Yes! Our AI understands technical whitepapers across all domains: blockchain, AI/ML, cloud, security, IoT, and more."
+    },
+    {
+      "question": "Can it compare multiple vendor solutions?",
+      "answer": "Yes! Pro plans support batch processing to compare features and approaches across multiple whitepapers."
+    },
+    {
+      "question": "Does it extract technical specifications?",
+      "answer": "Absolutely! The AI identifies architecture, protocols, performance metrics, and technical requirements."
+    },
+    {
+      "question": "What about academic whitepapers?",
+      "answer": "Yes! We support both industry whitepapers and academic research papers."
+    },
+    {
+      "question": "How many whitepapers can I summarize?",
+      "answer": "Free: 10/month, Starter: 50/month, Pro: 200/month, Team: Unlimited."
+    }
+  ],
+  "pricing": {
+    "highlight": "Built for tech professionals",
+    "ctaText": "See Professional Pricing",
+    "ctaUrl": "/pricing?use-case=whitepapers"
+  },
+  "finalCta": {
+    "headline": "Ready to Stay Current with Tech?",
+    "subheadline": "Join tech professionals evaluating solutions 10x faster",
+    "buttonText": "Start Free Trial - For Tech Teams",
+    "buttonUrl": "/sign-up?use-case=whitepapers&trial=14"
+  }
+}

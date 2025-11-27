@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "business-proposal-review",
+  "seo": {
+    "title": "Business Proposal Summarizer - Review Proposals 10x Faster | SummarizePDF",
+    "description": "Quickly review business proposals and RFPs with AI. Extract key terms, pricing, deliverables, and timelines. Make better decisions faster.",
+    "keywords": ["business proposal summarizer", "RFP review tool", "proposal analysis AI", "vendor proposal tool", "bid review software"]
+  },
+  "hero": {
+    "headline": "Review 50-Page Proposals in Minutes",
+    "subheadline": "AI extracts pricing, deliverables, timelines, and key terms so you can evaluate vendors and make decisions faster.",
+    "cta": "Analyze Your First Proposal Free",
+    "ctaUrl": "/sign-up?use-case=business-proposals&trial=14",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?use-case=proposals"
+  },
+  "targetAudience": "Business Executives, Procurement Teams, Decision Makers",
+  "painPoints": [
+    "Reading dozens of vendor proposals takes days",
+    "Extracting pricing and terms from different formats",
+    "Comparing proposals side-by-side is tedious",
+    "Missing critical details buried in fine print",
+    "Pressure to make vendor decisions quickly"
+  ],
+  "solution": {
+    "title": "AI-Powered Proposal Intelligence",
+    "description": "Our AI extracts pricing, deliverables, timelines, payment terms, and key obligations from any business proposal format.",
+    "features": [
+      {
+        "title": "Pricing Extraction",
+        "description": "Automatically identifies all costs, fees, and payment terms."
+      },
+      {
+        "title": "Deliverables List",
+        "description": "Extracts what the vendor promises to deliver."
+      },
+      {
+        "title": "Timeline Analysis",
+        "description": "Identifies milestones, deadlines, and implementation schedules."
+      },
+      {
+        "title": "Risk Identification",
+        "description": "Flags unusual terms, exclusions, and limitations."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Review 10+ Proposals/Day",
+      "description": "Evaluate vendors 10x faster.",
+      "icon": "zap"
+    },
+    {
+      "title": "Better Vendor Decisions",
+      "description": "Compare terms side-by-side easily.",
+      "icon": "check-circle"
+    },
+    {
+      "title": "Never Miss Fine Print",
+      "description": "AI flags important terms and exclusions.",
+      "icon": "alert-triangle"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Business Proposal",
+      "description": "RFP response, vendor bid, or quote"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Key Terms",
+      "description": "Pricing, deliverables, and timeline"
+    },
+    {
+      "step": 3,
+      "title": "Get Executive Summary",
+      "description": "Structured summary for decision making"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "10,000+", "label": "Proposals Reviewed" },
+      { "value": "5x", "label": "Faster Vendor Selection" },
+      { "value": "4.8/5", "label": "Executive Rating" }
+    ],
+    "testimonial": {
+      "quote": "We receive 20+ vendor proposals per month. SummarizePDF helps our procurement team review them all in hours instead of weeks. The pricing extraction is incredibly accurate.",
+      "author": "Michael Chen",
+      "role": "VP of Operations, Manufacturing Company"
+    }
+  },
+  "faq": [
+    {
+      "question": "What types of proposals does it support?",
+      "answer": "All formats: RFP responses, vendor proposals, service agreements, consulting bids, project quotes, and more."
+    },
+    {
+      "question": "Can it compare multiple proposals?",
+      "answer": "Yes! Pro and Team plans support side-by-side proposal comparison with standardized metrics."
+    },
+    {
+      "question": "Does it extract total cost accurately?",
+      "answer": "Yes! Our AI identifies all costs including one-time fees, recurring charges, and optional add-ons."
+    },
+    {
+      "question": "Can it flag risky or unusual terms?",
+      "answer": "Absolutely! The AI flags clauses that deviate from standard business terms, including unusual payment terms and liability limitations."
+    },
+    {
+      "question": "What's included in the Team plan?",
+      "answer": "Team plans include unlimited proposals, shared workspaces for procurement teams, and admin controls."
+    }
+  ],
+  "pricing": {
+    "highlight": "Built for procurement and decision makers",
+    "ctaText": "See Business Pricing",
+    "ctaUrl": "/pricing?use-case=proposals"
+  },
+  "finalCta": {
+    "headline": "Ready to Make Better Vendor Decisions?",
+    "subheadline": "Join businesses reviewing proposals 10x faster",
+    "buttonText": "Start Free Trial - For Business Teams",
+    "buttonUrl": "/sign-up?use-case=business-proposals&trial=14"
+  }
+}

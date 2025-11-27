@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "textbook-chapter-summaries",
+  "seo": {
+    "title": "Textbook Chapter Summarizer - Study Smarter, Not Harder | SummarizePDF",
+    "description": "Summarize textbook chapters in minutes with AI. Extract key concepts, definitions, and important points. Perfect for students preparing for exams.",
+    "keywords": ["textbook summarizer", "chapter summary", "study tool AI", "textbook notes", "exam prep tool", "student summary app"]
+  },
+  "hero": {
+    "headline": "Turn 50-Page Chapters Into Study Notes",
+    "subheadline": "AI extracts key concepts, definitions, and examples so you can study smarter, not harder.",
+    "cta": "Summarize Your First Chapter Free",
+    "ctaUrl": "/sign-up?use-case=textbook-study&trial=14",
+    "secondaryCta": "See Pricing",
+    "secondaryCtaUrl": "/pricing?use-case=textbook"
+  },
+  "targetAudience": "Students, College Learners, Exam Prep",
+  "painPoints": [
+    "Reading 50+ page textbook chapters takes forever",
+    "Trying to figure out what's actually important for exams",
+    "Creating study notes by hand is time-consuming",
+    "Can't keep up with reading assignments before exams",
+    "Struggling to retain information from dense textbooks"
+  ],
+  "solution": {
+    "title": "AI-Powered Study Notes in Minutes",
+    "description": "Our AI identifies key concepts, definitions, formulas, and important examples. Get organized study notes that help you ace your exams.",
+    "features": [
+      {
+        "title": "Key Concepts Extracted",
+        "description": "AI identifies the most important concepts and theories from each chapter."
+      },
+      {
+        "title": "Definitions & Formulas",
+        "description": "Automatically highlights key terms and mathematical formulas."
+      },
+      {
+        "title": "Example Problems",
+        "description": "Captures important examples and problem-solving approaches."
+      },
+      {
+        "title": "Study Guide Format",
+        "description": "Organized summaries perfect for exam preparation."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Study 5x Faster",
+      "description": "Review chapters in minutes instead of hours.",
+      "icon": "zap"
+    },
+    {
+      "title": "Better Exam Prep",
+      "description": "Focus on what actually matters for tests.",
+      "icon": "graduation-cap"
+    },
+    {
+      "title": "Never Fall Behind",
+      "description": "Keep up with reading assignments effortlessly.",
+      "icon": "check-circle"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Textbook Chapter",
+      "description": "Drop your PDF chapter or scan"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Key Content",
+      "description": "Identifies concepts, definitions, and examples"
+    },
+    {
+      "step": 3,
+      "title": "Get Study-Ready Notes",
+      "description": "Receive organized notes perfect for exam prep"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "100,000+", "label": "Chapters Summarized" },
+      { "value": "5x", "label": "Faster Study Time" },
+      { "value": "4.8/5", "label": "Student Rating" }
+    ],
+    "testimonial": {
+      "quote": "Before exams, I used to panic about reading all the chapters. Now I just upload them to SummarizePDF and get perfect study notes in minutes. My grades have never been better!",
+      "author": "Marcus Johnson",
+      "role": "Biology Major, UCLA"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work for all subjects?",
+      "answer": "Yes! SummarizePDF works with textbooks across all subjects: science, math, history, literature, business, and more."
+    },
+    {
+      "question": "Can I use this for exam prep?",
+      "answer": "Absolutely! Our summaries are designed to help you study efficiently. Focus on key concepts and save hours of reading time."
+    },
+    {
+      "question": "What about math and science textbooks?",
+      "answer": "Yes! Our AI handles technical content including formulas, equations, diagrams, and problem examples."
+    },
+    {
+      "question": "How many chapters can I summarize?",
+      "answer": "Free plan: 10 chapters/month. Starter: 50/month. Pro: 200/month. Team: Unlimited for study groups."
+    },
+    {
+      "question": "Is this considered cheating?",
+      "answer": "No! SummarizePDF is a study tool that helps you understand material faster. You still need to learn and comprehend the content."
+    }
+  ],
+  "pricing": {
+    "highlight": "Student-friendly pricing starting at $9/mo",
+    "ctaText": "See Student Pricing",
+    "ctaUrl": "/pricing?use-case=textbook"
+  },
+  "finalCta": {
+    "headline": "Ready to Ace Your Next Exam?",
+    "subheadline": "Join 100,000+ students studying smarter with AI",
+    "buttonText": "Start Free Trial - Perfect for Students",
+    "buttonUrl": "/sign-up?use-case=textbook-study&trial=14"
+  }
+}

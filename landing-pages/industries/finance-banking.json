@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "finance-banking",
+  "seo": {
+    "title": "Financial Document Summarizer for Analysts & Advisors - Fast Report Analysis | SummarizePDF",
+    "description": "Analyze earnings reports, prospectuses, and financial statements 10x faster. Trusted by 200+ financial firms. Secure, SOC 2 certified. Start free trial today!",
+    "keywords": ["financial document summarizer", "earnings report summary", "10-k analyzer", "investment research tool", "prospectus summary", "financial statement ai"]
+  },
+  "hero": {
+    "headline": "Financial Document Analysis for Banking & Investment",
+    "subheadline": "Analyze earnings reports, 10-Ks, prospectuses, and research reports 10x faster with AI",
+    "cta": "Start Free - Finance Plan",
+    "ctaUrl": "/sign-up?industry=finance&trial=14",
+    "secondaryCta": "See Finance Pricing",
+    "secondaryCtaUrl": "/pricing?industry=finance"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "trending-up",
+      "title": "Earnings season overwhelm",
+      "description": "Hundreds of 10-Ks and 10-Qs to analyze. You can't keep up with coverage universe."
+    },
+    {
+      "icon": "file-text",
+      "title": "200-page prospectuses",
+      "description": "Finding risk factors and key terms buried in dense legal language takes hours"
+    },
+    {
+      "icon": "clock",
+      "title": "Research reports pile up",
+      "description": "Sell-side research from 20+ banks. No time to read everything before market open."
+    },
+    {
+      "icon": "dollar-sign",
+      "title": "Slow analysis = missed opportunities",
+      "description": "By the time you finish reading, the market has already moved"
+    }
+  ],
+  "solution": {
+    "headline": "AI Trained on Financial Documents",
+    "description": "SummarizePDF understands financial terminology, accounting principles, and regulatory filings. Extract revenue trends, risk factors, and key metrics instantly.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Analyze 10-Ks in Minutes, Not Hours",
+        "description": "Extract key financials, risks, and management discussion instantly. Focus on investment thesis."
+      },
+      {
+        "icon": "shield",
+        "title": "Bank-Grade Security",
+        "description": "SOC 2 certified, encrypted storage, audit trails. Your research stays confidential."
+      },
+      {
+        "icon": "bar-chart",
+        "title": "Extract Financial Metrics",
+        "description": "Automatically highlight revenue, margins, cash flow, and guidance. No more hunting through tables."
+      },
+      {
+        "icon": "briefcase",
+        "title": "Build Investment Research Library",
+        "description": "Organize summaries by sector, company, or thesis. Access insights faster."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Earnings & SEC Filings Analysis",
+      "description": "Quickly extract revenue trends, risk factors, and management guidance from 10-Ks, 10-Qs, and 8-Ks",
+      "metrics": "Cover 3x more companies in your universe"
+    },
+    {
+      "title": "Due Diligence for M&A",
+      "description": "Summarize financial statements, legal agreements, and target company disclosures for deal evaluation",
+      "metrics": "Complete DD in days instead of weeks"
+    },
+    {
+      "title": "Investment Research",
+      "description": "Digest sell-side research, industry reports, and competitor filings to inform investment decisions",
+      "metrics": "Read 50 research reports before market open"
+    },
+    {
+      "title": "Credit Analysis & Risk Assessment",
+      "description": "Identify risk factors, debt covenants, and credit metrics from bond prospectuses and credit agreements",
+      "metrics": "Assess credit risk 5x faster"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "During earnings season, SummarizePDF is invaluable. I can cover 30 companies instead of 10. The AI catches risks and guidance I might have missed reading manually.",
+      "author": "David Kim",
+      "role": "Equity Research Analyst",
+      "firm": "Investment Bank"
+    },
+    {
+      "quote": "We use SummarizePDF for M&A due diligence. Reviewing target financials used to take our team 2 weeks. Now we do it in 2 days with better thoroughness.",
+      "author": "Rachel Goldman",
+      "role": "VP, Corporate Development",
+      "firm": "Private Equity Firm"
+    }
+  ],
+  "compliance": {
+    "headline": "Financial-Grade Security & Compliance",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security and compliance audits"
+      },
+      {
+        "badge": "AES-256 Encryption",
+        "description": "Bank-level document protection"
+      },
+      {
+        "badge": "Audit Trails",
+        "description": "Complete activity logging"
+      },
+      {
+        "badge": "Data Residency",
+        "description": "Control where your data is stored"
+      }
+    ],
+    "confidentiality": "We understand material non-public information requirements. All documents are encrypted, access is logged, and we never share your research or use it for AI training."
+  },
+  "stats": [
+    { "value": "200+", "label": "Financial Firms" },
+    { "value": "85%", "label": "Analysis Time Saved" },
+    { "value": "100K+", "label": "Financial Docs Analyzed" },
+    { "value": "99.9%", "label": "Uptime SLA" }
+  ],
+  "faq": [
+    {
+      "question": "Is SummarizePDF secure enough for confidential financial analysis?",
+      "answer": "Yes! We're SOC 2 Type II certified with bank-grade encryption. Your documents and research are encrypted at rest and in transit. We never use your data for AI training and provide complete audit trails."
+    },
+    {
+      "question": "Can it handle complex financial documents like 10-Ks?",
+      "answer": "Absolutely! Our AI is trained on SEC filings, earnings reports, and financial statements. It understands GAAP terminology, financial metrics, and regulatory language."
+    },
+    {
+      "question": "How accurate are the financial summaries?",
+      "answer": "Our AI excels at extracting key metrics, risks, and guidance. However, we always recommend analyst review for investment decisions. Think of it as an intelligent first pass."
+    },
+    {
+      "question": "What's the best plan for research analysts?",
+      "answer": "Most analysts use the Pro plan ($19/mo) with 500 pages/month for coverage universe. Teams should consider our Team plan ($49/mo) for shared research libraries and collaboration."
+    },
+    {
+      "question": "Can multiple analysts share summaries?",
+      "answer": "Yes! The Team plan allows unlimited users to collaborate and share document summaries. Build a firm-wide research database."
+    },
+    {
+      "question": "Do you offer enterprise pricing for financial institutions?",
+      "answer": "Yes! We provide custom enterprise plans with advanced security, SSO, and dedicated support for banks, hedge funds, and investment firms. Contact sales for institutional pricing."
+    }
+  ],
+  "finalCta": {
+    "headline": "Make Better Investment Decisions, Faster",
+    "subheadline": "Join 200+ financial firms using AI to analyze documents and stay ahead of markets",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=finance&trial=14",
+    "trustSignal": "SOC 2 certified. No credit card required."
+  }
+}

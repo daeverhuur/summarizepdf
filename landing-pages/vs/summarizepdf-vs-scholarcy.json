@@ -1,0 +1,175 @@
+{
+  "pageType": "comparison",
+  "slug": "summarizepdf-vs-scholarcy",
+  "seo": {
+    "title": "SummarizePDF vs Scholarcy - Best Academic PDF Tool 2025",
+    "description": "Compare SummarizePDF to Scholarcy for research paper summarization. See pricing, features, and AI quality differences. Free trial available!",
+    "keywords": [
+      "scholarcy alternative",
+      "scholarcy vs summarizepdf",
+      "best research paper summarizer",
+      "scholarcy comparison",
+      "academic pdf summarizer",
+      "cheaper than scholarcy",
+      "research paper ai tool"
+    ]
+  },
+  "hero": {
+    "headline": "SummarizePDF vs Scholarcy",
+    "subheadline": "Which academic PDF summarizer is better in 2025?",
+    "verdict": "SummarizePDF offers modern AI, better pricing, and more flexible features for researchers at all levels."
+  },
+  "comparisonTable": {
+    "features": [
+      "AI Technology",
+      "Summary Quality",
+      "Citation Extraction",
+      "Flashcard Generation",
+      "Multi-Document Analysis",
+      "Batch Processing",
+      "Export Formats",
+      "Browser Extension",
+      "Team Features",
+      "Free Plan",
+      "Monthly Price",
+      "Annual Price"
+    ],
+    "summarizepdf": [
+      "Google Gemini (latest)",
+      "Excellent - context-aware",
+      "APA, MLA, Chicago auto-format",
+      "AI-generated flashcards",
+      "Compare multiple papers side-by-side",
+      "Unlimited batch processing",
+      "PDF, Word, Markdown, JSON, Anki",
+      "Coming soon",
+      "Team workspaces included",
+      "10 PDFs/month free",
+      "$9-19/mo",
+      "$108-228/year"
+    ],
+    "competitor": [
+      "Older AI technology",
+      "Good - academic focus",
+      "Basic citation extraction",
+      "Yes - flashcard feature",
+      "Limited",
+      "Browser extension only",
+      "PDF, Word, CSV",
+      "Chrome extension available",
+      "Not available",
+      "Limited trial only",
+      "$9.99-39.99/mo",
+      "$119-479/year"
+    ]
+  },
+  "advantages": [
+    {
+      "title": "Modern AI Technology",
+      "description": "Scholarcy uses older AI models. SummarizePDF leverages Google's latest Gemini AI for superior understanding, context awareness, and summary quality.",
+      "icon": "brain"
+    },
+    {
+      "title": "True Batch Processing",
+      "description": "Upload your entire research library at once and process all papers simultaneously. Scholarcy's browser extension requires processing one paper at a time.",
+      "icon": "layers"
+    },
+    {
+      "title": "Better Collaboration",
+      "description": "Share projects with teammates, create team workspaces, and collaborate on research. Scholarcy is individual-focused with no team features.",
+      "icon": "users"
+    },
+    {
+      "title": "More Export Options",
+      "description": "Export to PDF, Word, Markdown, JSON, and Anki flashcards. Scholarcy's export options are more limited and format-locked.",
+      "icon": "download"
+    }
+  ],
+  "whenToUseCompetitor": "Use Scholarcy if you prefer browser-based workflows, need immediate summarization while browsing academic databases, or are heavily invested in their flashcard system.",
+  "whenToUseSummarizePDF": "Use SummarizePDF for comprehensive research projects, batch processing multiple papers, team collaboration, or when you want the latest AI technology at a better price point.",
+  "featureComparison": {
+    "academic": {
+      "title": "Academic Features Head-to-Head",
+      "scholarcy": {
+        "strengths": [
+          "Browser extension workflow",
+          "Established flashcard system",
+          "Academic-specific interface"
+        ],
+        "weaknesses": [
+          "One paper at a time",
+          "Older AI technology",
+          "No team features",
+          "Limited batch processing"
+        ]
+      },
+      "summarizepdf": {
+        "strengths": [
+          "Latest AI (Google Gemini)",
+          "Unlimited batch processing",
+          "Team collaboration",
+          "Multi-document synthesis",
+          "Better value pricing"
+        ],
+        "weaknesses": [
+          "Browser extension coming soon",
+          "Newer to academic market"
+        ]
+      }
+    }
+  },
+  "testimonials": [
+    {
+      "quote": "I used Scholarcy for 2 years. Switched to SummarizePDF for the batch processing alone - saved 10 hours on my literature review. The AI quality is noticeably better too.",
+      "author": "Rachel Kim",
+      "role": "PhD Student, Biology",
+      "rating": 5
+    },
+    {
+      "quote": "Scholarcy was fine, but SummarizePDF's team features let my whole research group collaborate. Plus it's cheaper and the summaries are more accurate.",
+      "author": "Prof. David Williams",
+      "role": "Associate Professor, Psychology",
+      "rating": 5
+    }
+  ],
+  "pricing": {
+    "scholarcy": "$9.99/mo Personal, $39.99/mo Professional ($119-479/year)",
+    "summarizepdf": "$9/mo Starter, $19/mo Pro ($108-228/year) - Save up to $251/year"
+  },
+  "faq": [
+    {
+      "question": "Is SummarizePDF as good as Scholarcy for academic papers?",
+      "answer": "Yes - SummarizePDF uses newer AI technology (Google Gemini) optimized for academic papers. Many researchers find the summary quality superior, with better context understanding and citation extraction."
+    },
+    {
+      "question": "Does SummarizePDF have a browser extension like Scholarcy?",
+      "answer": "A browser extension is coming soon. Currently, you upload PDFs directly to the web app, which allows for powerful batch processing that Scholarcy's extension can't match."
+    },
+    {
+      "question": "Can I import my Scholarcy flashcards?",
+      "answer": "SummarizePDF generates AI flashcards and exports to Anki format. While there's no direct Scholarcy import, you can easily recreate your flashcard collection with better AI-generated cards."
+    },
+    {
+      "question": "Which is better for PhD students?",
+      "answer": "SummarizePDF is often preferred for comprehensive literature reviews due to batch processing and multi-document analysis. Scholarcy is better for quick, on-the-go summarization while browsing journals."
+    }
+  ],
+  "finalCta": {
+    "headline": "Modern AI for Academic Research",
+    "subheadline": "Join researchers who switched from Scholarcy for better AI, batch processing, and team collaboration",
+    "primaryButton": {
+      "text": "Start Free Trial - 14 Days",
+      "href": "/sign-up?source=vs-scholarcy&trial=14"
+    },
+    "secondaryButton": {
+      "text": "Compare Pricing",
+      "href": "/pricing?source=vs-scholarcy"
+    },
+    "trustSignals": [
+      "Free forever plan",
+      "Save up to $251/year",
+      "Latest AI technology",
+      "Trusted by PhD students worldwide"
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-export-summaries-to-different-formats",
+  "seo": {
+    "title": "How to Export PDF Summaries to Any Format | SummarizePDF",
+    "description": "Export PDF summaries as Word, Excel, Markdown, plain text, or PDF. Perfect for reports, presentations, and documentation. Multiple export formats. Try free!",
+    "keywords": [
+      "export pdf summary",
+      "pdf summary export formats",
+      "convert summary to word",
+      "export summary to excel",
+      "pdf summary download",
+      "summary export options"
+    ]
+  },
+  "hero": {
+    "headline": "Export PDF Summaries to Any Format You Need",
+    "subheadline": "Word, Excel, Markdown, PDF, plain text - get your summaries in any format.",
+    "cta": "Try Export Options",
+    "ctaUrl": "/sign-up?source=hero&page=export-formats"
+  },
+  "problem": {
+    "title": "Summaries Trapped in One Format",
+    "description": "You have a great summary. Now you need it in Word for a report. Excel for analysis. PDF for sharing. Copy-paste breaks formatting. There's no easy way to convert.",
+    "painPoints": [
+      "Can't use summaries in other tools",
+      "Copy-paste destroys formatting",
+      "Need summaries in presentation format",
+      "Want to analyze summaries in Excel",
+      "Building reports requires reformatting",
+      "Sharing requires different formats"
+    ]
+  },
+  "solution": {
+    "title": "One-Click Export to Any Format",
+    "description": "Export your PDF summaries to Word, Excel, Markdown, PDF, or plain text with perfect formatting preserved. Use summaries wherever you need them.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Generate Your Summary",
+        "description": "Summarize any PDF document with SummarizePDF as usual.",
+        "icon": "file-text"
+      },
+      {
+        "step": 2,
+        "title": "Choose Export Format",
+        "description": "Select from Word (.docx), Excel (.xlsx), PDF, Markdown (.md), or plain text (.txt).",
+        "icon": "download"
+      },
+      {
+        "step": 3,
+        "title": "Download Instantly",
+        "description": "Get your summary in the chosen format with formatting preserved perfectly.",
+        "icon": "check-circle"
+      },
+      {
+        "step": 4,
+        "title": "Use in Your Workflow",
+        "description": "Import into Word for reports, Excel for analysis, or Markdown for documentation.",
+        "icon": "arrow-right"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Multiple Export Formats",
+      "description": "Word, Excel, PDF, Markdown, plain text - export to whatever format your workflow requires.",
+      "icon": "layers"
+    },
+    {
+      "title": "Perfect Formatting",
+      "description": "Headings, bullets, tables, and structure preserved in every export format.",
+      "icon": "layout"
+    },
+    {
+      "title": "Batch Export",
+      "description": "Export multiple summaries at once. Download all as single consolidated file or individual files.",
+      "icon": "package"
+    },
+    {
+      "title": "Custom Templates",
+      "description": "Team plan includes custom export templates. Match your company's report formatting automatically.",
+      "icon": "file"
+    }
+  },
+  "exportFormats": [
+    {
+      "format": "Microsoft Word (.docx)",
+      "useCase": "Reports, documentation, editing",
+      "features": ["Editable text", "Preserved formatting", "Header/footer support"]
+    },
+    {
+      "format": "Excel (.xlsx)",
+      "useCase": "Data analysis, comparison tables",
+      "features": ["Structured data", "Key points as rows", "Easy sorting/filtering"]
+    },
+    {
+      "format": "PDF",
+      "useCase": "Sharing, archiving, printing",
+      "features": ["Professional format", "Unchangeable", "Universal compatibility"]
+    },
+    {
+      "format": "Markdown (.md)",
+      "useCase": "Documentation, wikis, GitHub",
+      "features": ["Plain text format", "Version control friendly", "Easy to edit"]
+    },
+    {
+      "format": "Plain Text (.txt)",
+      "useCase": "Simple sharing, email, notes",
+      "features": ["Universal format", "Smallest file size", "No formatting"]
+    }
+  ],
+  "results": {
+    "title": "Summaries That Work Everywhere",
+    "metrics": [
+      {
+        "value": "5",
+        "label": "Export Formats"
+      },
+      {
+        "value": "1-click",
+        "label": "Easy Export"
+      },
+      {
+        "value": "100%",
+        "label": "Format Preservation"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "I create weekly executive reports from multiple PDF summaries. Export to Word saves me hours of reformatting. Just export, adjust headers, done.",
+      "author": "Nicole Brown",
+      "role": "Executive Assistant",
+      "rating": 5
+    },
+    {
+      "quote": "Research team exports summaries to Excel for meta-analysis. Having structured data in spreadsheet format is perfect for our statistical tools.",
+      "author": "Dr. Kevin Patel",
+      "role": "Research Lead",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "Which formats are included in each plan?",
+      "answer": "Free & Starter: PDF and plain text. Pro: adds Word and Markdown. Team: all formats including Excel and custom templates."
+    },
+    {
+      "question": "Is formatting preserved in Word export?",
+      "answer": "Yes! Headings, bullets, bold/italic, and document structure are perfectly preserved in Word format."
+    },
+    {
+      "question": "Can I export multiple summaries at once?",
+      "answer": "Yes! Pro and Team plans support batch export. Select multiple summaries and export all as one file or individual files."
+    },
+    {
+      "question": "Can I customize the export template?",
+      "answer": "Team plan includes custom template builder. Set your company's formatting, add logos, headers/footers, and branding."
+    },
+    {
+      "question": "What does Excel export look like?",
+      "answer": "Structured data with columns: Document Name, Key Point, Category, Page Reference. Perfect for sorting and analyzing."
+    },
+    {
+      "question": "Can I automate exports via API?",
+      "answer": "Yes! Team plan includes API access. Automatically generate and export summaries programmatically."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Try Export Options Free",
+    "href": "/sign-up?source=primary&page=export-formats"
+  },
+  "secondaryCTA": {
+    "text": "See All Export Formats",
+    "href": "#formats"
+  },
+  "finalCTA": {
+    "headline": "Use Summaries Wherever You Work",
+    "subheadline": "Join 6,000+ users who export summaries to Word, Excel, and other formats daily.",
+    "cta": "Start Exporting Free",
+    "ctaUrl": "/sign-up?source=final&page=export-formats"
+  }
+}

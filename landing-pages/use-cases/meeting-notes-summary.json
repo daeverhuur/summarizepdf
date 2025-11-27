@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "meeting-notes-summary",
+  "seo": {
+    "title": "Meeting Notes Summarizer - Extract Action Items Instantly | SummarizePDF",
+    "description": "Summarize meeting notes and board documents with AI. Extract decisions, action items, and key discussion points in seconds. Never miss a follow-up again.",
+    "keywords": ["meeting notes summarizer", "meeting summary AI", "action items extractor", "board meeting summary", "meeting minutes tool"]
+  },
+  "hero": {
+    "headline": "Turn Meeting Notes Into Action Items",
+    "subheadline": "AI extracts decisions, action items, and key points from meeting PDFs so nothing falls through the cracks.",
+    "cta": "Summarize Meeting Notes Free",
+    "ctaUrl": "/sign-up?use-case=meeting-notes&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Executives, Project Managers, Administrative Staff",
+  "painPoints": [
+    "Reading through 20 pages of meeting minutes takes forever",
+    "Missing important action items buried in notes",
+    "Trying to remember who's responsible for what",
+    "Spending time creating meeting summaries by hand",
+    "Difficulty tracking follow-ups across multiple meetings"
+  ],
+  "solution": {
+    "title": "AI-Powered Meeting Intelligence",
+    "description": "Our AI identifies decisions made, action items assigned, deadlines mentioned, and key discussion points automatically.",
+    "features": [
+      {
+        "title": "Action Items Extracted",
+        "description": "Automatically identifies tasks, owners, and deadlines."
+      },
+      {
+        "title": "Decisions Highlighted",
+        "description": "Captures all decisions made during the meeting."
+      },
+      {
+        "title": "Key Discussion Points",
+        "description": "Summarizes important topics and conversations."
+      },
+      {
+        "title": "Participant Tracking",
+        "description": "Links action items to specific attendees."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Save 1 Hour Per Meeting",
+      "description": "Get summaries instantly instead of manual review.",
+      "icon": "clock"
+    },
+    {
+      "title": "Never Miss Follow-Ups",
+      "description": "Clear action items with assigned owners.",
+      "icon": "check-square"
+    },
+    {
+      "title": "Better Accountability",
+      "description": "Everyone knows their responsibilities.",
+      "icon": "users"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Meeting Notes",
+      "description": "PDF minutes or exported notes"
+    },
+    {
+      "step": 2,
+      "title": "AI Extracts Key Items",
+      "description": "Decisions, actions, and discussion points"
+    },
+    {
+      "step": 3,
+      "title": "Get Actionable Summary",
+      "description": "Clear list of follow-ups and owners"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "50,000+", "label": "Meetings Summarized" },
+      { "value": "1 hr", "label": "Saved Per Meeting" },
+      { "value": "4.9/5", "label": "Executive Rating" }
+    ],
+    "testimonial": {
+      "quote": "Before SummarizePDF, I spent hours after board meetings creating action item lists. Now I just upload the minutes and get a perfect summary in seconds. Game changer for executive productivity.",
+      "author": "Rachel Thompson",
+      "role": "Chief of Staff, Tech Startup"
+    }
+  },
+  "faq": [
+    {
+      "question": "What types of meeting notes does it work with?",
+      "answer": "All formats: board meeting minutes, team meeting notes, project updates, client meetings, investor meetings, and more."
+    },
+    {
+      "question": "Can it identify who's responsible for each action item?",
+      "answer": "Yes! Our AI links action items to specific attendees mentioned in the notes."
+    },
+    {
+      "question": "Does it extract deadlines and dates?",
+      "answer": "Absolutely! The AI identifies all dates, deadlines, and time-sensitive items mentioned in meeting notes."
+    },
+    {
+      "question": "Can I share summaries with my team?",
+      "answer": "Yes! Pro and Team plans include sharing features and collaboration tools."
+    },
+    {
+      "question": "What's included in the Team plan?",
+      "answer": "Team plan includes unlimited meetings, shared workspaces, admin controls, and priority support."
+    }
+  ],
+  "pricing": {
+    "highlight": "Perfect for busy executives and teams",
+    "ctaText": "See Team Pricing",
+    "ctaUrl": "/pricing?use-case=meetings"
+  },
+  "finalCta": {
+    "headline": "Ready to Never Miss an Action Item Again?",
+    "subheadline": "Join teams saving 1+ hour per meeting with AI summaries",
+    "buttonText": "Start Free Trial - For Teams",
+    "buttonUrl": "/sign-up?use-case=meeting-notes&trial=14"
+  }
+}

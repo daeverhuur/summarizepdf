@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "research-paper-summarization",
+  "seo": {
+    "title": "Research Paper Summarizer - Save 10+ Hours Per Week | SummarizePDF",
+    "description": "Quickly summarize research papers with AI. Extract key findings, methodology, and conclusions in minutes. Perfect for researchers, students, and academics.",
+    "keywords": ["research paper summarizer", "academic paper summary", "scientific paper AI", "research summary tool", "paper summarization", "academic research tool"]
+  },
+  "hero": {
+    "headline": "Summarize Research Papers 10x Faster with AI",
+    "subheadline": "Stop spending hours reading lengthy papers. Get key findings, methodology, and conclusions in minutes.",
+    "cta": "Summarize Your First Paper Free",
+    "ctaUrl": "/sign-up?use-case=research-papers&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Researchers, PhD Students, Academics",
+  "painPoints": [
+    "Reading 50+ page research papers takes hours",
+    "Keeping up with new publications is overwhelming",
+    "Extracting key findings from dense academic text is tedious",
+    "Literature reviews require reading hundreds of papers",
+    "Missing important details buried in methodology sections"
+  ],
+  "solution": {
+    "title": "AI That Understands Academic Research",
+    "description": "Our AI is trained to identify research methodology, key findings, statistical significance, and conclusions. Get structured summaries that capture what matters.",
+    "features": [
+      {
+        "title": "Structured Summaries",
+        "description": "Automatically extracts abstract, methodology, results, and conclusions into clear sections."
+      },
+      {
+        "title": "Key Findings Highlighted",
+        "description": "AI identifies the most important findings and statistical results."
+      },
+      {
+        "title": "Citation Ready",
+        "description": "Keep original context for accurate citations and references."
+      },
+      {
+        "title": "Bulk Processing",
+        "description": "Summarize entire folders of papers for literature reviews."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Save 10+ Hours Per Week",
+      "description": "Read 10 papers in the time it used to take for one.",
+      "icon": "clock"
+    },
+    {
+      "title": "Never Miss Key Findings",
+      "description": "AI highlights critical results and methodology details.",
+      "icon": "target"
+    },
+    {
+      "title": "Faster Literature Reviews",
+      "description": "Process hundreds of papers for comprehensive reviews.",
+      "icon": "book-open"
+    }
+  ],
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Research Paper",
+      "description": "Drop your PDF or paste a DOI link"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Structure",
+      "description": "Identifies sections, methodology, and findings"
+    },
+    {
+      "step": 3,
+      "title": "Get Structured Summary",
+      "description": "Receive organized summary with key findings highlighted"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "50,000+", "label": "Papers Summarized" },
+      { "value": "10 hrs", "label": "Avg. Time Saved/Week" },
+      { "value": "4.9/5", "label": "Researcher Rating" }
+    ],
+    "testimonial": {
+      "quote": "SummarizePDF has transformed my literature review process. I can now read 20 papers per day instead of 2. The summaries are accurate and capture all the important methodology details.",
+      "author": "Dr. Sarah Chen",
+      "role": "PhD Researcher, MIT"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with scientific papers in all fields?",
+      "answer": "Yes! Our AI understands research papers across all disciplines including STEM, social sciences, humanities, and medical research."
+    },
+    {
+      "question": "Can I use summaries for citations?",
+      "answer": "Summaries help you quickly understand papers, but you should always cite the original source. We preserve context to help you find exact quotes."
+    },
+    {
+      "question": "How accurate are the summaries?",
+      "answer": "Our AI achieves 95%+ accuracy in extracting key findings and methodology. Always review summaries for critical research decisions."
+    },
+    {
+      "question": "What's included in the free plan?",
+      "answer": "Free plan includes 10 paper summaries per month. Perfect for trying it out before upgrading."
+    },
+    {
+      "question": "Can I summarize papers in bulk?",
+      "answer": "Yes! Pro and Team plans support bulk uploads. Process entire folders for comprehensive literature reviews."
+    }
+  ],
+  "pricing": {
+    "highlight": "Start free, upgrade as you summarize more papers",
+    "ctaText": "Start Summarizing Free",
+    "ctaUrl": "/pricing?use-case=research-papers"
+  },
+  "finalCta": {
+    "headline": "Ready to Speed Up Your Research?",
+    "subheadline": "Join thousands of researchers who save 10+ hours per week",
+    "buttonText": "Start Free - No Credit Card Required",
+    "buttonUrl": "/sign-up?use-case=research-papers&trial=14"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "human-resources",
+  "seo": {
+    "title": "HR Document Summarizer - Fast Policy & Resume Review | SummarizePDF",
+    "description": "Summarize resumes, policies, and employee handbooks instantly. Hire faster, manage better. Trusted by 150+ HR teams. Start free trial!",
+    "keywords": ["hr document summarizer", "resume screening ai", "policy document tool", "employee handbook summary", "hr productivity software"]
+  },
+  "hero": {
+    "headline": "HR Document Summarization for Faster Hiring & Compliance",
+    "subheadline": "Review resumes, policies, handbooks, and training materials 10x faster with AI",
+    "cta": "Start Free - HR Plan",
+    "ctaUrl": "/sign-up?industry=human-resources&trial=14",
+    "secondaryCta": "See HR Pricing",
+    "secondaryCtaUrl": "/pricing?industry=human-resources"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "users",
+      "title": "Resume overload",
+      "description": "200 applications for one position. Screening resumes takes days you don't have."
+    },
+    {
+      "icon": "file-text",
+      "title": "Policy documents are dense",
+      "description": "Updating employee handbooks requires reading 100+ pages of legal compliance docs"
+    },
+    {
+      "icon": "clock",
+      "title": "Slow onboarding",
+      "description": "New hires need to read handbooks, policies, and training materials before day one"
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Compliance research takes forever",
+      "description": "Staying current with labor laws requires reading hundreds of pages of regulations"
+    }
+  ],
+  "solution": {
+    "headline": "AI Built for HR Operations",
+    "description": "SummarizePDF helps HR teams screen candidates, update policies, and manage compliance faster. Spend time on people, not paperwork.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Screen Resumes 10x Faster",
+        "description": "Summarize candidate resumes and cover letters instantly. Find top talent faster."
+      },
+      {
+        "icon": "shield",
+        "title": "Stay Compliant Easier",
+        "description": "Quickly digest labor laws, compliance updates, and legal guidance for policy updates."
+      },
+      {
+        "icon": "book-open",
+        "title": "Faster Employee Onboarding",
+        "description": "Create concise summaries of handbooks and policies for new hire orientation."
+      },
+      {
+        "icon": "trending-up",
+        "title": "More Strategic HR",
+        "description": "Spend less time on admin, more time on talent development and culture."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Resume & Candidate Screening",
+      "description": "Quickly summarize candidate resumes and applications to identify top talent and red flags",
+      "metrics": "Screen 100 candidates in 1 hour instead of 1 day"
+    },
+    {
+      "title": "Policy & Handbook Updates",
+      "description": "Digest labor law updates, compliance guidance, and legal docs to keep policies current",
+      "metrics": "Update handbooks 5x faster"
+    },
+    {
+      "title": "Employee Onboarding Materials",
+      "description": "Create digestible summaries of handbooks, benefits guides, and training docs for new hires",
+      "metrics": "Improve new hire comprehension and engagement"
+    },
+    {
+      "title": "Performance Review Documentation",
+      "description": "Summarize employee performance records and feedback for review meetings and decisions",
+      "metrics": "Prepare for reviews in minutes, not hours"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Hiring for our growth stage startup was overwhelming. SummarizePDF helps me screen 200+ resumes in an afternoon instead of a week. I can focus on interviewing the best candidates.",
+      "author": "Amanda Rodriguez",
+      "role": "HR Manager",
+      "firm": "Tech Startup"
+    },
+    {
+      "quote": "We use this to stay current with labor law changes and update our employee handbook. What used to take our team 2 weeks now takes 2 days. More time for strategic HR work.",
+      "author": "David Lee",
+      "role": "Director of HR",
+      "firm": "Manufacturing Company"
+    }
+  ],
+  "compliance": {
+    "headline": "Secure & Confidential Employee Data",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security and privacy audits"
+      },
+      {
+        "badge": "GDPR Compliant",
+        "description": "EU employee data protection"
+      },
+      {
+        "badge": "Encrypted Storage",
+        "description": "All PII protected with AES-256"
+      },
+      {
+        "badge": "Access Controls",
+        "description": "Role-based permissions for HR teams"
+      }
+    ],
+    "confidentiality": "We understand employee confidentiality. All candidate and employee data is encrypted and private. We never share your data or use it for AI training."
+  },
+  "stats": [
+    { "value": "150+", "label": "HR Teams" },
+    { "value": "85%", "label": "Screening Time Saved" },
+    { "value": "50K+", "label": "Resumes Reviewed" },
+    { "value": "4.7/5", "label": "HR Professional Rating" }
+  ],
+  "faq": [
+    {
+      "question": "Is candidate data secure and private?",
+      "answer": "Absolutely! SOC 2 certified with GDPR compliance and encrypted storage. All candidate and employee PII is protected. We never share data or use it for AI training."
+    },
+    {
+      "question": "Can it help with resume screening and ATS?",
+      "answer": "Yes! Upload candidate resumes and get quick summaries of experience, skills, and qualifications. Perfect for initial screening before ATS or interviews."
+    },
+    {
+      "question": "What types of HR documents can you summarize?",
+      "answer": "All of them: resumes, cover letters, employee handbooks, policy documents, benefits guides, training materials, performance reviews, labor law updates, and more."
+    },
+    {
+      "question": "How does it help with compliance?",
+      "answer": "Quickly digest labor law changes, EEOC guidance, and compliance updates so you can update policies and handbooks faster. Stay compliant without spending weeks reading."
+    },
+    {
+      "question": "What plan is best for HR teams?",
+      "answer": "Most small HR teams use the Pro plan ($19/mo). Growing companies should consider the Team plan ($49/mo) for unlimited users and collaboration. Enterprise HR needs custom plans."
+    },
+    {
+      "question": "Can we share policy summaries with employees?",
+      "answer": "Yes! Export summaries as PDF or Word to include in new hire packets, employee communications, and training materials."
+    }
+  ],
+  "finalCta": {
+    "headline": "Hire Faster, Manage Smarter",
+    "subheadline": "Join 150+ HR teams using AI to screen candidates and manage policies more efficiently",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=human-resources&trial=14",
+    "trustSignal": "GDPR compliant. No credit card required."
+  }
+}

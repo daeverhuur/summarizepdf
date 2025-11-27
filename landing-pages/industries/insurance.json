@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "insurance",
+  "seo": {
+    "title": "Insurance Document Summarizer - Fast Claims & Policy Review | SummarizePDF",
+    "description": "Summarize claims, policies, and underwriting documents instantly. Process claims 5x faster. Trusted by 100+ insurance companies. Start free trial!",
+    "keywords": ["insurance document summarizer", "claims processing ai", "policy review tool", "underwriting analysis", "insurance ai tool"]
+  },
+  "hero": {
+    "headline": "Insurance Document Summarization for Faster Claims",
+    "subheadline": "Review claims, policies, medical records, and underwriting docs 10x faster with AI",
+    "cta": "Start Free - Insurance Plan",
+    "ctaUrl": "/sign-up?industry=insurance&trial=14",
+    "secondaryCta": "See Insurance Pricing",
+    "secondaryCtaUrl": "/pricing?industry=insurance"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "clock",
+      "title": "Claims backlogs",
+      "description": "Hundreds of claims waiting for review. Customers frustrated with slow processing times."
+    },
+    {
+      "icon": "file-text",
+      "title": "Complex medical records",
+      "description": "500-page medical files for workers' comp and disability claims take days to review"
+    },
+    {
+      "icon": "search",
+      "title": "Finding policy exclusions",
+      "description": "Critical coverage details buried in 100-page insurance policies"
+    },
+    {
+      "icon": "alert-circle",
+      "title": "Fraud detection delays",
+      "description": "Suspicious claims sit in queue while adjusters read through documentation"
+    }
+  ],
+  "solution": {
+    "headline": "AI Built for Insurance Operations",
+    "description": "SummarizePDF understands insurance policies, medical terminology, and claims documentation. Extract coverage details, injuries, and liability faster.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Process Claims 5x Faster",
+        "description": "Summarize claim documentation, medical records, and policy terms instantly. Reduce claim cycle time."
+      },
+      {
+        "icon": "shield",
+        "title": "SOC 2 & Privacy Compliant",
+        "description": "Encrypted storage, access controls, audit logs. PHI and PII stay protected."
+      },
+      {
+        "icon": "alert-circle",
+        "title": "Spot Fraud Indicators",
+        "description": "AI highlights inconsistencies and red flags in claims documentation for SIU review."
+      },
+      {
+        "icon": "trending-down",
+        "title": "Lower Operating Costs",
+        "description": "Reduce adjuster workload by 70%. Handle more claims with same headcount."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Claims Processing & Adjudication",
+      "description": "Quickly review claim submissions, medical records, police reports, and supporting documentation",
+      "metrics": "Close claims in 2 days instead of 2 weeks"
+    },
+    {
+      "title": "Policy Review & Underwriting",
+      "description": "Extract coverage limits, exclusions, and terms from complex insurance policies for underwriting decisions",
+      "metrics": "Review 50 policies per day instead of 10"
+    },
+    {
+      "title": "Medical Record Analysis",
+      "description": "Summarize lengthy medical files for workers' comp, disability, and health insurance claims",
+      "metrics": "Process medical records 10x faster"
+    },
+    {
+      "title": "Fraud Investigation",
+      "description": "Analyze claim documentation for inconsistencies and suspicious patterns flagged by SIU",
+      "metrics": "Identify fraud indicators in minutes"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our claims adjusters were drowning in paperwork. SummarizePDF helps them process claims 5x faster. Customer satisfaction is up because we're closing claims in days instead of weeks.",
+      "author": "Karen Williams",
+      "role": "VP of Claims",
+      "firm": "Regional Insurance Carrier"
+    },
+    {
+      "quote": "We use this for workers' comp medical record review. What used to take 3 days now takes 3 hours. Our adjusters can focus on complex cases instead of reading medical files.",
+      "author": "Robert Taylor",
+      "role": "Claims Manager",
+      "firm": "National Insurance Company"
+    }
+  ],
+  "compliance": {
+    "headline": "Built for Insurance Compliance",
+    "certifications": [
+      {
+        "badge": "SOC 2 Type II",
+        "description": "Annual security and privacy audits"
+      },
+      {
+        "badge": "HIPAA Compliant",
+        "description": "PHI protection and BAA available"
+      },
+      {
+        "badge": "AES-256 Encryption",
+        "description": "Encrypted claims data"
+      },
+      {
+        "badge": "Audit Logs",
+        "description": "Complete activity tracking"
+      }
+    ],
+    "confidentiality": "We understand insurance compliance requirements. All claim data is encrypted, access is logged, and we provide Business Associate Agreements for HIPAA compliance."
+  },
+  "stats": [
+    { "value": "100+", "label": "Insurance Companies" },
+    { "value": "5x", "label": "Faster Claims Processing" },
+    { "value": "200K+", "label": "Claims Analyzed" },
+    { "value": "99.9%", "label": "Uptime SLA" }
+  ],
+  "faq": [
+    {
+      "question": "Is SummarizePDF HIPAA compliant for medical claims?",
+      "answer": "Yes! We offer Business Associate Agreements (BAA), maintain HIPAA-compliant infrastructure, and encrypt all PHI. Perfect for health, workers' comp, and disability claims."
+    },
+    {
+      "question": "Can it handle complex insurance policies?",
+      "answer": "Absolutely! Our AI is trained on insurance language and understands coverage terms, exclusions, and limits. It works with all policy types: auto, home, commercial, life, health."
+    },
+    {
+      "question": "How does it help with fraud detection?",
+      "answer": "The AI highlights inconsistencies, unusual patterns, and red flags in claims documentation. Your SIU team can then investigate suspicious claims faster."
+    },
+    {
+      "question": "What plan is best for insurance companies?",
+      "answer": "It depends on claim volume. Small agencies use Pro ($19/mo). Large carriers need our Enterprise plan with advanced security, SSO, and dedicated support. Contact sales for volume pricing."
+    },
+    {
+      "question": "Can multiple adjusters share claim summaries?",
+      "answer": "Yes! The Team plan ($49/mo) allows unlimited users to collaborate on claims. Perfect for claims departments and SIU teams."
+    },
+    {
+      "question": "How secure is our claims data?",
+      "answer": "Very secure! We're SOC 2 certified with AES-256 encryption, access controls, and complete audit trails. Your claims data is never shared or used for AI training."
+    }
+  ],
+  "finalCta": {
+    "headline": "Process Claims Faster, Serve Customers Better",
+    "subheadline": "Join 100+ insurance companies using AI to reduce claim cycle times and lower costs",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=insurance&trial=14",
+    "trustSignal": "HIPAA compliant. No credit card required."
+  }
+}

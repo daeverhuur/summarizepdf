@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "academic-literature-review",
+  "seo": {
+    "title": "Literature Review Tool - Summarize 100+ Papers Faster | SummarizePDF",
+    "description": "Speed up academic literature reviews with AI. Summarize hundreds of papers, identify research gaps, and extract key findings. Perfect for thesis and dissertation work.",
+    "keywords": ["literature review tool", "academic research AI", "thesis research tool", "literature survey AI", "research gap analysis", "dissertation tool"]
+  },
+  "hero": {
+    "headline": "Complete Literature Reviews 10x Faster",
+    "subheadline": "Summarize hundreds of papers, identify research gaps, and extract common themes for your thesis or dissertation.",
+    "cta": "Start Your Literature Review Free",
+    "ctaUrl": "/sign-up?use-case=literature-review&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "PhD Students, Researchers, Academic Writers",
+  "painPoints": [
+    "Reading 100+ papers for literature reviews takes months",
+    "Identifying research gaps across multiple studies",
+    "Tracking common methodologies and findings",
+    "Organizing citations and key papers",
+    "Meeting thesis deadlines with comprehensive reviews"
+  ],
+  "solution": {
+    "title": "AI-Powered Literature Analysis",
+    "description": "Our AI helps you process hundreds of papers, identify common themes, extract methodologies, and spot research gaps for comprehensive literature reviews.",
+    "features": [
+      {
+        "title": "Bulk Paper Processing",
+        "description": "Upload and summarize entire folders of research papers."
+      },
+      {
+        "title": "Theme Identification",
+        "description": "AI identifies common themes and approaches across papers."
+      },
+      {
+        "title": "Methodology Extraction",
+        "description": "Compare research methods used in different studies."
+      },
+      {
+        "title": "Gap Analysis",
+        "description": "Identify areas where research is lacking or contradictory."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Review 100+ Papers/Week",
+      "description": "Complete comprehensive reviews in weeks, not months.",
+      "icon": "book-open"
+    },
+    {
+      "title": "Identify Research Gaps",
+      "description": "Spot opportunities for original contributions.",
+      "icon": "target"
+    },
+    {
+      "title": "Better Thesis Writing",
+      "description": "Organized summaries support stronger arguments.",
+      "icon": "edit"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Paper Collection",
+      "description": "Bulk upload your research papers"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes All Papers",
+      "description": "Extracts findings, methods, and themes"
+    },
+    {
+      "step": 3,
+      "title": "Get Comparative Analysis",
+      "description": "Summary with common themes and gaps"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "25,000+", "label": "Literature Reviews" },
+      { "value": "10x", "label": "Faster Completion" },
+      { "value": "4.9/5", "label": "PhD Student Rating" }
+    ],
+    "testimonial": {
+      "quote": "My dissertation literature review required reading 200+ papers. SummarizePDF helped me complete it in 3 weeks instead of 3 months. The theme identification feature was invaluable for finding my research gap.",
+      "author": "Dr. Emily Watson",
+      "role": "PhD Candidate, Psychology"
+    }
+  },
+  "faq": [
+    {
+      "question": "Can it analyze multiple papers together?",
+      "answer": "Yes! Pro and Team plans support batch processing and comparative analysis across your entire paper collection."
+    },
+    {
+      "question": "Does it help identify research gaps?",
+      "answer": "Yes! Our AI identifies areas where research is contradictory, lacking, or incomplete - helping you find original contribution opportunities."
+    },
+    {
+      "question": "Can I organize papers by theme or topic?",
+      "answer": "Yes! The AI identifies common themes and helps you organize papers by methodology, findings, or research approach."
+    },
+    {
+      "question": "How many papers can I process for a literature review?",
+      "answer": "Pro plan: 200 papers/month. Team plan: Unlimited papers. Perfect for comprehensive dissertation literature reviews."
+    },
+    {
+      "question": "Do you offer student discounts?",
+      "answer": "Yes! We offer special pricing for students with valid .edu email addresses. Contact us for student discount codes."
+    }
+  ],
+  "pricing": {
+    "highlight": "Special pricing for academic researchers",
+    "ctaText": "See Academic Pricing",
+    "ctaUrl": "/pricing?use-case=literature-review"
+  },
+  "finalCta": {
+    "headline": "Ready to Finish Your Literature Review?",
+    "subheadline": "Join PhD students completing reviews 10x faster",
+    "buttonText": "Start Free Trial - For Researchers",
+    "buttonUrl": "/sign-up?use-case=literature-review&trial=14"
+  }
+}

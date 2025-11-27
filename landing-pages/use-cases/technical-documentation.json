@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "technical-documentation",
+  "seo": {
+    "title": "Technical Documentation Summarizer - Understand Docs Faster | SummarizePDF",
+    "description": "Quickly summarize technical documentation with AI. Extract key features, APIs, setup instructions, and troubleshooting. Perfect for developers and engineers.",
+    "keywords": ["technical docs summarizer", "API documentation summary", "developer documentation tool", "software docs AI", "technical manual summary"]
+  },
+  "hero": {
+    "headline": "Understand Technical Docs 10x Faster",
+    "subheadline": "AI extracts key features, API endpoints, setup instructions, and examples so you can start building immediately.",
+    "cta": "Summarize Technical Docs Free",
+    "ctaUrl": "/sign-up?use-case=technical-docs&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Developers, Software Engineers, DevOps Teams",
+  "painPoints": [
+    "Reading 500-page technical manuals takes days",
+    "Finding the right API endpoint buried in documentation",
+    "Understanding legacy system documentation",
+    "Onboarding to new codebases and tools",
+    "Keeping up with documentation updates across multiple services"
+  ],
+  "solution": {
+    "title": "AI That Understands Technical Content",
+    "description": "Our AI is trained on technical documentation to identify key features, API specifications, code examples, and troubleshooting steps.",
+    "features": [
+      {
+        "title": "API Endpoint Extraction",
+        "description": "Automatically lists all endpoints, parameters, and response formats."
+      },
+      {
+        "title": "Setup Instructions",
+        "description": "Extracts installation steps, dependencies, and configuration."
+      },
+      {
+        "title": "Code Examples",
+        "description": "Identifies and highlights important code samples."
+      },
+      {
+        "title": "Troubleshooting",
+        "description": "Summarizes common errors and solutions."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Start Building Faster",
+      "description": "Get what you need from docs in minutes.",
+      "icon": "code"
+    },
+    {
+      "title": "Better API Understanding",
+      "description": "Clear summaries of endpoints and parameters.",
+      "icon": "book"
+    },
+    {
+      "title": "Faster Onboarding",
+      "description": "New devs understand systems quickly.",
+      "icon": "users"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Technical Docs",
+      "description": "API docs, user manuals, or specs"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Content",
+      "description": "Identifies APIs, setup, and examples"
+    },
+    {
+      "step": 3,
+      "title": "Get Developer Summary",
+      "description": "Structured guide with key information"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "30,000+", "label": "Docs Summarized" },
+      { "value": "5x", "label": "Faster Onboarding" },
+      { "value": "4.9/5", "label": "Developer Rating" }
+    ],
+    "testimonial": {
+      "quote": "Onboarding new developers used to take weeks as they struggled through our legacy documentation. SummarizePDF helps them understand our systems in days. It's become essential to our dev workflow.",
+      "author": "Alex Rivera",
+      "role": "Engineering Manager, SaaS Company"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with API documentation?",
+      "answer": "Yes! Our AI excels at extracting API endpoints, parameters, authentication methods, and response formats from technical docs."
+    },
+    {
+      "question": "Can it handle code examples?",
+      "answer": "Absolutely! The AI identifies and preserves code samples, making them easy to find and understand."
+    },
+    {
+      "question": "What about hardware and product manuals?",
+      "answer": "Yes! We support all technical documentation: software, hardware, network equipment, industrial systems, and more."
+    },
+    {
+      "question": "Can I summarize internal documentation?",
+      "answer": "Yes! Upload your internal wikis, architecture docs, and runbooks. Team plans include secure sharing for your engineering team."
+    },
+    {
+      "question": "How many documents can I process?",
+      "answer": "Free: 10/month, Starter: 50/month, Pro: 200/month, Team: Unlimited for your engineering team."
+    }
+  ],
+  "pricing": {
+    "highlight": "Built for development teams",
+    "ctaText": "See Developer Pricing",
+    "ctaUrl": "/pricing?use-case=technical-docs"
+  },
+  "finalCta": {
+    "headline": "Ready to Speed Up Your Dev Workflow?",
+    "subheadline": "Join engineering teams saving hours on documentation",
+    "buttonText": "Start Free Trial - For Developers",
+    "buttonUrl": "/sign-up?use-case=technical-docs&trial=14"
+  }
+}

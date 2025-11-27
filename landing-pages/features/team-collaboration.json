@@ -1,0 +1,224 @@
+{
+  "pageType": "feature",
+  "slug": "team-collaboration",
+  "seo": {
+    "title": "Team Collaboration - Shared PDF Library & Summaries | SummarizePDF",
+    "description": "Collaborate on PDF summaries with your team. Shared library, comments, annotations, and team workspaces. Perfect for research teams. Try free!",
+    "keywords": ["team collaboration pdf", "shared document library", "team pdf summarizer", "collaborate on pdfs", "team workspace", "shared summaries"]
+  },
+  "hero": {
+    "headline": "Collaborate on PDF Summaries with Your Team",
+    "subheadline": "Shared document library, team comments, collaborative annotations, and centralized knowledge base. Perfect for research and knowledge work.",
+    "cta": "Start Team Workspace",
+    "ctaUrl": "/sign-up?source=feature-team-collaboration",
+    "secondaryCta": "See Team Pricing",
+    "secondaryCtaUrl": "/pricing?source=feature-team-collaboration&plan=team"
+  },
+  "benefits": [
+    {
+      "title": "Shared Team Library",
+      "description": "One central library for all team documents and summaries. Everyone has access to the same knowledge base.",
+      "icon": "users"
+    },
+    {
+      "title": "Collaborative Annotations",
+      "description": "Team members can add comments, highlights, and notes to any summary. Discuss insights in context.",
+      "icon": "message-square"
+    },
+    {
+      "title": "Role-Based Permissions",
+      "description": "Control who can view, edit, or manage documents. Create teams within teams with custom access levels.",
+      "icon": "shield"
+    },
+    {
+      "title": "Activity Tracking",
+      "description": "See who added documents, created summaries, and made comments. Full audit trail of team activity.",
+      "icon": "activity"
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Create Team Workspace",
+      "description": "Set up your team workspace and invite members via email. Assign roles and permissions."
+    },
+    {
+      "step": 2,
+      "title": "Build Shared Library",
+      "description": "Team members upload PDFs and create summaries. Everything is automatically shared with the team."
+    },
+    {
+      "step": 3,
+      "title": "Collaborate & Discuss",
+      "description": "Add comments, highlights, and annotations. Discuss findings and insights directly on summaries."
+    },
+    {
+      "step": 4,
+      "title": "Track & Organize",
+      "description": "Use shared folders, tags, and collections to organize team knowledge. Search across everything."
+    }
+  ],
+  "features": [
+    {
+      "title": "Team Workspaces",
+      "description": "Create multiple workspaces for different projects or departments. Separate billing and permissions.",
+      "icon": "briefcase"
+    },
+    {
+      "title": "Member Management",
+      "description": "Invite unlimited team members. Manage roles: Owner, Admin, Editor, Viewer.",
+      "icon": "user-plus"
+    },
+    {
+      "title": "Shared Collections",
+      "description": "Create shared folders and collections. Organize documents by project, client, or topic.",
+      "icon": "folder-open"
+    },
+    {
+      "title": "Comments & Discussions",
+      "description": "Thread comments on any summary. @mention teammates to start discussions.",
+      "icon": "message-circle"
+    },
+    {
+      "title": "Activity Feed",
+      "description": "See real-time updates when teammates upload documents, create summaries, or add comments.",
+      "icon": "rss"
+    },
+    {
+      "title": "Team Analytics",
+      "description": "Track team usage, document processing stats, and collaboration metrics. (Team plan)",
+      "icon": "bar-chart"
+    },
+    {
+      "title": "SSO Integration",
+      "description": "Single sign-on with Google Workspace, Microsoft 365, or SAML. (Enterprise)",
+      "icon": "key"
+    },
+    {
+      "title": "Advanced Permissions",
+      "description": "Granular access control: view, comment, edit, or admin. Set permissions per document or folder.",
+      "icon": "lock"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "500+", "label": "Teams Using SummarizePDF" },
+      { "value": "10,000+", "label": "Team Members" },
+      { "value": "50,000+", "label": "Team Documents" },
+      { "value": "4.9/5", "label": "Team Feature Rating" }
+    ],
+    "testimonial": {
+      "quote": "Our research team went from scattered Google Docs to a centralized knowledge base in SummarizePDF. Now everyone can find and build on each other's work instantly.",
+      "author": "Dr. Sophie Martin",
+      "role": "Research Director",
+      "avatar": "SM"
+    }
+  },
+  "useCases": [
+    {
+      "title": "Research Teams",
+      "description": "Collaborate on literature reviews, share paper summaries, and build collective knowledge."
+    },
+    {
+      "title": "Legal Firms",
+      "description": "Share case research, collaborate on document review, and maintain case knowledge bases."
+    },
+    {
+      "title": "Consulting Teams",
+      "description": "Centralize client research, share market reports, and collaborate on deliverables."
+    },
+    {
+      "title": "Investment Teams",
+      "description": "Share due diligence research, collaborate on deal analysis, and track investment theses."
+    },
+    {
+      "title": "Academic Departments",
+      "description": "Share course materials, collaborate on research, and build departmental knowledge bases."
+    },
+    {
+      "title": "Content Teams",
+      "description": "Research and summarize source materials collaboratively for content creation."
+    }
+  ],
+  "comparisonTable": {
+    "title": "Individual vs Team Plans",
+    "rows": [
+      {
+        "feature": "Document Library",
+        "individual": "Personal only",
+        "team": "Shared team library"
+      },
+      {
+        "feature": "Collaboration",
+        "individual": "Share via link",
+        "team": "Comments, annotations, discussions"
+      },
+      {
+        "feature": "Team Members",
+        "individual": "1 user",
+        "team": "Unlimited team members"
+      },
+      {
+        "feature": "Permissions",
+        "individual": "N/A",
+        "team": "Role-based access control"
+      },
+      {
+        "feature": "Activity Tracking",
+        "individual": "Personal history",
+        "team": "Full team audit trail"
+      },
+      {
+        "feature": "Team Analytics",
+        "individual": "Personal stats",
+        "team": "Team-wide analytics dashboard"
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "How many team members can I add?",
+      "answer": "Team plan includes unlimited team members. Pay per seat: $49/month includes 5 seats, then $10/month per additional member."
+    },
+    {
+      "question": "Can I create multiple teams or workspaces?",
+      "answer": "Yes! Create separate workspaces for different projects, departments, or clients. Each workspace has its own library and permissions."
+    },
+    {
+      "question": "What permissions can I set?",
+      "answer": "Four roles: Owner (full access), Admin (manage members), Editor (upload, summarize, comment), Viewer (read-only). Set permissions per workspace or individual documents."
+    },
+    {
+      "question": "Can team members have different access levels?",
+      "answer": "Absolutely! Assign different roles to different members. Create viewer-only accounts for external collaborators."
+    },
+    {
+      "question": "Is there a limit on team documents?",
+      "answer": "Team plan includes unlimited document storage. Process and store as many PDFs as your team needs."
+    },
+    {
+      "question": "Can we use SSO for login?",
+      "answer": "Enterprise plans support SSO with Google Workspace, Microsoft 365, Okta, or custom SAML. Contact sales for SSO setup."
+    },
+    {
+      "question": "What happens to documents if a member leaves?",
+      "answer": "Documents remain in the team library. Reassign ownership to active members. Former members lose access immediately."
+    },
+    {
+      "question": "Can I try team features before upgrading?",
+      "answer": "Yes! Start a 14-day free trial of the Team plan. Invite your team and test all collaboration features risk-free."
+    }
+  ],
+  "pricingHighlight": {
+    "freeFeatures": ["Individual library", "Share via link"],
+    "paidFeatures": ["Shared team library", "Unlimited members", "Comments & annotations", "Role-based permissions", "Activity tracking", "Team analytics"],
+    "ctaText": "See Team Pricing",
+    "ctaUrl": "/pricing?source=feature-team-collaboration&plan=team"
+  },
+  "finalCta": {
+    "headline": "Stop Working in Silos. Start Collaborating.",
+    "subheadline": "Give your team a shared knowledge base for all PDF research and summaries.",
+    "cta": "Start Free Team Trial",
+    "ctaUrl": "/sign-up?source=feature-team-collaboration-final&plan=team&trial=14"
+  }
+}

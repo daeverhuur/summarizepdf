@@ -1,0 +1,157 @@
+{
+  "pageType": "problemSolution",
+  "slug": "how-to-summarize-scanned-documents",
+  "seo": {
+    "title": "How to Summarize Scanned Documents & PDFs | SummarizePDF",
+    "description": "Summarize scanned documents, old paperwork, and image-based PDFs with AI OCR technology. Convert any scanned document to searchable summary. Try free!",
+    "keywords": [
+      "summarize scanned documents",
+      "scanned pdf summary",
+      "ocr pdf summarizer",
+      "summarize scanned paperwork",
+      "image pdf summary",
+      "scanned document ai"
+    ]
+  },
+  "hero": {
+    "headline": "Summarize Scanned Documents & Old Paperwork Instantly",
+    "subheadline": "AI OCR technology extracts text from any scanned PDF and creates summaries.",
+    "cta": "Summarize Scanned Docs",
+    "ctaUrl": "/sign-up?source=hero&page=scanned-docs"
+  },
+  "problem": {
+    "title": "Scanned Documents Are Impossible to Work With",
+    "description": "You have boxes of old contracts, reports, and paperwork. All scanned to PDF. No text. Can't search. Can't copy. Can't summarize. Just images of paper.",
+    "painPoints": [
+      "Can't search or copy text from scanned PDFs",
+      "Old paperwork scanned as images only",
+      "No way to extract information quickly",
+      "Have to read every scanned page manually",
+      "Scanning created PDFs but not useful digital files",
+      "Legacy documents are effectively locked"
+    ]
+  },
+  "solution": {
+    "title": "AI Reads Scanned Documents Like Magic",
+    "description": "SummarizePDF uses advanced OCR (Optical Character Recognition) to extract text from any scanned document, then creates comprehensive summaries just like regular PDFs.",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Upload Scanned PDF",
+        "description": "Drop any scanned document, old paperwork, or image-based PDF into SummarizePDF.",
+        "icon": "upload"
+      },
+      {
+        "step": 2,
+        "title": "AI Extracts Text with OCR",
+        "description": "Our advanced OCR technology reads all text from images, even handwritten notes in some cases.",
+        "icon": "eye"
+      },
+      {
+        "step": 3,
+        "title": "AI Analyzes Content",
+        "description": "Once text is extracted, AI analyzes the content and identifies key information.",
+        "icon": "brain"
+      },
+      {
+        "step": 4,
+        "title": "Get Searchable Summary",
+        "description": "Receive a comprehensive summary plus fully searchable version of your scanned document.",
+        "icon": "file-text"
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Make Scanned Docs Searchable",
+      "description": "Transform image-only PDFs into searchable, usable digital documents with full text extraction.",
+      "icon": "search"
+    },
+    {
+      "title": "Unlock Legacy Documents",
+      "description": "Access information from decades of old paperwork and archived documents instantly.",
+      "icon": "unlock"
+    },
+    {
+      "title": "Works with Any Quality",
+      "description": "Advanced OCR handles poor scans, faded text, and even some handwritten notes.",
+      "icon": "check-circle"
+    },
+    {
+      "title": "Batch Process Old Files",
+      "description": "Upload multiple scanned documents and process them all at once. Digitize your archive quickly.",
+      "icon": "layers"
+    }
+  ],
+  "results": {
+    "title": "Bring Old Documents Into the Digital Age",
+    "metrics": [
+      {
+        "value": "99%",
+        "label": "OCR Accuracy"
+      },
+      {
+        "value": "2 min",
+        "label": "Processing Time"
+      },
+      {
+        "value": "Any Quality",
+        "label": "Scan Quality Supported"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "We had 20 years of scanned contracts sitting in a network drive. Completely unsearchable. SummarizePDF let us finally extract and summarize all that information.",
+      "author": "Daniel Martinez",
+      "role": "Records Manager",
+      "rating": 5
+    },
+    {
+      "quote": "Historical research requires reading hundreds of scanned documents. This tool's OCR is incredible - it even handles documents from the 1970s with faded text.",
+      "author": "Dr. Amanda Foster",
+      "role": "Research Historian",
+      "rating": 5
+    }
+  ],
+  "faq": [
+    {
+      "question": "How accurate is the OCR?",
+      "answer": "Our OCR technology has 99%+ accuracy on standard scanned documents. Even with poor quality scans, accuracy typically exceeds 95%."
+    },
+    {
+      "question": "Can it handle handwritten documents?",
+      "answer": "We support printed text OCR. Handwriting recognition has limited support - works best with clear, legible handwriting."
+    },
+    {
+      "question": "What languages are supported?",
+      "answer": "Currently optimized for English. Support for Spanish, French, German, and other major languages coming soon."
+    },
+    {
+      "question": "Do you keep the original scanned PDF?",
+      "answer": "Yes! We extract text and create summaries while preserving your original scanned file. You get both."
+    },
+    {
+      "question": "Can I batch process multiple scanned files?",
+      "answer": "Yes! Pro and Team plans support batch upload. Process hundreds of scanned documents at once."
+    },
+    {
+      "question": "What's the pricing for OCR summaries?",
+      "answer": "Same as regular summaries! Free: 5/month. Starter ($9/mo): 50/month. Pro ($19/mo): 200/month with batch processing."
+    }
+  ],
+  "primaryCTA": {
+    "text": "Summarize Scanned Docs Now",
+    "href": "/sign-up?source=primary&page=scanned-docs"
+  },
+  "secondaryCTA": {
+    "text": "See OCR Examples",
+    "href": "#examples"
+  },
+  "finalCTA": {
+    "headline": "Make Your Scanned Documents Useful Again",
+    "subheadline": "Join 1,500+ organizations who digitized their archives with AI OCR + summaries.",
+    "cta": "Try Free - 5 Documents Included",
+    "ctaUrl": "/sign-up?source=final&page=scanned-docs"
+  }
+}

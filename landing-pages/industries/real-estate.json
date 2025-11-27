@@ -1,0 +1,162 @@
+{
+  "pageType": "industry",
+  "slug": "real-estate",
+  "seo": {
+    "title": "Real Estate Document Summarizer for Agents & Investors - Fast Contract Review | SummarizePDF",
+    "description": "Summarize leases, purchase agreements, and property disclosures instantly. Close deals faster. Trusted by 1,000+ real estate professionals. Start free trial!",
+    "keywords": ["real estate document summarizer", "lease agreement summary", "contract review for realtors", "property disclosure ai", "real estate due diligence"]
+  },
+  "hero": {
+    "headline": "Real Estate Document Summarization for Agents & Investors",
+    "subheadline": "Review leases, contracts, and property disclosures 10x faster. Close more deals with AI.",
+    "cta": "Start Free - Real Estate Plan",
+    "ctaUrl": "/sign-up?industry=real-estate&trial=14",
+    "secondaryCta": "See Real Estate Pricing",
+    "secondaryCtaUrl": "/pricing?industry=real-estate"
+  },
+  "industryPainPoints": [
+    {
+      "icon": "file-text",
+      "title": "50-page purchase agreements",
+      "description": "Reading every clause and contingency takes hours you don't have before showing properties"
+    },
+    {
+      "icon": "clock",
+      "title": "Clients need answers fast",
+      "description": "Buyers ask about HOA rules and disclosures while you're juggling 5 other deals"
+    },
+    {
+      "icon": "search",
+      "title": "Finding red flags in disclosures",
+      "description": "Critical property issues buried on page 47 of seller disclosures"
+    },
+    {
+      "icon": "briefcase",
+      "title": "Commercial leases are complex",
+      "description": "100+ page triple-net leases with confusing CAM charges and renewal terms"
+    }
+  ],
+  "solution": {
+    "headline": "AI That Understands Real Estate Documents",
+    "description": "SummarizePDF is trained on purchase agreements, leases, HOA docs, and disclosures. Extract key terms, contingencies, and red flags instantly.",
+    "benefits": [
+      {
+        "icon": "zap",
+        "title": "Review Contracts in Minutes",
+        "description": "Summarize purchase agreements, leases, and disclosures instantly. Spend time selling, not reading."
+      },
+      {
+        "icon": "alert-circle",
+        "title": "Spot Red Flags Automatically",
+      "description": "AI highlights important issues, easements, liens, and unusual clauses you need to know about."
+      },
+      {
+        "icon": "users",
+        "title": "Impress Clients with Fast Answers",
+        "description": "When clients ask about HOA rules or lease terms, get answers in seconds, not hours."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Close More Deals",
+        "description": "Handle more properties simultaneously. Faster document review = more commissions."
+      }
+    ]
+  },
+  "useCases": [
+    {
+      "title": "Purchase Agreement Review",
+      "description": "Quickly extract offer price, contingencies, closing dates, and special terms from residential and commercial contracts",
+      "metrics": "Review 10 offers in the time it took to read 1"
+    },
+    {
+      "title": "Lease Agreement Analysis",
+      "description": "Summarize rent terms, escalations, renewal options, and tenant obligations for landlords and property managers",
+      "metrics": "Manage 3x more rental properties"
+    },
+    {
+      "title": "Property Due Diligence",
+      "description": "Extract key issues from property disclosures, inspection reports, and title documents for buyers and investors",
+      "metrics": "Complete DD checklist in 1 day instead of 1 week"
+    },
+    {
+      "title": "HOA & Condo Documents",
+      "description": "Summarize HOA bylaws, CC&Rs, and financial statements so you can answer buyer questions confidently",
+      "metrics": "Know the key rules in 5 minutes"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "I'm juggling 15 active deals at once. SummarizePDF helps me quickly review contracts and disclosures so I can focus on negotiations and showings. Game changer!",
+      "author": "Lisa Martinez",
+      "role": "Realtor",
+      "firm": "Coldwell Banker"
+    },
+    {
+      "quote": "As a commercial property investor, I review dozens of leases for each acquisition. This tool cut my due diligence time from 2 weeks to 2 days. I can evaluate more deals and win more bids.",
+      "author": "Tom Anderson",
+      "role": "Commercial Real Estate Investor",
+      "firm": "Anderson Properties"
+    }
+  ],
+  "compliance": {
+    "headline": "Secure & Confidential",
+    "certifications": [
+      {
+        "badge": "Encrypted Storage",
+        "description": "All documents protected with AES-256"
+      },
+      {
+        "badge": "Client Privacy",
+        "description": "Your deals stay confidential"
+      },
+      {
+        "badge": "SOC 2 Certified",
+        "description": "Security and privacy audits"
+      },
+      {
+        "badge": "No AI Training",
+        "description": "Your documents never train our AI"
+      }
+    ],
+    "confidentiality": "We understand client confidentiality. All property documents are encrypted and private. We never share your data or use it for AI training."
+  },
+  "stats": [
+    { "value": "1,000+", "label": "Real Estate Professionals" },
+    { "value": "75%", "label": "Document Review Time Saved" },
+    { "value": "50K+", "label": "Contracts Summarized" },
+    { "value": "4.9/5", "label": "Agent Rating" }
+  ],
+  "faq": [
+    {
+      "question": "What types of real estate documents can I summarize?",
+      "answer": "All of them! Purchase agreements, leases, HOA documents, seller disclosures, title reports, inspection reports, loan documents, and more. If it's a PDF, we can summarize it."
+    },
+    {
+      "question": "Will the AI catch important red flags?",
+      "answer": "The AI highlights unusual clauses, liens, easements, and potential issues. However, always review with a real estate attorney for complex transactions. Think of it as a smart first pass."
+    },
+    {
+      "question": "How secure are client documents?",
+      "answer": "Very secure! All documents are encrypted at rest and in transit. We're SOC 2 certified and never share your data or use it to train our AI. Your client confidentiality is protected."
+    },
+    {
+      "question": "What plan is best for real estate agents?",
+      "answer": "Most agents use the Starter plan ($9/mo) with 250 pages/month for reviewing contracts and disclosures. High-volume agents or teams should consider the Pro ($19/mo) or Team plan ($49/mo)."
+    },
+    {
+      "question": "Can my whole team share summaries?",
+      "answer": "Yes! The Team plan ($49/mo) allows unlimited users to share and collaborate on property documents. Perfect for brokerages and investment firms."
+    },
+    {
+      "question": "Can I use this on my phone during showings?",
+      "answer": "Absolutely! SummarizePDF works on any device. Upload a contract from your phone and get a summary in seconds. Perfect for answering client questions on the go."
+    }
+  ],
+  "finalCta": {
+    "headline": "Close More Deals with Less Reading",
+    "subheadline": "Join 1,000+ real estate professionals using AI to review documents faster and serve clients better",
+    "cta": "Start 14-Day Free Trial",
+    "ctaUrl": "/sign-up?industry=real-estate&trial=14",
+    "trustSignal": "No credit card required. Cancel anytime."
+  }
+}

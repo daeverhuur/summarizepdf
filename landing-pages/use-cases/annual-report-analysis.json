@@ -1,0 +1,126 @@
+{
+  "pageType": "useCase",
+  "slug": "annual-report-analysis",
+  "seo": {
+    "title": "Annual Report Summarizer - Extract Key Financials Fast | SummarizePDF",
+    "description": "Quickly analyze annual reports with AI. Extract financials, strategy, risks, and management commentary. Perfect for investors and analysts.",
+    "keywords": ["annual report summarizer", "company analysis AI", "investor research tool", "financial statement summary", "corporate report AI"]
+  },
+  "hero": {
+    "headline": "Analyze 200-Page Annual Reports in Minutes",
+    "subheadline": "AI extracts financials, strategy, risks, and management outlook so you can evaluate companies and make investment decisions faster.",
+    "cta": "Analyze Your First Report Free",
+    "ctaUrl": "/sign-up?use-case=annual-reports&trial=14",
+    "secondaryCta": "See How It Works",
+    "secondaryCtaUrl": "#demo"
+  },
+  "targetAudience": "Investors, Financial Analysts, Due Diligence Teams",
+  "painPoints": [
+    "Reading 200+ page annual reports takes an entire day",
+    "Extracting key financials from complex statements",
+    "Finding management's strategic priorities buried in text",
+    "Identifying hidden risks and challenges",
+    "Comparing annual reports across multiple companies"
+  ],
+  "solution": {
+    "title": "AI-Powered Company Intelligence",
+    "description": "Our AI extracts financial performance, strategic priorities, risk factors, and management commentary from annual reports.",
+    "features": [
+      {
+        "title": "Financial Extraction",
+        "description": "Revenue, profits, margins, cash flow, and key ratios."
+      },
+      {
+        "title": "Strategy Summary",
+        "description": "CEO letter and management's strategic priorities."
+      },
+      {
+        "title": "Risk Analysis",
+        "description": "Identifies key business risks and challenges."
+      },
+      {
+        "title": "Segment Performance",
+        "description": "Business unit performance and geographic breakdown."
+      }
+    ]
+  },
+  "benefits": [
+    {
+      "title": "Analyze 10+ Companies/Day",
+      "description": "Cover more stocks in your investment research.",
+      "icon": "trending-up"
+    },
+    {
+      "title": "Better Investment Decisions",
+      "description": "Understand strategy and risks quickly.",
+      "icon": "target"
+    },
+    {
+      "title": "Faster Due Diligence",
+      "description": "Complete company analysis in hours, not days.",
+      "icon": "clock"
+    }
+  },
+  "useCaseSteps": [
+    {
+      "step": 1,
+      "title": "Upload Annual Report",
+      "description": "10-K, annual report, or investor presentation"
+    },
+    {
+      "step": 2,
+      "title": "AI Analyzes Report",
+      "description": "Extracts financials, strategy, and risks"
+    },
+    {
+      "step": 3,
+      "title": "Get Investment Summary",
+      "description": "Complete company overview for decisions"
+    }
+  ],
+  "socialProof": {
+    "stats": [
+      { "value": "12,000+", "label": "Annual Reports Analyzed" },
+      { "value": "10x", "label": "Faster Company Research" },
+      { "value": "4.9/5", "label": "Investor Rating" }
+    ],
+    "testimonial": {
+      "quote": "Due diligence used to mean spending days reading annual reports. SummarizePDF helps our team analyze companies 10x faster. The risk extraction feature is particularly valuable for investment decisions.",
+      "author": "Amanda Foster",
+      "role": "Portfolio Manager, Private Equity"
+    }
+  },
+  "faq": [
+    {
+      "question": "Does it work with international annual reports?",
+      "answer": "Yes! We support annual reports from companies worldwide, including different accounting standards (GAAP, IFRS)."
+    },
+    {
+      "question": "Can it extract segment-level financials?",
+      "answer": "Absolutely! The AI identifies business unit performance, geographic segments, and product line breakdown."
+    },
+    {
+      "question": "Does it identify risks and challenges?",
+      "answer": "Yes! Our AI extracts risk factors, competitive threats, and challenges mentioned throughout the report."
+    },
+    {
+      "question": "Can I compare multiple years or companies?",
+      "answer": "Yes! Pro and Team plans support comparative analysis across years and competitive benchmarking."
+    },
+    {
+      "question": "What about quarterly reports?",
+      "answer": "Yes! We support all formats: 10-K, 10-Q, 8-K, annual reports, and quarterly earnings releases."
+    }
+  ],
+  "pricing": {
+    "highlight": "Professional pricing for investors",
+    "ctaText": "See Investor Pricing",
+    "ctaUrl": "/pricing?use-case=annual-reports"
+  },
+  "finalCta": {
+    "headline": "Ready to Accelerate Your Investment Research?",
+    "subheadline": "Join investors analyzing companies 10x faster",
+    "buttonText": "Start Free Trial - For Investors",
+    "buttonUrl": "/sign-up?use-case=annual-reports&trial=14"
+  }
+}
