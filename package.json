@@ -14,6 +14,8 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.56.0",
     "@clerk/nextjs": "^6.35.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
     "@stripe/stripe-js": "^8.5.3",
     "convex": "^1.29.3",
     "framer-motion": "^12.23.24",
@@ -23,8 +25,10 @@
     "pdf-parse": "^1.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-spring": "^10.0.3",
     "stripe": "^20.0.0",
-    "stripe-cli": "^0.1.0"
+    "stripe-cli": "^0.1.0",
+    "three": "^0.181.2"
   },
   "devDependencies": {
     "@convex-dev/eslint-plugin": "^1.0.0",

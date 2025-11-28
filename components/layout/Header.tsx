@@ -58,8 +58,8 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { href: '#pricing', label: 'Pricing', sectionId: 'pricing' },
     { href: '#features', label: 'Features', sectionId: 'features' },
+    { href: '#pricing', label: 'Pricing', sectionId: 'pricing' },
   ];
 
   const scrollToSection = useCallback((sectionId: string) => {

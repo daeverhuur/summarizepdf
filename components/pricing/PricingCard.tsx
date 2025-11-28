@@ -83,9 +83,33 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
     >
       {plan.popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span className="bg-[#009de0] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-            Most Popular
-          </span>
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <span className="relative inline-block bg-[#009de0] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+              Most Popular
+              {/* Pulsing ring effect */}
+              <motion.span
+                className="absolute inset-0 rounded-full bg-[#009de0]"
+                animate={{
+                  scale: [1, 1.2],
+                  opacity: [0.8, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+              />
+            </span>
+          </motion.div>
         </div>
       )}
 

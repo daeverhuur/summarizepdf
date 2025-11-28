@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { PricingCard } from '@/components/pricing/PricingCard';
@@ -12,6 +11,10 @@ import { PricingToggle } from '@/components/pricing/PricingToggle';
 import { PLANS } from '@/lib/stripe/plans';
 import { BillingInterval } from '@/lib/stripe/config';
 import { TryUploadModal } from '@/components/home/TryUploadModal';
+import dynamic from 'next/dynamic';
+
+// Dynamically import Three.js components to avoid SSR issues
+const ParticleBackground = dynamic(() => import('@/components/home/ParticleBackground'), { ssr: false });
 
 // Custom icons matching brand guidelines
 const ZapIcon = () => (
@@ -81,14 +84,6 @@ const ExportIconSmall = () => (
   </svg>
 );
 
-const LibraryIconSmall = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-    <rect x="3" y="5" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="2"/>
-    <rect x="11" y="3" width="5" height="16" rx="1" stroke="currentColor" strokeWidth="2"/>
-    <path d="M18 7l4 1.5v10l-4-1.5V7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 // 3D PDF Document Component
 function FloatingPDF({ delay = 0, className = '' }: { delay?: number; className?: string }) {
   return (
@@ -120,23 +115,89 @@ function FloatingPDF({ delay = 0, className = '' }: { delay?: number; className?
   );
 }
 
-// Animated Counter
+// Animated Counter with Count-up Effect
 function AnimatedCounter({ value, suffix = '' }: { value: string; suffix?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    if (isInView) {
+      // Parse the numeric value from the string (e.g., "10K" -> 10, "99.9" -> 99.9)
+      const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''));
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const increment = numericValue / steps;
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= numericValue) {
+          setCount(numericValue);
+          clearInterval(timer);
+        } else {
+          setCount(current);
+        }
+      }, duration / steps);
+      
+      return () => clearInterval(timer);
+    }
+  }, [isInView, value]);
+  
+  const displayValue = value.includes('K') 
+    ? `${Math.floor(count)}K` 
+    : value.includes('.') 
+    ? count.toFixed(1) 
+    : Math.floor(count);
   
   return (
     <span ref={ref} className="tabular-nums">
-      {isInView ? (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {value}{suffix}
-        </motion.span>
-      ) : '0'}
+      <motion.span
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.5, type: "spring" }}
+      >
+        {isInView ? displayValue : '0'}{suffix}
+      </motion.span>
     </span>
+  );
+}
+
+// Magnetic Button Component
+function MagneticButton({ children, className = '', href }: { children: React.ReactNode; className?: string; href: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setPosition({ x: x * 0.3, y: y * 0.3 });
+  };
+  
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+  
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="inline-block"
+    >
+      <motion.div
+        animate={{ x: position.x, y: position.y }}
+        transition={{ type: "spring", stiffness: 150, damping: 15 }}
+      >
+        <Link href={href}>
+          <Button variant="glow" size="xl" className={`group ${className}`}>
+            {children}
+          </Button>
+        </Link>
+      </motion.div>
+    </div>
   );
 }
 
@@ -243,11 +304,39 @@ export default function HomePage() {
         ref={heroRef}
         className="relative h-screen min-h-[700px] max-h-[900px] flex items-center overflow-hidden"
       >
+        {/* 3D Particle Background */}
+        <div className="absolute inset-0 opacity-40">
+          <ParticleBackground />
+        </div>
+        
         {/* Background Effects */}
         <div className="absolute inset-0">
-          {/* Primary gradient orb - more subtle */}
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#009de0]/15 rounded-full blur-[150px]" />
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#7c3aed]/10 rounded-full blur-[120px]" />
+          {/* Primary gradient orb - more subtle with animation */}
+          <motion.div 
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#009de0]/15 rounded-full blur-[150px]"
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.15, 0.25, 0.15],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#7c3aed]/10 rounded-full blur-[120px]"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.1, 0.2, 0.1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
+          />
           
           {/* Grid pattern */}
           <div className="absolute inset-0 grid-pattern opacity-20" />
@@ -270,13 +359,27 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6"
+                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6 cursor-default"
               >
                 <div className="flex -space-x-1.5">
                   {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-br from-[#009de0] to-[#7c3aed] border-2 border-[#050508] flex items-center justify-center text-[8px] font-bold text-white">
+                    <motion.div 
+                      key={i} 
+                      className="w-6 h-6 rounded-full bg-gradient-to-br from-[#009de0] to-[#7c3aed] border-2 border-[#050508] flex items-center justify-center text-[8px] font-bold text-white"
+                      animate={{
+                        y: [0, -2, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.2,
+                      }}
+                      whileHover={{ scale: 1.2, zIndex: 10 }}
+                    >
                       {['S', 'M', 'E', 'J'][i]}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
                 <span className="text-sm text-white/60">Trusted by <span className="text-white font-semibold">10,000+</span> professionals</span>
@@ -311,21 +414,38 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6"
               >
-                <Link href="/sign-up">
-                  <Button variant="glow" size="xl" className="group w-full sm:w-auto">
-                    Start Free — No Card Required
+                <MagneticButton href="/sign-up" className="w-full sm:w-auto">
+                  <span className="relative z-10">Start Free — No Card Required</span>
+                  <motion.span
+                    className="inline-block ml-1 relative z-10"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRightIcon />
+                  </motion.span>
+                  {/* Animated shimmer effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    animate={{
+                      x: ['-200%', '200%'],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatDelay: 2,
+                    }}
+                  />
+                </MagneticButton>
+                <Link href="#how-it-works">
+                  <Button variant="secondary" size="xl" className="w-full sm:w-auto group">
+                    See How It Works
                     <motion.span
                       className="inline-block ml-1"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
+                      animate={{ y: [0, 3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     >
-                      <ArrowRightIcon />
+                      ↓
                     </motion.span>
-                  </Button>
-                </Link>
-                <Link href="#how-it-works">
-                  <Button variant="secondary" size="xl" className="w-full sm:w-auto">
-                    See How It Works
                   </Button>
                 </Link>
               </motion.div>
@@ -356,8 +476,38 @@ export default function HomePage() {
               onDragLeave={handleHeroDragLeave}
               onDrop={handleHeroDrop}
             >
+              {/* Animated spotlight beam effect */}
+              <motion.div
+                className="absolute -top-40 left-1/2 -translate-x-1/2 w-[200px] h-[400px] bg-gradient-to-b from-[#009de0]/30 via-[#009de0]/10 to-transparent blur-2xl"
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                  scaleY: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              
               {/* Glow effect behind card */}
               <div className={`absolute inset-0 bg-gradient-to-r from-[#009de0]/30 to-[#7c3aed]/30 blur-3xl rounded-3xl scale-90 transition-opacity duration-300 ${isDraggingOnHero ? 'opacity-60' : 'opacity-40'}`} />
+              
+              {/* Rotating gradient border */}
+              <motion.div
+                className="absolute inset-0 rounded-2xl opacity-50"
+                style={{
+                  background: 'conic-gradient(from 0deg, transparent, #009de0, transparent)',
+                }}
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
               
               <div 
                 onClick={() => setIsTryModalOpen(true)}
@@ -435,42 +585,152 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Floating stats badge */}
+              {/* Floating stats badge with animation */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
                 className="absolute -bottom-4 -left-4 bg-[#12121a] border border-white/10 rounded-xl px-4 py-3 shadow-xl"
               >
-                <div className="flex items-center gap-3">
+                <motion.div
+                  animate={{
+                    y: [0, -3, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="flex items-center gap-3"
+                >
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} filled />
+                      <motion.div
+                        key={i}
+                        whileHover={{ scale: 1.2, rotate: 15 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <StarIcon filled />
+                      </motion.div>
                     ))}
                   </div>
                   <div className="text-white text-sm font-semibold">4.9/5</div>
                   <div className="text-white/40 text-xs">from 2,400+ reviews</div>
-                </div>
+                </motion.div>
+              </motion.div>
+              
+              {/* Floating action hint */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ 
+                  opacity: [0, 1, 1, 0],
+                  scale: [0.8, 1, 1, 0.8],
+                  y: [10, 0, 0, -10],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  repeatDelay: 5,
+                }}
+                className="absolute -top-8 right-1/4 bg-[#009de0] text-white text-xs font-semibold px-3 py-2 rounded-full shadow-lg"
+              >
+                <span className="flex items-center gap-1">
+                  👆 Try it now!
+                </span>
               </motion.div>
             </motion.div>
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator with enhanced animation */}
         <motion.div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 cursor-pointer"
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          whileHover={{ scale: 1.2 }}
+          onClick={() => {
+            document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+          }}
         >
-          <div className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5">
-            <div className="w-1 h-2 bg-white/40 rounded-full" />
-          </div>
+          <motion.div 
+            className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5 relative overflow-hidden"
+            whileHover={{ borderColor: 'rgba(0, 157, 224, 0.5)' }}
+          >
+            <motion.div 
+              className="w-1 h-2 bg-white/40 rounded-full"
+              animate={{
+                y: [0, 12],
+                opacity: [1, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            {/* Pulsing glow effect */}
+            <motion.div
+              className="absolute inset-0 rounded-full bg-[#009de0]/20 blur-md"
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0, 0.5, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
+          <motion.p
+            className="text-white/40 text-xs mt-2 text-center"
+            animate={{
+              opacity: [0.4, 0.8, 0.4],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            Scroll
+          </motion.p>
         </motion.div>
       </section>
 
       {/* Stats Section */}
-      <AnimatedSection className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#009de0]/5 to-transparent" />
+      <AnimatedSection className="py-16 md:py-24 relative overflow-hidden">
+        {/* Animated gradient background */}
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-b from-transparent via-[#009de0]/5 to-transparent"
+          animate={{
+            backgroundPosition: ['0% 0%', '100% 100%'],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: 'reverse',
+            ease: 'linear',
+          }}
+        />
+        
+        {/* Animated grid lines */}
+        <motion.div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: 'linear-gradient(#009de0 1px, transparent 1px), linear-gradient(90deg, #009de0 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+          animate={{
+            backgroundPosition: ['0px 0px', '50px 50px'],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+        />
+        
         <div className="container-custom relative">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
             {stats.map((stat, i) => (
@@ -480,12 +740,29 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="text-center"
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
+                }}
+                className="text-center group cursor-default"
               >
-                <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2">
+                <motion.div 
+                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 group-hover:text-gradient transition-all"
+                  whileHover={{
+                    textShadow: '0 0 20px rgba(0, 157, 224, 0.5)',
+                  }}
+                >
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-white/50 font-medium">{stat.label}</div>
+                </motion.div>
+                <div className="text-white/50 font-medium group-hover:text-white/70 transition-colors">{stat.label}</div>
+                
+                {/* Animated underline on hover */}
+                <motion.div
+                  className="h-0.5 bg-[#009de0] mt-2 mx-auto"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '60%' }}
+                  transition={{ duration: 0.3 }}
+                />
               </motion.div>
             ))}
           </div>
@@ -533,25 +810,55 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                whileHover={{ 
+                  y: -12, 
+                  scale: 1.02,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 } 
+                }}
                 className="group"
               >
                 <div className="glass-card h-full p-8 relative overflow-hidden">
                   {/* Gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                  <motion.div 
+                    className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10`}
+                    transition={{ duration: 0.5 }}
+                  />
                   
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-5`}>
-                    <div className="w-full h-full bg-[#12121a] rounded-[10px] flex items-center justify-center text-white">
-                      <feature.icon />
+                  {/* Animated border glow on hover */}
+                  <motion.div
+                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100`}
+                    style={{
+                      background: `linear-gradient(135deg, transparent 0%, ${feature.gradient.includes('009de0') ? '#009de0' : feature.gradient.includes('7c3aed') ? '#7c3aed' : feature.gradient.includes('059669') ? '#059669' : '#ea580c'}20 50%, transparent 100%)`,
+                    }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  
+                  <motion.div 
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-5 relative z-10`}
+                    whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+                  >
+                    <div className="w-full h-full bg-[#12121a] rounded-[10px] flex items-center justify-center text-white group-hover:bg-[#0a0a0f] transition-colors">
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <feature.icon />
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#009de0] transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#009de0] transition-colors relative z-10">
                     {feature.title}
                   </h3>
-                  <p className="text-white/50 leading-relaxed">
+                  <p className="text-white/50 leading-relaxed group-hover:text-white/70 transition-colors relative z-10">
                     {feature.description}
                   </p>
+                  
+                  {/* Animated corner accent */}
+                  <motion.div
+                    className={`absolute -bottom-2 -right-2 w-20 h-20 bg-gradient-to-br ${feature.gradient} rounded-full blur-2xl opacity-0 group-hover:opacity-30`}
+                    transition={{ duration: 0.5 }}
+                  />
                 </div>
               </motion.div>
             ))}
@@ -584,9 +891,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'Upload', desc: 'Drag and drop your PDF or click to upload any document' },
-              { step: '02', title: 'Process', desc: 'Our AI analyzes and extracts key insights in seconds' },
-              { step: '03', title: 'Review', desc: 'Get your summary, ask questions, and export anywhere' },
+              { step: '01', title: 'Upload', desc: 'Drag and drop your PDF or click to upload any document', icon: '📤' },
+              { step: '02', title: 'Process', desc: 'Our AI analyzes and extracts key insights in seconds', icon: '⚡' },
+              { step: '03', title: 'Review', desc: 'Get your summary, ask questions, and export anywhere', icon: '✓' },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -594,23 +901,70 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                className="relative group"
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.03,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 } 
+                }}
+                className="relative group cursor-pointer"
               >
                 <div className="glass-card p-8 text-center relative overflow-hidden">
-                  <div className="text-7xl font-black text-white/5 absolute top-4 right-4">
+                  {/* Animated background on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-[#009de0]/10 to-transparent opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.5 }}
+                  />
+                  
+                  <motion.div 
+                    className="text-7xl font-black text-white/5 absolute top-4 right-4"
+                    animate={{
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.5,
+                    }}
+                  >
                     {item.step}
-                  </div>
+                  </motion.div>
+                  
                   <div className="relative z-10">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#009de0]/20 text-[#009de0] font-bold text-2xl mb-6">
+                    <motion.div 
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#009de0]/20 text-[#009de0] font-bold text-2xl mb-6 group-hover:bg-[#009de0]/30 transition-colors"
+                      whileHover={{ 
+                        rotate: [0, -5, 5, -5, 0],
+                        scale: 1.1,
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
                       {item.step}
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-white/50">{item.desc}</p>
+                    </motion.div>
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#009de0] transition-colors">{item.title}</h3>
+                    <p className="text-white/50 group-hover:text-white/70 transition-colors">{item.desc}</p>
                   </div>
+                  
+                  {/* Animated bottom accent */}
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#009de0] to-transparent opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.5 }}
+                  />
                 </div>
-                {/* Connector line */}
+                {/* Connector line with animation */}
                 {i < 2 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#009de0]/50 to-transparent" />
+                  <motion.div 
+                    className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#009de0]/50 to-transparent"
+                    animate={{
+                      opacity: [0.3, 1, 0.3],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.5,
+                    }}
+                  />
                 )}
               </motion.div>
             ))}
@@ -663,9 +1017,9 @@ export default function HomePage() {
           {/* Testimonial cards */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'Sarah K.', role: 'PhD Researcher', quote: 'This tool has transformed how I review literature. What used to take hours now takes minutes.' },
-              { name: 'Michael R.', role: 'Legal Analyst', quote: 'Essential for reviewing contracts and legal documents. The accuracy is impressive.' },
-              { name: 'Emily T.', role: 'Product Manager', quote: 'Perfect for staying on top of industry reports. The chat feature is a game-changer.' },
+              { name: 'Sarah K.', role: 'PhD Researcher', quote: 'This tool has transformed how I review literature. What used to take hours now takes minutes.', avatar: 'S' },
+              { name: 'Michael R.', role: 'Legal Analyst', quote: 'Essential for reviewing contracts and legal documents. The accuracy is impressive.', avatar: 'M' },
+              { name: 'Emily T.', role: 'Product Manager', quote: 'Perfect for staying on top of industry reports. The chat feature is a game-changer.', avatar: 'E' },
             ].map((testimonial, i) => (
               <motion.div
                 key={i}
@@ -673,18 +1027,64 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card p-6"
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
+                }}
+                className="glass-card p-6 relative overflow-hidden group cursor-pointer"
               >
-                <div className="flex gap-1 mb-4">
+                {/* Subtle gradient overlay on hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[#009de0]/5 to-transparent opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.5 }}
+                />
+                
+                <div className="flex gap-1 mb-4 relative z-10">
                   {[...Array(5)].map((_, j) => (
-                    <StarIcon key={j} filled />
+                    <motion.div
+                      key={j}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 + j * 0.05 }}
+                      whileHover={{ scale: 1.2, rotate: 15 }}
+                    >
+                      <StarIcon filled />
+                    </motion.div>
                   ))}
                 </div>
-                <p className="text-white/70 mb-6 italic">&ldquo;{testimonial.quote}&rdquo;</p>
-                <div>
-                  <div className="font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-white/40 text-sm">{testimonial.role}</div>
+                <p className="text-white/70 mb-6 italic relative z-10 group-hover:text-white/90 transition-colors">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 relative z-10">
+                  <motion.div 
+                    className="w-12 h-12 rounded-full bg-gradient-to-br from-[#009de0] to-[#7c3aed] flex items-center justify-center text-white font-bold"
+                    whileHover={{ scale: 1.1, rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {testimonial.avatar}
+                  </motion.div>
+                  <div>
+                    <div className="font-semibold text-white group-hover:text-[#009de0] transition-colors">{testimonial.name}</div>
+                    <div className="text-white/40 text-sm">{testimonial.role}</div>
+                  </div>
                 </div>
+                
+                {/* Quote decoration */}
+                <motion.div
+                  className="absolute top-4 right-4 text-6xl text-[#009de0]/10 font-serif"
+                  animate={{
+                    opacity: [0.1, 0.2, 0.1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  &ldquo;
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -1397,18 +1797,28 @@ export default function HomePage() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
             >
-              <Link href="/sign-up">
-                <Button variant="glow" size="xl" className="group w-full sm:w-auto">
-                  Start Free Trial
-                  <motion.span
-                    className="inline-block"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ArrowRightIcon />
-                  </motion.span>
-                </Button>
-              </Link>
+              <MagneticButton href="/sign-up" className="w-full sm:w-auto">
+                <span className="relative z-10">Start Free Trial</span>
+                <motion.span
+                  className="inline-block relative z-10"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRightIcon />
+                </motion.span>
+                {/* Animated shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-lg"
+                  animate={{
+                    x: ['-200%', '200%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                  }}
+                />
+              </MagneticButton>
               <Link href="/pricing">
                 <Button variant="secondary" size="xl" className="w-full sm:w-auto">
                   View Pricing Plans
