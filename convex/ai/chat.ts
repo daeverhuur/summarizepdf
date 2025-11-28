@@ -102,7 +102,7 @@ export const chatWithDocument = action({
     ];
 
     try {
-      // Try with primary model first (gpt-5-nano)
+      // Try with primary model first (gpt-4o-mini)
       let model: string = OPENAI_MODELS.PRIMARY;
       let response;
 
@@ -115,7 +115,7 @@ export const chatWithDocument = action({
           top_p: MODEL_CONFIG.top_p,
         });
       } catch (error: any) {
-        // If primary model fails, fall back to gpt-5-mini
+        // If primary model fails, fall back to gpt-4o
         if (error.status === 429 || error.code === "rate_limit_exceeded") {
           console.log("Rate limited on primary model, using fallback");
           model = OPENAI_MODELS.FALLBACK;

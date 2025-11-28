@@ -1,26 +1,680 @@
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN SYSTEM - SUMMARIZEPDF
+   Bold Dark Theme with 3D Effects
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core Colors */
+  --accent: #009de0;
+  --accent-light: #33b5ff;
+  --accent-dark: #0077b3;
+  --accent-glow: rgba(0, 157, 224, 0.5);
+  
+  /* Dark Theme Palette */
+  --bg-primary: #050508;
+  --bg-secondary: #0a0a0f;
+  --bg-tertiary: #12121a;
+  --bg-card: #16161f;
+  --bg-elevated: #1a1a25;
+  
+  /* Surface Colors with depth */
+  --surface-1: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.04);
+  --surface-3: rgba(255, 255, 255, 0.06);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-muted: #6b6b7a;
+  
+  /* Borders */
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --border-accent: rgba(0, 157, 224, 0.4);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--accent) 0%, #00d4ff 50%, #7c3aed 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, var(--accent-glow) 0%, transparent 70%);
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 157, 224, 0.15) 0%, transparent 50%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px var(--accent-glow);
+  --shadow-glow-lg: 0 0 80px var(--accent-glow);
+  
+  /* Spacing */
+  --section-gap: 8rem;
+  
+  /* Animation */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --color-accent: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+/* Remove default margin and padding only from specific elements */
+/* body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+} */
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+}
+
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   CURSOR & POINTER EVENTS
+   ============================================ */
+
+/* Interactive elements - pointer cursor (high specificity) */
+a,
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+[role="link"]:not([aria-disabled="true"]),
+[role="tab"]:not([aria-disabled="true"]),
+[role="menuitem"]:not([aria-disabled="true"]),
+input[type="button"]:not(:disabled),
+input[type="submit"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+input[type="file"]:not(:disabled),
+label[for],
+select:not(:disabled),
+summary,
+[onclick],
+[data-clickable],
+.clickable {
+  cursor: pointer !important;
+  pointer-events: auto;
+}
+
+/* Disabled elements - not-allowed cursor */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled,
+[aria-disabled="true"],
+.disabled {
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+/* Input fields and textareas ONLY - text cursor */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+textarea,
+[contenteditable="true"] {
+  cursor: text !important;
+}
+
+/* All other text elements use default cursor */
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+td,
+th,
+label:not([for]),
+code,
+pre,
+blockquote,
+cite,
+em,
+strong,
+small,
+sub,
+sup,
+mark,
+del,
+ins,
+abbr,
+dfn,
+kbd,
+samp,
+var,
+time {
+  cursor: default;
+}
+
+/* Cards and containers that should be clickable */
+.glass-card[onclick],
+.glass-card[data-clickable],
+.card-3d[onclick],
+.card-3d[data-clickable],
+.hover-lift,
+.hover-scale {
+  cursor: pointer !important;
+}
+
+/* Cards with hover effects that suggest interactivity */
+.glass-card:hover,
+.card-3d:hover {
+  cursor: pointer;
+}
+
+/* Non-interactive elements - default cursor */
+img,
+svg,
+video,
+canvas,
+iframe,
+div,
+section,
+article,
+header,
+footer,
+nav,
+main,
+aside {
+  cursor: default;
+  pointer-events: auto;
+}
+
+/* Elements with cursor-pointer class should always be clickable - must come after general div rule */
+.cursor-pointer,
+.glass-card.cursor-pointer {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent text selection on interactive elements */
+button,
+a,
+[role="button"],
+[role="link"],
+[role="tab"],
+[role="menuitem"],
+input:not([type="text"]):not([type="email"]):not([type="password"]):not([type="number"]):not([type="search"]):not([type="tel"]):not([type="url"]):not([type="date"]):not([type="time"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]),
+select,
+label[for] {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  /* Fallback for browsers that don't support background-clip: text */
+  color: var(--accent);
+}
+
+/* Ensure text is visible even if gradient fails */
+@supports (-webkit-background-clip: text) {
+  .text-gradient {
+    color: transparent;
+  }
+}
+
+.text-glow {
+  text-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* ============================================
+   3D TRANSFORMS & PERSPECTIVE
+   ============================================ */
+
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.card-3d:hover {
+  transform: rotateY(-5deg) rotateX(5deg) translateZ(20px);
+}
+
+/* 3D Float Animation */
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(0deg) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(-10px) rotateX(-2deg) rotateY(2deg);
+  }
+}
+
+.animate-float-3d {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+/* Hero 3D Rotate */
+@keyframes hero3d {
+  0% {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  }
+}
+
+.animate-hero-3d {
+  animation: hero3d 20s ease-in-out infinite;
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+
+.glow-accent {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-accent-lg {
+  box-shadow: var(--shadow-glow-lg);
+}
+
+/* Animated Glow Border */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--accent-glow), inset 0 0 20px rgba(0, 157, 224, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--accent-glow), inset 0 0 30px rgba(0, 157, 224, 0.15);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Glowing border */
+.border-glow {
+  position: relative;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent), transparent 50%, var(--accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border-glow:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   GRID & PATTERNS
+   ============================================ */
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.dots-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+
+/* Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
+}
+
+/* Fade In Scale */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.8s var(--ease-out-expo) forwards;
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s var(--ease-out-expo) forwards;
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s var(--ease-out-expo) forwards;
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+.hover-lift {
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  background: var(--surface-2);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-3);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.glass-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.container-custom {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-custom {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Animation Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

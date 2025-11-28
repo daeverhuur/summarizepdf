@@ -173,6 +173,7 @@ export const updateExtractedText = internalMutation({
   handler: async (ctx, args) => {
     await ctx.db.patch(args.documentId, {
       extractedText: args.extractedText,
+      pageCount: args.extractedText.length, // Update page count based on extracted pages
     });
   },
 });

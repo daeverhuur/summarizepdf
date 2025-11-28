@@ -69,6 +69,22 @@ export default defineSchema({
       v.literal("detailed")
     ),
     content: v.string(),
+    // Structured summary data for enhanced display
+    keyInsights: v.optional(v.array(v.object({
+      text: v.string(),
+      type: v.union(
+        v.literal("finding"),
+        v.literal("recommendation"),
+        v.literal("warning"),
+        v.literal("statistic"),
+        v.literal("conclusion")
+      ),
+    }))),
+    sections: v.optional(v.array(v.object({
+      title: v.string(),
+      content: v.string(),
+    }))),
+    suggestedQuestions: v.optional(v.array(v.string())),
     model: v.optional(v.string()),
     tokensUsed: v.optional(v.number()),
     createdAt: v.number(),

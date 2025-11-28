@@ -32,8 +32,8 @@ export default function BillingPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-2">Billing & Usage</h1>
-        <p className="text-slate-600">Manage your subscription and track usage</p>
+        <h1 className="text-4xl font-extrabold text-white mb-3">Billing & Usage</h1>
+        <p className="text-white/60 text-lg">Manage your subscription and track usage</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -50,8 +50,8 @@ export default function BillingPage() {
 
         {/* Usage Stats */}
         <div className="lg:col-span-2">
-          <Card className="p-6">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Current Usage</h2>
+          <Card>
+            <h2 className="text-2xl font-bold text-white mb-6">Current Usage</h2>
 
             {usage ? (
               <div>
@@ -83,7 +83,7 @@ export default function BillingPage() {
                 )}
               </div>
             ) : (
-              <p className="text-slate-600">Loading usage data...</p>
+              <p className="text-white/60">Loading usage data...</p>
             )}
           </Card>
         </div>

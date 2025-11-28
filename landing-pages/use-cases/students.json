@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "headline": "Study Smarter, Not Harder with AI",
+    "subheadline": "Transform your study routine with instant PDF summaries. Tackle textbooks, research papers, and lecture notes faster than ever before."
+  },
+  "cta": {
+    "primary": {
+      "text": "Start Free Student Account",
+      "link": "/sign-up"
+    },
+    "secondary": {
+      "text": "Student Pricing",
+      "link": "/pricing"
+    }
+  },
+  "benefits": [
+    {
+      "title": "Master Textbook Chapters Fast",
+      "description": "Get comprehensive summaries of lengthy textbook chapters in minutes. Focus on understanding concepts instead of spending hours reading every word."
+    },
+    {
+      "title": "Ace Your Research Papers",
+      "description": "Quickly review multiple academic papers and sources for your essays. Identify key arguments, methodologies, and findings without reading everything cover to cover."
+    },
+    {
+      "title": "Efficient Exam Preparation",
+      "description": "Create condensed study guides from your course materials. Review key concepts and important points quickly before exams and tests."
+    },
+    {
+      "title": "Save Money on Study Aids",
+      "description": "Generate your own chapter summaries and study notes instead of buying expensive study guides and CliffsNotes. One tool for all your courses."
+    },
+    {
+      "title": "Better Time Management",
+      "description": "Spend less time reading and more time understanding. Balance multiple courses, part-time jobs, and extracurriculars without sacrificing grades."
+    },
+    {
+      "title": "Multilingual Learning Support",
+      "description": "Summarize documents in over 50 languages. Perfect for language courses, international students, or studying abroad programs."
+    }
+  ],
+  "socialProof": [
+    {
+      "quote": "As a pre-med student, I'm drowning in reading. SummarizePDF helped me keep up with all my courses without pulling all-nighters. My grades actually improved because I had more time to understand the material.",
+      "author": "Alex Rivera",
+      "role": "Pre-Med Student, Junior"
+    },
+    {
+      "quote": "I used to spend $200+ per semester on study guides. Now I just upload my textbook PDFs and get better summaries instantly. This tool paid for itself in the first week.",
+      "author": "Sarah Kim",
+      "role": "Business Major, Sophomore"
+    },
+    {
+      "quote": "Research papers for my history thesis used to take forever to review. With SummarizePDF, I can quickly scan 20+ sources to find the most relevant ones, then dive deeper into those. Total game changer.",
+      "author": "Marcus Thompson",
+      "role": "History Major, Senior"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do you offer student discounts?",
+      "answer": "Yes! Students with valid .edu email addresses receive special pricing on all paid plans. Sign up with your student email to automatically qualify for educational discounts."
+    },
+    {
+      "question": "Can I summarize textbooks and course materials?",
+      "answer": "Absolutely! That's what most students use SummarizePDF for. Upload textbook chapters, lecture slides, course readings, and academic papers. Please ensure you have legal access to the materials you're summarizing."
+    },
+    {
+      "question": "Will this help me write better papers?",
+      "answer": "Yes! Use SummarizePDF to quickly review multiple sources and identify key arguments and evidence. This helps you understand the literature faster and build stronger arguments in your own writing."
+    },
+    {
+      "question": "Is there a free plan for students?",
+      "answer": "Yes! Our free plan includes 10 summaries per month - perfect for light use. For heavy coursework, our student-priced Pro plan offers unlimited summaries at a discount."
+    },
+    {
+      "question": "Can I use this for group projects?",
+      "answer": "Definitely! The Team plan is perfect for study groups and group projects. Share document libraries, collaborate on summaries, and split the cost among team members."
+    },
+    {
+      "question": "How fast can I get a summary?",
+      "answer": "Most documents are summarized in 10-30 seconds. Even lengthy textbook chapters (50+ pages) are processed in under a minute. Perfect when you're cramming before class or exams."
+    }
+  ]
+}
+

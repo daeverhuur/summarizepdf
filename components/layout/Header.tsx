@@ -1,51 +1,170 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { useUser, UserButton } from '@clerk/nextjs';
-import { FileText, Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
+
+// Custom brand-aligned icons
+const LogoIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+    <path d="M8 9h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V10a1 1 0 011-1z" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M10 13h8M10 16h6M10 19h4" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M17 17l3 3m0-3l-3 3" stroke="#00d4ff" strokeWidth="2" strokeLinecap="round" />
+    <defs>
+      <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+        <stop stopColor="#009de0" />
+        <stop offset="1" stopColor="#00d4ff" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+const MenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <line x1="6" y1="6" x2="18" y2="18" />
+    <line x1="6" y1="18" x2="18" y2="6" />
+  </svg>
+);
 
 export function Header() {
   const { isSignedIn } = useUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  
+  const { scrollY } = useScroll();
+  const headerOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  const headerBlur = useTransform(scrollY, [0, 100], [0, 20]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: '#pricing', label: 'Pricing', sectionId: 'pricing' },
+    { href: '#features', label: 'Features', sectionId: 'features' },
+  ];
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    if (pathname === '/') {
+      // Already on home page, just scroll
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to home page with hash
+      router.push(`/#${sectionId}`);
+    }
+  }, [pathname, router, scrollToSection]);
+
+  // Handle hash scrolling when navigating to home page with hash
+  useEffect(() => {
+    if (pathname === '/' && window.location.hash) {
+      const sectionId = window.location.hash.replace('#', '');
+      // Small delay to ensure the page is rendered
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    }
+  }, [pathname, scrollToSection]);
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <motion.header 
+      className={`fixed w-full top-0 z-50 transition-colors duration-300 pt-4 ${
+        hasScrolled 
+          ? 'bg-[#050508]/80 border-b border-white/5' 
+          : 'bg-transparent'
+      }`}
+      style={{
+        backdropFilter: hasScrolled ? 'blur(20px)' : 'none',
+      }}
+    >
+      <nav className="container-custom py-5">
+        <div className="flex items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-violet-500 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
-              <FileText className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-slate-900">SummarizePDF</span>
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            >
+              <LogoIcon />
+            </motion.div>
+            <span className="text-xl font-bold text-white tracking-tight">
+              Summarize<span className="text-[#009de0]">PDF</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/pricing" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
-              Pricing
-            </Link>
+          <div className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <a 
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.sectionId)}
+                className="text-white/60 hover:text-white font-medium transition-colors relative group cursor-pointer"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
+              </a>
+            ))}
             {isSignedIn && (
-              <Link href="/dashboard" className="text-slate-600 hover:text-slate-900 font-medium transition-colors">
+              <Link 
+                href="/dashboard" 
+                className="text-white/60 hover:text-white font-medium transition-colors relative group"
+              >
                 Dashboard
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
               </Link>
             )}
           </div>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-4">
             {isSignedIn ? (
-              <UserButton afterSignOutUrl="/" />
+              <UserButton 
+                afterSignOutUrl="/"
+                appearance={{
+                  elements: {
+                    avatarBox: 'w-10 h-10 border-2 border-[#009de0]/50 hover:border-[#009de0]',
+                  }
+                }}
+              />
             ) : (
               <>
                 <Link href="/sign-in">
-                  <Button variant="ghost">Sign In</Button>
+                  <Button variant="ghost" size="sm">Sign In</Button>
                 </Link>
                 <Link href="/sign-up">
-                  <Button variant="primary">Get Started Free</Button>
+                  <Button variant="primary" size="sm">
+                    Start Free
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-1">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Button>
                 </Link>
               </>
             )}
@@ -54,9 +173,9 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-slate-600 hover:text-slate-900"
+            className="md:hidden text-white/70 hover:text-white p-2"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
 
@@ -67,34 +186,72 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pt-4 border-t border-slate-200"
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="md:hidden mt-4 pt-4 border-t border-white/10 overflow-hidden"
             >
-              <div className="flex flex-col gap-4">
-                <Link href="/pricing" className="text-slate-600 hover:text-slate-900 font-medium">
-                  Pricing
-                </Link>
+              <div className="flex flex-col gap-4 pb-4">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <a 
+                      href={link.href}
+                      onClick={(e) => {
+                        handleNavClick(e, link.sectionId);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="text-white/70 hover:text-white font-medium text-lg block py-2 cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  </motion.div>
+                ))}
                 {isSignedIn ? (
                   <>
-                    <Link href="/dashboard" className="text-slate-600 hover:text-slate-900 font-medium">
-                      Dashboard
-                    </Link>
-                    <UserButton afterSignOutUrl="/" />
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <Link 
+                        href="/dashboard" 
+                        className="text-white/70 hover:text-white font-medium text-lg block py-2"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Dashboard
+                      </Link>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <UserButton afterSignOutUrl="/" />
+                    </motion.div>
                   </>
                 ) : (
-                  <>
-                    <Link href="/sign-in">
-                      <Button variant="ghost" className="w-full">Sign In</Button>
+                  <motion.div 
+                    className="flex flex-col gap-3 pt-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <Link href="/sign-in" onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="secondary" className="w-full">Sign In</Button>
                     </Link>
-                    <Link href="/sign-up">
-                      <Button variant="primary" className="w-full">Get Started Free</Button>
+                    <Link href="/sign-up" onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="primary" className="w-full">Start Free</Button>
                     </Link>
-                  </>
+                  </motion.div>
                 )}
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   );
 }

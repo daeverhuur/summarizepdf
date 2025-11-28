@@ -2,11 +2,17 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Check } from 'lucide-react';
-import { Card } from '@/components/ui/Card';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { PLANS, PricingTier } from '@/lib/stripe/plans';
 import { STRIPE_CONFIG, BillingInterval } from '@/lib/stripe/config';
+
+// Custom check icon
+const CheckIcon = ({ className = '' }: { className?: string }) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className={className}>
+    <path d="M5 10l3 3 7-7" stroke="#009de0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
 
 interface PricingCardProps {
   tier: PricingTier;
@@ -67,48 +73,52 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
   ];
 
   return (
-    <Card
-      hover
-      className={`p-8 ${plan.popular ? 'ring-2 ring-blue-500 shadow-xl' : ''}`}
+    <motion.div
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className={`relative bg-[#16161f] rounded-2xl border p-8 h-full flex flex-col ${
+        plan.popular 
+          ? 'border-[#009de0] shadow-[0_0_30px_rgba(0,157,224,0.2)]' 
+          : 'border-white/10 hover:border-white/20'
+      }`}
     >
       {plan.popular && (
-        <div className="mb-4">
-          <span className="bg-gradient-to-r from-blue-500 to-violet-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-            MOST POPULAR
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="bg-[#009de0] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+            Most Popular
           </span>
         </div>
       )}
 
-      <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+      <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
 
       <div className="mb-6">
-        <span className="text-5xl font-extrabold text-slate-900">${price}</span>
-        <span className="text-slate-600">/{billingInterval === 'month' ? 'mo' : 'yr'}</span>
+        <span className="text-5xl font-extrabold text-white">${price}</span>
+        <span className="text-white/40 ml-1">/{billingInterval === 'month' ? 'mo' : 'yr'}</span>
         {savings > 0 && (
-          <span className="ml-2 text-sm text-green-600 font-semibold">Save {savings}%</span>
+          <span className="ml-3 text-sm text-[#00d4ff] font-semibold">Save {savings}%</span>
         )}
       </div>
 
       <Button
-        variant={plan.popular ? 'primary' : 'outline'}
-        className="w-full mb-6"
+        variant={plan.popular ? 'glow' : 'secondary'}
+        className="w-full mb-8"
         onClick={handleSubscribe}
         isLoading={loading}
       >
         {plan.cta}
       </Button>
 
-      <ul className="space-y-3">
+      <ul className="space-y-4 flex-grow">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-            <span className="text-slate-700">
-              <span className="font-semibold">{feature.label}:</span>{' '}
+            <CheckIcon className="flex-shrink-0 mt-0.5" />
+            <span className="text-white/60">
+              <span className="text-white/80 font-medium">{feature.label}:</span>{' '}
               {typeof feature.value === 'boolean' ? (feature.value ? 'Yes' : 'No') : feature.value}
             </span>
           </li>
         ))}
       </ul>
-    </Card>
+    </motion.div>
   );
 }

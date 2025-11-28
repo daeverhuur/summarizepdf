@@ -151,6 +151,21 @@ export const create = mutation({
       v.literal("detailed")
     ),
     content: v.string(),
+    keyInsights: v.optional(v.array(v.object({
+      text: v.string(),
+      type: v.union(
+        v.literal("finding"),
+        v.literal("recommendation"),
+        v.literal("warning"),
+        v.literal("statistic"),
+        v.literal("conclusion")
+      ),
+    }))),
+    sections: v.optional(v.array(v.object({
+      title: v.string(),
+      content: v.string(),
+    }))),
+    suggestedQuestions: v.optional(v.array(v.string())),
     model: v.optional(v.string()),
     tokensUsed: v.optional(v.number()),
   },
@@ -184,6 +199,9 @@ export const create = mutation({
       format: args.format,
       length: args.length,
       content: args.content,
+      keyInsights: args.keyInsights,
+      sections: args.sections,
+      suggestedQuestions: args.suggestedQuestions,
       model: args.model,
       tokensUsed: args.tokensUsed,
       createdAt: Date.now(),

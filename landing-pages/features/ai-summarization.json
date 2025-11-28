@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "headline": "Advanced AI-Powered Document Summarization",
+    "subheadline": "Experience the power of cutting-edge AI technology that understands context, extracts key insights, and delivers human-quality summaries from any document."
+  },
+  "cta": {
+    "primary": {
+      "text": "Try AI Summarization Free",
+      "link": "/sign-up"
+    },
+    "secondary": {
+      "text": "View Pricing",
+      "link": "/pricing"
+    }
+  },
+  "benefits": [
+    {
+      "title": "Context-Aware Intelligence",
+      "description": "Our AI doesn't just extract text - it understands context, relationships, and nuances to deliver meaningful summaries that capture the essence of your documents."
+    },
+    {
+      "title": "Multiple Summary Formats",
+      "description": "Get executive summaries, bullet-point highlights, detailed analyses, or custom formats tailored to your specific needs and preferences."
+    },
+    {
+      "title": "Smart Key Insight Extraction",
+      "description": "Automatically identifies and highlights the most important information, data points, conclusions, and actionable items from your documents."
+    },
+    {
+      "title": "Multi-Language Support",
+      "description": "Process documents in over 50 languages with AI that understands cultural context and language-specific nuances for accurate summaries."
+    },
+    {
+      "title": "Continuous Learning",
+      "description": "Our AI models are constantly updated with the latest advancements, ensuring you always get the most accurate and sophisticated summaries available."
+    },
+    {
+      "title": "Industry-Specific Intelligence",
+      "description": "Trained on diverse datasets including legal, medical, financial, and technical documents for specialized domain knowledge and accuracy."
+    }
+  ],
+  "socialProof": [
+    {
+      "quote": "The AI summarization is incredibly accurate. It picks up on nuances and context that other tools miss completely. This has become essential for our legal team's document review process.",
+      "author": "Michael Torres",
+      "role": "Legal Director, Fortune 500"
+    },
+    {
+      "quote": "I've tried every summarization tool on the market. SummarizePDF's AI is in a league of its own - it actually understands what the documents are saying, not just extracting sentences.",
+      "author": "Dr. Lisa Chang",
+      "role": "Research Director"
+    },
+    {
+      "quote": "The multi-format summary options are a game changer. I can get quick bullet points for email updates or detailed analyses for board presentations - all from the same AI engine.",
+      "author": "James Wilson",
+      "role": "Management Consultant"
+    }
+  ],
+  "faq": [
+    {
+      "question": "What AI technology powers the summarization?",
+      "answer": "We use Google's latest Gemini AI models, known for their advanced reasoning capabilities and contextual understanding. Our system is continuously updated with the latest AI advancements to ensure the highest quality summaries."
+    },
+    {
+      "question": "How does AI summarization differ from simple text extraction?",
+      "answer": "Traditional tools just pull out sentences. Our AI actually reads and understands the document, identifies relationships between concepts, evaluates importance, and generates new text that captures the essence - just like a human would."
+    },
+    {
+      "question": "Can the AI handle technical or specialized documents?",
+      "answer": "Yes! Our AI is trained on diverse datasets including legal, medical, financial, technical, and academic documents. It understands domain-specific terminology and context for accurate specialized summaries."
+    },
+    {
+      "question": "What summary formats are available?",
+      "answer": "You can choose from executive summaries, bullet-point highlights, detailed chapter-by-chapter analyses, key insights extraction, or custom formats. Each format is optimized for different use cases and audiences."
+    },
+    {
+      "question": "Does the AI work with scanned documents or images?",
+      "answer": "Absolutely! We use advanced OCR technology to extract text from scanned documents and images, then apply our AI summarization to process the content just like any digital document."
+    },
+    {
+      "question": "How accurate are the AI-generated summaries?",
+      "answer": "Our AI achieves industry-leading accuracy rates. However, we always recommend reviewing summaries for critical decisions. The AI is designed to be a powerful assistant, not a replacement for human judgment in important matters."
+    }
+  ]
+}
+

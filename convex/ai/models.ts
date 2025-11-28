@@ -1,14 +1,14 @@
 // OpenAI Model Configuration for SummarizePDF
-// Model names extracted from /research/openai-models.md
+// Using GPT-4o models for summarization
 
 export const OPENAI_MODELS = {
   // PRIMARY: Cost-effective model for high-volume summarization
-  // gpt-5-nano: $0.05/1M input, 400K context, designed for summarization
-  PRIMARY: "gpt-5-nano",
+  // gpt-4o-mini: Fast, affordable, 128K context window
+  PRIMARY: "gpt-4o-mini",
 
   // FALLBACK: Higher quality model for complex documents
-  // gpt-5-mini: $0.25/1M input, 400K context, high reasoning capability
-  FALLBACK: "gpt-5-mini",
+  // gpt-4o: Most capable GPT-4 model, 128K context window
+  FALLBACK: "gpt-4o",
 } as const;
 
 // Model configuration settings

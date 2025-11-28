@@ -6,6 +6,24 @@ import { api, internal } from "../_generated/api";
 import OpenAI from "openai";
 import { OPENAI_MODELS, MODEL_CONFIG } from "./models";
 
+// Type definitions for structured summary
+interface KeyInsight {
+  text: string;
+  type: "finding" | "recommendation" | "warning" | "statistic" | "conclusion";
+}
+
+interface Section {
+  title: string;
+  content: string;
+}
+
+interface StructuredSummary {
+  summary: string;
+  keyInsights: KeyInsight[];
+  sections: Section[];
+  suggestedQuestions: string[];
+}
+
 // Generate summary from PDF document
 export const generateSummary = action({
   args: {
@@ -89,12 +107,12 @@ export const generateSummary = action({
       throw new Error("Document appears to be empty");
     }
 
-    // Build prompt based on format and length
-    const systemPrompt = buildSystemPrompt(args.format, args.length);
-    const userPrompt = buildUserPrompt(fullText, args.format, args.length);
+    // Build prompt for structured JSON output
+    const systemPrompt = buildStructuredSystemPrompt();
+    const userPrompt = buildStructuredUserPrompt(fullText, args.format, args.length);
 
     try {
-      // Try with primary model first (gpt-5-nano)
+      // Try with primary model first (gpt-4o-mini)
       let model: string = OPENAI_MODELS.PRIMARY;
       let response;
 
@@ -106,13 +124,14 @@ export const generateSummary = action({
             { role: "user", content: userPrompt },
           ],
           temperature: MODEL_CONFIG.temperature,
-          max_tokens: MODEL_CONFIG.maxTokens[args.length],
+          max_tokens: MODEL_CONFIG.maxTokens[args.length] + 1000, // Extra tokens for JSON structure
           top_p: MODEL_CONFIG.top_p,
           frequency_penalty: MODEL_CONFIG.frequency_penalty,
           presence_penalty: MODEL_CONFIG.presence_penalty,
+          response_format: { type: "json_object" },
         });
       } catch (error: any) {
-        // If primary model fails (rate limit, etc.), fall back to gpt-5-mini
+        // If primary model fails (rate limit, etc.), fall back to gpt-4o
         if (error.status === 429 || error.code === "rate_limit_exceeded") {
           console.log("Rate limited on primary model, using fallback");
           model = OPENAI_MODELS.FALLBACK;
@@ -124,19 +143,34 @@ export const generateSummary = action({
               { role: "user", content: userPrompt },
             ],
             temperature: MODEL_CONFIG.temperature,
-            max_tokens: MODEL_CONFIG.maxTokens[args.length],
+            max_tokens: MODEL_CONFIG.maxTokens[args.length] + 1000,
             top_p: MODEL_CONFIG.top_p,
             frequency_penalty: MODEL_CONFIG.frequency_penalty,
             presence_penalty: MODEL_CONFIG.presence_penalty,
+            response_format: { type: "json_object" },
           });
         } else {
           throw error;
         }
       }
 
-      const summary = response.choices[0]?.message?.content;
-      if (!summary) {
+      const rawContent = response.choices[0]?.message?.content;
+      if (!rawContent) {
         throw new Error("No summary generated");
+      }
+
+      // Parse the JSON response
+      let structuredData: StructuredSummary;
+      try {
+        structuredData = JSON.parse(rawContent);
+      } catch {
+        // If JSON parsing fails, use the raw content as the summary
+        structuredData = {
+          summary: rawContent,
+          keyInsights: [],
+          sections: [],
+          suggestedQuestions: [],
+        };
       }
 
       // Calculate tokens used
@@ -144,12 +178,15 @@ export const generateSummary = action({
         (response.usage?.prompt_tokens || 0) +
         (response.usage?.completion_tokens || 0);
 
-      // Save summary to database
+      // Save summary to database with structured data
       const summaryId = await ctx.runMutation(api.summaries.create, {
         documentId: args.documentId,
         format: args.format,
         length: args.length,
-        content: summary,
+        content: structuredData.summary,
+        keyInsights: structuredData.keyInsights,
+        sections: structuredData.sections,
+        suggestedQuestions: structuredData.suggestedQuestions,
         model,
         tokensUsed,
       });
@@ -163,7 +200,7 @@ export const generateSummary = action({
 
       return {
         summaryId,
-        content: summary,
+        content: structuredData.summary,
         model,
         tokensUsed,
       };
@@ -176,31 +213,39 @@ export const generateSummary = action({
   },
 });
 
-// Build system prompt based on format
-function buildSystemPrompt(
-  format: "bullet" | "paragraph" | "detailed",
-  length: "short" | "medium" | "detailed"
-): string {
-  const basePrompt =
-    "You are an expert PDF summarization assistant. Your summaries are accurate, concise, and capture the key points of the document.";
+// Build system prompt for structured JSON output
+function buildStructuredSystemPrompt(): string {
+  return `You are an expert PDF summarization assistant. You analyze documents and provide structured insights in JSON format.
 
-  switch (format) {
-    case "bullet":
-      return `${basePrompt}\n\nProvide summaries as clear, organized bullet points. Each bullet should be a complete, standalone statement. Group related points under clear headings when appropriate.`;
-
-    case "paragraph":
-      return `${basePrompt}\n\nProvide summaries as flowing, well-structured paragraphs. Use clear topic sentences and smooth transitions. Write in an executive summary style.`;
-
-    case "detailed":
-      return `${basePrompt}\n\nProvide comprehensive, section-by-section analysis. Include key details, main arguments, supporting evidence, and conclusions. Maintain the logical flow of the original document.`;
-
-    default:
-      return basePrompt;
-  }
+Your response must be a valid JSON object with this exact structure:
+{
+  "summary": "The main summary text (formatted based on user's requested format)",
+  "keyInsights": [
+    {"text": "Key insight 1", "type": "finding|recommendation|warning|statistic|conclusion"},
+    {"text": "Key insight 2", "type": "finding|recommendation|warning|statistic|conclusion"}
+  ],
+  "sections": [
+    {"title": "Section Title", "content": "Section content..."},
+    {"title": "Another Section", "content": "More content..."}
+  ],
+  "suggestedQuestions": [
+    "Question 1 that a reader might want to ask about this document?",
+    "Question 2 about specific details?"
+  ]
 }
 
-// Build user prompt based on length
-function buildUserPrompt(
+Insight types:
+- "finding": A key discovery or fact from the document
+- "recommendation": An action item or suggestion
+- "warning": A risk, concern, or caution mentioned
+- "statistic": A notable number, percentage, or data point
+- "conclusion": A final takeaway or conclusion
+
+Always provide 3-5 key insights, 2-4 sections, and 3-4 suggested questions.`;
+}
+
+// Build user prompt for structured output
+function buildStructuredUserPrompt(
   text: string,
   format: "bullet" | "paragraph" | "detailed",
   length: "short" | "medium" | "detailed"
@@ -212,19 +257,23 @@ function buildUserPrompt(
   };
 
   const formatInstruction = {
-    bullet: "Extract the key takeaways as bullet points",
-    paragraph: "Write an executive summary in flowing paragraphs",
-    detailed: "Provide a section-by-section analysis",
+    bullet: "Format the summary as clear bullet points with • symbols",
+    paragraph: "Format the summary as flowing, professional paragraphs",
+    detailed: "Format the summary as a comprehensive section-by-section analysis",
   };
 
-  return `${formatInstruction[format]} of approximately ${lengthGuide[length]} from the following document:
+  return `Analyze the following document and provide a structured JSON response.
 
+Summary format: ${formatInstruction[format]}
+Summary length: approximately ${lengthGuide[length]}
+
+Document content:
 ${text}
 
-Remember to:
-- Focus on the most important information
-- Maintain accuracy to the source material
-- ${format === "bullet" ? "Use clear, concise bullet points" : ""}
-- ${format === "paragraph" ? "Use smooth, professional prose" : ""}
-- ${format === "detailed" ? "Cover all major sections and their key points" : ""}`;
+Remember:
+- Extract the most important and actionable insights
+- Identify key findings, recommendations, warnings, statistics, and conclusions
+- Break down the content into logical sections
+- Suggest questions that would help readers understand the document better
+- Ensure the summary is accurate to the source material`;
 }
