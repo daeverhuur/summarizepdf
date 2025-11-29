@@ -11,18 +11,73 @@ export default function ContactPage() {
     subject: '',
     message: '',
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.subject) {
+      newErrors.subject = 'Please select a subject';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted:', formData);
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setErrors({});
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    }, 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [name]: value
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   const contactMethods = [
@@ -142,10 +197,26 @@ export default function ContactPage() {
                 Send us a message
               </h2>
               <Card className="p-8">
+                {submitSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-green-600">
+                      <path
+                        d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-2 15l-5-5 1.41-1.41L8 12.17l7.59-7.59L17 6l-9 9z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    <span className="text-green-800 font-medium">Thank you! Your message has been sent successfully.</span>
+                  </motion.div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-slate-900 font-medium mb-2">
-                      Name
+                      Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -153,15 +224,30 @@ export default function ContactPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
+                      className={`w-full px-4 py-3 bg-slate-50 border rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all ${
+                        errors.name
+                          ? 'border-red-500 focus:ring-2 focus:ring-red-500/20 focus:border-red-500'
+                          : 'border-slate-200 focus:ring-2 focus:ring-[#009de0] focus:border-[#009de0]'
+                      }`}
                       placeholder="Your name"
                     />
+                    {errors.name && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1.5 text-sm text-red-600 flex items-center gap-1"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {errors.name}
+                      </motion.p>
+                    )}
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-slate-900 font-medium mb-2">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -169,23 +255,41 @@ export default function ContactPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
+                      className={`w-full px-4 py-3 bg-slate-50 border rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all ${
+                        errors.email
+                          ? 'border-red-500 focus:ring-2 focus:ring-red-500/20 focus:border-red-500'
+                          : 'border-slate-200 focus:ring-2 focus:ring-[#009de0] focus:border-[#009de0]'
+                      }`}
                       placeholder="your.email@example.com"
                     />
+                    {errors.email && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1.5 text-sm text-red-600 flex items-center gap-1"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {errors.email}
+                      </motion.p>
+                    )}
                   </div>
 
                   <div>
                     <label htmlFor="subject" className="block text-slate-900 font-medium mb-2">
-                      Subject
+                      Subject <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
+                      className={`w-full px-4 py-3 bg-slate-50 border rounded-lg text-slate-900 focus:outline-none transition-all ${
+                        errors.subject
+                          ? 'border-red-500 focus:ring-2 focus:ring-red-500/20 focus:border-red-500'
+                          : 'border-slate-200 focus:ring-2 focus:ring-[#009de0] focus:border-[#009de0]'
+                      }`}
                     >
                       <option value="" className="bg-white">Select a subject</option>
                       <option value="support" className="bg-white">Technical Support</option>
@@ -194,30 +298,70 @@ export default function ContactPage() {
                       <option value="partnership" className="bg-white">Partnership</option>
                       <option value="other" className="bg-white">Other</option>
                     </select>
+                    {errors.subject && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1.5 text-sm text-red-600 flex items-center gap-1"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {errors.subject}
+                      </motion.p>
+                    )}
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-slate-900 font-medium mb-2">
-                      Message
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      required
                       rows={6}
-                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all resize-none"
+                      className={`w-full px-4 py-3 bg-slate-50 border rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all resize-none ${
+                        errors.message
+                          ? 'border-red-500 focus:ring-2 focus:ring-red-500/20 focus:border-red-500'
+                          : 'border-slate-200 focus:ring-2 focus:ring-[#009de0] focus:border-[#009de0]'
+                      }`}
                       placeholder="How can we help you?"
                     />
+                    {errors.message && (
+                      <motion.p
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-1.5 text-sm text-red-600 flex items-center gap-1"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {errors.message}
+                      </motion.p>
+                    )}
                   </div>
 
-                  <button
+                  <motion.button
                     type="submit"
-                    className="w-full btn-primary"
+                    disabled={isSubmitting}
+                    whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                    whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                    className={`w-full btn-primary ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                   >
-                    Send Message
-                  </button>
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </motion.button>
                 </form>
               </Card>
             </div>

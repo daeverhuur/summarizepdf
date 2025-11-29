@@ -9,7 +9,7 @@ type ButtonBaseProps = Omit<
 >;
 
 interface ButtonProps extends ButtonBaseProps {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'glow' | 'white';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'glow' | 'white' | 'icon';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   isLoading?: boolean;
 }
@@ -19,6 +19,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = `
       font-semibold rounded-xl transition-all inline-flex items-center justify-center gap-3
       relative overflow-hidden cursor-pointer select-none
+      focus-visible:ring-2 focus-visible:ring-[#009de0] focus-visible:ring-offset-2 focus-visible:outline-none
     `;
 
     const variants = {
@@ -26,7 +27,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         bg-[#009de0] text-white
         before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
         before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700
-        hover:shadow-[0_10px_40px_rgba(0,157,224,0.4)]
+        hover:shadow-[0_10px_40px_rgba(0,157,224,0.4)] hover:scale-[1.02]
         active:scale-[0.98]
       `,
       secondary: `
@@ -41,14 +42,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         active:scale-[0.98]
       `,
       ghost: `
-        text-slate-600
+        text-slate-700
         hover:bg-slate-100 hover:text-slate-900
         active:scale-[0.98]
       `,
       glow: `
         bg-[#009de0] text-white
         shadow-[0_0_20px_rgba(0,157,224,0.5),inset_0_0_20px_rgba(0,157,224,0.1)]
-        hover:shadow-[0_0_40px_rgba(0,157,224,0.6),inset_0_0_30px_rgba(0,157,224,0.15)]
+        hover:shadow-[0_0_40px_rgba(0,157,224,0.6),inset_0_0_30px_rgba(0,157,224,0.15)] hover:scale-[1.02]
         animate-[glow-pulse_3s_ease-in-out_infinite]
         active:scale-[0.98]
       `,
@@ -57,10 +58,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         hover:bg-slate-50
         active:scale-[0.98]
       `,
+      icon: `
+        bg-transparent text-slate-700
+        hover:bg-slate-100
+        active:scale-[0.98]
+        p-2
+      `,
     };
 
     const sizes = {
-      sm: 'px-4 py-2 text-sm',
+      sm: 'px-5 py-2.5 text-sm',
       md: 'px-6 py-3 text-base',
       lg: 'px-8 py-4 text-lg',
       xl: 'px-10 py-5 text-xl',

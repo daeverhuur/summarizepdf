@@ -1,0 +1,32 @@
+[
+  {
+    "test": "Landing Page",
+    "status": "PASS",
+    "details": "Hero visible: true. Console errors: 0"
+  },
+  {
+    "test": "Pricing Page",
+    "status": "PASS",
+    "details": "Pricing toggle works, yearly view captured"
+  },
+  {
+    "test": "Contact Page",
+    "status": "PASS",
+    "details": "Form validation triggered"
+  },
+  {
+    "test": "Dashboard Access",
+    "status": "PASS",
+    "details": "URL: https://sweet-filly-99.accounts.dev/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3006%2Fdashboard. Correctly redirected to auth"
+  },
+  {
+    "test": "Mobile Responsive",
+    "status": "PASS",
+    "details": "Mobile views captured for landing and pricing"
+  },
+  {
+    "test": "UI Components - Focus States",
+    "status": "PASS",
+    "details": "Button focus state captured"
+  }
+]

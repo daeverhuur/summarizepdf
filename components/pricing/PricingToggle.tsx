@@ -11,35 +11,61 @@ interface PricingToggleProps {
 export function PricingToggle({ billingInterval, onChange }: PricingToggleProps) {
   return (
     <div className="flex items-center justify-center gap-4 mb-12">
-      <button
+      <motion.button
         onClick={() => onChange('month')}
-        className={`text-lg font-semibold transition-colors ${
-          billingInterval === 'month' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`text-lg font-semibold transition-all ${
+          billingInterval === 'month' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-700'
         }`}
       >
         Monthly
-      </button>
+      </motion.button>
 
       <div
-        className="relative w-14 h-7 bg-slate-100 border border-slate-200 rounded-full cursor-pointer pointer-events-auto"
+        className="relative w-16 h-8 bg-slate-100 border-2 border-slate-200 rounded-full cursor-pointer pointer-events-auto transition-all hover:border-slate-300 shadow-inner"
         onClick={() => onChange(billingInterval === 'month' ? 'year' : 'month')}
       >
+        {/* Sliding background */}
         <motion.div
-          animate={{ x: billingInterval === 'month' ? 2 : 30 }}
-          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-          className="absolute top-1 w-5 h-5 bg-[#009de0] rounded-full shadow-[0_0_10px_rgba(0,157,224,0.5)]"
+          animate={{
+            x: billingInterval === 'month' ? 0 : '100%',
+          }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-[#009de0] to-[#00d4ff] rounded-full m-0.5"
+        />
+
+        {/* Sliding indicator */}
+        <motion.div
+          animate={{ x: billingInterval === 'month' ? 2 : 34 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          className="absolute top-1 w-6 h-6 bg-white rounded-full shadow-lg border border-slate-200"
         />
       </div>
 
-      <button
+      <motion.button
         onClick={() => onChange('year')}
-        className={`text-lg font-semibold transition-colors ${
-          billingInterval === 'year' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`text-lg font-semibold transition-all flex items-center gap-2 ${
+          billingInterval === 'year' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-700'
         }`}
       >
         Yearly
-        <span className="ml-2 text-sm text-[#00d4ff] font-semibold">(Save 20%)</span>
-      </button>
+        <motion.span
+          className="px-2 py-0.5 bg-gradient-to-r from-[#00d4ff] to-purple-500 text-white text-xs font-bold rounded-full"
+          animate={{
+            scale: billingInterval === 'year' ? [1, 1.05, 1] : 1,
+          }}
+          transition={{
+            duration: 2,
+            repeat: billingInterval === 'year' ? Infinity : 0,
+            ease: "easeInOut",
+          }}
+        >
+          Save 20%
+        </motion.span>
+      </motion.button>
     </div>
   );
 }

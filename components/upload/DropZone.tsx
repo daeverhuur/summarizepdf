@@ -53,9 +53,27 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all ${
-        isDragging ? 'border-[#009de0] bg-[#009de0]/10' : 'border-slate-200 bg-slate-100'
-      } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:border-[#009de0]/50'}`}
+        isDragging
+          ? 'border-[#009de0] bg-gradient-to-br from-[#009de0]/10 via-[#00d4ff]/10 to-purple-500/10 shadow-[0_0_30px_rgba(0,157,224,0.3)]'
+          : 'border-slate-300 bg-slate-50 hover:bg-gradient-to-br hover:from-slate-50 hover:to-slate-100'
+      } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:border-[#009de0]/50 hover:shadow-lg'}`}
     >
+      {/* Animated border effect when dragging */}
+      {isDragging && (
+        <motion.div
+          className="absolute inset-0 rounded-2xl border-2 border-[#00d4ff]"
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            scale: [1, 1.02, 1],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      )}
+
       <input
         type="file"
         accept="application/pdf"
@@ -95,11 +113,26 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Upload className="w-16 h-16 text-slate-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <Upload className="w-20 h-20 text-slate-400 mx-auto mb-4" />
+            </motion.div>
+            <h3 className="text-lg font-medium text-slate-900 mb-2">
               Drop your PDF here or click to browse
             </h3>
-            <p className="text-slate-600">Support for PDFs up to 500 pages</p>
+            <p className="text-sm text-slate-500 mb-4">Support for PDFs up to 500 pages</p>
+
+            {/* File type badges */}
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <span className="px-3 py-1 bg-[#009de0]/10 text-[#009de0] text-xs font-semibold rounded-full border border-[#009de0]/20">
+                PDF
+              </span>
+              <span className="px-3 py-1 bg-slate-200 text-slate-600 text-xs font-medium rounded-full">
+                Max 50MB
+              </span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

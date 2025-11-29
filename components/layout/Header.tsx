@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useUser, UserButton } from '@clerk/nextjs';
 import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 
 // Custom brand-aligned icons
@@ -43,28 +43,51 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isInHeroArea, setIsInHeroArea] = useState(true);
+  const [lightSectionOffset, setLightSectionOffset] = useState<number | null>(null);
   const pathname = usePathname();
   const router = useRouter();
+  const isHomePage = pathname === '/';
 
   const { scrollY } = useScroll();
-  const headerOpacity = useTransform(scrollY, [0, 100], [0, 1]);
-  const headerBlur = useTransform(scrollY, [0, 100], [0, 20]);
+  const backgroundOpacity = useTransform(scrollY, [0, 120], [0, 0.9]);
+  const darkBackground = useMotionTemplate`rgba(5, 5, 8, ${backgroundOpacity})`;
+  const lightBackground = useMotionTemplate`rgba(255, 255, 255, ${backgroundOpacity})`;
+
+  useEffect(() => {
+    if (!isHomePage) {
+      setLightSectionOffset(null);
+      return;
+    }
+
+    const updateLightSectionOffset = () => {
+      const featuresSection = document.getElementById('features');
+      setLightSectionOffset(featuresSection ? featuresSection.offsetTop : null);
+    };
+
+    updateLightSectionOffset();
+    window.addEventListener('resize', updateLightSectionOffset);
+    return () => window.removeEventListener('resize', updateLightSectionOffset);
+  }, [isHomePage]);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setHasScrolled(scrollPosition > 20);
 
-      // Check if we're still in the hero area (dark section)
-      // Hero + Stats section is approximately 100vh + stats height (estimated ~800-1000px total)
-      // The transition happens at around 900-1000px from top
-      const heroEndPosition = 900;
-      setIsInHeroArea(scrollPosition < heroEndPosition);
+      if (!isHomePage) {
+        setIsInHeroArea(false);
+        return;
+      }
+
+      const headerHeight = document.querySelector('header')?.clientHeight ?? 0;
+      const fallbackEnd = 1400;
+      const lightStart = Math.max((lightSectionOffset ?? fallbackEnd) - headerHeight - 32, 0);
+      setIsInHeroArea(scrollPosition + headerHeight < lightStart);
     };
     handleScroll(); // Call once on mount to set initial state
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage, lightSectionOffset]);
 
   const navLinks = [
     { href: '#features', label: 'Features', sectionId: 'features' },
@@ -106,22 +129,21 @@ export function Header() {
     }
   }, [pathname, scrollToSection]);
 
-  // Only apply dark theme logic on homepage
-  const isHomePage = pathname === '/';
   const shouldUseDarkTheme = isHomePage && isInHeroArea;
   const shouldShowBackground = hasScrolled;
+  const headerBackground = shouldUseDarkTheme ? darkBackground : lightBackground;
 
   return (
     <motion.header
-      className={`fixed w-full top-0 z-50 transition-colors duration-300 pt-4 ${
-        shouldShowBackground
-          ? shouldUseDarkTheme
-            ? 'bg-[#050508]/80 border-b border-white/10'
-            : 'bg-white/80 border-b border-slate-100'
-          : 'bg-transparent'
-      }`}
+      className="fixed w-full top-0 z-50 border-b transition-colors duration-300 pt-4"
       style={{
-        backdropFilter: shouldShowBackground ? 'blur(20px)' : 'none',
+        background: shouldShowBackground ? headerBackground : 'transparent',
+        borderColor: shouldShowBackground
+          ? shouldUseDarkTheme
+            ? 'rgba(255,255,255,0.08)'
+            : 'rgba(15,23,42,0.08)'
+          : 'transparent',
+        backdropFilter: shouldShowBackground ? 'blur(18px)' : 'none',
       }}
     >
       <nav className="container-custom py-5">

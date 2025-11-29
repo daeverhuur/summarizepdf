@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
-import { useRef, useState, useCallback, useEffect } from 'react';
+import { motion, useScroll, useTransform, useInView, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { useRef, useState, useCallback, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/Button';
 import { PricingCard } from '@/components/pricing/PricingCard';
 import { PricingToggle } from '@/components/pricing/PricingToggle';
@@ -42,9 +42,9 @@ const LibraryIcon = () => (
 );
 
 const StarIcon = ({ filled = false }: { filled?: boolean }) => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill={filled ? "#009de0" : "none"}>
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" 
-          stroke="#009de0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill={filled ? "#facc15" : "none"}>
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          stroke="#facc15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -98,7 +98,7 @@ function FloatingPDF({ delay = 0, className = '' }: { delay?: number; className?
         repeatDelay: 2,
       }}
     >
-      <div className="w-16 h-20 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 shadow-lg transform perspective-500">
+      <div className="w-16 h-20 rounded-lg border border-white/20 shadow-lg frosted-panel transform perspective-500">
         <div className="h-3 bg-[#009de0]/30 rounded-t-lg" />
         <div className="p-2 space-y-1">
           <div className="h-1 bg-white/20 rounded" />
@@ -196,18 +196,18 @@ function MagneticButton({ children, className = '', href }: { children: React.Re
   );
 }
 
-// Section wrapper with scroll animation
+// Section wrapper with scroll animation (reduced intensity)
 function AnimatedSection({ children, className = '', id }: { children: React.ReactNode; className?: string; id?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   return (
     <motion.section
       ref={ref}
       id={id}
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}
@@ -220,8 +220,11 @@ export default function HomePage() {
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
   const [isTryModalOpen, setIsTryModalOpen] = useState(false);
   const [isDraggingOnHero, setIsDraggingOnHero] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
   
   const heroRef = useRef(null);
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
   
   // Handle drag events on the hero demo card
   const handleHeroDragOver = useCallback((e: React.DragEvent) => {
@@ -247,11 +250,19 @@ export default function HomePage() {
     offset: ["start start", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+  const heroTranslateY = useTransform(scrollYProgress, [0, 0.45], [0, 60]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.35], [1, 0.9]);
   
-  const springY = useSpring(y, { stiffness: 100, damping: 30 });
+  const heroMotionStyle = useMemo(() => {
+    if (prefersReducedMotion) return undefined;
+    return {
+      y: heroTranslateY,
+      opacity: heroOpacity,
+      scale: heroScale,
+      willChange: 'transform, opacity',
+    };
+  }, [prefersReducedMotion, heroTranslateY, heroOpacity, heroScale]);
 
   const features = [
     {
@@ -341,7 +352,7 @@ export default function HomePage() {
 
         <motion.div 
           className="container-custom relative z-10 pt-20 pb-8"
-          style={{ y: springY, opacity, scale }}
+          style={heroMotionStyle}
         >
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Content */}
@@ -352,7 +363,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-6 cursor-default"
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 cursor-default frosted-panel border border-white/10"
               >
                 <div className="flex -space-x-1.5">
                   {[...Array(4)].map((_, i) => (
@@ -512,7 +523,7 @@ export default function HomePage() {
               
               <div
                 onClick={() => setIsTryModalOpen(true)}
-                className={`relative bg-white/10 border rounded-2xl p-1 shadow-2xl backdrop-blur-sm cursor-pointer transition-all duration-300 group ${
+                className={`relative border rounded-2xl p-1 shadow-2xl frosted-panel cursor-pointer transition-all duration-300 group ${
                   isDraggingOnHero
                     ? 'border-[#009de0] scale-[1.02]'
                     : 'border-white/20 hover:border-[#009de0]/50 hover:scale-[1.01]'
@@ -591,7 +602,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
-                className="absolute -bottom-4 -left-4 bg-white/10 border border-white/20 rounded-xl px-4 py-3 shadow-xl backdrop-blur-sm"
+                className="absolute -bottom-4 -left-4 border border-white/20 rounded-xl px-4 py-3 shadow-xl frosted-panel"
               >
                 <motion.div
                   animate={{
@@ -700,39 +711,17 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <AnimatedSection className="py-16 md:py-24 relative overflow-hidden bg-[#050508]">
-        {/* Animated gradient background */}
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-[#009de0]/5 to-transparent"
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'linear',
-          }}
-        />
+      <section className="py-20 md:py-28 relative overflow-hidden bg-[#050508]">
+        <div className="absolute inset-0 stats-gradient" aria-hidden />
+        <div className="absolute inset-0 stats-grid" aria-hidden />
         
-        {/* Animated grid lines */}
         <motion.div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: 'linear-gradient(#009de0 1px, transparent 1px), linear-gradient(90deg, #009de0 1px, transparent 1px)',
-            backgroundSize: '50px 50px',
-          }}
-          animate={{
-            backgroundPosition: ['0px 0px', '50px 50px'],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-        
-        <div className="container-custom relative">
+          ref={statsRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={statsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="container-custom relative"
+        >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
             {stats.map((stat, i) => (
               <motion.div
@@ -748,14 +737,14 @@ export default function HomePage() {
                 className="text-center group cursor-default"
               >
                 <motion.div
-                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 group-hover:text-gradient transition-all"
+                  className="text-4xl md:text-5xl font-bold text-white mb-2 tabular-nums group-hover:text-gradient transition-all"
                   whileHover={{
                     textShadow: '0 0 20px rgba(0, 157, 224, 0.5)',
                   }}
                 >
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </motion.div>
-                <div className="text-white/50 font-medium group-hover:text-white/70 transition-colors">{stat.label}</div>
+                <div className="text-sm uppercase tracking-wider text-white/60 group-hover:text-white/80 transition-colors">{stat.label}</div>
                 
                 {/* Animated underline on hover */}
                 <motion.div
@@ -767,14 +756,14 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </AnimatedSection>
+        </motion.div>
+      </section>
 
       {/* Transition gradient from dark to light */}
       <div className="h-32 bg-gradient-to-b from-[#050508] to-white" />
 
       {/* Features Section */}
-      <AnimatedSection id="features" className="py-16 md:py-24 relative scroll-mt-24">
+      <AnimatedSection id="features" className="py-20 md:py-28 relative scroll-mt-24">
         <div className="container-custom">
           <div className="text-center mb-20">
             <motion.span
@@ -789,7 +778,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6"
             >
               Everything you need to
               <br />
@@ -800,7 +789,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-slate-500 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto"
             >
               Powerful AI features to transform how you work with documents
             </motion.p>
@@ -814,10 +803,9 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ 
-                  y: -12, 
-                  scale: 1.02,
-                  transition: { duration: 0.3, type: "spring", stiffness: 300 } 
+                whileHover={{
+                  y: -4,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
                 }}
                 className="group"
               >
@@ -838,10 +826,10 @@ export default function HomePage() {
                   />
                   
                   <motion.div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-5 relative z-10`}
-                    whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+                    className={`w-16 h-16 rounded-xl bg-[#009de0]/10 p-3 mb-5 relative z-10 flex items-center justify-center text-[#009de0]`}
+                    whileHover={{ rotate: [0, -5, 5, 0], transition: { duration: 0.5 } }}
                   >
-                    <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center text-slate-900 group-hover:bg-slate-50 transition-colors">
+                    <div className="w-full h-full flex items-center justify-center">
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
@@ -871,7 +859,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* How It Works Section */}
-      <AnimatedSection id="how-it-works" className="py-16 md:py-24 relative scroll-mt-20">
+      <AnimatedSection id="how-it-works" className="py-20 md:py-28 relative scroll-mt-20">
         <div className="absolute inset-0 dots-pattern opacity-20" />
         <div className="container-custom relative">
           <div className="text-center mb-20">
@@ -887,7 +875,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6"
             >
               Three simple steps
             </motion.h2>
@@ -905,12 +893,11 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.03,
-                  transition: { duration: 0.3, type: "spring", stiffness: 300 } 
+                whileHover={{
+                  y: -4,
+                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
                 }}
-                className="relative group cursor-pointer"
+                className="relative group"
               >
                 <div className="glass-card p-8 text-center relative overflow-hidden">
                   {/* Animated background on hover */}
@@ -977,7 +964,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Social Proof Section */}
-      <AnimatedSection className="py-16 md:py-24 relative">
+      <AnimatedSection className="py-20 md:py-28 relative">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center px-4">
             <motion.div
@@ -1036,7 +1023,7 @@ export default function HomePage() {
                   scale: 1.02,
                   transition: { duration: 0.3, type: "spring", stiffness: 300 }
                 }}
-                className="glass-card p-6 relative overflow-hidden group cursor-pointer"
+                className="glass-card p-6 relative overflow-hidden group"
               >
                 {/* Subtle gradient overlay on hover */}
                 <motion.div
@@ -1096,7 +1083,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Pricing Section */}
-      <AnimatedSection id="pricing" className="py-16 md:py-24 relative scroll-mt-24">
+      <AnimatedSection id="pricing" className="py-20 md:py-28 relative scroll-mt-24">
         <div className="container-custom">
           <div className="text-center mb-16">
             <motion.span
@@ -1111,7 +1098,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6"
             >
               Choose your plan
             </motion.h2>
@@ -1120,7 +1107,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-slate-500 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto"
             >
               Start free and scale as you grow. All plans include our core AI features.
             </motion.p>
@@ -1681,7 +1668,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mt-16 max-w-3xl mx-auto"
           >
-            <h3 className="text-2xl font-bold text-slate-900 text-center mb-8">Frequently Asked Questions</h3>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 text-center mb-8">Frequently Asked Questions</h3>
             <div className="space-y-6">
               <div className="glass-card p-6">
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">Can I cancel anytime?</h4>
@@ -1705,7 +1692,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="py-16 md:py-24 relative overflow-hidden">
+      <AnimatedSection className="py-20 md:py-28 relative overflow-hidden">
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-[#009de0]/20 via-[#7c3aed]/20 to-[#009de0]/20" />
@@ -1751,7 +1738,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-3 bg-slate-100 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 mb-8"
+              className="inline-flex items-center gap-3 border border-slate-200 rounded-full px-6 py-3 mb-8 frosted-panel"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#009de0] opacity-75"></span>
@@ -1766,7 +1753,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-tight"
             >
               Transform how you
               <br />

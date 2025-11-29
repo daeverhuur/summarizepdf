@@ -154,11 +154,18 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
 
   return (
     <motion.div
-      whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className={`relative bg-white rounded-2xl border p-8 h-full flex flex-col ${
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{
+        y: plan.popular ? -12 : -8,
+        scale: plan.popular ? 1.02 : 1,
+        transition: { duration: 0.3 }
+      }}
+      className={`relative bg-white rounded-2xl border p-8 h-full flex flex-col transition-shadow ${
         plan.popular
-          ? 'border-[#009de0] shadow-[0_0_30px_rgba(0,157,224,0.2)]'
-          : 'border-slate-200 hover:border-slate-300'
+          ? 'border-[#009de0] shadow-[0_0_30px_rgba(0,157,224,0.2)] hover:shadow-[0_0_50px_rgba(0,157,224,0.4)]'
+          : 'border-slate-200 hover:border-slate-300 hover:shadow-xl'
       }`}
     >
       {plan.popular && (
@@ -203,14 +210,16 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
         )}
       </div>
 
-      <Button
-        variant={plan.popular ? 'glow' : 'secondary'}
-        className="w-full mb-8"
-        onClick={handleSubscribe}
-        isLoading={loading}
-      >
-        {plan.cta}
-      </Button>
+      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+        <Button
+          variant={plan.popular ? 'glow' : 'secondary'}
+          className="w-full mb-8"
+          onClick={handleSubscribe}
+          isLoading={loading}
+        >
+          {plan.cta}
+        </Button>
+      </motion.div>
 
       <ul className="space-y-3 flex-grow">
         {features.map((feature, i) => {

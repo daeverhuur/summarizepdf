@@ -24,6 +24,17 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalPr
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
+
   const sizes = {
     sm: 'max-w-md',
     md: 'max-w-2xl',
@@ -49,13 +60,16 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalPr
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 className={`relative w-full ${sizes[size]} bg-white border border-slate-200 rounded-2xl shadow-2xl`}
+                role="dialog"
+                aria-modal="true"
               >
                 {title && (
                   <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
                     <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
                     <button
                       onClick={onClose}
-                      className="text-slate-400 hover:text-slate-600 transition-colors p-2"
+                      className="text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors p-1 rounded-lg"
+                      aria-label="Close modal"
                     >
                       <X className="w-6 h-6" />
                     </button>

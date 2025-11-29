@@ -105,10 +105,10 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] px-4 py-3 rounded-2xl ${
+                    className={`max-w-[85%] px-4 py-3 ${
                       msg.role === 'user'
-                        ? 'bg-gradient-to-r from-[#009de0] to-[#00d4ff] text-white'
-                        : 'bg-slate-100 text-slate-900'
+                        ? 'bg-gradient-to-r from-[#009de0] to-[#00d4ff] text-white rounded-2xl rounded-br-md'
+                        : 'bg-slate-100 text-slate-900 rounded-2xl rounded-tl-md'
                     }`}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
@@ -131,8 +131,28 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex justify-start"
               >
-                <div className="bg-slate-200 px-4 py-3 rounded-2xl">
-                  <Loader2 className="w-5 h-5 text-[#00d4ff] animate-spin" />
+                <div className="bg-slate-200 px-4 py-3 rounded-2xl rounded-tl-md flex items-center gap-2">
+                  {/* Typing indicator - three pulsing dots */}
+                  <motion.div
+                    className="flex gap-1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    {[0, 1, 2].map((i) => (
+                      <motion.div
+                        key={i}
+                        className="w-2 h-2 bg-[#009de0] rounded-full"
+                        animate={{
+                          y: [0, -6, 0],
+                        }}
+                        transition={{
+                          duration: 0.6,
+                          repeat: Infinity,
+                          delay: i * 0.15,
+                        }}
+                      />
+                    ))}
+                  </motion.div>
                 </div>
               </motion.div>
             )}
@@ -142,28 +162,32 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
       </div>
 
       {/* Input */}
-      <div className="p-4 border-t border-slate-200 bg-slate-100">
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Ask a question..."
-            disabled={sending}
-            className="flex-1 px-4 py-3 text-sm bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#009de0] focus:border-transparent text-slate-900 placeholder-slate-400 disabled:opacity-50"
-          />
-          <button
+      <div className="p-4 border-t border-slate-200 bg-slate-50">
+        <div className="flex gap-3 items-end">
+          <div className="flex-1 relative">
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Ask a question..."
+              disabled={sending}
+              className="w-full py-3 px-4 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#009de0] focus:border-transparent text-slate-900 placeholder-slate-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
+            />
+          </div>
+          <motion.button
             onClick={() => handleSend()}
             disabled={sending || !message.trim()}
-            className="px-4 py-3 bg-gradient-to-r from-[#009de0] to-[#00d4ff] text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-11 h-11 flex items-center justify-center bg-gradient-to-r from-[#009de0] to-[#00d4ff] text-white rounded-full hover:shadow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             {sending ? (
               <Loader2 className="w-5 h-5 animate-spin" />
             ) : (
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4" />
             )}
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
