@@ -6,31 +6,53 @@ import { api } from '@/convex/_generated/api';
 import { Id } from '@/convex/_generated/dataModel';
 import { FileText } from 'lucide-react';
 
-type PdfJsModule = typeof import('pdfjs-dist/legacy/build/pdf');
-
-let pdfjsLibPromise: Promise<PdfJsModule> | null = null;
+// Singleton to ensure PDF.js is only initialized once
+let pdfjsLibPromise: Promise<any> | null = null;
 let workerConfigured = false;
 
-const loadPdfJs = async (): Promise<PdfJsModule> => {
+const loadPdfJs = async () => {
+  // Only create the promise once
   if (!pdfjsLibPromise) {
-    pdfjsLibPromise = import('pdfjs-dist/legacy/build/pdf');
+    pdfjsLibPromise = (async () => {
+      // Ensure we're in the browser
+      if (typeof window === 'undefined') {
+        throw new Error('PDF.js can only be loaded in browser');
+      }
+
+      // Use CDN worker URL
+      const workerUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.394/legacy/build/pdf.worker.min.mjs';
+      
+      let pdfjsLib;
+      
+      // Try importing PDF.js - wrap in try-catch to handle initialization errors
+      try {
+        // Attempt to import - this may fail with Object.defineProperty error
+        pdfjsLib = await import('pdfjs-dist/legacy/build/pdf');
+      } catch (importError: any) {
+        // If import fails, try loading from CDN instead
+        console.warn('Local PDF.js import failed, trying CDN:', importError?.message);
+        
+        try {
+          // Load from CDN as fallback
+          const cdnModule = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.394/legacy/build/pdf.mjs' as any);
+          pdfjsLib = cdnModule;
+        } catch (cdnError) {
+          console.error('Both local and CDN imports failed:', cdnError);
+          throw new Error('Failed to load PDF.js library');
+        }
+      }
+      
+      // Configure worker immediately after import
+      if (pdfjsLib && pdfjsLib.GlobalWorkerOptions && !workerConfigured) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+        workerConfigured = true;
+      }
+      
+      return pdfjsLib;
+    })();
   }
-
-  const pdfjsLib = await pdfjsLibPromise;
-
-  if (!workerConfigured) {
-    // Use local worker file from public folder (most reliable for Next.js)
-    // Falls back to CDN if local file is not available
-    if (typeof window !== 'undefined') {
-      pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-    } else {
-      // Fallback to CDN for SSR
-      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.394/build/pdf.worker.min.mjs`;
-    }
-    workerConfigured = true;
-  }
-
-  return pdfjsLib;
+  
+  return await pdfjsLibPromise;
 };
 
 type PdfPagePreviewProps = {
@@ -63,12 +85,22 @@ export function PdfPagePreview({
       setStatus('loading');
 
       try {
+        // Load PDF.js library
         const pdfjsLib = await loadPdfJs();
 
+        // Fetch PDF as blob to avoid CORS issues
+        const response = await fetch(fileUrl);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
+        }
+
+        const pdfBlob = await response.blob();
+        const arrayBuffer = await pdfBlob.arrayBuffer();
+
+        // Load PDF from array buffer instead of URL
         pdfDoc = await pdfjsLib
           .getDocument({
-            url: fileUrl,
-            withCredentials: true,
+            data: arrayBuffer,
           })
           .promise;
 
@@ -110,15 +142,26 @@ export function PdfPagePreview({
         }
       } catch (error) {
         if (!cancelled) {
-          console.error('Failed to render PDF preview', error);
-          // Log more details for debugging
+          // Better error handling - log all error types
+          const errorDetails: Record<string, unknown> = {
+            errorType: typeof error,
+            errorString: String(error),
+            fileUrl: fileUrl?.substring(0, 100),
+          };
+          
           if (error instanceof Error) {
-            console.error('Error details:', {
-              message: error.message,
-              stack: error.stack,
-              fileUrl: fileUrl?.substring(0, 50) + '...',
-            });
+            errorDetails.message = error.message;
+            errorDetails.stack = error.stack;
+            errorDetails.name = error.name;
+          } else if (error && typeof error === 'object') {
+            try {
+              errorDetails.errorObject = JSON.stringify(error, Object.getOwnPropertyNames(error));
+            } catch {
+              errorDetails.errorObject = 'Could not stringify error object';
+            }
           }
+          
+          console.error('Failed to render PDF preview:', errorDetails);
           setStatus('error');
         }
       }
