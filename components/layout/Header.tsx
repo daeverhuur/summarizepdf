@@ -62,10 +62,17 @@ export function Header() {
     { href: '#pricing', label: 'Pricing', sectionId: 'pricing' },
   ];
 
-  const scrollToSection = useCallback((sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string, behavior: ScrollBehavior = 'smooth') => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = document.querySelector('header')?.clientHeight ?? 96;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight - 16;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior,
+      });
     }
   }, []);
 
@@ -81,14 +88,12 @@ export function Header() {
     }
   }, [pathname, router, scrollToSection]);
 
-  // Handle hash scrolling when navigating to home page with hash
   useEffect(() => {
-    if (pathname === '/' && window.location.hash) {
+    if (pathname === '/' && typeof window !== 'undefined' && window.location.hash) {
       const sectionId = window.location.hash.replace('#', '');
-      // Small delay to ensure the page is rendered
       setTimeout(() => {
-        scrollToSection(sectionId);
-      }, 100);
+        scrollToSection(sectionId, 'auto');
+      }, 150);
     }
   }, [pathname, scrollToSection]);
 

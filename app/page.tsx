@@ -4,17 +4,12 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useCallback, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { PricingCard } from '@/components/pricing/PricingCard';
 import { PricingToggle } from '@/components/pricing/PricingToggle';
 import { PLANS } from '@/lib/stripe/plans';
 import { BillingInterval } from '@/lib/stripe/config';
 import { TryUploadModal } from '@/components/home/TryUploadModal';
-import dynamic from 'next/dynamic';
-
-// Dynamically import Three.js components to avoid SSR issues
-const ParticleBackground = dynamic(() => import('@/components/home/ParticleBackground'), { ssr: false });
+import ParticleBackground from '@/components/home/ParticleBackground';
 
 // Custom icons matching brand guidelines
 const ZapIcon = () => (
@@ -293,16 +288,13 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050508] overflow-x-hidden">
-      {/* Noise overlay for texture */}
-      <div className="noise-overlay" />
-      
-      <Header />
+    <div className="relative">
 
       {/* Hero Section - Optimized for Conversion & SEO */}
       <section
         ref={heroRef}
-        className="relative h-screen min-h-[700px] max-h-[900px] flex items-center overflow-hidden"
+        id="hero"
+        className="relative h-screen min-h-[700px] flex items-center overflow-hidden"
       >
         {/* 3D Particle Background */}
         <div className="absolute inset-0 opacity-40">
@@ -436,7 +428,16 @@ export default function HomePage() {
                     }}
                   />
                 </MagneticButton>
-                <Link href="#how-it-works">
+                <Link
+                  href="#how-it-works"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('how-it-works')?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start',
+                    });
+                  }}
+                >
                   <Button variant="secondary" size="xl" className="w-full sm:w-auto group">
                     See How It Works
                     <motion.span
@@ -1856,9 +1857,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </AnimatedSection>
-
-      <Footer />
-
       {/* Try Upload Modal */}
       <TryUploadModal isOpen={isTryModalOpen} onClose={() => setIsTryModalOpen(false)} />
     </div>

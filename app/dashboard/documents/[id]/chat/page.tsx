@@ -19,7 +19,11 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
   const chatWithDocument = useAction(api.ai.chat.chatWithDocument);
 
   if (document === undefined) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex min-h-[40vh] items-center justify-center text-white/60">
+        Loading...
+      </div>
+    );
   }
 
   if (document === null) {
@@ -47,8 +51,8 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-2">Chat with {document.title}</h1>
-        <p className="text-slate-600">Ask questions about your document</p>
+        <h1 className="text-4xl font-extrabold text-white mb-2">Chat with {document.title}</h1>
+        <p className="text-white/60">Ask questions about your document</p>
       </div>
 
       <Card className="p-6">
@@ -61,8 +65,8 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
                 <div
                   className={`max-w-[70%] p-4 rounded-2xl ${
                     msg.role === 'user'
-                      ? 'bg-gradient-to-r from-blue-500 to-violet-500 text-white'
-                      : 'bg-slate-100 text-slate-900'
+                      ? 'bg-gradient-to-r from-[#009de0] to-[#7c3aed] text-white shadow-lg shadow-[#009de0]/20'
+                      : 'bg-white/5 text-white'
                   }`}
                 >
                   <p>{msg.content}</p>
@@ -71,9 +75,9 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
             ))
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-center">
-              <FileText className="w-16 h-16 text-slate-300 mb-4" />
-              <p className="text-slate-600">Start a conversation about this document</p>
-              <p className="text-sm text-slate-500 mt-2">
+              <FileText className="w-16 h-16 text-white/20 mb-4" />
+              <p className="text-white/60">Start a conversation about this document</p>
+              <p className="text-sm text-white/40 mt-2">
                 Try asking: &quot;What are the main points?&quot; or &quot;Summarize page 5&quot;
               </p>
             </div>
@@ -87,7 +91,7 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Ask a question..."
-            className="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-500"
+            className="flex-1 px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-white placeholder:text-white/30 focus:outline-none focus:border-[#009de0]"
             disabled={sending}
           />
           <Button type="submit" disabled={sending || !message.trim()}>

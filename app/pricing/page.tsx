@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { PricingCard } from '@/components/pricing/PricingCard';
 import { PricingToggle } from '@/components/pricing/PricingToggle';
 import { BillingInterval, PricingTier } from '@/lib/stripe/config';
@@ -14,11 +12,7 @@ export default function PricingPage() {
   const tiers: PricingTier[] = ['free', 'starter', 'pro', 'team'];
 
   return (
-    <div className="min-h-screen bg-[#050508]">
-      {/* Noise overlay for texture */}
-      <div className="noise-overlay" />
-      
-      <Header />
+    <div className="pt-32">
 
       <section className="pt-32 pb-20 relative">
         {/* Background Effects */}
@@ -63,8 +57,6 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

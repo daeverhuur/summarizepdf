@@ -24,6 +24,8 @@ interface StructuredSummary {
   suggestedQuestions: string[];
 }
 
+type SummaryFormat = "bullet" | "paragraph" | "detailed";
+
 // Generate summary from PDF document
 export const generateSummary = action({
   args: {
@@ -173,6 +175,9 @@ export const generateSummary = action({
         };
       }
 
+      const normalizedData = normalizeStructuredSummary(structuredData);
+      const formattedContent = buildReadableSummary(normalizedData, args.format);
+
       // Calculate tokens used
       const tokensUsed =
         (response.usage?.prompt_tokens || 0) +
@@ -183,10 +188,10 @@ export const generateSummary = action({
         documentId: args.documentId,
         format: args.format,
         length: args.length,
-        content: structuredData.summary,
-        keyInsights: structuredData.keyInsights,
-        sections: structuredData.sections,
-        suggestedQuestions: structuredData.suggestedQuestions,
+        content: formattedContent,
+        keyInsights: normalizedData.keyInsights,
+        sections: normalizedData.sections,
+        suggestedQuestions: normalizedData.suggestedQuestions,
         model,
         tokensUsed,
       });
@@ -200,7 +205,7 @@ export const generateSummary = action({
 
       return {
         summaryId,
-        content: structuredData.summary,
+        content: formattedContent,
         model,
         tokensUsed,
       };
@@ -215,18 +220,18 @@ export const generateSummary = action({
 
 // Build system prompt for structured JSON output
 function buildStructuredSystemPrompt(): string {
-  return `You are an expert PDF summarization assistant. You analyze documents and provide structured insights in JSON format.
+  return `You are an expert PDF summarization assistant. You analyze documents and provide structured, insight-rich outputs in JSON format.
 
 Your response must be a valid JSON object with this exact structure:
 {
-  "summary": "The main summary text (formatted based on user's requested format)",
+  "summary": "The main summary text (formatted based on the requested format). It must contain multiple paragraphs that explain context, major findings, implications, and recommended next steps.",
   "keyInsights": [
     {"text": "Key insight 1", "type": "finding|recommendation|warning|statistic|conclusion"},
     {"text": "Key insight 2", "type": "finding|recommendation|warning|statistic|conclusion"}
   ],
   "sections": [
-    {"title": "Section Title", "content": "Section content..."},
-    {"title": "Another Section", "content": "More content..."}
+    {"title": "Section Title", "content": "3-5 sentences that synthesize that part of the document"},
+    {"title": "Another Section", "content": "More analysis with concrete details"}
   ],
   "suggestedQuestions": [
     "Question 1 that a reader might want to ask about this document?",
@@ -241,13 +246,13 @@ Insight types:
 - "statistic": A notable number, percentage, or data point
 - "conclusion": A final takeaway or conclusion
 
-Always provide 3-5 key insights, 2-4 sections, and 3-4 suggested questions.`;
+Always provide 3-5 key insights, 3-5 richly written sections (infer logical sections when the document does not provide them), and 3-4 suggested questions. Each section description should read like a concise paragraph, not a bullet fragment.`;
 }
 
 // Build user prompt for structured output
 function buildStructuredUserPrompt(
   text: string,
-  format: "bullet" | "paragraph" | "detailed",
+  format: SummaryFormat,
   length: "short" | "medium" | "detailed"
 ): string {
   const lengthGuide = {
@@ -273,7 +278,207 @@ ${text}
 Remember:
 - Extract the most important and actionable insights
 - Identify key findings, recommendations, warnings, statistics, and conclusions
-- Break down the content into logical sections
+- Break down the content into logical sections (each with 3-5 complete sentences)
+- Expand slightly beyond a terse recap by explaining why each point matters and how it ties back to the document's goals
 - Suggest questions that would help readers understand the document better
-- Ensure the summary is accurate to the source material`;
+- Ensure the summary is accurate to the source material and avoids hallucinations`;
+}
+
+interface NormalizedStructuredSummary {
+  summary: string;
+  keyInsights: KeyInsight[];
+  sections: Section[];
+  suggestedQuestions: string[];
+}
+
+const INSIGHT_TYPES: KeyInsight["type"][] = [
+  "finding",
+  "recommendation",
+  "warning",
+  "statistic",
+  "conclusion",
+];
+
+const INSIGHT_LABELS: Record<KeyInsight["type"], string> = {
+  finding: "Finding",
+  recommendation: "Recommendation",
+  warning: "Risk",
+  statistic: "Statistic",
+  conclusion: "Conclusion",
+};
+
+const SECTION_LABELS: Record<KeyInsight["type"], string> = {
+  finding: "Key Findings & Evidence",
+  recommendation: "Recommended Actions",
+  warning: "Risks & Watchouts",
+  statistic: "Notable Metrics",
+  conclusion: "Conclusions & Implications",
+};
+
+function normalizeStructuredSummary(
+  data: StructuredSummary
+): NormalizedStructuredSummary {
+  const summary = (data.summary || "").trim();
+
+  const keyInsights = Array.isArray(data.keyInsights)
+    ? data.keyInsights
+        .map((insight) => ({
+          text:
+            typeof insight.text === "string" ? insight.text.trim() : "",
+          type: INSIGHT_TYPES.includes(insight.type)
+            ? insight.type
+            : ("finding" as const),
+        }))
+        .filter((insight) => insight.text.length > 0)
+    : [];
+
+  let sections = Array.isArray(data.sections)
+    ? data.sections
+        .map((section: any) => ({
+          title:
+            typeof section?.title === "string" &&
+            section.title.trim().length > 0
+              ? section.title.trim()
+              : "Section Overview",
+          content: formatSectionContent(section?.content),
+        }))
+        .filter((section) => section.content.length > 0)
+    : [];
+
+  const suggestedQuestions = Array.isArray(data.suggestedQuestions)
+    ? data.suggestedQuestions
+        .map((question) =>
+          typeof question === "string" ? question.trim() : ""
+        )
+        .filter((question) => question.length > 0)
+    : [];
+
+  if (sections.length === 0) {
+    sections = buildSectionsFromInsights(summary, keyInsights);
+  }
+
+  if (sections.length === 0 && summary) {
+    sections = [
+      {
+        title: "Executive Overview",
+        content: summary,
+      },
+    ];
+  }
+
+  return {
+    summary,
+    keyInsights,
+    sections,
+    suggestedQuestions,
+  };
+}
+
+function buildReadableSummary(
+  data: NormalizedStructuredSummary,
+  format: SummaryFormat
+): string {
+  const chunks: string[] = [];
+
+  if (data.summary) {
+    chunks.push("Executive Overview:");
+    chunks.push(format === "bullet" ? toBulletList(data.summary) : data.summary);
+  }
+
+  if (data.keyInsights.length) {
+    const insightsBlock = data.keyInsights
+      .map(
+        (insight) =>
+          `• (${INSIGHT_LABELS[insight.type]}) ${insight.text}`
+      )
+      .join("\n");
+    chunks.push("Key Insights:");
+    chunks.push(insightsBlock);
+  }
+
+  if (data.sections.length) {
+    chunks.push("Section Breakdown:");
+    data.sections.forEach((section) => {
+      chunks.push(`${section.title}:`);
+      chunks.push(section.content);
+    });
+  }
+
+  if (data.suggestedQuestions.length) {
+    chunks.push("Suggested Follow-up Questions:");
+    chunks.push(
+      data.suggestedQuestions.map((question) => `• ${question}`).join("\n")
+    );
+  }
+
+  return chunks.join("\n\n").trim();
+}
+
+function buildSectionsFromInsights(
+  executiveSummary: string,
+  insights: KeyInsight[]
+): Section[] {
+  const grouped: Record<KeyInsight["type"], string[]> = {
+    finding: [],
+    recommendation: [],
+    warning: [],
+    statistic: [],
+    conclusion: [],
+  };
+
+  insights.forEach((insight) => {
+    grouped[insight.type].push(insight.text);
+  });
+
+  const derived: Section[] = [];
+  INSIGHT_TYPES.forEach((type) => {
+    if (grouped[type].length > 0) {
+      derived.push({
+        title: SECTION_LABELS[type],
+        content: grouped[type].map((text) => `• ${text}`).join("\n"),
+      });
+    }
+  });
+
+  if (derived.length === 0 && executiveSummary) {
+    return [
+      {
+        title: "Document Overview",
+        content: executiveSummary,
+      },
+    ];
+  }
+
+  return derived;
+}
+
+function formatSectionContent(rawContent: unknown): string {
+  if (typeof rawContent === "string") {
+    return rawContent.trim();
+  }
+
+  if (Array.isArray(rawContent)) {
+    return rawContent
+      .map((item) => formatSectionContent(item))
+      .filter((text) => text.length > 0)
+      .join("\n");
+  }
+
+  if (rawContent && typeof rawContent === "object") {
+    return Object.values(rawContent)
+      .map((value) => formatSectionContent(value))
+      .filter((text) => text.length > 0)
+      .join("\n");
+  }
+
+  return "";
+}
+
+function toBulletList(text: string): string {
+  return text
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
+    .map((line) => (line.startsWith("•") ? line : `• ${line}`))
+    .join("\n");
 }

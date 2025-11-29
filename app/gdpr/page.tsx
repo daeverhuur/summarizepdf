@@ -1,19 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 
 export default function GDPRPage() {
   const lastUpdated = 'November 28, 2025';
 
   return (
-    <div className="min-h-screen bg-[#050508]">
-      {/* Noise overlay for texture */}
-      <div className="noise-overlay" />
-      
-      <Header />
+    <div className="pt-32">
 
       {/* Hero Section */}
       <section className="pt-32 pb-12 relative">
@@ -257,8 +251,6 @@ export default function GDPRPage() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

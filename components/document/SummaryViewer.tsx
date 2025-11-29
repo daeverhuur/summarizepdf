@@ -36,7 +36,17 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
     setExpandedSections(newExpanded);
   };
 
-  const hasSections = sections && sections.length > 0;
+  const sectionList = sections ?? [];
+  const hasSections = sectionList.length > 0;
+  const previewSections = hasSections ? sectionList.slice(0, 3) : [];
+
+  const getPreviewText = (text: string) => {
+    const normalized = text.replace(/\s+/g, ' ').trim();
+    if (normalized.length <= 320) {
+      return normalized;
+    }
+    return `${normalized.slice(0, 320).trim()}...`;
+  };
 
   return (
     <div className="bg-[#16161f] rounded-2xl border border-white/10 overflow-hidden">
@@ -124,6 +134,49 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
                   return <p key={i}>{line}</p>;
                 })}
               </div>
+
+              {previewSections.length > 0 && (
+                <div className="mt-10 border-t border-white/5 pt-6">
+                  <div className="flex items-center justify-between mb-4 gap-3 flex-wrap">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">Section Breakdown</h3>
+                      <p className="text-sm text-white/50">
+                        Snapshot of the most important sections from the analysis
+                      </p>
+                    </div>
+                    {hasSections && sectionList.length > previewSections.length && (
+                      <button
+                        onClick={() => setActiveTab('sections')}
+                        className="text-sm text-[#00d4ff] hover:text-white transition-colors"
+                      >
+                        View all sections →
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="space-y-3">
+                    {previewSections.map((section, index) => (
+                      <div
+                        key={`${section.title}-${index}`}
+                        className="p-4 rounded-xl border border-white/10 bg-white/5 hover:border-[#00d4ff]/40 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#009de0]/20 text-[#00d4ff] font-semibold flex items-center justify-center">
+                            {(index + 1).toString().padStart(2, '0')}
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-white">{section.title}</p>
+                            <p className="text-xs text-white/50">Section {index + 1}</p>
+                          </div>
+                        </div>
+                        <p className="text-sm text-white/70 mt-3 leading-relaxed">
+                          {getPreviewText(section.content)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </motion.div>
           ) : (
             <motion.div

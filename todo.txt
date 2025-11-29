@@ -1,0 +1,6 @@
+light design
+Improve document viewing page
+Improve SEO pages
+Fix pointer events
+Show preview of PDF files on my documents page
+Fix scroll behaviour

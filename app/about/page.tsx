@@ -1,8 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 
 export default function AboutPage() {
@@ -33,11 +31,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050508]">
-      {/* Noise overlay for texture */}
-      <div className="noise-overlay" />
-      
-      <Header />
+    <div className="pt-32">
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative">
@@ -192,8 +186,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

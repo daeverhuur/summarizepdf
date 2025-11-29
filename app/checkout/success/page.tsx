@@ -19,29 +19,27 @@ export default function CheckoutSuccessPage() {
   }, [router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-violet-50 to-cyan-50">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 text-center">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-12 h-12 text-green-600" />
+    <div className="pt-32 pb-20">
+      <div className="container-custom flex items-center justify-center">
+        <div className="max-w-lg w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl p-10 text-center shadow-2xl shadow-[#009de0]/10">
+          <div className="w-24 h-24 mx-auto mb-8 rounded-3xl bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center">
+            <CheckCircle className="w-12 h-12 text-[#34d399]" />
+          </div>
+          <h1 className="text-4xl font-extrabold text-white mb-4">
+            Payment Successful!
+          </h1>
+          <p className="text-white/60 mb-8 leading-relaxed">
+            Thank you for subscribing to SummarizePDF. Your premium features are unlocked and ready whenever you are.
+          </p>
+          <Link href="/dashboard">
+            <Button size="lg" className="w-full justify-center">
+              Go to Dashboard
+            </Button>
+          </Link>
+          <p className="text-sm text-white/40 mt-4">
+            Redirecting automatically in 5 seconds...
+          </p>
         </div>
-
-        <h1 className="text-3xl font-extrabold text-slate-900 mb-4">
-          Payment Successful!
-        </h1>
-
-        <p className="text-slate-600 mb-8">
-          Thank you for subscribing to SummarizePDF. Your subscription is now active and you can start using all premium features.
-        </p>
-
-        <Link href="/dashboard">
-          <Button size="lg" className="w-full">
-            Go to Dashboard
-          </Button>
-        </Link>
-
-        <p className="text-sm text-slate-500 mt-4">
-          Redirecting automatically in 5 seconds...
-        </p>
       </div>
     </div>
   );

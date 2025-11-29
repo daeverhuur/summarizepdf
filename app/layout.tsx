@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { AppShell } from "@/components/layout/AppShell";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -232,7 +233,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://api.openai.com" />
       </head>
       <body className={`${sora.variable} font-sans antialiased bg-[#050508] text-white`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AppShell>{children}</AppShell>
+        </Providers>
       </body>
     </html>
   );
