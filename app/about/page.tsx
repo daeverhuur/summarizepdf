@@ -46,10 +46,10 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
               Transforming document workflow with <span className="text-gradient">AI innovation</span>
             </h1>
-            <p className="text-xl text-white/50 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               SummarizePDF was born from a simple idea: people shouldn't spend hours reading documents when AI can extract the key insights in seconds.
             </p>
           </motion.div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
             {stats.map((stat, i) => (
               <Card key={i} className="p-6 text-center">
                 <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
-                <div className="text-white/50 text-sm">{stat.label}</div>
+                <div className="text-slate-600 text-sm">{stat.label}</div>
               </Card>
             ))}
           </motion.div>
@@ -81,14 +81,14 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 text-center">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 text-center">
                 Our Mission
               </h2>
               <Card className="p-10">
-                <p className="text-lg text-white/70 leading-relaxed mb-6">
+                <p className="text-lg text-slate-700 leading-relaxed mb-6">
                   We believe everyone deserves access to powerful AI tools that make their work easier and more efficient. In a world drowning in information, we're building the tools that help you extract what matters most.
                 </p>
-                <p className="text-lg text-white/70 leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed">
                   Whether you're a student tackling research papers, a professional reviewing contracts, or a researcher analyzing literature, SummarizePDF empowers you to work smarter, not harder.
                 </p>
               </Card>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-12 text-center">
               Our Values
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -119,8 +119,8 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                 >
                   <Card className="p-8 h-full">
-                    <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
-                    <p className="text-white/60 leading-relaxed">{value.description}</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{value.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{value.description}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -143,14 +143,14 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8">
                 Powered by <span className="text-gradient">Advanced AI</span>
               </h2>
               <Card className="p-10">
-                <p className="text-lg text-white/70 leading-relaxed mb-6">
+                <p className="text-lg text-slate-700 leading-relaxed mb-6">
                   We use Google's latest Gemini AI models, known for their exceptional reasoning capabilities and contextual understanding. Our technology doesn't just extract text—it comprehends meaning, identifies relationships, and generates insights.
                 </p>
-                <p className="text-lg text-white/70 leading-relaxed">
+                <p className="text-lg text-slate-700 leading-relaxed">
                   Combined with advanced OCR, multi-language support, and continuous model improvements, we deliver the most accurate and intelligent document summaries available.
                 </p>
               </Card>
@@ -169,10 +169,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
               Join thousands of users worldwide
             </h2>
-            <p className="text-xl text-white/50 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
               Experience the future of document processing with AI-powered summaries
             </p>
             <motion.a

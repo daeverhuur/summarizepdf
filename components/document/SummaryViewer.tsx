@@ -49,16 +49,16 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
   };
 
   return (
-    <div className="bg-[#16161f] rounded-2xl border border-white/10 overflow-hidden">
+    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
       {/* Header with tabs */}
-      <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-        <div className="flex gap-1 bg-white/5 p-1 rounded-lg">
+      <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+        <div className="flex gap-1 bg-slate-100 p-1 rounded-lg">
           <button
             onClick={() => setActiveTab('summary')}
             className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
               activeTab === 'summary'
                 ? 'bg-[#009de0] text-white shadow-lg shadow-[#009de0]/20'
-                : 'text-white/60 hover:text-white'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             Summary
@@ -69,7 +69,7 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
               className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 activeTab === 'sections'
                   ? 'bg-[#009de0] text-white shadow-lg shadow-[#009de0]/20'
-                  : 'text-white/60 hover:text-white'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Sections ({sections.length})
@@ -79,7 +79,7 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
 
         <button
           onClick={handleCopy}
-          className="flex items-center gap-2 px-3 py-2 text-sm text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+          className="flex items-center gap-2 px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-200 rounded-lg transition-colors"
         >
           {copied ? (
             <>
@@ -104,9 +104,9 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="prose prose-invert max-w-none"
+              className="prose max-w-none"
             >
-              <div className={`text-white/80 leading-relaxed ${
+              <div className={`text-slate-700 leading-relaxed ${
                 format === 'bullet' ? 'space-y-2' : 'space-y-4'
               }`}>
                 {content.split('\n').map((line, i) => {
@@ -125,7 +125,7 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
                   // Handle headings (lines ending with :)
                   if (line.trim().endsWith(':') && line.length < 100) {
                     return (
-                      <h3 key={i} className="text-lg font-semibold text-white mt-6 mb-3 first:mt-0">
+                      <h3 key={i} className="text-lg font-semibold text-slate-900 mt-6 mb-3 first:mt-0">
                         {line}
                       </h3>
                     );
@@ -136,18 +136,18 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
               </div>
 
               {previewSections.length > 0 && (
-                <div className="mt-10 border-t border-white/5 pt-6">
+                <div className="mt-10 border-t border-slate-100 pt-6">
                   <div className="flex items-center justify-between mb-4 gap-3 flex-wrap">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Section Breakdown</h3>
-                      <p className="text-sm text-white/50">
+                      <h3 className="text-lg font-semibold text-slate-900">Section Breakdown</h3>
+                      <p className="text-sm text-slate-500">
                         Snapshot of the most important sections from the analysis
                       </p>
                     </div>
                     {hasSections && sectionList.length > previewSections.length && (
                       <button
                         onClick={() => setActiveTab('sections')}
-                        className="text-sm text-[#00d4ff] hover:text-white transition-colors"
+                        className="text-sm text-[#00d4ff] hover:text-slate-900 transition-colors"
                       >
                         View all sections →
                       </button>
@@ -158,18 +158,18 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
                     {previewSections.map((section, index) => (
                       <div
                         key={`${section.title}-${index}`}
-                        className="p-4 rounded-xl border border-white/10 bg-white/5 hover:border-[#00d4ff]/40 transition-colors"
+                        className="p-4 rounded-xl border border-slate-200 bg-slate-100 hover:border-[#00d4ff]/40 transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-xl bg-[#009de0]/20 text-[#00d4ff] font-semibold flex items-center justify-center">
                             {(index + 1).toString().padStart(2, '0')}
                           </div>
                           <div>
-                            <p className="text-sm font-semibold text-white">{section.title}</p>
-                            <p className="text-xs text-white/50">Section {index + 1}</p>
+                            <p className="text-sm font-semibold text-slate-900">{section.title}</p>
+                            <p className="text-xs text-slate-500">Section {index + 1}</p>
                           </div>
                         </div>
-                        <p className="text-sm text-white/70 mt-3 leading-relaxed">
+                        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
                           {getPreviewText(section.content)}
                         </p>
                       </div>
@@ -189,17 +189,17 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
               {sections?.map((section, index) => (
                 <div
                   key={index}
-                  className="border border-white/10 rounded-xl overflow-hidden bg-white/5"
+                  className="border border-slate-200 rounded-xl overflow-hidden bg-slate-100"
                 >
                   <button
                     onClick={() => toggleSection(index)}
-                    className="w-full flex items-center justify-between p-4 text-left hover:bg-white/5 transition-colors"
+                    className="w-full flex items-center justify-between p-4 text-left hover:bg-slate-100 transition-colors"
                   >
-                    <h3 className="font-semibold text-white">{section.title}</h3>
+                    <h3 className="font-semibold text-slate-900">{section.title}</h3>
                     {expandedSections.has(index) ? (
-                      <ChevronUp className="w-5 h-5 text-white/40" />
+                      <ChevronUp className="w-5 h-5 text-slate-400" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-white/40" />
+                      <ChevronDown className="w-5 h-5 text-slate-400" />
                     )}
                   </button>
                   <AnimatePresence>
@@ -211,7 +211,7 @@ export function SummaryViewer({ content, sections, format }: SummaryViewerProps)
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-4 pb-4 text-white/70 leading-relaxed border-t border-white/5 pt-4">
+                        <div className="px-4 pb-4 text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
                           {section.content}
                         </div>
                       </motion.div>

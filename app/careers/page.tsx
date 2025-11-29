@@ -66,10 +66,10 @@ export default function CareersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
               Join our <span className="text-gradient">mission</span> to transform document processing
             </h1>
-            <p className="text-xl text-white/50 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Build the future of AI-powered productivity tools with a passionate, talented team
             </p>
           </motion.div>
@@ -85,7 +85,7 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-12 text-center">
               Our Culture & Values
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
@@ -98,8 +98,8 @@ export default function CareersPage() {
                   viewport={{ once: true }}
                 >
                   <Card className="p-8 h-full">
-                    <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
-                    <p className="text-white/60 leading-relaxed">{value.description}</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{value.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{value.description}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -121,7 +121,7 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-12 text-center">
               Benefits & Perks
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -137,8 +137,8 @@ export default function CareersPage() {
                     <div className="w-12 h-12 bg-[#009de0]/10 rounded-xl flex items-center justify-center mb-4">
                       <div className="w-6 h-6 bg-[#009de0] rounded-full" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                    <p className="text-white/60">{benefit.description}</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
+                    <p className="text-slate-600">{benefit.description}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -156,7 +156,7 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-12 text-center">
               Current Openings
             </h2>
             <div className="max-w-2xl mx-auto">
@@ -174,17 +174,17 @@ export default function CareersPage() {
                     <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4">
+                <h3 className="text-3xl font-bold text-slate-900 mb-4">
                   No Open Positions Right Now
                 </h3>
-                <p className="text-lg text-white/60 mb-8 leading-relaxed">
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   We're not actively hiring at the moment, but we're always interested in meeting talented people who are passionate about AI and productivity tools.
                 </p>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-8">
-                  <h4 className="text-xl font-bold text-white mb-3">
+                <div className="bg-slate-100 border border-slate-200 rounded-xl p-8">
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">
                     Interested in future opportunities?
                   </h4>
-                  <p className="text-white/50 text-sm mb-6">
+                  <p className="text-slate-600 text-sm mb-6">
                     Send us your resume and tell us about yourself. We'll reach out when a position matches your skills.
                   </p>
                   <a
@@ -210,18 +210,18 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8">
                 Our Tech Stack
               </h2>
               <Card className="p-10">
-                <p className="text-lg text-white/70 leading-relaxed mb-8">
+                <p className="text-lg text-slate-700 leading-relaxed mb-8">
                   We work with modern, cutting-edge technologies that make development enjoyable and efficient.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   {['Next.js', 'TypeScript', 'React', 'Convex', 'Google Gemini AI', 'Tailwind CSS', 'Stripe'].map((tech, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white/70 text-sm font-medium"
+                      className="px-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 text-sm font-medium"
                     >
                       {tech}
                     </span>

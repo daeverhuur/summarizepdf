@@ -52,7 +52,7 @@ export function KeyInsightsPanel({ insights }: KeyInsightsPanelProps) {
 
   return (
     <div className="mb-8">
-      <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+      <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
         <Lightbulb className="w-5 h-5 text-amber-400" />
         Key Insights
       </h2>
@@ -70,14 +70,14 @@ export function KeyInsightsPanel({ insights }: KeyInsightsPanelProps) {
               className={`p-4 rounded-xl border ${config.color} backdrop-blur-sm transition-all hover:scale-[1.02]`}
             >
               <div className="flex items-start gap-3">
-                <div className={`p-2 rounded-lg bg-white/5 ${config.iconColor}`}>
+                <div className={`p-2 rounded-lg bg-slate-100 ${config.iconColor}`}>
                   <Icon className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="text-xs font-medium uppercase tracking-wide opacity-75">
                     {config.label}
                   </span>
-                  <p className="mt-1 text-sm font-medium leading-relaxed text-white/90">
+                  <p className="mt-1 text-sm font-medium leading-relaxed text-slate-900">
                     {insight.text}
                   </p>
                 </div>

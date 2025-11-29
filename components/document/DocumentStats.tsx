@@ -58,13 +58,13 @@ export function DocumentStats({
   ];
 
   return (
-    <div className="flex flex-wrap items-center gap-6 text-sm text-white/60">
+    <div className="flex flex-wrap items-center gap-6 text-sm text-slate-600">
       {stats.map((stat) => (
         <div key={stat.label} className="flex items-center gap-2">
-          <stat.icon className="w-4 h-4 text-white/40" />
+          <stat.icon className="w-4 h-4 text-slate-400" />
           <span>
-            <span className="font-medium text-white">{stat.value}</span>{' '}
-            <span className="text-white/60">{stat.label}</span>
+            <span className="font-medium text-slate-900">{stat.value}</span>{' '}
+            <span className="text-slate-600">{stat.label}</span>
           </span>
         </div>
       ))}
@@ -78,7 +78,7 @@ export function DocumentStats({
             ? 'bg-[#009de0]/10 text-[#009de0] border-[#009de0]/30'
             : status === 'error'
             ? 'bg-red-500/10 text-red-400 border-red-500/30'
-            : 'bg-white/10 text-white/80 border-white/20'
+            : 'bg-slate-200 text-slate-700 border-slate-300'
         }`}
       >
         {status === 'ready' ? 'Ready' : status === 'processing' ? 'Processing' : status === 'error' ? 'Error' : 'Uploading'}

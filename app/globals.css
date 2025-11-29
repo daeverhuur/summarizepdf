@@ -2,7 +2,7 @@
 
 /* ============================================
    DESIGN SYSTEM - SUMMARIZEPDF
-   Bold Dark Theme with 3D Effects
+   Clean Light Theme with Subtle 3D Effects
    ============================================ */
 
 :root {
@@ -10,45 +10,45 @@
   --accent: #009de0;
   --accent-light: #33b5ff;
   --accent-dark: #0077b3;
-  --accent-glow: rgba(0, 157, 224, 0.5);
-  
-  /* Dark Theme Palette */
-  --bg-primary: #050508;
-  --bg-secondary: #0a0a0f;
-  --bg-tertiary: #12121a;
-  --bg-card: #16161f;
-  --bg-elevated: #1a1a25;
-  
+  --accent-glow: rgba(0, 157, 224, 0.3);
+
+  /* Light Theme Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+
   /* Surface Colors with depth */
-  --surface-1: rgba(255, 255, 255, 0.02);
-  --surface-2: rgba(255, 255, 255, 0.04);
-  --surface-3: rgba(255, 255, 255, 0.06);
-  
+  --surface-1: rgba(0, 0, 0, 0.02);
+  --surface-2: rgba(0, 0, 0, 0.04);
+  --surface-3: rgba(0, 0, 0, 0.06);
+
   /* Text Colors */
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0b0;
-  --text-muted: #6b6b7a;
-  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
   /* Borders */
-  --border-default: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
+  --border-default: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.15);
   --border-accent: rgba(0, 157, 224, 0.4);
-  
+
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--accent) 0%, #00d4ff 50%, #7c3aed 100%);
   --gradient-glow: radial-gradient(circle at 50% 50%, var(--accent-glow) 0%, transparent 70%);
-  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 157, 224, 0.15) 0%, transparent 50%);
-  
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px var(--accent-glow);
-  --shadow-glow-lg: 0 0 80px var(--accent-glow);
-  
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 157, 224, 0.08) 0%, transparent 50%);
+
+  /* Shadows - Light Theme */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-glow: 0 0 40px rgba(0, 157, 224, 0.2);
+  --shadow-glow-lg: 0 0 80px rgba(0, 157, 224, 0.25);
+
   /* Spacing */
   --section-gap: 8rem;
-  
+
   /* Animation */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
@@ -423,11 +423,11 @@ label[for] {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(0, 157, 224, 0.12), rgba(0, 157, 224, 0) 45%),
-    radial-gradient(circle at 75% 10%, rgba(124, 58, 237, 0.1), rgba(124, 58, 237, 0) 55%),
-    radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.08), rgba(6, 182, 212, 0) 60%),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at 20% 20%, rgba(0, 157, 224, 0.04), rgba(0, 157, 224, 0) 45%),
+    radial-gradient(circle at 75% 10%, rgba(124, 58, 237, 0.03), rgba(124, 58, 237, 0) 55%),
+    radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.03), rgba(6, 182, 212, 0) 60%),
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size:
     140% 140%,
     140% 140%,
@@ -440,7 +440,7 @@ label[for] {
     no-repeat,
     repeat,
     repeat;
-  background-blend-mode: screen;
+  background-blend-mode: normal;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.65) 55%, transparent 90%);
   filter: saturate(1.1);
 }
@@ -456,7 +456,7 @@ label[for] {
 }
 
 .dots-pattern {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
@@ -677,7 +677,7 @@ label[for] {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-3);
+  background: #cbd5e1;
   border-radius: 4px;
 }
 

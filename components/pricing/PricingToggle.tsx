@@ -14,14 +14,14 @@ export function PricingToggle({ billingInterval, onChange }: PricingToggleProps)
       <button
         onClick={() => onChange('month')}
         className={`text-lg font-semibold transition-colors ${
-          billingInterval === 'month' ? 'text-white' : 'text-white/40 hover:text-white/60'
+          billingInterval === 'month' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'
         }`}
       >
         Monthly
       </button>
 
-      <div 
-        className="relative w-14 h-7 bg-white/10 border border-white/20 rounded-full cursor-pointer pointer-events-auto" 
+      <div
+        className="relative w-14 h-7 bg-slate-100 border border-slate-200 rounded-full cursor-pointer pointer-events-auto"
         onClick={() => onChange(billingInterval === 'month' ? 'year' : 'month')}
       >
         <motion.div
@@ -34,7 +34,7 @@ export function PricingToggle({ billingInterval, onChange }: PricingToggleProps)
       <button
         onClick={() => onChange('year')}
         className={`text-lg font-semibold transition-colors ${
-          billingInterval === 'year' ? 'text-white' : 'text-white/40 hover:text-white/60'
+          billingInterval === 'year' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'
         }`}
       >
         Yearly

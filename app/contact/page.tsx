@@ -76,10 +76,10 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
               Get in <span className="text-gradient">touch</span>
             </h1>
-            <p className="text-xl text-white/50 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
           </motion.div>
@@ -108,9 +108,9 @@ export default function ContactPage() {
                     <div className="w-14 h-14 bg-[#009de0]/10 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#009de0]">
                       {method.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
-                    <p className="text-white/50 text-sm mb-4">{method.description}</p>
-                    <a 
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{method.title}</h3>
+                    <p className="text-slate-600 text-sm mb-4">{method.description}</p>
+                    <a
                       href={`mailto:${method.contact}`}
                       className="text-[#009de0] hover:text-[#00d4ff] transition-colors font-medium"
                     >
@@ -138,13 +138,13 @@ export default function ContactPage() {
             viewport={{ once: true }}
           >
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-4xl font-extrabold text-white mb-8 text-center">
+              <h2 className="text-4xl font-extrabold text-slate-900 mb-8 text-center">
                 Send us a message
               </h2>
               <Card className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-white font-medium mb-2">
+                    <label htmlFor="name" className="block text-slate-900 font-medium mb-2">
                       Name
                     </label>
                     <input
@@ -154,13 +154,13 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-[#009de0]/50 focus:bg-white/10 transition-all"
+                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
                       placeholder="Your name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-white font-medium mb-2">
+                    <label htmlFor="email" className="block text-slate-900 font-medium mb-2">
                       Email
                     </label>
                     <input
@@ -170,13 +170,13 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-[#009de0]/50 focus:bg-white/10 transition-all"
+                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-white font-medium mb-2">
+                    <label htmlFor="subject" className="block text-slate-900 font-medium mb-2">
                       Subject
                     </label>
                     <select
@@ -185,19 +185,19 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#009de0]/50 focus:bg-white/10 transition-all"
+                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
                     >
-                      <option value="" className="bg-[#050508]">Select a subject</option>
-                      <option value="support" className="bg-[#050508]">Technical Support</option>
-                      <option value="sales" className="bg-[#050508]">Sales Inquiry</option>
-                      <option value="feedback" className="bg-[#050508]">Feedback</option>
-                      <option value="partnership" className="bg-[#050508]">Partnership</option>
-                      <option value="other" className="bg-[#050508]">Other</option>
+                      <option value="" className="bg-white">Select a subject</option>
+                      <option value="support" className="bg-white">Technical Support</option>
+                      <option value="sales" className="bg-white">Sales Inquiry</option>
+                      <option value="feedback" className="bg-white">Feedback</option>
+                      <option value="partnership" className="bg-white">Partnership</option>
+                      <option value="other" className="bg-white">Other</option>
                     </select>
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-white font-medium mb-2">
+                    <label htmlFor="message" className="block text-slate-900 font-medium mb-2">
                       Message
                     </label>
                     <textarea
@@ -207,7 +207,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-[#009de0]/50 focus:bg-white/10 transition-all resize-none"
+                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all resize-none"
                       placeholder="How can we help you?"
                     />
                   </div>
@@ -235,7 +235,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
           >
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-extrabold text-white mb-8 text-center">
+              <h2 className="text-4xl font-extrabold text-slate-900 mb-8 text-center">
                 Quick Answers
               </h2>
               <div className="space-y-4">
@@ -254,8 +254,8 @@ export default function ContactPage() {
                   },
                 ].map((faq, i) => (
                   <Card key={i} className="p-6">
-                    <h3 className="text-lg font-bold text-white mb-2">{faq.question}</h3>
-                    <p className="text-white/60">{faq.answer}</p>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{faq.question}</h3>
+                    <p className="text-slate-600">{faq.answer}</p>
                   </Card>
                 ))}
               </div>

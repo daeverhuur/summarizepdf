@@ -26,16 +26,16 @@ export function AppShell({
   mainClassName = '',
 }: AppShellProps) {
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden bg-[#050508] text-white">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-white text-slate-900">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         <div
-          className="absolute left-1/2 top-[-20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-[#009de0]/25 blur-[160px]"
+          className="absolute left-1/2 top-[-20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-[#009de0]/[0.06] blur-[160px]"
         />
         <div
-          className="absolute right-[-10%] bottom-[-5%] h-[500px] w-[500px] rounded-full bg-[#7c3aed]/20 blur-[160px]"
+          className="absolute right-[-10%] bottom-[-5%] h-[500px] w-[500px] rounded-full bg-[#7c3aed]/[0.05] blur-[160px]"
         />
         <div
-          className="absolute left-[-10%] bottom-0 h-[450px] w-[450px] rounded-full bg-[#00d4ff]/10 blur-[160px]"
+          className="absolute left-[-10%] bottom-0 h-[450px] w-[450px] rounded-full bg-[#00d4ff]/[0.05] blur-[160px]"
         />
       </div>
 

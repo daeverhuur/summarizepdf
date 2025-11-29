@@ -27,10 +27,10 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
               Simple, <span className="text-gradient">transparent</span> pricing
             </h1>
-            <p className="text-xl text-white/50 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Choose the perfect plan for your needs. Start free, upgrade anytime.
             </p>
           </motion.div>

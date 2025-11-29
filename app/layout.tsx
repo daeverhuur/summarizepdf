@@ -16,8 +16,8 @@ const siteDescription = "Upload your PDF and get instant AI-powered summaries. E
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#050508" },
-    { media: "(prefers-color-scheme: light)", color: "#050508" },
+    { media: "(prefers-color-scheme: dark)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -217,22 +217,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="https://api.openai.com" />
       </head>
-      <body className={`${sora.variable} font-sans antialiased bg-[#050508] text-white`}>
+      <body className={`${sora.variable} font-sans antialiased bg-white text-slate-900`}>
         <Providers>
           <AppShell>{children}</AppShell>
         </Providers>

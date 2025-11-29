@@ -18,8 +18,8 @@ export default function DocumentsPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-4xl font-extrabold text-white mb-2">My Documents</h1>
-          <p className="text-white/60">All your summarized PDFs in one place</p>
+          <h1 className="text-4xl font-extrabold text-slate-900 mb-2">My Documents</h1>
+          <p className="text-slate-600">All your summarized PDFs in one place</p>
         </div>
         <Link href="/dashboard/upload">
           <Button>Upload PDF</Button>
@@ -64,10 +64,10 @@ export default function DocumentsPage() {
                 </div>
                 <div className="space-y-2">
                   <div>
-                    <h3 className="font-bold text-white text-base mb-1 line-clamp-2">
+                    <h3 className="font-bold text-slate-900 text-base mb-1 line-clamp-2">
                       {doc.title}
                     </h3>
-                    <p className="text-xs text-white/50">
+                    <p className="text-xs text-slate-500">
                       {new Date(doc._creationTime).toLocaleDateString()}
                     </p>
                   </div>
@@ -86,9 +86,9 @@ export default function DocumentsPage() {
         </div>
       ) : (
         <Card className="p-12 text-center">
-          <FileText className="w-16 h-16 text-white/20 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-white mb-2">No documents yet</h3>
-          <p className="text-white/60 mb-6">Upload your first PDF to get started</p>
+          <FileText className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-slate-900 mb-2">No documents yet</h3>
+          <p className="text-slate-600 mb-6">Upload your first PDF to get started</p>
           <Link href="/dashboard/upload">
             <Button>Upload PDF</Button>
           </Link>

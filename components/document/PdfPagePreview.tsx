@@ -19,28 +19,11 @@ const loadPdfJs = async () => {
         throw new Error('PDF.js can only be loaded in browser');
       }
 
-      // Use CDN worker URL
-      const workerUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.394/legacy/build/pdf.worker.min.mjs';
+      // Use local worker file (copied to public folder)
+      const workerUrl = '/pdf.worker.min.mjs';
       
-      let pdfjsLib;
-      
-      // Try importing PDF.js - wrap in try-catch to handle initialization errors
-      try {
-        // Attempt to import - this may fail with Object.defineProperty error
-        pdfjsLib = await import('pdfjs-dist/legacy/build/pdf');
-      } catch (importError: any) {
-        // If import fails, try loading from CDN instead
-        console.warn('Local PDF.js import failed, trying CDN:', importError?.message);
-        
-        try {
-          // Load from CDN as fallback
-          const cdnModule = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.394/legacy/build/pdf.mjs' as any);
-          pdfjsLib = cdnModule;
-        } catch (cdnError) {
-          console.error('Both local and CDN imports failed:', cdnError);
-          throw new Error('Failed to load PDF.js library');
-        }
-      }
+      // Import PDF.js - webpack will handle this properly with our next.config.ts setup
+      const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf');
       
       // Configure worker immediately after import
       if (pdfjsLib && pdfjsLib.GlobalWorkerOptions && !workerConfigured) {
@@ -181,7 +164,7 @@ export function PdfPagePreview({
 
   return (
     <div
-      className={`relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/5 ${className}`}
+      className={`relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-slate-100 ${className}`}
     >
       <canvas
         ref={canvasRef}
@@ -192,8 +175,8 @@ export function PdfPagePreview({
         aria-label={title ? `Preview of ${title}` : 'PDF preview'}
       />
       {showPlaceholder && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-[#0b0d16] via-transparent to-[#0b0d16] text-center text-xs text-white/60">
-          <FileText className="h-8 w-8 text-white/30" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-slate-50 via-transparent to-slate-50 text-center text-xs text-slate-600">
+          <FileText className="h-8 w-8 text-slate-300" />
           <span>
             {status === 'error' ? 'Preview unavailable' : 'Rendering preview'}
           </span>

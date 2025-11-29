@@ -23,15 +23,15 @@ export function Card({
   const Component = hover ? motion.div : 'div';
   
   const variants = {
-    default: 'bg-[#16161f] border-white/10',
-    glass: 'bg-[#16161f]/80 backdrop-blur-xl border-white/10',
-    glow: 'bg-[#16161f] border-[#009de0]/30 shadow-[0_0_20px_rgba(0,157,224,0.1)]',
+    default: 'bg-white border-slate-200',
+    glass: 'bg-white/80 backdrop-blur-xl border-slate-200',
+    glow: 'bg-white border-[#009de0]/30 shadow-[0_0_20px_rgba(0,157,224,0.1)]',
   };
 
   const motionProps = hover ? {
-    whileHover: { 
-      y: -8, 
-      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 157, 224, 0.15)',
+    whileHover: {
+      y: -8,
+      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.05), 0 0 30px rgba(0, 157, 224, 0.15)',
       borderColor: 'rgba(0, 157, 224, 0.4)',
     },
     transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }

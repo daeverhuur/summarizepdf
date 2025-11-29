@@ -50,7 +50,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#050508] border-t border-white/5">
+    <footer className="relative bg-white border-t border-slate-200">
       {/* Gradient accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#009de0]/50 to-transparent" />
 
@@ -65,24 +65,24 @@ export function Footer() {
               >
                 <LogoIcon />
               </motion.div>
-              <span className="text-xl font-bold text-white tracking-tight">
+              <span className="text-xl font-bold text-slate-900 tracking-tight">
                 Summarize<span className="text-[#009de0]">PDF</span>
               </span>
             </Link>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               AI-powered PDF summarization to boost your productivity. Extract key insights from any document in seconds.
             </p>
           </div>
 
           {/* Product Links */}
           <div>
-            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Product</h3>
+            <h3 className="font-semibold text-slate-900 mb-5 text-sm uppercase tracking-wider">Product</h3>
             <ul className="space-y-4">
               {footerLinks.product.map((link, i) => (
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="text-white/40 hover:text-white text-sm transition-colors"
+                    className="text-slate-400 hover:text-slate-900 text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -93,13 +93,13 @@ export function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Resources</h3>
+            <h3 className="font-semibold text-slate-900 mb-5 text-sm uppercase tracking-wider">Resources</h3>
             <ul className="space-y-4">
               {footerLinks.resources.map((link, i) => (
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="text-white/40 hover:text-white text-sm transition-colors"
+                    className="text-slate-400 hover:text-slate-900 text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -110,13 +110,13 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Company</h3>
+            <h3 className="font-semibold text-slate-900 mb-5 text-sm uppercase tracking-wider">Company</h3>
             <ul className="space-y-4">
               {footerLinks.company.map((link, i) => (
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="text-white/40 hover:text-white text-sm transition-colors"
+                    className="text-slate-400 hover:text-slate-900 text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -127,13 +127,13 @@ export function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-white mb-5 text-sm uppercase tracking-wider">Legal</h3>
+            <h3 className="font-semibold text-slate-900 mb-5 text-sm uppercase tracking-wider">Legal</h3>
             <ul className="space-y-4">
               {footerLinks.legal.map((link, i) => (
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="text-white/40 hover:text-white text-sm transition-colors"
+                    className="text-slate-400 hover:text-slate-900 text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -144,12 +144,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/30 text-sm text-center md:text-left">
+        <div className="pt-6 md:pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-sm text-center md:text-left">
             © {currentYear} SummarizePDF. All rights reserved.
           </p>
           <div className="flex items-center justify-center md:justify-end">
-            <span className="text-white/20 text-xs">
+            <span className="text-slate-400 text-xs">
               Made with{' '}
               <span className="text-[#009de0]">♥</span>
               {' '}for productivity

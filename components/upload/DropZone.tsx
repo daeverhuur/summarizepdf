@@ -53,7 +53,7 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all ${
-        isDragging ? 'border-[#009de0] bg-[#009de0]/10' : 'border-white/20 bg-white/5'
+        isDragging ? 'border-[#009de0] bg-[#009de0]/10' : 'border-slate-200 bg-slate-100'
       } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:border-[#009de0]/50'}`}
     >
       <input
@@ -75,17 +75,17 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
           >
             <FileText className="w-12 h-12 text-[#009de0]" />
             <div className="text-left">
-              <p className="font-semibold text-white">{selectedFile.name}</p>
-              <p className="text-sm text-white/60">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
+              <p className="font-semibold text-slate-900">{selectedFile.name}</p>
+              <p className="text-sm text-slate-600">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
             </div>
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 clearFile();
               }}
-              className="ml-4 p-2 hover:bg-white/10 rounded-lg transition-colors"
+              className="ml-4 p-2 hover:bg-slate-200 rounded-lg transition-colors"
             >
-              <X className="w-5 h-5 text-white/60" />
+              <X className="w-5 h-5 text-slate-600" />
             </button>
           </motion.div>
         ) : (
@@ -95,11 +95,11 @@ export function DropZone({ onFileSelect, disabled = false }: DropZoneProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <Upload className="w-16 h-16 text-white/40 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-white mb-3">
+            <Upload className="w-16 h-16 text-slate-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
               Drop your PDF here or click to browse
             </h3>
-            <p className="text-white/60">Support for PDFs up to 500 pages</p>
+            <p className="text-slate-600">Support for PDFs up to 500 pages</p>
           </motion.div>
         )}
       </AnimatePresence>

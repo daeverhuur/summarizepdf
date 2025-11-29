@@ -287,8 +287,8 @@ export default function UploadPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-4xl font-extrabold text-white mb-3">Upload PDF</h1>
-        <p className="text-white/60 text-lg">Upload a PDF to generate an AI summary</p>
+        <h1 className="text-4xl font-extrabold text-slate-900 mb-3">Upload PDF</h1>
+        <p className="text-slate-600 text-lg">Upload a PDF to generate an AI summary</p>
       </div>
 
       <Card className="max-w-3xl mx-auto">
@@ -297,9 +297,9 @@ export default function UploadPage() {
         {uploading && (
           <div className="mt-8">
             <ProgressBar value={Math.min(progress, 100)} max={100} />
-            <p className="text-center text-white/60 mt-4">{statusText || 'Processing...'}</p>
+            <p className="text-center text-slate-600 mt-4">{statusText || 'Processing...'}</p>
             {showProgressHeartbeat && (
-              <p className="mt-2 text-center text-xs text-[#83e8ff] flex items-center justify-center gap-2">
+              <p className="mt-2 text-center text-xs text-[#009de0] flex items-center justify-center gap-2">
                 <span className="inline-flex">
                   <span className="h-2 w-2 rounded-full bg-[#009de0] animate-pulse" />
                 </span>

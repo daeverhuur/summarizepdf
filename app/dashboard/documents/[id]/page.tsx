@@ -72,7 +72,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
       {/* Back button */}
       <Link
         href="/dashboard/documents"
-        className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-6 transition-colors"
+        className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-6 transition-colors"
       >
         <ArrowLeft className="w-4 h-4" />
         <span>Back to Documents</span>
@@ -86,7 +86,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
       >
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
           <div className="flex-1">
-            <h1 className="text-3xl lg:text-4xl font-bold text-white mb-3">
+            <h1 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
               {document.title}
             </h1>
             <DocumentStats
@@ -120,8 +120,8 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
           className="bg-[#009de0]/10 border border-[#009de0]/30 rounded-2xl p-8 text-center mb-8"
         >
           <Loader2 className="w-12 h-12 text-[#00d4ff] mx-auto mb-4 animate-spin" />
-          <h2 className="text-xl font-semibold text-white mb-2">Processing Document</h2>
-          <p className="text-white/60">Extracting text and preparing your document...</p>
+          <h2 className="text-xl font-semibold text-slate-900 mb-2">Processing Document</h2>
+          <p className="text-slate-600">Extracting text and preparing your document...</p>
         </motion.div>
       )}
 
@@ -163,11 +163,11 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
               {summary ? (
                 <>
                   <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-xl font-semibold text-white">Document Summary</h2>
+                    <h2 className="text-xl font-semibold text-slate-900">Document Summary</h2>
                     <button
                       onClick={handleGenerateSummary}
                       disabled={isGenerating}
-                      className="flex items-center gap-2 px-3 py-2 text-sm text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors disabled:opacity-50"
+                      className="flex items-center gap-2 px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors disabled:opacity-50"
                     >
                       {isGenerating ? (
                         <Loader2 className="w-4 h-4 animate-spin" />
@@ -184,7 +184,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
                   />
 
                   {/* Summary metadata */}
-                  <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-white/40">
+                  <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
                     <span>Generated with {summary.model || 'AI'}</span>
                     <span className="hidden sm:inline">•</span>
                     <span>{summary.tokensUsed?.toLocaleString() || 0} tokens used</span>
@@ -193,21 +193,21 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
                   </div>
                 </>
               ) : (
-                <div className="bg-[#16161f] rounded-2xl border border-white/10 p-12 text-center">
+                <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#009de0]/20 to-purple-500/20 flex items-center justify-center mx-auto mb-6">
                     <Sparkles className="w-8 h-8 text-[#00d4ff]" />
                   </div>
-                  <h2 className="text-2xl font-semibold text-white mb-3">
+                  <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                     Generate AI Summary
                   </h2>
-                  <p className="text-white/60 mb-8 max-w-md mx-auto">
+                  <p className="text-slate-600 mb-8 max-w-md mx-auto">
                     Get instant insights from your document with AI-powered summarization.
                     Choose your preferred format and detail level.
                   </p>
 
                   {/* Format Selection */}
                   <div className="mb-6">
-                    <label className="text-sm font-medium text-white/70 mb-2 block">
+                    <label className="text-sm font-medium text-slate-700 mb-2 block">
                       Summary Format
                     </label>
                     <div className="flex justify-center gap-2">
@@ -218,7 +218,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
                           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                             selectedFormat === format
                               ? 'bg-[#009de0] text-white shadow-lg shadow-[#009de0]/20'
-                              : 'bg-white/5 text-white/60 border border-white/10 hover:bg-white/10'
+                              : 'bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200'
                           }`}
                         >
                           {format.charAt(0).toUpperCase() + format.slice(1)}
@@ -229,7 +229,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
 
                   {/* Length Selection */}
                   <div className="mb-8">
-                    <label className="text-sm font-medium text-white/70 mb-2 block">
+                    <label className="text-sm font-medium text-slate-700 mb-2 block">
                       Summary Length
                     </label>
                     <div className="flex justify-center gap-2">
@@ -240,7 +240,7 @@ export default function DocumentPage({ params }: { params: Promise<{ id: string 
                           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                             selectedLength === length
                               ? 'bg-[#009de0] text-white shadow-lg shadow-[#009de0]/20'
-                              : 'bg-white/5 text-white/60 border border-white/10 hover:bg-white/10'
+                              : 'bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200'
                           }`}
                         >
                           {length.charAt(0).toUpperCase() + length.slice(1)}

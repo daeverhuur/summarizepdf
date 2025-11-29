@@ -30,9 +30,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         active:scale-[0.98]
       `,
       secondary: `
-        bg-white/5 text-white border border-white/10
+        bg-slate-100 text-slate-900 border border-slate-200
         backdrop-blur-sm
-        hover:bg-white/10 hover:border-white/20
+        hover:bg-slate-200 hover:border-slate-300
         active:scale-[0.98]
       `,
       outline: `
@@ -41,8 +41,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         active:scale-[0.98]
       `,
       ghost: `
-        text-white/70
-        hover:bg-white/5 hover:text-white
+        text-slate-600
+        hover:bg-slate-100 hover:text-slate-900
         active:scale-[0.98]
       `,
       glow: `
@@ -53,8 +53,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         active:scale-[0.98]
       `,
       white: `
-        bg-white text-[#050508]
-        hover:bg-white/90
+        bg-white text-slate-900 border border-slate-200
+        hover:bg-slate-50
         active:scale-[0.98]
       `,
     };

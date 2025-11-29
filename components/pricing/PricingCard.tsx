@@ -155,10 +155,10 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
   return (
     <motion.div
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
-      className={`relative bg-[#16161f] rounded-2xl border p-8 h-full flex flex-col ${
-        plan.popular 
-          ? 'border-[#009de0] shadow-[0_0_30px_rgba(0,157,224,0.2)]' 
-          : 'border-white/10 hover:border-white/20'
+      className={`relative bg-white rounded-2xl border p-8 h-full flex flex-col ${
+        plan.popular
+          ? 'border-[#009de0] shadow-[0_0_30px_rgba(0,157,224,0.2)]'
+          : 'border-slate-200 hover:border-slate-300'
       }`}
     >
       {plan.popular && (
@@ -193,11 +193,11 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
         </div>
       )}
 
-      <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
+      <h3 className="text-2xl font-bold text-slate-900 mb-4">{plan.name}</h3>
 
       <div className="mb-6">
-        <span className="text-5xl font-extrabold text-white">${price}</span>
-        <span className="text-white/40 ml-1">/{billingInterval === 'month' ? 'mo' : 'yr'}</span>
+        <span className="text-5xl font-extrabold text-slate-900">${price}</span>
+        <span className="text-slate-400 ml-1">/{billingInterval === 'month' ? 'mo' : 'yr'}</span>
         {savings > 0 && (
           <span className="ml-3 text-sm text-[#00d4ff] font-semibold">Save {savings}%</span>
         )}
@@ -230,36 +230,36 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
               <div className="flex items-start gap-3">
                 {/* Icon container with gradient background */}
                 <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                  feature.enabled 
-                    ? 'bg-[#009de0]/10 text-[#009de0] group-hover:bg-[#009de0]/20' 
-                    : 'bg-white/5 text-white/30'
+                  feature.enabled
+                    ? 'bg-[#009de0]/10 text-[#009de0] group-hover:bg-[#009de0]/20'
+                    : 'bg-slate-100 text-slate-300'
                 }`}>
                   <Icon />
                 </div>
-                
+
                 {/* Feature content */}
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-white/90 mb-0.5">
+                  <div className="text-sm font-medium text-slate-900 mb-0.5">
                     {feature.label}
                   </div>
                   <div className={`text-sm font-semibold ${
-                    feature.enabled 
-                      ? displayValue === 'Unlimited' 
-                        ? 'text-[#00d4ff]' 
-                        : 'text-white/70'
-                      : 'text-white/30'
+                    feature.enabled
+                      ? displayValue === 'Unlimited'
+                        ? 'text-[#00d4ff]'
+                        : 'text-slate-700'
+                      : 'text-slate-400'
                   }`}>
                     {displayValue}
                   </div>
                 </div>
-                
+
                 {/* Status indicator */}
                 {isBoolean && (
                   <div className="flex-shrink-0 mt-1">
                     {feature.value ? (
                       <CheckIcon className="text-[#009de0]" />
                     ) : (
-                      <CloseIcon className="text-white/20" />
+                      <CloseIcon className="text-slate-300" />
                     )}
                   </div>
                 )}

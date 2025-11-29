@@ -42,17 +42,26 @@ export function Header() {
   const { isSignedIn } = useUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isInHeroArea, setIsInHeroArea] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
-  
+
   const { scrollY } = useScroll();
   const headerOpacity = useTransform(scrollY, [0, 100], [0, 1]);
   const headerBlur = useTransform(scrollY, [0, 100], [0, 20]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setHasScrolled(window.scrollY > 20);
+      const scrollPosition = window.scrollY;
+      setHasScrolled(scrollPosition > 20);
+
+      // Check if we're still in the hero area (dark section)
+      // Hero + Stats section is approximately 100vh + stats height (estimated ~800-1000px total)
+      // The transition happens at around 900-1000px from top
+      const heroEndPosition = 900;
+      setIsInHeroArea(scrollPosition < heroEndPosition);
     };
+    handleScroll(); // Call once on mount to set initial state
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -97,15 +106,22 @@ export function Header() {
     }
   }, [pathname, scrollToSection]);
 
+  // Only apply dark theme logic on homepage
+  const isHomePage = pathname === '/';
+  const shouldUseDarkTheme = isHomePage && isInHeroArea;
+  const shouldShowBackground = hasScrolled;
+
   return (
-    <motion.header 
+    <motion.header
       className={`fixed w-full top-0 z-50 transition-colors duration-300 pt-4 ${
-        hasScrolled 
-          ? 'bg-[#050508]/80 border-b border-white/5' 
+        shouldShowBackground
+          ? shouldUseDarkTheme
+            ? 'bg-[#050508]/80 border-b border-white/10'
+            : 'bg-white/80 border-b border-slate-100'
           : 'bg-transparent'
       }`}
       style={{
-        backdropFilter: hasScrolled ? 'blur(20px)' : 'none',
+        backdropFilter: shouldShowBackground ? 'blur(20px)' : 'none',
       }}
     >
       <nav className="container-custom py-5">
@@ -118,7 +134,9 @@ export function Header() {
             >
               <LogoIcon />
             </motion.div>
-            <span className="text-xl font-bold text-white tracking-tight">
+            <span className={`text-xl font-bold tracking-tight transition-colors ${
+              shouldUseDarkTheme ? 'text-white' : 'text-slate-900'
+            }`}>
               Summarize<span className="text-[#009de0]">PDF</span>
             </span>
           </Link>
@@ -126,20 +144,28 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.sectionId)}
-                className="text-white/60 hover:text-white font-medium transition-colors relative group cursor-pointer"
+                className={`font-medium transition-colors relative group cursor-pointer ${
+                  shouldUseDarkTheme
+                    ? 'text-white/60 hover:text-white'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             {isSignedIn && (
-              <Link 
-                href="/dashboard" 
-                className="text-white/60 hover:text-white font-medium transition-colors relative group"
+              <Link
+                href="/dashboard"
+                className={`font-medium transition-colors relative group ${
+                  shouldUseDarkTheme
+                    ? 'text-white/60 hover:text-white'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
               >
                 Dashboard
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
@@ -178,7 +204,11 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white/70 hover:text-white p-2"
+            className={`md:hidden p-2 transition-colors ${
+              shouldUseDarkTheme
+                ? 'text-white/60 hover:text-white'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
           >
             {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -192,7 +222,9 @@ export function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="md:hidden mt-4 pt-4 border-t border-white/10 overflow-hidden"
+              className={`md:hidden mt-4 pt-4 border-t overflow-hidden ${
+                shouldUseDarkTheme ? 'border-white/10' : 'border-slate-200'
+              }`}
             >
               <div className="flex flex-col gap-4 pb-4">
                 {navLinks.map((link, i) => (
@@ -202,13 +234,17 @@ export function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <a 
+                    <a
                       href={link.href}
                       onClick={(e) => {
                         handleNavClick(e, link.sectionId);
                         setMobileMenuOpen(false);
                       }}
-                      className="text-white/70 hover:text-white font-medium text-lg block py-2 cursor-pointer"
+                      className={`font-medium text-lg block py-2 cursor-pointer transition-colors ${
+                        shouldUseDarkTheme
+                          ? 'text-white/60 hover:text-white'
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
                     >
                       {link.label}
                     </a>
@@ -221,9 +257,13 @@ export function Header() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <Link 
-                        href="/dashboard" 
-                        className="text-white/70 hover:text-white font-medium text-lg block py-2"
+                      <Link
+                        href="/dashboard"
+                        className={`font-medium text-lg block py-2 transition-colors ${
+                          shouldUseDarkTheme
+                            ? 'text-white/60 hover:text-white'
+                            : 'text-slate-600 hover:text-slate-900'
+                        }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         Dashboard

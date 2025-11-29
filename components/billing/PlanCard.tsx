@@ -18,17 +18,17 @@ export function PlanCard({ tier, onManage, onUpgrade }: PlanCardProps) {
     <Card>
       <div className="flex items-start justify-between mb-6">
         <div>
-          <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-          <p className="text-white/60">Current plan</p>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+          <p className="text-slate-600">Current plan</p>
         </div>
         <Badge variant={tier === 'free' ? 'default' : 'success'}>{tier.toUpperCase()}</Badge>
       </div>
 
       <div className="mb-8">
-        <span className="text-4xl font-extrabold text-white">
+        <span className="text-4xl font-extrabold text-slate-900">
           ${plan.price.monthly}
         </span>
-        <span className="text-white/60 ml-1">/mo</span>
+        <span className="text-slate-600 ml-1">/mo</span>
       </div>
 
       <div className="flex gap-3">

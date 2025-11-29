@@ -14,10 +14,10 @@ export default function DashboardPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-4xl font-extrabold text-white mb-3">
+        <h1 className="text-4xl font-extrabold text-slate-900 mb-3">
           Welcome back{user?.name ? `, ${user.name}` : ''}!
         </h1>
-        <p className="text-white/60 text-lg">Here&apos;s what&apos;s happening with your documents</p>
+        <p className="text-slate-600 text-lg">Here&apos;s what&apos;s happening with your documents</p>
       </div>
 
       {/* Stats */}
@@ -28,8 +28,8 @@ export default function DashboardPage() {
               <FileText className="w-6 h-6 text-[#009de0]" />
             </div>
             <div>
-              <p className="text-sm text-white/60 mb-1">Total Documents</p>
-              <p className="text-2xl font-bold text-white">{documents?.length || 0}</p>
+              <p className="text-sm text-slate-600 mb-1">Total Documents</p>
+              <p className="text-2xl font-bold text-slate-900">{documents?.length || 0}</p>
             </div>
           </div>
         </Card>
@@ -40,8 +40,8 @@ export default function DashboardPage() {
               <TrendingUp className="w-6 h-6 text-[#00d4ff]" />
             </div>
             <div>
-              <p className="text-sm text-white/60 mb-1">Summaries Created</p>
-              <p className="text-2xl font-bold text-white">{documents?.length || 0}</p>
+              <p className="text-sm text-slate-600 mb-1">Summaries Created</p>
+              <p className="text-2xl font-bold text-slate-900">{documents?.length || 0}</p>
             </div>
           </div>
         </Card>
@@ -52,8 +52,8 @@ export default function DashboardPage() {
               <MessageSquare className="w-6 h-6 text-[#a855f7]" />
             </div>
             <div>
-              <p className="text-sm text-white/60 mb-1">Chat Messages</p>
-              <p className="text-2xl font-bold text-white">0</p>
+              <p className="text-sm text-slate-600 mb-1">Chat Messages</p>
+              <p className="text-2xl font-bold text-slate-900">0</p>
             </div>
           </div>
         </Card>
@@ -62,7 +62,7 @@ export default function DashboardPage() {
       {/* Recent Documents */}
       <Card>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-white">Recent Documents</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Recent Documents</h2>
           <Link href="/dashboard/upload">
             <Button>Upload PDF</Button>
           </Link>
@@ -73,11 +73,11 @@ export default function DashboardPage() {
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {documents.map((doc: any) => (
               <Link key={doc._id} href={`/dashboard/documents/${doc._id}`}>
-                <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors border border-white/10 hover:border-white/20">
+                <div className="flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-slate-200 hover:border-slate-300">
                   <FileText className="w-8 h-8 text-[#009de0]" />
                   <div className="flex-1">
-                    <h3 className="font-semibold text-white mb-1">{doc.title}</h3>
-                    <p className="text-sm text-white/60">
+                    <h3 className="font-semibold text-slate-900 mb-1">{doc.title}</h3>
+                    <p className="text-sm text-slate-600">
                       {doc.pageCount} pages • {new Date(doc._creationTime).toLocaleDateString()}
                     </p>
                   </div>
@@ -87,8 +87,8 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <FileText className="w-16 h-16 text-white/20 mx-auto mb-4" />
-            <p className="text-white/60 mb-6">No documents yet</p>
+            <FileText className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+            <p className="text-slate-600 mb-6">No documents yet</p>
             <Link href="/dashboard/upload">
               <Button>Upload Your First PDF</Button>
             </Link>

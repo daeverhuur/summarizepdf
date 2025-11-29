@@ -58,14 +58,14 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
   const hasMessages = displayedMessages.length > 0;
 
   return (
-    <div className="bg-[#16161f] rounded-2xl border border-white/10 overflow-hidden flex flex-col h-[500px]">
+    <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col h-[500px]">
       {/* Header */}
-      <div className="px-5 py-4 border-b border-white/10 bg-gradient-to-r from-[#009de0]/10 to-purple-500/10">
+      <div className="px-5 py-4 border-b border-slate-200 bg-gradient-to-r from-[#009de0]/10 to-purple-500/10">
         <div className="flex items-center gap-2">
           <MessageSquare className="w-5 h-5 text-[#00d4ff]" />
-          <h3 className="font-semibold text-white">Ask Questions</h3>
+          <h3 className="font-semibold text-slate-900">Ask Questions</h3>
         </div>
-        <p className="text-sm text-white/50 mt-1">Chat with your document</p>
+        <p className="text-sm text-slate-500 mt-1">Chat with your document</p>
       </div>
 
       {/* Messages */}
@@ -75,18 +75,18 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
             <div className="w-12 h-12 rounded-full bg-[#009de0]/20 flex items-center justify-center mb-4">
               <Sparkles className="w-6 h-6 text-[#00d4ff]" />
             </div>
-            <p className="text-white/60 mb-4">Ask anything about this document</p>
+            <p className="text-slate-600 mb-4">Ask anything about this document</p>
 
             {/* Suggested Questions */}
             {suggestedQuestions && suggestedQuestions.length > 0 && (
               <div className="space-y-2 w-full">
-                <p className="text-xs text-white/40 uppercase tracking-wide">Suggested</p>
+                <p className="text-xs text-slate-400 uppercase tracking-wide">Suggested</p>
                 {suggestedQuestions.slice(0, 3).map((question, index) => (
                   <button
                     key={index}
                     onClick={() => handleSend(question)}
                     disabled={sending}
-                    className="w-full text-left px-3 py-2 text-sm text-white/70 bg-white/5 hover:bg-white/10 rounded-lg transition-colors disabled:opacity-50 border border-white/5"
+                    className="w-full text-left px-3 py-2 text-sm text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors disabled:opacity-50 border border-slate-100"
                   >
                     {question}
                   </button>
@@ -108,12 +108,12 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
                     className={`max-w-[85%] px-4 py-3 rounded-2xl ${
                       msg.role === 'user'
                         ? 'bg-gradient-to-r from-[#009de0] to-[#00d4ff] text-white'
-                        : 'bg-white/10 text-white/90'
+                        : 'bg-slate-100 text-slate-900'
                     }`}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
                     {msg.pageReferences && msg.pageReferences.length > 0 && (
-                      <div className="mt-2 pt-2 border-t border-white/20">
+                      <div className="mt-2 pt-2 border-t border-slate-300">
                         <p className="text-xs opacity-75">
                           Referenced: Page{msg.pageReferences.length > 1 ? 's' : ''}{' '}
                           {msg.pageReferences.join(', ')}
@@ -131,7 +131,7 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex justify-start"
               >
-                <div className="bg-white/10 px-4 py-3 rounded-2xl">
+                <div className="bg-slate-200 px-4 py-3 rounded-2xl">
                   <Loader2 className="w-5 h-5 text-[#00d4ff] animate-spin" />
                 </div>
               </motion.div>
@@ -142,7 +142,7 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
       </div>
 
       {/* Input */}
-      <div className="p-4 border-t border-white/10 bg-[#12121a]">
+      <div className="p-4 border-t border-slate-200 bg-slate-100">
         <div className="flex gap-2">
           <input
             type="text"
@@ -151,7 +151,7 @@ export function QuickChat({ documentId, suggestedQuestions }: QuickChatProps) {
             onKeyDown={handleKeyDown}
             placeholder="Ask a question..."
             disabled={sending}
-            className="flex-1 px-4 py-3 text-sm bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#009de0] focus:border-transparent text-white placeholder-white/40 disabled:opacity-50"
+            className="flex-1 px-4 py-3 text-sm bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#009de0] focus:border-transparent text-slate-900 placeholder-slate-400 disabled:opacity-50"
           />
           <button
             onClick={() => handleSend()}

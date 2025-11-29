@@ -19,10 +19,10 @@ export default function BlogPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
               Latest <span className="text-gradient">Insights</span> & Updates
             </h1>
-            <p className="text-xl text-white/50 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               News, tips, and best practices for AI-powered document processing
             </p>
           </motion.div>
@@ -53,26 +53,26 @@ export default function BlogPage() {
                     <path d="M12 2v20M2 12h20" strokeLinecap="round" />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">
                   Blog Coming Soon
                 </h2>
-                <p className="text-lg text-white/60 mb-8 leading-relaxed">
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   We're working on bringing you valuable content about AI, document processing, productivity tips, and product updates. Stay tuned!
                 </p>
-                
+
                 {/* Newsletter Signup */}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-8 max-w-md mx-auto">
-                  <h3 className="text-xl font-bold text-white mb-3">
+                <div className="bg-slate-100 border border-slate-200 rounded-xl p-8 max-w-md mx-auto">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
                     Get notified when we launch
                   </h3>
-                  <p className="text-white/50 text-sm mb-6">
+                  <p className="text-slate-600 text-sm mb-6">
                     Subscribe to our newsletter for product updates and tips
                   </p>
                   <form className="space-y-4">
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/30 focus:outline-none focus:border-[#009de0]/50 focus:bg-white/10 transition-all"
+                      className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009de0]/50 focus:bg-slate-200 transition-all"
                     />
                     <button
                       type="submit"
@@ -97,7 +97,7 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Upcoming Topics
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -126,10 +126,10 @@ export default function BlogPage() {
                     <div className="text-[#009de0] text-sm font-semibold mb-3">
                       {topic.category}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
                       {topic.title}
                     </h3>
-                    <p className="text-white/40 text-sm">Coming soon...</p>
+                    <p className="text-slate-500 text-sm">Coming soon...</p>
                   </Card>
                 </motion.div>
               ))}

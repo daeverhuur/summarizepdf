@@ -102,7 +102,7 @@ function FloatingPDF({ delay = 0, className = '' }: { delay?: number; className?
         <div className="h-3 bg-[#009de0]/30 rounded-t-lg" />
         <div className="p-2 space-y-1">
           <div className="h-1 bg-white/20 rounded" />
-          <div className="h-1 bg-white/15 rounded w-4/5" />
+          <div className="h-1 bg-white/10 rounded w-4/5" />
           <div className="h-1 bg-white/10 rounded w-3/5" />
         </div>
       </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
       <section
         ref={heroRef}
         id="hero"
-        className="relative h-screen min-h-[700px] flex items-center overflow-hidden"
+        className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-[#050508]"
       >
         {/* 3D Particle Background */}
         <div className="absolute inset-0 opacity-40">
@@ -356,8 +356,8 @@ export default function HomePage() {
               >
                 <div className="flex -space-x-1.5">
                   {[...Array(4)].map((_, i) => (
-                    <motion.div 
-                      key={i} 
+                    <motion.div
+                      key={i}
                       className="w-6 h-6 rounded-full bg-gradient-to-br from-[#009de0] to-[#7c3aed] border-2 border-[#050508] flex items-center justify-center text-[8px] font-bold text-white"
                       animate={{
                         y: [0, -2, 0],
@@ -395,7 +395,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-lg sm:text-xl text-white/60 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               >
-                Upload any PDF and get <span className="text-white font-medium">AI-powered summaries in seconds</span>. 
+                Upload any PDF and get <span className="text-white font-medium">AI-powered summaries in seconds</span>.
                 Extract key insights, chat with documents, and save hours of reading time.
               </motion.p>
 
@@ -510,17 +510,17 @@ export default function HomePage() {
                 }}
               />
               
-              <div 
+              <div
                 onClick={() => setIsTryModalOpen(true)}
-                className={`relative bg-[#0a0a0f]/90 border rounded-2xl p-1 shadow-2xl backdrop-blur-sm cursor-pointer transition-all duration-300 group ${
-                  isDraggingOnHero 
-                    ? 'border-[#009de0] scale-[1.02]' 
-                    : 'border-white/10 hover:border-[#009de0]/50 hover:scale-[1.01]'
+                className={`relative bg-white/10 border rounded-2xl p-1 shadow-2xl backdrop-blur-sm cursor-pointer transition-all duration-300 group ${
+                  isDraggingOnHero
+                    ? 'border-[#009de0] scale-[1.02]'
+                    : 'border-white/20 hover:border-[#009de0]/50 hover:scale-[1.01]'
                 }`}
               >
-                <div className="bg-[#12121a] rounded-xl overflow-hidden">
+                <div className="bg-white/5 rounded-xl overflow-hidden">
                   {/* Mini browser header */}
-                  <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0a0a0f] border-b border-white/5">
+                  <div className="flex items-center gap-2 px-4 py-2.5 bg-white/10 border-b border-white/10">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
                       <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
@@ -532,13 +532,13 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Interactive Upload Zone */}
                   <div className="p-5">
                     {/* Drop Zone */}
                     <div className={`border-2 border-dashed rounded-xl p-6 text-center transition-all mb-4 ${
-                      isDraggingOnHero 
-                        ? 'border-[#009de0] bg-[#009de0]/10' 
+                      isDraggingOnHero
+                        ? 'border-[#009de0] bg-[#009de0]/10'
                         : 'border-white/20 group-hover:border-[#009de0]/50 bg-white/5'
                     }`}>
                       <div className="w-12 h-12 rounded-xl bg-[#009de0]/20 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
@@ -549,12 +549,12 @@ export default function HomePage() {
                       <p className="text-white font-medium text-sm mb-1">
                         {isDraggingOnHero ? 'Drop your PDF here!' : 'Try it now — Drop PDF here'}
                       </p>
-                      <p className="text-white/40 text-xs">or click to upload</p>
+                      <p className="text-white/50 text-xs">or click to upload</p>
                     </div>
 
                     {/* What you'll get preview */}
                     <div className="space-y-2">
-                      <p className="text-white/50 text-xs uppercase tracking-wider mb-3">What you&apos;ll get:</p>
+                      <p className="text-white/40 text-xs uppercase tracking-wider mb-3">What you&apos;ll get:</p>
                       <div className="flex items-center gap-2 text-white/60 text-sm">
                         <div className="w-5 h-5 rounded-full bg-[#009de0]/20 flex items-center justify-center shrink-0">
                           <ZapIconSmall />
@@ -591,7 +591,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
-                className="absolute -bottom-4 -left-4 bg-[#12121a] border border-white/10 rounded-xl px-4 py-3 shadow-xl"
+                className="absolute -bottom-4 -left-4 bg-white/10 border border-white/20 rounded-xl px-4 py-3 shadow-xl backdrop-blur-sm"
               >
                 <motion.div
                   animate={{
@@ -653,12 +653,12 @@ export default function HomePage() {
             document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          <motion.div 
+          <motion.div
             className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5 relative overflow-hidden"
             whileHover={{ borderColor: 'rgba(0, 157, 224, 0.5)' }}
           >
-            <motion.div 
-              className="w-1 h-2 bg-white/40 rounded-full"
+            <motion.div
+              className="w-1 h-2 bg-white/50 rounded-full"
               animate={{
                 y: [0, 12],
                 opacity: [1, 0],
@@ -684,7 +684,7 @@ export default function HomePage() {
             />
           </motion.div>
           <motion.p
-            className="text-white/40 text-xs mt-2 text-center"
+            className="text-white/50 text-xs mt-2 text-center"
             animate={{
               opacity: [0.4, 0.8, 0.4],
             }}
@@ -700,7 +700,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <AnimatedSection className="py-16 md:py-24 relative overflow-hidden">
+      <AnimatedSection className="py-16 md:py-24 relative overflow-hidden bg-[#050508]">
         {/* Animated gradient background */}
         <motion.div 
           className="absolute inset-0 bg-gradient-to-b from-transparent via-[#009de0]/5 to-transparent"
@@ -741,13 +741,13 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.1,
                   transition: { duration: 0.3, type: "spring", stiffness: 300 }
                 }}
                 className="text-center group cursor-default"
               >
-                <motion.div 
+                <motion.div
                   className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 group-hover:text-gradient transition-all"
                   whileHover={{
                     textShadow: '0 0 20px rgba(0, 157, 224, 0.5)',
@@ -770,6 +770,9 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
+      {/* Transition gradient from dark to light */}
+      <div className="h-32 bg-gradient-to-b from-[#050508] to-white" />
+
       {/* Features Section */}
       <AnimatedSection id="features" className="py-16 md:py-24 relative scroll-mt-24">
         <div className="container-custom">
@@ -786,7 +789,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6"
             >
               Everything you need to
               <br />
@@ -797,7 +800,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/50 max-w-2xl mx-auto"
+              className="text-xl text-slate-500 max-w-2xl mx-auto"
             >
               Powerful AI features to transform how you work with documents
             </motion.p>
@@ -834,11 +837,11 @@ export default function HomePage() {
                     transition={{ duration: 0.5 }}
                   />
                   
-                  <motion.div 
+                  <motion.div
                     className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-5 relative z-10`}
                     whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
                   >
-                    <div className="w-full h-full bg-[#12121a] rounded-[10px] flex items-center justify-center text-white group-hover:bg-[#0a0a0f] transition-colors">
+                    <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center text-slate-900 group-hover:bg-slate-50 transition-colors">
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
@@ -847,11 +850,11 @@ export default function HomePage() {
                       </motion.div>
                     </div>
                   </motion.div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#009de0] transition-colors relative z-10">
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#009de0] transition-colors relative z-10">
                     {feature.title}
                   </h3>
-                  <p className="text-white/50 leading-relaxed group-hover:text-white/70 transition-colors relative z-10">
+                  <p className="text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors relative z-10">
                     {feature.description}
                   </p>
                   
@@ -884,7 +887,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6"
             >
               Three simple steps
             </motion.h2>
@@ -916,8 +919,8 @@ export default function HomePage() {
                     transition={{ duration: 0.5 }}
                   />
                   
-                  <motion.div 
-                    className="text-7xl font-black text-white/5 absolute top-4 right-4"
+                  <motion.div
+                    className="text-7xl font-black text-slate-200 absolute top-4 right-4"
                     animate={{
                       scale: [1, 1.05, 1],
                     }}
@@ -930,11 +933,11 @@ export default function HomePage() {
                   >
                     {item.step}
                   </motion.div>
-                  
+
                   <div className="relative z-10">
-                    <motion.div 
+                    <motion.div
                       className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#009de0]/20 text-[#009de0] font-bold text-2xl mb-6 group-hover:bg-[#009de0]/30 transition-colors"
-                      whileHover={{ 
+                      whileHover={{
                         rotate: [0, -5, 5, -5, 0],
                         scale: 1.1,
                       }}
@@ -942,8 +945,8 @@ export default function HomePage() {
                     >
                       {item.step}
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#009de0] transition-colors">{item.title}</h3>
-                    <p className="text-white/50 group-hover:text-white/70 transition-colors">{item.desc}</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#009de0] transition-colors">{item.title}</h3>
+                    <p className="text-slate-500 group-hover:text-slate-700 transition-colors">{item.desc}</p>
                   </div>
                   
                   {/* Animated bottom accent */}
@@ -1000,7 +1003,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
             >
               Trusted by 10,000+ users worldwide
             </motion.p>
@@ -1009,7 +1012,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-white/50 text-lg"
+              className="text-slate-500 text-lg"
             >
               From students to Fortune 500 companies, professionals trust SummarizePDF to save hours every week
             </motion.p>
@@ -1055,11 +1058,11 @@ export default function HomePage() {
                     </motion.div>
                   ))}
                 </div>
-                <p className="text-white/70 mb-6 italic relative z-10 group-hover:text-white/90 transition-colors">
+                <p className="text-slate-700 mb-6 italic relative z-10 group-hover:text-slate-900 transition-colors">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 relative z-10">
-                  <motion.div 
+                  <motion.div
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-[#009de0] to-[#7c3aed] flex items-center justify-center text-white font-bold"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.5 }}
@@ -1067,8 +1070,8 @@ export default function HomePage() {
                     {testimonial.avatar}
                   </motion.div>
                   <div>
-                    <div className="font-semibold text-white group-hover:text-[#009de0] transition-colors">{testimonial.name}</div>
-                    <div className="text-white/40 text-sm">{testimonial.role}</div>
+                    <div className="font-semibold text-slate-900 group-hover:text-[#009de0] transition-colors">{testimonial.name}</div>
+                    <div className="text-slate-400 text-sm">{testimonial.role}</div>
                   </div>
                 </div>
                 
@@ -1108,7 +1111,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6"
             >
               Choose your plan
             </motion.h2>
@@ -1117,7 +1120,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-white/50 max-w-2xl mx-auto"
+              className="text-xl text-slate-500 max-w-2xl mx-auto"
             >
               Start free and scale as you grow. All plans include our core AI features.
             </motion.p>
@@ -1147,14 +1150,14 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-16 max-w-6xl mx-auto"
           >
-            <motion.div 
+            <motion.div
               className="glass-card p-6 text-center hover:border-[#009de0]/50 transition-all duration-300 cursor-pointer pointer-events-auto"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.2 }}
               onClick={() => setIsComparisonOpen(!isComparisonOpen)}
             >
               <div className="flex items-center justify-center gap-2.5">
-                <h3 className="text-lg font-bold text-white">Compare All Features</h3>
+                <h3 className="text-lg font-bold text-slate-900">Compare All Features</h3>
                 <motion.svg
                   width="20"
                   height="20"
@@ -1173,7 +1176,7 @@ export default function HomePage() {
                   />
                 </motion.svg>
               </div>
-              <p className="text-white/40 text-sm mt-1">Detailed side-by-side comparison</p>
+              <p className="text-slate-400 text-sm mt-1">Detailed side-by-side comparison</p>
             </motion.div>
 
             <AnimatePresence>
@@ -1197,8 +1200,8 @@ export default function HomePage() {
                 <div className="glass-card p-6 overflow-x-auto">
                   <table className="w-full min-w-[700px]">
                     <thead>
-                      <tr className="border-b border-white/10">
-                        <th className="text-left py-3 px-3 text-white/50 font-semibold text-xs uppercase tracking-wider">
+                      <tr className="border-b border-slate-200">
+                        <th className="text-left py-3 px-3 text-slate-500 font-semibold text-xs uppercase tracking-wider">
                           Feature
                         </th>
                         {(['free', 'starter', 'pro', 'team'] as const).map((tier, i) => (
@@ -1210,7 +1213,7 @@ export default function HomePage() {
                             className={`py-3 px-3 text-center ${
                               PLANS[tier].popular
                                 ? 'text-[#009de0] font-bold'
-                                : 'text-white font-semibold'
+                                : 'text-slate-900 font-semibold'
                             }`}
                           >
                             <div className="flex flex-col items-center gap-1">
@@ -1225,8 +1228,8 @@ export default function HomePage() {
                         ))}
                       </tr>
                     </thead>
-                    <motion.tbody 
-                      className="divide-y divide-white/5"
+                    <motion.tbody
+                      className="divide-y divide-slate-100"
                       initial="hidden"
                       animate="visible"
                       variants={{
@@ -1238,44 +1241,44 @@ export default function HomePage() {
                       }}
                     >
                       {/* Pricing */}
-                      <motion.tr 
-                        className="hover:bg-white/5 transition-colors"
+                      <motion.tr
+                        className="hover:bg-slate-50 transition-colors"
                         variants={{
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 }
                         }}
                       >
-                        <td className="py-3 px-3 text-white/80 font-medium text-sm">Monthly Price</td>
+                        <td className="py-3 px-3 text-slate-700 font-medium text-sm">Monthly Price</td>
                         {(['free', 'starter', 'pro', 'team'] as const).map((tier) => (
                           <td key={tier} className="py-3 px-3 text-center">
-                            <span className="text-white font-bold text-base">
+                            <span className="text-slate-900 font-bold text-base">
                               ${PLANS[tier].price.monthly}
                             </span>
-                            <span className="text-white/40 text-xs">/mo</span>
+                            <span className="text-slate-400 text-xs">/mo</span>
                           </td>
                         ))}
                       </motion.tr>
-                      <motion.tr 
-                        className="hover:bg-white/5 transition-colors"
+                      <motion.tr
+                        className="hover:bg-slate-50 transition-colors"
                         variants={{
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 }
                         }}
                       >
-                        <td className="py-3 px-3 text-white/80 font-medium text-sm">Yearly Price</td>
+                        <td className="py-3 px-3 text-slate-700 font-medium text-sm">Yearly Price</td>
                         {(['free', 'starter', 'pro', 'team'] as const).map((tier) => (
                           <td key={tier} className="py-3 px-3 text-center">
-                            <span className="text-white font-bold text-base">
+                            <span className="text-slate-900 font-bold text-base">
                               ${PLANS[tier].price.yearly}
                             </span>
-                            <span className="text-white/40 text-xs">/yr</span>
+                            <span className="text-slate-400 text-xs">/yr</span>
                           </td>
                         ))}
                       </motion.tr>
 
                       {/* Core Features */}
-                      <motion.tr 
-                        className="bg-white/5"
+                      <motion.tr
+                        className="bg-slate-50"
                         variants={{
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 }
@@ -1291,19 +1294,19 @@ export default function HomePage() {
                         { label: 'Chat Questions per Doc', key: 'chatQuestionsPerDoc' as const },
                         { label: 'Document Library Size', key: 'documentLibrarySize' as const },
                       ].map((feature) => (
-                        <motion.tr 
+                        <motion.tr
                           key={feature.key}
-                          className="hover:bg-white/5 transition-colors"
+                          className="hover:bg-slate-50 transition-colors"
                           variants={{
                             hidden: { opacity: 0, x: -20 },
                             visible: { opacity: 1, x: 0 }
                           }}
                         >
-                          <td className="py-3 px-3 text-white/80 font-medium text-sm">{feature.label}</td>
+                          <td className="py-3 px-3 text-slate-700 font-medium text-sm">{feature.label}</td>
                           {(['free', 'starter', 'pro', 'team'] as const).map((tier) => {
                             const value = PLANS[tier].features[feature.key];
                             return (
-                              <td key={tier} className="py-3 px-3 text-center text-white/70 text-sm">
+                              <td key={tier} className="py-3 px-3 text-center text-slate-700 text-sm">
                                 {value === 'unlimited' ? (
                                   <span className="text-[#00d4ff] font-semibold">Unlimited</span>
                                 ) : value > 999999 ? (
@@ -1320,8 +1323,8 @@ export default function HomePage() {
                       ))}
 
                       {/* Advanced Features */}
-                      <motion.tr 
-                        className="bg-white/5"
+                      <motion.tr
+                        className="bg-slate-50"
                         variants={{
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 }
@@ -1331,14 +1334,14 @@ export default function HomePage() {
                           Advanced Features
                         </td>
                       </motion.tr>
-                      <motion.tr 
-                        className="hover:bg-white/5 transition-colors"
+                      <motion.tr
+                        className="hover:bg-slate-50 transition-colors"
                         variants={{
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 }
                         }}
                       >
-                        <td className="py-3 px-3 text-white/80 font-medium text-sm">Batch Upload</td>
+                        <td className="py-3 px-3 text-slate-700 font-medium text-sm">Batch Upload</td>
                         {(['free', 'starter', 'pro', 'team'] as const).map((tier) => (
                           <td key={tier} className="py-3 px-3 text-center">
                             {PLANS[tier].features.batchUpload ? (
@@ -1351,13 +1354,13 @@ export default function HomePage() {
                                   />
                                 </svg>
                                 {PLANS[tier].features.batchUploadLimit && (
-                                  <span className="text-[10px] text-white/40">
+                                  <span className="text-[10px] text-slate-400">
                                     {PLANS[tier].features.batchUploadLimit} files
                                   </span>
                                 )}
                               </div>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1368,14 +1371,14 @@ export default function HomePage() {
                           </td>
                         ))}
                       </motion.tr>
-                      <motion.tr 
-                        className="hover:bg-white/5 transition-colors"
+                      <motion.tr
+                        className="hover:bg-slate-50 transition-colors"
                         variants={{
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 }
                         }}
                       >
-                        <td className="py-3 px-3 text-white/80 font-medium text-sm">Export Formats</td>
+                        <td className="py-3 px-3 text-slate-700 font-medium text-sm">Export Formats</td>
                         {(['free', 'starter', 'pro', 'team'] as const).map((tier) => (
                           <td key={tier} className="py-3 px-3 text-center">
                             {PLANS[tier].features.exportFormats ? (
@@ -1387,10 +1390,10 @@ export default function HomePage() {
                                     clipRule="evenodd"
                                   />
                                 </svg>
-                                <span className="text-[10px] text-white/40">PDF, MD, DOCX</span>
+                                <span className="text-[10px] text-slate-400">PDF, MD, DOCX</span>
                               </div>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1421,13 +1424,13 @@ export default function HomePage() {
                                   />
                                 </svg>
                                 {PLANS[tier].features.apiCallsPerMonth && (
-                                  <span className="text-[10px] text-white/40">
+                                  <span className="text-[10px] text-slate-400">
                                     {PLANS[tier].features.apiCallsPerMonth.toLocaleString()} calls
                                   </span>
                                 )}
                               </div>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1457,7 +1460,7 @@ export default function HomePage() {
                                 />
                               </svg>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1496,7 +1499,7 @@ export default function HomePage() {
                                 {PLANS[tier].features.teamSeats}
                               </span>
                             ) : (
-                              <span className="text-white/20">—</span>
+                              <span className="text-slate-300">—</span>
                             )}
                           </td>
                         ))}
@@ -1520,7 +1523,7 @@ export default function HomePage() {
                                 />
                               </svg>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1550,7 +1553,7 @@ export default function HomePage() {
                                 />
                               </svg>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1580,7 +1583,7 @@ export default function HomePage() {
                                 />
                               </svg>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1610,7 +1613,7 @@ export default function HomePage() {
                                 />
                               </svg>
                             ) : (
-                              <svg className="w-4 h-4 text-white/20 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 text-slate-300 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -1678,23 +1681,23 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mt-16 max-w-3xl mx-auto"
           >
-            <h3 className="text-2xl font-bold text-white text-center mb-8">Frequently Asked Questions</h3>
+            <h3 className="text-2xl font-bold text-slate-900 text-center mb-8">Frequently Asked Questions</h3>
             <div className="space-y-6">
               <div className="glass-card p-6">
-                <h4 className="text-lg font-semibold text-white mb-2">Can I cancel anytime?</h4>
-                <p className="text-white/60">Yes! All plans can be cancelled at any time. No long-term commitments required.</p>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Can I cancel anytime?</h4>
+                <p className="text-slate-600">Yes! All plans can be cancelled at any time. No long-term commitments required.</p>
               </div>
               <div className="glass-card p-6">
-                <h4 className="text-lg font-semibold text-white mb-2">What payment methods do you accept?</h4>
-                <p className="text-white/60">We accept all major credit cards, debit cards, and support payment through Stripe.</p>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">What payment methods do you accept?</h4>
+                <p className="text-slate-600">We accept all major credit cards, debit cards, and support payment through Stripe.</p>
               </div>
               <div className="glass-card p-6">
-                <h4 className="text-lg font-semibold text-white mb-2">Do you offer refunds?</h4>
-                <p className="text-white/60">Yes, we offer a 30-day money-back guarantee if you&apos;re not satisfied with our service.</p>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Do you offer refunds?</h4>
+                <p className="text-slate-600">Yes, we offer a 30-day money-back guarantee if you&apos;re not satisfied with our service.</p>
               </div>
               <div className="glass-card p-6">
-                <h4 className="text-lg font-semibold text-white mb-2">Can I upgrade or downgrade my plan?</h4>
-                <p className="text-white/60">Absolutely! You can upgrade or downgrade your plan at any time from your account settings.</p>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Can I upgrade or downgrade my plan?</h4>
+                <p className="text-slate-600">Absolutely! You can upgrade or downgrade your plan at any time from your account settings.</p>
               </div>
             </div>
           </motion.div>
@@ -1748,13 +1751,13 @@ export default function HomePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 mb-8"
+              className="inline-flex items-center gap-3 bg-slate-100 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 mb-8"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#009de0] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#009de0]"></span>
               </span>
-              <span className="text-sm font-medium text-white/80">Join 10,000+ professionals</span>
+              <span className="text-sm font-medium text-slate-700">Join 10,000+ professionals</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -1763,7 +1766,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight"
             >
               Transform how you
               <br />
@@ -1776,7 +1779,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-lg sm:text-xl md:text-2xl text-white/60 mb-3 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-3 max-w-3xl mx-auto leading-relaxed"
             >
               Save hours every week with AI-powered summarization
             </motion.p>
@@ -1785,7 +1788,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.35 }}
-              className="text-base sm:text-lg text-white/50 mb-10 max-w-2xl mx-auto"
+              className="text-base sm:text-lg text-slate-500 mb-10 max-w-2xl mx-auto"
             >
               No credit card required • 5 free PDFs per day • Cancel anytime
             </motion.p>
@@ -1833,7 +1836,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-white/40 text-sm"
+              className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-slate-400 text-sm"
             >
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-[#009de0]" fill="currentColor" viewBox="0 0 20 20">

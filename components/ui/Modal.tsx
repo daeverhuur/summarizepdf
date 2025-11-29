@@ -40,7 +40,7 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalPr
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50"
           />
           <div className="fixed inset-0 z-50 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4">
@@ -48,14 +48,14 @@ export function Modal({ isOpen, onClose, title, children, size = 'md' }: ModalPr
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className={`relative w-full ${sizes[size]} bg-[#16161f] border border-white/10 rounded-2xl shadow-2xl`}
+                className={`relative w-full ${sizes[size]} bg-white border border-slate-200 rounded-2xl shadow-2xl`}
               >
                 {title && (
-                  <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-                    <h2 className="text-2xl font-bold text-white">{title}</h2>
+                  <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+                    <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
                     <button
                       onClick={onClose}
-                      className="text-white/40 hover:text-white/70 transition-colors p-2"
+                      className="text-slate-400 hover:text-slate-600 transition-colors p-2"
                     >
                       <X className="w-6 h-6" />
                     </button>

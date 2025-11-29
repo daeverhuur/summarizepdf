@@ -198,7 +198,7 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50"
           />
 
           {/* Modal */}
@@ -209,14 +209,14 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-2xl z-50"
           >
-            <div className="h-full md:h-auto bg-[#0a0a0f] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="h-full md:h-auto bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xl">
               {/* Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-[#009de0]/20 flex items-center justify-center">
                     <SparkleIcon />
                   </div>
-                  <h2 className="text-lg font-semibold text-white">
+                  <h2 className="text-lg font-semibold text-slate-900">
                     {stage === 'upload' && 'Try SummarizePDF'}
                     {stage === 'processing' && 'Processing Your PDF'}
                     {stage === 'preview' && 'Your Summary Preview'}
@@ -224,7 +224,7 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-white/10 rounded-lg transition-colors text-white/60 hover:text-white"
+                  className="p-2 hover:bg-slate-100 rounded-lg transition-colors text-slate-600 hover:text-slate-900"
                 >
                   <CloseIcon />
                 </button>
@@ -246,9 +246,9 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                         onDragLeave={handleDragLeave}
                         onDrop={handleDrop}
                         className={`relative border-2 border-dashed rounded-xl p-12 text-center transition-all ${
-                          isDragging 
-                            ? 'border-[#009de0] bg-[#009de0]/10' 
-                            : 'border-white/20 hover:border-[#009de0]/50 bg-white/5'
+                          isDragging
+                            ? 'border-[#009de0] bg-[#009de0]/10'
+                            : 'border-slate-300 hover:border-[#009de0]/50 bg-slate-50'
                         }`}
                       >
                         <input
@@ -258,19 +258,19 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                         />
 
-                        <div className="text-white/40 mb-4">
+                        <div className="text-slate-400 mb-4">
                           <UploadIcon />
                         </div>
-                        <h3 className="text-xl font-semibold text-white mb-2">
+                        <h3 className="text-xl font-semibold text-slate-900 mb-2">
                           Drop your PDF here
                         </h3>
-                        <p className="text-white/60 mb-4">or click to browse</p>
-                        <p className="text-sm text-white/40">
+                        <p className="text-slate-600 mb-4">or click to browse</p>
+                        <p className="text-sm text-slate-500">
                           PDF files up to 50MB • No account required
                         </p>
                       </div>
 
-                      <div className="mt-6 flex items-center justify-center gap-6 text-sm text-white/50">
+                      <div className="mt-6 flex items-center justify-center gap-6 text-sm text-slate-500">
                         <div className="flex items-center gap-2">
                           <CheckCircleIcon />
                           <span>Free trial</span>
@@ -297,15 +297,15 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                       className="text-center py-8"
                     >
                       {/* File Info */}
-                      <div className="inline-flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 mb-8">
+                      <div className="inline-flex items-center gap-3 bg-slate-100 rounded-lg px-4 py-3 mb-8">
                         <div className="text-[#009de0]">
                           <FileIcon />
                         </div>
                         <div className="text-left">
-                          <p className="text-white font-medium text-sm truncate max-w-[200px]">
+                          <p className="text-slate-900 font-medium text-sm truncate max-w-[200px]">
                             {file?.name}
                           </p>
-                          <p className="text-white/50 text-xs">
+                          <p className="text-slate-500 text-xs">
                             {file && (file.size / 1024 / 1024).toFixed(2)} MB
                           </p>
                         </div>
@@ -313,7 +313,7 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
 
                       {/* Progress */}
                       <div className="mb-6">
-                        <div className="h-2 bg-white/10 rounded-full overflow-hidden mb-3">
+                        <div className="h-2 bg-slate-200 rounded-full overflow-hidden mb-3">
                           <motion.div
                             className="h-full bg-gradient-to-r from-[#009de0] to-[#00d4ff]"
                             initial={{ width: 0 }}
@@ -321,7 +321,7 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                             transition={{ duration: 0.3 }}
                           />
                         </div>
-                        <p className="text-white/60 text-sm">
+                        <p className="text-slate-600 text-sm">
                           {processingSteps[currentStep]}
                         </p>
                       </div>
@@ -360,19 +360,19 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                             <path d="M5 12l5 5L20 7" stroke="#009de0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </motion.div>
-                        <h3 className="text-xl font-semibold text-white mb-2">
+                        <h3 className="text-xl font-semibold text-slate-900 mb-2">
                           Summary Ready!
                         </h3>
-                        <p className="text-white/60 text-sm">
-                          We&apos;ve analyzed <span className="text-white font-medium">{file?.name}</span>
+                        <p className="text-slate-600 text-sm">
+                          We&apos;ve analyzed <span className="text-slate-900 font-medium">{file?.name}</span>
                         </p>
                       </div>
 
                       {/* Preview insights */}
-                      <div className="bg-white/5 rounded-xl p-5 mb-6 border border-white/10">
+                      <div className="bg-slate-50 rounded-xl p-5 mb-6 border border-slate-200">
                         <div className="flex items-center gap-2 mb-4">
                           <SparkleIcon />
-                          <span className="text-white font-medium">Key Insights Found</span>
+                          <span className="text-slate-900 font-medium">Key Insights Found</span>
                         </div>
                         <div className="space-y-3">
                           {insights.map((insight, i) => (
@@ -384,29 +384,29 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                               className="flex items-start gap-3"
                             >
                               <CheckCircleIcon />
-                              <span className="text-white/70 text-sm">{insight}</span>
+                              <span className="text-slate-700 text-sm">{insight}</span>
                             </motion.div>
                           ))}
                         </div>
                       </div>
 
                       {/* Locked content teaser */}
-                      <div className="relative bg-gradient-to-b from-white/5 to-transparent rounded-xl p-5 mb-6 border border-white/10 overflow-hidden">
-                        <div className="absolute inset-0 backdrop-blur-sm bg-[#0a0a0f]/60 flex items-center justify-center z-10">
+                      <div className="relative bg-gradient-to-b from-slate-50 to-transparent rounded-xl p-5 mb-6 border border-slate-200 overflow-hidden">
+                        <div className="absolute inset-0 backdrop-blur-sm bg-white/80 flex items-center justify-center z-10">
                           <div className="text-center">
-                            <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 text-white/60">
+                            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-3 text-slate-600">
                               <LockIcon />
                             </div>
-                            <p className="text-white font-medium mb-1">Full Summary Locked</p>
-                            <p className="text-white/50 text-sm">Create a free account to unlock</p>
+                            <p className="text-slate-900 font-medium mb-1">Full Summary Locked</p>
+                            <p className="text-slate-500 text-sm">Create a free account to unlock</p>
                           </div>
                         </div>
                         <div className="space-y-2 blur-sm select-none">
-                          <div className="h-3 bg-white/10 rounded w-full" />
-                          <div className="h-3 bg-white/10 rounded w-5/6" />
-                          <div className="h-3 bg-white/10 rounded w-4/5" />
-                          <div className="h-3 bg-white/10 rounded w-full" />
-                          <div className="h-3 bg-white/10 rounded w-3/4" />
+                          <div className="h-3 bg-slate-200 rounded w-full" />
+                          <div className="h-3 bg-slate-200 rounded w-5/6" />
+                          <div className="h-3 bg-slate-200 rounded w-4/5" />
+                          <div className="h-3 bg-slate-200 rounded w-full" />
+                          <div className="h-3 bg-slate-200 rounded w-3/4" />
                         </div>
                       </div>
 
@@ -431,7 +431,7 @@ export function TryUploadModal({ isOpen, onClose }: TryUploadModalProps) {
                         </Link>
                       </div>
 
-                      <p className="text-center text-white/40 text-xs mt-4">
+                      <p className="text-center text-slate-400 text-xs mt-4">
                         No credit card required • 5 free PDFs per day
                       </p>
                     </motion.div>
