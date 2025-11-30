@@ -11,6 +11,7 @@ import { BillingInterval } from '@/lib/stripe/config';
 import { TryUploadModal } from '@/components/home/TryUploadModal';
 import { HeroSection } from '@/components/home/HeroSection';
 import { ProofWall } from '@/components/home/ProofWall';
+import { WhatYouGetSection } from '@/components/home/WhatYouGetSection';
 
 // Custom icons matching brand guidelines
 const ZapIcon = () => (
@@ -209,7 +210,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Stats Section */}
-      <section className="py-20 md:py-28 relative overflow-hidden bg-[#050508]">
+      <section data-header-theme="dark" className="py-20 md:py-28 relative overflow-hidden bg-[#050508]">
         <div className="absolute inset-0 stats-gradient" aria-hidden />
         <div className="absolute inset-0 stats-grid" aria-hidden />
         
@@ -257,6 +258,9 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* What You Get Section */}
+      <WhatYouGetSection />
+
       {/* Header light trigger - switches nav back to light theme */}
       <div data-header-light-trigger className="h-0" aria-hidden />
 
@@ -266,104 +270,8 @@ export default function HomePage() {
       {/* Transition gradient from dark to light */}
       <div className="h-32 bg-gradient-to-b from-white to-white" />
 
-      {/* Features Section */}
-      <AnimatedSection id="features" className="py-20 md:py-28 relative scroll-mt-24">
-        <div className="container-custom">
-          <div className="text-center mb-20">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-block text-[#009de0] font-semibold text-sm uppercase tracking-wider mb-4"
-            >
-              Features
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6"
-            >
-              Everything you need to
-              <br />
-              <span className="text-gradient">work smarter</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto"
-            >
-              Powerful AI features to transform how you work with documents
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{
-                  y: -4,
-                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
-                }}
-                className="group"
-              >
-                <div className="glass-card h-full p-8 relative overflow-hidden">
-                  {/* Gradient background on hover */}
-                  <motion.div 
-                    className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10`}
-                    transition={{ duration: 0.5 }}
-                  />
-                  
-                  {/* Animated border glow on hover */}
-                  <motion.div
-                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100`}
-                    style={{
-                      background: `linear-gradient(135deg, transparent 0%, ${feature.gradient.includes('009de0') ? '#009de0' : feature.gradient.includes('7c3aed') ? '#7c3aed' : feature.gradient.includes('059669') ? '#059669' : '#ea580c'}20 50%, transparent 100%)`,
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  
-                  <motion.div
-                    className={`w-16 h-16 rounded-xl bg-[#009de0]/10 p-3 mb-5 relative z-10 flex items-center justify-center text-[#009de0]`}
-                    whileHover={{ rotate: [0, -5, 5, 0], transition: { duration: 0.5 } }}
-                  >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <feature.icon />
-                      </motion.div>
-                    </div>
-                  </motion.div>
-
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#009de0] transition-colors relative z-10">
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors relative z-10">
-                    {feature.description}
-                  </p>
-                  
-                  {/* Animated corner accent */}
-                  <motion.div
-                    className={`absolute -bottom-2 -right-2 w-20 h-20 bg-gradient-to-br ${feature.gradient} rounded-full blur-2xl opacity-0 group-hover:opacity-30`}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
       {/* How It Works Section */}
-      <AnimatedSection id="how-it-works" className="py-20 md:py-28 relative scroll-mt-20">
+      <AnimatedSection id="how-it-works" data-header-theme="light" className="py-20 md:py-28 relative scroll-mt-20">
         <div className="absolute inset-0 dots-pattern opacity-20" />
         <div className="container-custom relative">
           <div className="text-center mb-20">
@@ -468,7 +376,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Social Proof Section */}
-      <AnimatedSection className="py-20 md:py-28 relative">
+      <AnimatedSection data-header-theme="light" className="py-20 md:py-28 relative">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center px-4">
             <motion.div
@@ -587,7 +495,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Pricing Section */}
-      <AnimatedSection id="pricing" className="py-20 md:py-28 relative scroll-mt-24">
+      <AnimatedSection id="pricing" data-header-theme="light" className="py-20 md:py-28 relative scroll-mt-24">
         <div className="container-custom">
           <div className="text-center mb-16">
             <motion.span
@@ -1196,7 +1104,7 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="py-20 md:py-28 relative overflow-hidden">
+      <AnimatedSection data-header-theme="light" className="py-20 md:py-28 relative overflow-hidden">
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-[#009de0]/20 via-[#7c3aed]/20 to-[#009de0]/20" />

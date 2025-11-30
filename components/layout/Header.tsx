@@ -41,58 +41,83 @@ const CloseIcon = () => (
 export function Header() {
   const { isSignedIn } = useUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const [isInHeroArea, setIsInHeroArea] = useState(true);
-  const [lightSectionOffset, setLightSectionOffset] = useState<number | null>(null);
+  const [headerTheme, setHeaderTheme] = useState<'transparent' | 'dark' | 'light'>('transparent');
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === '/';
 
   const { scrollY } = useScroll();
-  const backgroundOpacity = useTransform(scrollY, [0, 120], [0, 0.9]);
+  
+  // Dynamic background based on theme and scroll
+  const backgroundOpacity = useTransform(
+    scrollY, 
+    [0, 80], 
+    headerTheme === 'transparent' ? [0, 0] : [0, 0.95]
+  );
   const darkBackground = useMotionTemplate`rgba(5, 5, 8, ${backgroundOpacity})`;
   const lightBackground = useMotionTemplate`rgba(255, 255, 255, ${backgroundOpacity})`;
 
   useEffect(() => {
     if (!isHomePage) {
-      setLightSectionOffset(null);
+      setHeaderTheme('light');
       return;
     }
 
-    const updateLightSectionOffset = () => {
-      const triggerEl = document.querySelector('[data-header-light-trigger]') as HTMLElement | null;
-      if (triggerEl) {
-        const offset = triggerEl.getBoundingClientRect().top + window.pageYOffset;
-        setLightSectionOffset(offset);
-      } else {
-        setLightSectionOffset(null);
-      }
-    };
-
-    updateLightSectionOffset();
-    window.addEventListener('resize', updateLightSectionOffset);
-    return () => window.removeEventListener('resize', updateLightSectionOffset);
-  }, [isHomePage]);
-
-  useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setHasScrolled(scrollPosition > 20);
+      const headerHeight = 96; // Approximate header height
 
-      if (!isHomePage) {
-        setIsInHeroArea(false);
+      // At the very top - transparent
+      if (scrollPosition < 50) {
+        setHeaderTheme('transparent');
         return;
       }
 
-      const headerHeight = document.querySelector('header')?.clientHeight ?? 0;
-      const fallbackEnd = 1000;
-      const lightStart = Math.max((lightSectionOffset ?? fallbackEnd) - headerHeight - 32, 0);
-      setIsInHeroArea(scrollPosition + headerHeight < lightStart);
+      // Find all sections with theme data attributes
+      const allSections = document.querySelectorAll('[data-header-theme]');
+      
+      // Default to light theme (for pages without sections or white backgrounds)
+      let currentTheme: 'transparent' | 'dark' | 'light' = 'light';
+      let closestSection: Element | null = null;
+      let closestDistance = Infinity;
+
+      // Find the section that is currently behind the header
+      // We want the section whose top edge is closest to the top of the viewport
+      // but still above the header (rect.top <= headerHeight)
+      for (const section of Array.from(allSections)) {
+        const rect = section.getBoundingClientRect();
+        
+        // If the section overlaps with the header area
+        if (rect.top <= headerHeight && rect.bottom > 0) {
+          // Calculate how far the section top is from the viewport top
+          const distance = Math.abs(rect.top);
+          
+          // If this section is closer to the top than our current closest
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = section;
+          }
+        }
+      }
+
+      // If we found a section, use its theme
+      if (closestSection) {
+        const theme = closestSection.getAttribute('data-header-theme') as 'dark' | 'light';
+        currentTheme = theme;
+      }
+
+      setHeaderTheme(currentTheme);
     };
+
     handleScroll(); // Call once on mount to set initial state
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage, lightSectionOffset]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [isHomePage]);
 
   const navLinks = [
     { href: '#features', label: 'Features', sectionId: 'features' },
@@ -134,8 +159,8 @@ export function Header() {
     }
   }, [pathname, scrollToSection]);
 
-  const shouldUseDarkTheme = isHomePage && isInHeroArea;
-  const shouldShowBackground = hasScrolled;
+  const shouldUseDarkTheme = headerTheme === 'dark' || headerTheme === 'transparent';
+  const shouldShowBackground = headerTheme !== 'transparent';
   const headerBackground = shouldUseDarkTheme ? darkBackground : lightBackground;
 
   return (

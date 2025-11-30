@@ -72,7 +72,7 @@ const proofCards: ProofCard[] = [
 
 export function ProofWall() {
   return (
-    <section aria-label="Customer success stories" className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+    <section data-header-theme="light" aria-label="Customer success stories" className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#009de0]/10 rounded-full blur-3xl" />

@@ -16,14 +16,14 @@ export function PricingToggle({ billingInterval, onChange }: PricingToggleProps)
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={`text-lg font-semibold transition-all ${
-          billingInterval === 'month' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-700'
+          billingInterval === 'month' ? 'text-white' : 'text-slate-400 hover:text-slate-300'
         }`}
       >
         Monthly
       </motion.button>
 
       <div
-        className="relative w-16 h-8 bg-slate-100 border-2 border-slate-200 rounded-full cursor-pointer pointer-events-auto transition-all hover:border-slate-300 shadow-inner"
+        className="relative w-16 h-8 bg-slate-800 border-2 border-slate-700 rounded-full cursor-pointer pointer-events-auto transition-all hover:border-slate-600 shadow-lg"
         onClick={() => onChange(billingInterval === 'month' ? 'year' : 'month')}
       >
         {/* Sliding background */}
@@ -39,7 +39,7 @@ export function PricingToggle({ billingInterval, onChange }: PricingToggleProps)
         <motion.div
           animate={{ x: billingInterval === 'month' ? 2 : 34 }}
           transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-          className="absolute top-1 w-6 h-6 bg-white rounded-full shadow-lg border border-slate-200"
+          className="absolute top-1 w-6 h-6 bg-white rounded-full shadow-xl border-2 border-slate-600"
         />
       </div>
 
@@ -48,7 +48,7 @@ export function PricingToggle({ billingInterval, onChange }: PricingToggleProps)
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={`text-lg font-semibold transition-all flex items-center gap-2 ${
-          billingInterval === 'year' ? 'text-slate-900' : 'text-slate-400 hover:text-slate-700'
+          billingInterval === 'year' ? 'text-white' : 'text-slate-400 hover:text-slate-300'
         }`}
       >
         Yearly
