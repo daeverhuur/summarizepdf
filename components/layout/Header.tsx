@@ -60,8 +60,13 @@ export function Header() {
     }
 
     const updateLightSectionOffset = () => {
-      const featuresSection = document.getElementById('features');
-      setLightSectionOffset(featuresSection ? featuresSection.offsetTop : null);
+      const triggerEl = document.querySelector('[data-header-light-trigger]') as HTMLElement | null;
+      if (triggerEl) {
+        const offset = triggerEl.getBoundingClientRect().top + window.pageYOffset;
+        setLightSectionOffset(offset);
+      } else {
+        setLightSectionOffset(null);
+      }
     };
 
     updateLightSectionOffset();
@@ -80,7 +85,7 @@ export function Header() {
       }
 
       const headerHeight = document.querySelector('header')?.clientHeight ?? 0;
-      const fallbackEnd = 1400;
+      const fallbackEnd = 1000;
       const lightStart = Math.max((lightSectionOffset ?? fallbackEnd) - headerHeight - 32, 0);
       setIsInHeroArea(scrollPosition + headerHeight < lightStart);
     };

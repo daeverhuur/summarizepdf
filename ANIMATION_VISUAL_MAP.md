@@ -228,3 +228,4 @@ All animations respect your brand colors:
 
 **All animations are strategically placed to guide users through the conversion funnel! 🎯**
 
+

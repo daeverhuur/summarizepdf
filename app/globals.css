@@ -871,6 +871,82 @@ label[for] {
 }
 
 /* ============================================
+   HERO 3D ANIMATIONS (Paper Transformer Design)
+   ============================================ */
+
+/* Hero 3D animations */
+.hero-perspective {
+  perspective: 2000px;
+}
+
+.document-3d {
+  transform-style: preserve-3d;
+}
+
+@keyframes document-float {
+  0%, 100% {
+    transform: rotateX(10deg) rotateY(-15deg) translateY(0) translateZ(0);
+  }
+  50% {
+    transform: rotateX(12deg) rotateY(-12deg) translateY(-20px) translateZ(15px);
+  }
+}
+
+@keyframes wave-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(12px);
+  }
+}
+
+@keyframes particle-stream {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 20px));
+    opacity: 0;
+  }
+}
+
+@keyframes card-emerge {
+  0% {
+    transform: translateX(-30px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.diagonal-split-left {
+  clip-path: polygon(0 0, 65% 0, 35% 100%, 0 100%);
+}
+
+.diagonal-split-right {
+  clip-path: polygon(65% 0, 100% 0, 100% 100%, 35% 100%);
+}
+
+@media (max-width: 768px) {
+  .diagonal-split-left,
+  .diagonal-split-right {
+    clip-path: none;
+  }
+}
+
+/* ============================================
    REDUCED MOTION SUPPORT
    ============================================ */
 

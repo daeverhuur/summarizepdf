@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, useScroll, useTransform, useInView, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { useRef, useState, useCallback, useEffect, useMemo } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
 import { PricingCard } from '@/components/pricing/PricingCard';
 import { PricingToggle } from '@/components/pricing/PricingToggle';
 import { PLANS } from '@/lib/stripe/plans';
 import { BillingInterval } from '@/lib/stripe/config';
 import { TryUploadModal } from '@/components/home/TryUploadModal';
-import ParticleBackground from '@/components/home/ParticleBackground';
+import { HeroSection } from '@/components/home/HeroSection';
+import { ProofWall } from '@/components/home/ProofWall';
 
 // Custom icons matching brand guidelines
 const ZapIcon = () => (
@@ -53,62 +54,6 @@ const ArrowRightIcon = () => (
     <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
-
-const CheckIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path d="M5 10l3 3 7-7" stroke="#009de0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-// Small icons for demo card
-const ZapIconSmall = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-    <path d="M13 2L3 14h8v8l10-12h-8V2z" fill="white"/>
-  </svg>
-);
-
-const ChatIconSmall = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-    <path d="M21 12a9 9 0 01-9 9h-2.5l-4.5 3v-3A9 9 0 1121 12z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const ExportIconSmall = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-    <path d="M4 16v4a2 2 0 002 2h12a2 2 0 002-2v-4M7 10l5-5m0 0l5 5m-5-5v12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-// 3D PDF Document Component
-function FloatingPDF({ delay = 0, className = '' }: { delay?: number; className?: string }) {
-  return (
-    <motion.div
-      className={`absolute ${className}`}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ 
-        opacity: [0, 1, 1, 0],
-        y: [50, 0, -20, -50],
-        rotateY: [0, 10, -10, 0],
-        rotateX: [-5, 5, -5, 5],
-      }}
-      transition={{
-        duration: 8,
-        delay,
-        repeat: Infinity,
-        repeatDelay: 2,
-      }}
-    >
-      <div className="w-16 h-20 rounded-lg border border-white/20 shadow-lg frosted-panel transform perspective-500">
-        <div className="h-3 bg-[#009de0]/30 rounded-t-lg" />
-        <div className="p-2 space-y-1">
-          <div className="h-1 bg-white/20 rounded" />
-          <div className="h-1 bg-white/10 rounded w-4/5" />
-          <div className="h-1 bg-white/10 rounded w-3/5" />
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 // Animated Counter with Count-up Effect
 function AnimatedCounter({ value, suffix = '' }: { value: string; suffix?: string }) {
@@ -219,50 +164,9 @@ export default function HomePage() {
   const [billingInterval, setBillingInterval] = useState<BillingInterval>('month');
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
   const [isTryModalOpen, setIsTryModalOpen] = useState(false);
-  const [isDraggingOnHero, setIsDraggingOnHero] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
-  
-  const heroRef = useRef(null);
+
   const statsRef = useRef(null);
   const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
-  
-  // Handle drag events on the hero demo card
-  const handleHeroDragOver = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDraggingOnHero(true);
-  }, []);
-
-  const handleHeroDragLeave = useCallback(() => {
-    setIsDraggingOnHero(false);
-  }, []);
-
-  const handleHeroDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDraggingOnHero(false);
-    const file = e.dataTransfer.files[0];
-    if (file && file.type === 'application/pdf') {
-      // Store file temporarily and open modal
-      setIsTryModalOpen(true);
-    }
-  }, []);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-  
-  const heroTranslateY = useTransform(scrollYProgress, [0, 0.45], [0, 60]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.35], [1, 0.9]);
-  
-  const heroMotionStyle = useMemo(() => {
-    if (prefersReducedMotion) return undefined;
-    return {
-      y: heroTranslateY,
-      opacity: heroOpacity,
-      scale: heroScale,
-      willChange: 'transform, opacity',
-    };
-  }, [prefersReducedMotion, heroTranslateY, heroOpacity, heroScale]);
 
   const features = [
     {
@@ -301,414 +205,8 @@ export default function HomePage() {
   return (
     <div className="relative">
 
-      {/* Hero Section - Optimized for Conversion & SEO */}
-      <section
-        ref={heroRef}
-        id="hero"
-        className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-[#050508]"
-      >
-        {/* 3D Particle Background */}
-        <div className="absolute inset-0 opacity-40">
-          <ParticleBackground />
-        </div>
-        
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          {/* Primary gradient orb - more subtle with animation */}
-          <motion.div 
-            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#009de0]/15 rounded-full blur-[150px]"
-            animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.15, 0.25, 0.15],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div 
-            className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#7c3aed]/10 rounded-full blur-[120px]"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.1, 0.2, 0.1],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-          />
-          
-          {/* Grid pattern */}
-          <div className="absolute inset-0 grid-pattern opacity-20" />
-          
-          {/* Floating PDFs - repositioned */}
-          <FloatingPDF delay={0} className="top-1/4 left-[5%] hidden lg:block" />
-          <FloatingPDF delay={2} className="top-1/3 right-[8%] hidden lg:block" />
-          <FloatingPDF delay={3} className="bottom-1/3 left-[12%] hidden xl:block" />
-        </div>
-
-        <motion.div 
-          className="container-custom relative z-10 pt-20 pb-8"
-          style={heroMotionStyle}
-        >
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: Content */}
-            <div className="text-center lg:text-left">
-              {/* Trust Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 cursor-default frosted-panel border border-white/10"
-              >
-                <div className="flex -space-x-1.5">
-                  {[...Array(4)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-6 h-6 rounded-full bg-gradient-to-br from-[#009de0] to-[#7c3aed] border-2 border-[#050508] flex items-center justify-center text-[8px] font-bold text-white"
-                      animate={{
-                        y: [0, -2, 0],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: i * 0.2,
-                      }}
-                      whileHover={{ scale: 1.2, zIndex: 10 }}
-                    >
-                      {['S', 'M', 'E', 'J'][i]}
-                    </motion.div>
-                  ))}
-                </div>
-                <span className="text-sm text-white/60">Trusted by <span className="text-white font-semibold">10,000+</span> professionals</span>
-              </motion.div>
-
-              {/* H1 - SEO Optimized */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-5 leading-[1.1] tracking-tight"
-              >
-                <span className="block">AI PDF Summarizer</span>
-                <span className="text-gradient text-glow">Instant Insights</span>
-              </motion.h1>
-
-              {/* Subheadline - Value Proposition */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg sm:text-xl text-white/60 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
-              >
-                Upload any PDF and get <span className="text-white font-medium">AI-powered summaries in seconds</span>.
-                Extract key insights, chat with documents, and save hours of reading time.
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6"
-              >
-                <MagneticButton href="/sign-up" className="w-full sm:w-auto">
-                  <span className="relative z-10">Start Free — No Card Required</span>
-                  <motion.span
-                    className="inline-block ml-1 relative z-10"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <ArrowRightIcon />
-                  </motion.span>
-                  {/* Animated shimmer effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    animate={{
-                      x: ['-200%', '200%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatDelay: 2,
-                    }}
-                  />
-                </MagneticButton>
-                <Link
-                  href="#how-it-works"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('how-it-works')?.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start',
-                    });
-                  }}
-                >
-                  <Button variant="secondary" size="xl" className="w-full sm:w-auto group">
-                    See How It Works
-                    <motion.span
-                      className="inline-block ml-1"
-                      animate={{ y: [0, 3, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      ↓
-                    </motion.span>
-                  </Button>
-                </Link>
-              </motion.div>
-
-              {/* Benefits Row */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2"
-              >
-                {['5 free PDFs daily', 'No credit card', '99.9% uptime'].map((benefit, i) => (
-                  <div key={i} className="flex items-center gap-2 text-white/50 text-sm">
-                    <CheckIcon />
-                    <span>{benefit}</span>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Right: Interactive Try Now Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative hidden lg:block"
-              onDragOver={handleHeroDragOver}
-              onDragLeave={handleHeroDragLeave}
-              onDrop={handleHeroDrop}
-            >
-              {/* Animated spotlight beam effect */}
-              <motion.div
-                className="absolute -top-40 left-1/2 -translate-x-1/2 w-[200px] h-[400px] bg-gradient-to-b from-[#009de0]/30 via-[#009de0]/10 to-transparent blur-2xl"
-                animate={{
-                  opacity: [0.3, 0.6, 0.3],
-                  scaleY: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              
-              {/* Glow effect behind card */}
-              <div className={`absolute inset-0 bg-gradient-to-r from-[#009de0]/30 to-[#7c3aed]/30 blur-3xl rounded-3xl scale-90 transition-opacity duration-300 ${isDraggingOnHero ? 'opacity-60' : 'opacity-40'}`} />
-              
-              {/* Rotating gradient border */}
-              <motion.div
-                className="absolute inset-0 rounded-2xl opacity-50"
-                style={{
-                  background: 'conic-gradient(from 0deg, transparent, #009de0, transparent)',
-                }}
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              
-              <div
-                onClick={() => setIsTryModalOpen(true)}
-                className={`relative border rounded-2xl p-1 shadow-2xl frosted-panel cursor-pointer transition-all duration-300 group ${
-                  isDraggingOnHero
-                    ? 'border-[#009de0] scale-[1.02]'
-                    : 'border-white/20 hover:border-[#009de0]/50 hover:scale-[1.01]'
-                }`}
-              >
-                <div className="bg-white/5 rounded-xl overflow-hidden">
-                  {/* Mini browser header */}
-                  <div className="flex items-center gap-2 px-4 py-2.5 bg-white/10 border-b border-white/10">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                    </div>
-                    <div className="flex-1 flex justify-center">
-                      <div className="bg-white/5 rounded-md px-3 py-1 text-[10px] text-white/40 font-mono">
-                        summarizepdf.com
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Interactive Upload Zone */}
-                  <div className="p-5">
-                    {/* Drop Zone */}
-                    <div className={`border-2 border-dashed rounded-xl p-6 text-center transition-all mb-4 ${
-                      isDraggingOnHero
-                        ? 'border-[#009de0] bg-[#009de0]/10'
-                        : 'border-white/20 group-hover:border-[#009de0]/50 bg-white/5'
-                    }`}>
-                      <div className="w-12 h-12 rounded-xl bg-[#009de0]/20 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#009de0" strokeWidth="2">
-                          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-medium text-sm mb-1">
-                        {isDraggingOnHero ? 'Drop your PDF here!' : 'Try it now — Drop PDF here'}
-                      </p>
-                      <p className="text-white/50 text-xs">or click to upload</p>
-                    </div>
-
-                    {/* What you'll get preview */}
-                    <div className="space-y-2">
-                      <p className="text-white/40 text-xs uppercase tracking-wider mb-3">What you&apos;ll get:</p>
-                      <div className="flex items-center gap-2 text-white/60 text-sm">
-                        <div className="w-5 h-5 rounded-full bg-[#009de0]/20 flex items-center justify-center shrink-0">
-                          <ZapIconSmall />
-                        </div>
-                        <span>Instant AI summary</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-white/60 text-sm">
-                        <div className="w-5 h-5 rounded-full bg-[#009de0]/20 flex items-center justify-center shrink-0">
-                          <ChatIconSmall />
-                        </div>
-                        <span>Chat with your document</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-white/60 text-sm">
-                        <div className="w-5 h-5 rounded-full bg-[#009de0]/20 flex items-center justify-center shrink-0">
-                          <ExportIconSmall />
-                        </div>
-                        <span>Export to any format</span>
-                      </div>
-                    </div>
-
-                    {/* CTA Button */}
-                    <button className="w-full mt-4 py-3 bg-[#009de0] hover:bg-[#009de0]/90 rounded-lg text-white font-medium text-sm flex items-center justify-center gap-2 transition-colors">
-                      <span>Upload Your First PDF</span>
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating stats badge with animation */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4, duration: 0.5 }}
-                className="absolute -bottom-4 -left-4 border border-white/20 rounded-xl px-4 py-3 shadow-xl frosted-panel"
-              >
-                <motion.div
-                  animate={{
-                    y: [0, -3, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ scale: 1.2, rotate: 15 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <StarIcon filled />
-                      </motion.div>
-                    ))}
-                  </div>
-                  <div className="text-white text-sm font-semibold">4.9/5</div>
-                  <div className="text-white/40 text-xs">from 2,400+ reviews</div>
-                </motion.div>
-              </motion.div>
-              
-              {/* Floating action hint */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ 
-                  opacity: [0, 1, 1, 0],
-                  scale: [0.8, 1, 1, 0.8],
-                  y: [10, 0, 0, -10],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  repeatDelay: 5,
-                }}
-                className="absolute -top-8 right-1/4 bg-[#009de0] text-white text-xs font-semibold px-3 py-2 rounded-full shadow-lg"
-              >
-                <span className="flex items-center gap-1">
-                  👆 Try it now!
-                </span>
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Scroll indicator with enhanced animation */}
-        <motion.div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 cursor-pointer"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          whileHover={{ scale: 1.2 }}
-          onClick={() => {
-            document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-          }}
-        >
-          <motion.div
-            className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5 relative overflow-hidden"
-            whileHover={{ borderColor: 'rgba(0, 157, 224, 0.5)' }}
-          >
-            <motion.div
-              className="w-1 h-2 bg-white/50 rounded-full"
-              animate={{
-                y: [0, 12],
-                opacity: [1, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            {/* Pulsing glow effect */}
-            <motion.div
-              className="absolute inset-0 rounded-full bg-[#009de0]/20 blur-md"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0, 0.5, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </motion.div>
-          <motion.p
-            className="text-white/50 text-xs mt-2 text-center"
-            animate={{
-              opacity: [0.4, 0.8, 0.4],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            Scroll
-          </motion.p>
-        </motion.div>
-      </section>
+      {/* Hero Section - Paper Transformer Design */}
+      <HeroSection />
 
       {/* Stats Section */}
       <section className="py-20 md:py-28 relative overflow-hidden bg-[#050508]">
@@ -759,8 +257,14 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* Header light trigger - switches nav back to light theme */}
+      <div data-header-light-trigger className="h-0" aria-hidden />
+
+      {/* Proof Wall Section */}
+      <ProofWall />
+
       {/* Transition gradient from dark to light */}
-      <div className="h-32 bg-gradient-to-b from-[#050508] to-white" />
+      <div className="h-32 bg-gradient-to-b from-white to-white" />
 
       {/* Features Section */}
       <AnimatedSection id="features" className="py-20 md:py-28 relative scroll-mt-24">
