@@ -12,6 +12,7 @@ import { TryUploadModal } from '@/components/home/TryUploadModal';
 import { HeroSection } from '@/components/home/HeroSection';
 import { ProofWall } from '@/components/home/ProofWall';
 import { WhatYouGetSection } from '@/components/home/WhatYouGetSection';
+import { ScrollToTop } from '@/components/ui/ScrollToTop';
 
 // Custom icons matching brand guidelines
 const ZapIcon = () => (
@@ -32,6 +33,28 @@ const ChatIcon = () => (
 const ExportIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <path d="M4 22v4a2 2 0 002 2h20a2 2 0 002-2v-4M8 12l8-8m0 0l8 8m-8-8v18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+// How It Works Section Icons
+const UploadIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <path d="M28 20v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6M22 10l-6-6m0 0L10 10m6-6v18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const ProcessIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <path d="M16 4v6m0 12v6M6.34 8l4.24 4.24M21.42 23.08l4.24 4.24M4 16h6m12 0h6M6.34 24l4.24-4.24M21.42 8.92l4.24-4.24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="16" cy="16" r="3" stroke="currentColor" strokeWidth="2.5"/>
+  </svg>
+);
+
+const ReviewIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <path d="M9 17l3 3 9-9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M26 16c0 5.523-4.477 10-10 10S6 21.523 6 16 10.477 6 16 6c1.636 0 3.175.393 4.537 1.09" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M24 6l-2 2-2-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -271,14 +294,21 @@ export default function HomePage() {
       <div className="h-32 bg-gradient-to-b from-white to-white" />
 
       {/* How It Works Section */}
-      <AnimatedSection id="how-it-works" data-header-theme="light" className="py-20 md:py-28 relative scroll-mt-20">
-        <div className="absolute inset-0 dots-pattern opacity-20" />
+      <AnimatedSection id="how-it-works" data-header-theme="light" className="py-20 md:py-32 relative scroll-mt-20 overflow-hidden">
+        {/* Enhanced layered background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 dots-pattern opacity-[0.15]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#009de0]/[0.02] to-transparent" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#009de0]/[0.03] rounded-full blur-3xl" />
+        </div>
+
         <div className="container-custom relative">
           <div className="text-center mb-20">
             <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="inline-block text-[#009de0] font-semibold text-sm uppercase tracking-wider mb-4"
             >
               How It Works
@@ -287,91 +317,266 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6"
             >
               Three simple steps
             </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg text-slate-600 max-w-2xl mx-auto"
+            >
+              Transform your PDFs into actionable insights in minutes, not hours
+            </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Progress line connecting all steps */}
+          <div className="hidden md:block absolute top-[280px] left-1/2 -translate-x-1/2 w-[70%] max-w-4xl">
+            <motion.div 
+              className="h-0.5 bg-gradient-to-r from-transparent via-[#009de0]/30 to-transparent"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
             {[
-              { step: '01', title: 'Upload', desc: 'Drag and drop your PDF or click to upload any document', icon: '📤' },
-              { step: '02', title: 'Process', desc: 'Our AI analyzes and extracts key insights in seconds', icon: '⚡' },
-              { step: '03', title: 'Review', desc: 'Get your summary, ask questions, and export anywhere', icon: '✓' },
+              { 
+                step: '01', 
+                title: 'Upload', 
+                desc: 'Drag and drop your PDF or click to upload any document. Support for multiple formats and batch uploads.',
+                Icon: UploadIcon,
+                color: 'from-blue-500 to-cyan-500'
+              },
+              { 
+                step: '02', 
+                title: 'Process', 
+                desc: 'Our AI analyzes and extracts key insights in seconds. Advanced NLP technology at work.',
+                Icon: ProcessIcon,
+                color: 'from-cyan-500 to-teal-500'
+              },
+              { 
+                step: '03', 
+                title: 'Review', 
+                desc: 'Get your summary, ask questions, and export anywhere. Collaborate with your team effortlessly.',
+                Icon: ReviewIcon,
+                color: 'from-teal-500 to-emerald-500'
+              },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i === 0 ? -30 : i === 2 ? 30 : 0, y: i === 1 ? 30 : 0 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.2, duration: 0.6 }}
-                whileHover={{
-                  y: -4,
-                  transition: { duration: 0.3, type: "spring", stiffness: 300 }
-                }}
+                transition={{ delay: i * 0.15 + 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="relative group"
               >
-                <div className="glass-card p-8 text-center relative overflow-hidden">
-                  {/* Animated background on hover */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#009de0]/10 to-transparent opacity-0 group-hover:opacity-100"
-                    transition={{ duration: 0.5 }}
-                  />
-                  
-                  <motion.div
-                    className="text-7xl font-black text-slate-200 absolute top-4 right-4"
-                    animate={{
-                      scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.5,
-                    }}
-                  >
-                    {item.step}
-                  </motion.div>
-
-                  <div className="relative z-10">
+                {/* Card container with hover lift */}
+                <motion.div
+                  whileHover={{ y: -8, transition: { duration: 0.4, type: "spring", stiffness: 300, damping: 20 } }}
+                  className="relative h-full"
+                >
+                  <div className="glass-card p-8 md:p-10 text-center relative overflow-hidden h-full flex flex-col shadow-lg group-hover:shadow-2xl transition-shadow duration-500">
+                    {/* Multi-layered animated background */}
                     <motion.div
-                      className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#009de0]/20 text-[#009de0] font-bold text-2xl mb-6 group-hover:bg-[#009de0]/30 transition-colors"
-                      whileHover={{
-                        rotate: [0, -5, 5, -5, 0],
-                        scale: 1.1,
+                      className="absolute inset-0 bg-gradient-to-br from-[#009de0]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100"
+                      transition={{ duration: 0.6 }}
+                    />
+                    <motion.div
+                      className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-[0.03]`}
+                      transition={{ duration: 0.6, delay: 0.1 }}
+                    />
+                    
+                    {/* Large background step number */}
+                    <motion.div
+                      className="text-8xl md:text-9xl font-black text-slate-100 absolute -top-4 -right-4 select-none pointer-events-none"
+                      initial={{ opacity: 0.5, scale: 0.9 }}
+                      whileInView={{ opacity: 0.8, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: i * 0.15 + 0.5 }}
+                      animate={{
+                        scale: [1, 1.02, 1],
                       }}
-                      transition={{ duration: 0.5 }}
+                      style={{
+                        transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+                      }}
                     >
                       {item.step}
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#009de0] transition-colors">{item.title}</h3>
-                    <p className="text-slate-500 group-hover:text-slate-700 transition-colors">{item.desc}</p>
+
+                    <div className="relative z-10 flex-1 flex flex-col">
+                      {/* Icon container with sophisticated animation */}
+                      <motion.div
+                        className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-[#009de0]/10 text-[#009de0] mb-6 mx-auto relative overflow-hidden group-hover:bg-[#009de0]/15 transition-colors duration-500"
+                        whileHover={{
+                          scale: 1.05,
+                          rotate: [0, -3, 3, -3, 0],
+                          transition: { duration: 0.6 }
+                        }}
+                      >
+                        {/* Rotating gradient background on hover */}
+                        <motion.div
+                          className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-20`}
+                          animate={{
+                            rotate: [0, 360],
+                          }}
+                          transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                        />
+                        
+                        <motion.div
+                          className="relative z-10 scale-110"
+                          animate={{
+                            y: [0, -2, 0],
+                          }}
+                          transition={{
+                            duration: 2.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: i * 0.3,
+                          }}
+                        >
+                          <item.Icon />
+                        </motion.div>
+
+                        {/* Pulse effect */}
+                        <motion.div
+                          className="absolute inset-0 rounded-3xl border-2 border-[#009de0]/20"
+                          animate={{
+                            scale: [1, 1.1, 1],
+                            opacity: [0.5, 0, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: i * 0.4,
+                          }}
+                        />
+                      </motion.div>
+
+                      {/* Step number badge */}
+                      <motion.div
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#009de0] text-white font-bold text-sm mb-4 mx-auto shadow-lg shadow-[#009de0]/25"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ 
+                          type: "spring", 
+                          stiffness: 300, 
+                          damping: 15,
+                          delay: i * 0.15 + 0.6 
+                        }}
+                      >
+                        {i + 1}
+                      </motion.div>
+
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-[#009de0] transition-colors duration-400">
+                        {item.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors duration-400">
+                        {item.desc}
+                      </p>
+                    </div>
+                    
+                    {/* Animated gradient accent line at bottom */}
+                    <motion.div
+                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-100`}
+                      transition={{ duration: 0.5 }}
+                    />
+
+                    {/* Corner accent */}
+                    <motion.div
+                      className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#009de0]/5 to-transparent opacity-0 group-hover:opacity-100"
+                      transition={{ duration: 0.5 }}
+                    />
                   </div>
-                  
-                  {/* Animated bottom accent */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#009de0] to-transparent opacity-0 group-hover:opacity-100"
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                {/* Connector line with animation */}
+                </motion.div>
+
+                {/* Animated arrow connector between cards */}
                 {i < 2 && (
-                  <motion.div 
-                    className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#009de0]/50 to-transparent"
-                    animate={{
-                      opacity: [0.3, 1, 0.3],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.5,
-                    }}
-                  />
+                  <div className="hidden md:block absolute top-[120px] -right-6 lg:-right-10 w-12 lg:w-20 z-20">
+                    <motion.svg
+                      viewBox="0 0 80 24"
+                      fill="none"
+                      className="w-full h-6"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.15 + 0.8, duration: 0.6 }}
+                    >
+                      {/* Animated dashed line */}
+                      <motion.line
+                        x1="0"
+                        y1="12"
+                        x2="65"
+                        y2="12"
+                        stroke="#009de0"
+                        strokeWidth="2"
+                        strokeDasharray="4 4"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        whileInView={{ pathLength: 1, opacity: 0.4 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.15 + 0.9, duration: 1 }}
+                        animate={{
+                          opacity: [0.4, 0.7, 0.4],
+                        }}
+                        style={{
+                          transition: 'opacity 2s ease-in-out infinite',
+                        }}
+                      />
+                      {/* Arrow head */}
+                      <motion.path
+                        d="M65 12 L58 8 M65 12 L58 16"
+                        stroke="#009de0"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 0.5, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.15 + 1.1, duration: 0.6 }}
+                        animate={{
+                          x: [0, 3, 0],
+                          opacity: [0.5, 0.8, 0.5],
+                        }}
+                        style={{
+                          transition: 'all 2s ease-in-out infinite',
+                        }}
+                      />
+                    </motion.svg>
+                  </div>
                 )}
               </motion.div>
             ))}
           </div>
+
+          {/* Bottom CTA hint */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="text-center mt-16"
+          >
+            <p className="text-slate-500 text-sm mb-4">Ready to get started?</p>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <svg className="w-6 h-6 mx-auto text-[#009de0]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </motion.div>
+          </motion.div>
         </div>
       </AnimatedSection>
 
@@ -1261,6 +1466,9 @@ export default function HomePage() {
       </AnimatedSection>
       {/* Try Upload Modal */}
       <TryUploadModal isOpen={isTryModalOpen} onClose={() => setIsTryModalOpen(false)} />
+      
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 }

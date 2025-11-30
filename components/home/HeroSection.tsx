@@ -128,19 +128,47 @@ function UploadZone3D({ onFileSelect, isProcessing }: {
   const rotateX = useSpring(useTransform(mouseY, [-300, 300], [8, -8]), { stiffness: 150, damping: 20 });
   const rotateY = useSpring(useTransform(mouseX, [-300, 300], [-8, 8]), { stiffness: 150, damping: 20 });
 
+  // Magnetic cursor effect
+  const magneticX = useMotionValue(0);
+  const magneticY = useMotionValue(0);
+  const magneticStrength = 0.15; // Adjust this to control magnetic pull strength
+  
+  // Spring values for smooth magnetic movement
+  const springMagneticX = useSpring(magneticX, { stiffness: 200, damping: 25 });
+  const springMagneticY = useSpring(magneticY, { stiffness: 200, damping: 25 });
+
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    mouseX.set(e.clientX - centerX);
-    mouseY.set(e.clientY - centerY);
-  }, [mouseX, mouseY]);
+    const mouseXPos = e.clientX - centerX;
+    const mouseYPos = e.clientY - centerY;
+    
+    mouseX.set(mouseXPos);
+    mouseY.set(mouseYPos);
+
+    // Calculate distance from cursor to center
+    const distance = Math.sqrt(mouseXPos * mouseXPos + mouseYPos * mouseYPos);
+    const maxDistance = 400; // Distance at which magnetic effect starts to fade
+    
+    // Calculate magnetic pull (stronger when closer, fades with distance)
+    if (distance < maxDistance) {
+      const pullStrength = (1 - distance / maxDistance) * magneticStrength;
+      magneticX.set(mouseXPos * pullStrength);
+      magneticY.set(mouseYPos * pullStrength);
+    } else {
+      magneticX.set(0);
+      magneticY.set(0);
+    }
+  }, [mouseX, mouseY, magneticX, magneticY]);
 
   const handleMouseLeave = useCallback(() => {
     mouseX.set(0);
     mouseY.set(0);
-  }, [mouseX, mouseY]);
+    magneticX.set(0);
+    magneticY.set(0);
+  }, [mouseX, mouseY, magneticX, magneticY]);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -189,7 +217,13 @@ function UploadZone3D({ onFileSelect, isProcessing }: {
       />
 
       <motion.div
-        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        style={{ 
+          rotateX, 
+          rotateY, 
+          x: springMagneticX,
+          y: springMagneticY,
+          transformStyle: 'preserve-3d' 
+        }}
         className="relative"
       >
         {/* Main upload card */}

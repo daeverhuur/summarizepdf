@@ -203,11 +203,20 @@ export function PricingCard({ tier, billingInterval }: PricingCardProps) {
       <h3 className="text-2xl font-bold text-slate-900 mb-4">{plan.name}</h3>
 
       <div className="mb-6">
-        <span className="text-5xl font-extrabold text-slate-900">${price}</span>
-        <span className="text-slate-400 ml-1">/{billingInterval === 'month' ? 'mo' : 'yr'}</span>
-        {savings > 0 && (
-          <span className="ml-3 text-sm text-[#00d4ff] font-semibold">Save {savings}%</span>
-        )}
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <span className="text-5xl font-extrabold text-slate-900">${price}</span>
+          <span className="text-slate-400">/{billingInterval === 'month' ? 'mo' : 'yr'}</span>
+          {savings > 0 && (
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className="inline-flex items-center px-2.5 py-1 bg-gradient-to-r from-[#009de0] to-[#00d4ff] text-white text-xs font-bold rounded-full shadow-lg border border-[#00d4ff]/50"
+            >
+              Save {savings}%
+            </motion.span>
+          )}
+        </div>
       </div>
 
       <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>

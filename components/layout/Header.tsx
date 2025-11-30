@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useUser, UserButton } from '@clerk/nextjs';
 import { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 
@@ -162,6 +163,11 @@ export function Header() {
   const shouldUseDarkTheme = headerTheme === 'dark' || headerTheme === 'transparent';
   const shouldShowBackground = headerTheme !== 'transparent';
   const headerBackground = shouldUseDarkTheme ? darkBackground : lightBackground;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <motion.header
@@ -176,10 +182,10 @@ export function Header() {
         backdropFilter: shouldShowBackground ? 'blur(18px)' : 'none',
       }}
     >
-      <nav className="container-custom py-5">
-        <div className="flex items-center justify-between gap-8">
+      <nav className="container-custom py-5 relative">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group flex-shrink-0 z-10">
             <motion.div
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -193,46 +199,46 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          {/* Desktop Navigation - Absolutely Centered */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.sectionId)}
-                className={`font-medium transition-colors relative group cursor-pointer ${
+                className={`font-medium transition-colors relative group cursor-pointer py-2 ${
                   shouldUseDarkTheme
-                    ? 'text-white/60 hover:text-white'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'text-white/70 hover:text-white'
+                    : 'text-slate-700 hover:text-slate-900'
                 }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             {isSignedIn && (
               <Link
                 href="/dashboard"
-                className={`font-medium transition-colors relative group ${
+                className={`font-medium transition-colors relative group py-2 ${
                   shouldUseDarkTheme
-                    ? 'text-white/60 hover:text-white'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'text-white/70 hover:text-white'
+                    : 'text-slate-700 hover:text-slate-900'
                 }`}
               >
                 Dashboard
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#009de0] group-hover:w-full transition-all duration-300" />
               </Link>
             )}
           </div>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0 z-10">
             {isSignedIn ? (
               <UserButton 
                 afterSignOutUrl="/"
                 appearance={{
                   elements: {
-                    avatarBox: 'w-10 h-10 border-2 border-[#009de0]/50 hover:border-[#009de0]',
+                    avatarBox: 'w-10 h-10 border-2 border-[#009de0]/50 hover:border-[#009de0] transition-colors',
                   }
                 }}
               />
@@ -256,96 +262,133 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors ${
+            className={`md:hidden p-2.5 rounded-lg transition-all flex-shrink-0 ${
               shouldUseDarkTheme
-                ? 'text-white/60 hover:text-white'
-                : 'text-slate-600 hover:text-slate-900'
+                ? 'text-white/70 hover:text-white hover:bg-white/10'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
             }`}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Backdrop */}
+        {mounted && createPortal(
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMobileMenuOpen(false)}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+                style={{ top: 0 }}
+              />
+            )}
+          </AnimatePresence>,
+          document.body
+        )}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className={`md:hidden mt-4 pt-4 border-t overflow-hidden ${
-                shouldUseDarkTheme ? 'border-white/10' : 'border-slate-200'
-              }`}
-            >
-              <div className="flex flex-col gap-4 pb-4">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <a
-                      href={link.href}
-                      onClick={(e) => {
-                        handleNavClick(e, link.sectionId);
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`font-medium text-lg block py-2 cursor-pointer transition-colors ${
-                        shouldUseDarkTheme
-                          ? 'text-white/60 hover:text-white'
-                          : 'text-slate-600 hover:text-slate-900'
-                      }`}
-                    >
-                      {link.label}
-                    </a>
-                  </motion.div>
-                ))}
-                {isSignedIn ? (
-                  <>
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className={`md:hidden mt-4 pt-4 border-t overflow-hidden relative z-50 ${
+                  shouldUseDarkTheme ? 'border-white/10' : 'border-slate-200'
+                }`}
+              >
+                <div className="flex flex-col gap-2 pb-6">
+                  {navLinks.map((link, i) => (
                     <motion.div
+                      key={link.href}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
+                      transition={{ delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <Link
-                        href="/dashboard"
-                        className={`font-medium text-lg block py-2 transition-colors ${
+                      <a
+                        href={link.href}
+                        onClick={(e) => {
+                          handleNavClick(e, link.sectionId);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`font-medium text-base block py-3 px-4 rounded-xl cursor-pointer transition-all ${
                           shouldUseDarkTheme
-                            ? 'text-white/60 hover:text-white'
-                            : 'text-slate-600 hover:text-slate-900'
+                            ? 'text-white/80 hover:text-white hover:bg-white/10 active:bg-white/15'
+                            : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200'
                         }`}
-                        onClick={() => setMobileMenuOpen(false)}
                       >
-                        Dashboard
+                        {link.label}
+                      </a>
+                    </motion.div>
+                  ))}
+                  {isSignedIn ? (
+                    <>
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+                      >
+                        <Link
+                          href="/dashboard"
+                          className={`font-medium text-base block py-3 px-4 rounded-xl transition-all ${
+                            shouldUseDarkTheme
+                              ? 'text-white/80 hover:text-white hover:bg-white/10 active:bg-white/15'
+                              : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200'
+                          }`}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          Dashboard
+                        </Link>
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
+                        className="px-4 pt-2"
+                      >
+                        <div className={`py-2 px-4 rounded-xl border ${
+                          shouldUseDarkTheme ? 'border-white/20' : 'border-slate-200'
+                        }`}>
+                          <UserButton afterSignOutUrl="/" />
+                        </div>
+                      </motion.div>
+                    </>
+                  ) : (
+                    <motion.div 
+                      className="flex flex-col gap-3 pt-4 border-t"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+                      style={{
+                        borderColor: shouldUseDarkTheme ? 'rgba(255,255,255,0.1)' : 'rgba(15,23,42,0.1)'
+                      }}
+                    >
+                      <Link href="/sign-in" onClick={() => setMobileMenuOpen(false)}>
+                        <Button 
+                          variant="secondary" 
+                          className="w-full font-medium"
+                        >
+                          Sign In
+                        </Button>
+                      </Link>
+                      <Link href="/sign-up" onClick={() => setMobileMenuOpen(false)}>
+                        <Button 
+                          variant="primary" 
+                          className="w-full font-medium"
+                        >
+                          Start Free
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-2">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </Button>
                       </Link>
                     </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <UserButton afterSignOutUrl="/" />
-                    </motion.div>
-                  </>
-                ) : (
-                  <motion.div 
-                    className="flex flex-col gap-3 pt-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <Link href="/sign-in" onClick={() => setMobileMenuOpen(false)}>
-                      <Button variant="secondary" className="w-full">Sign In</Button>
-                    </Link>
-                    <Link href="/sign-up" onClick={() => setMobileMenuOpen(false)}>
-                      <Button variant="primary" className="w-full">Start Free</Button>
-                    </Link>
-                  </motion.div>
-                )}
-              </div>
-            </motion.div>
+                  )}
+                </div>
+              </motion.div>
           )}
         </AnimatePresence>
       </nav>
