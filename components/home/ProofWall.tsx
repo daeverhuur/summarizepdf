@@ -1,257 +1,266 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useState, useEffect, ReactNode } from 'react';
 
-interface StatCard {
-  value: number;
-  label: string;
-  suffix?: string;
-  prefix?: string;
-}
-
-interface CaseStudy {
+interface CompanyLogo {
   name: string;
-  role: string;
-  company: string;
-  industry: string;
-  challenge: string;
-  solution: string;
-  results: {
-    timeBefore: string;
-    timeAfter: string;
-    timeSaved: string;
-    efficiency: string;
-  };
-  metrics: {
-    documents: number;
-    hoursSaved: number;
-    roi: string;
-  };
-  quote: string;
-  avatar: string;
-  featured?: boolean;
+  initials: string;
 }
 
-const stats: StatCard[] = [
-  { value: 50000, label: 'Documents Analyzed', suffix: '+' },
-  { value: 120000, label: 'Hours Saved', suffix: '+' },
-  { value: 98, label: 'Success Rate', suffix: '%' },
-  { value: 15000, label: 'Happy Users', suffix: '+' },
+interface DocumentType {
+  name: string;
+  icon: string;
+  avgTime: string;
+}
+
+interface Capability {
+  title: string;
+  description: string;
+  icon: ReactNode;
+}
+
+const companyLogos: CompanyLogo[] = [
+  { name: 'TechCorp', initials: 'TC' },
+  { name: 'InnovateLabs', initials: 'IL' },
+  { name: 'Morrison & Associates', initials: 'MA' },
+  { name: 'MIT Labs', initials: 'ML' },
+  { name: 'TechVenture Inc', initials: 'TV' },
+  { name: 'InnovateCo', initials: 'IC' },
+  { name: 'GlobalTech', initials: 'GT' },
+  { name: 'NextGen Solutions', initials: 'NS' },
+  { name: 'DataFirst', initials: 'DF' },
+  { name: 'CloudWorks', initials: 'CW' },
+  { name: 'SmartDocs', initials: 'SD' },
+  { name: 'ProAnalytics', initials: 'PA' },
 ];
 
-const caseStudies: CaseStudy[] = [
-  {
-    name: 'Sarah Chen',
-    role: 'Legal Director',
-    company: 'Morrison & Associates',
-    industry: 'Legal Services',
-    challenge: 'Contract review process taking 3+ hours per document',
-    solution: 'Implemented AI-powered document analysis for initial review',
-    results: {
-      timeBefore: '3 hours',
-      timeAfter: '15 minutes',
-      timeSaved: '2h 45m per contract',
-      efficiency: '92% faster',
-    },
-    metrics: {
-      documents: 847,
-      hoursSaved: 2329,
-      roi: '12x',
-    },
-    quote: 'SummarizePDF transformed our contract review workflow. What used to take our team an entire afternoon now takes 15 minutes. We\'ve analyzed 847 contracts and saved over 2,300 hours.',
-    avatar: 'SC',
-    featured: true,
-  },
-  {
-    name: 'Dr. Marcus Rodriguez',
-    role: 'Research Lead',
-    company: 'MIT Labs',
-    industry: 'Academic Research',
-    challenge: 'Reviewing 200+ page research papers for literature reviews',
-    solution: 'Automated extraction of key findings and methodologies',
-    results: {
-      timeBefore: '4-6 hours',
-      timeAfter: '20 minutes',
-      timeSaved: '4h 40m per paper',
-      efficiency: '94% faster',
-    },
-    metrics: {
-      documents: 324,
-      hoursSaved: 1512,
-      roi: '18x',
-    },
-    quote: 'For our meta-analysis of climate research, we needed to review over 300 papers. SummarizePDF helped us extract key data points in 20 minutes instead of hours. The accuracy is remarkable.',
-    avatar: 'MR',
-    featured: true,
-  },
-  {
-    name: 'Emily Thompson',
-    role: 'Chief Financial Officer',
-    company: 'TechVenture Inc',
-    industry: 'Technology',
-    challenge: 'Quarterly financial reports requiring days of analysis',
-    solution: 'Automated financial data extraction and trend analysis',
-    results: {
-      timeBefore: '3 days',
-      timeAfter: '2 hours',
-      timeSaved: '22 hours per quarter',
-      efficiency: '93% faster',
-    },
-    metrics: {
-      documents: 156,
-      hoursSaved: 3432,
-      roi: '23x',
-    },
-    quote: 'Our quarterly board prep went from a 3-day nightmare to a 2-hour task. The AI accurately extracts financial trends, risks, and opportunities that I can present with confidence.',
-    avatar: 'ET',
-  },
-  {
-    name: 'David Park',
-    role: 'Senior Product Manager',
-    company: 'InnovateCo',
-    industry: 'Software',
-    challenge: 'Processing technical specs and user research documents',
-    solution: 'Rapid extraction of feature requirements and user insights',
-    results: {
-      timeBefore: '2 hours',
-      timeAfter: '12 minutes',
-      timeSaved: '1h 48m per doc',
-      efficiency: '90% faster',
-    },
-    metrics: {
-      documents: 567,
-      hoursSaved: 1020,
-      roi: '15x',
-    },
-    quote: 'Product specs, user research, competitive analysis—I process them all with SummarizePDF. It\'s like having a research assistant who never sleeps. Essential for our sprint planning.',
-    avatar: 'DP',
-  },
+const documentTypes: DocumentType[] = [
+  { name: 'Research Papers', icon: '📄', avgTime: '45 sec' },
+  { name: 'Legal Contracts', icon: '⚖️', avgTime: '38 sec' },
+  { name: 'Financial Reports', icon: '📊', avgTime: '52 sec' },
+  { name: 'Technical Docs', icon: '⚙️', avgTime: '41 sec' },
+  { name: 'Meeting Notes', icon: '📝', avgTime: '28 sec' },
 ];
 
-// Custom animated counter hook
-function useCountUp(end: number, duration: number = 2000) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+// Speed Demo Component
+function SpeedDemo() {
+  const [progress, setProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [
+    'Analyzing 247 pages...',
+    'Extracting key points...',
+    'Generating summary...',
+    'Complete!'
+  ];
 
   useEffect(() => {
-    if (!isInView) return;
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        return prev + 2;
+      });
+    }, 60);
 
-    let startTime: number | null = null;
-    const startValue = 0;
+    return () => clearInterval(interval);
+  }, []);
 
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(startValue + (end - startValue) * easeOutQuart));
+  useEffect(() => {
+    if (progress < 33) setCurrentStep(0);
+    else if (progress < 66) setCurrentStep(1);
+    else if (progress < 100) setCurrentStep(2);
+    else setCurrentStep(3);
+  }, [progress]);
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isInView, end, duration]);
-
-  return { count, ref };
-}
-
-// Custom Icon Components
-function DocumentIcon() {
   return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M12 18V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M9 15L12 12L15 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <div className="relative w-full max-w-4xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="bg-white rounded-2xl shadow-2xl border-2 border-slate-200 p-8 md:p-10"
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#009de0] to-[#7c3aed] flex items-center justify-center">
+              <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-slate-900">Processing Document</h3>
+              <p className="text-sm text-slate-500">Annual_Report_2024.pdf</p>
+            </div>
+          </div>
+          <div className="text-right">
+            <div className="text-3xl font-bold text-[#009de0]">~30s</div>
+            <div className="text-xs text-slate-500 uppercase tracking-wide">Avg. Time</div>
+          </div>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mb-6">
+          <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-[#009de0] to-[#7c3aed]"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
+          <div className="mt-3 flex items-center gap-2">
+            <motion.div
+              animate={{ rotate: progress < 100 ? 360 : 0 }}
+              transition={{ duration: 1, repeat: progress < 100 ? Infinity : 0, ease: "linear" }}
+              className="w-4 h-4"
+            >
+              {progress < 100 ? (
+                <svg className="w-4 h-4 text-[#009de0]" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" strokeDasharray="60" strokeDashoffset="15" strokeLinecap="round"/>
+                </svg>
+              ) : (
+                <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
+            </motion.div>
+            <span className="text-sm font-medium text-slate-700">{steps[currentStep]}</span>
+          </div>
+        </div>
+
+        {/* Metrics Grid */}
+        <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200">
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-slate-900">247</div>
+            <div className="text-xs md:text-sm text-slate-500 mt-1">Pages Processed</div>
+          </div>
+          <div className="text-center border-x border-slate-200">
+            <div className="text-2xl md:text-3xl font-bold text-[#009de0]">12</div>
+            <div className="text-xs md:text-sm text-slate-500 mt-1">Key Insights</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-[#7c3aed]">3</div>
+            <div className="text-xs md:text-sm text-slate-500 mt-1">Action Items</div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
-function ClockIcon() {
+// Document Types Grid
+function DocumentTypesGrid() {
   return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-      <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="w-full max-w-5xl mx-auto"
+    >
+      <h3 className="text-center text-lg font-semibold text-slate-700 mb-6">
+        Supports All Document Types
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {documentTypes.map((doc, index) => (
+          <motion.div
+            key={doc.name}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 * index }}
+            className="bg-white rounded-xl border-2 border-slate-200 p-4 text-center hover:border-[#009de0]/50 hover:shadow-lg transition-all duration-300"
+          >
+            <div className="text-3xl mb-2">{doc.icon}</div>
+            <div className="font-semibold text-slate-900 text-sm mb-1">{doc.name}</div>
+            <div className="text-xs text-slate-500 font-medium">{doc.avgTime}</div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
   );
 }
 
-function TrendingUpIcon() {
-  return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M23 6L13.5 15.5L8.5 10.5L1 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M17 6H23V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  );
-}
+// Capabilities Grid
+function CapabilitiesGrid() {
+  const capabilities: Capability[] = [
+    {
+      title: 'Multi-language Support',
+      description: 'Summarize PDFs in 50+ languages',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+          <path d="M5 8L10 3M10 3L15 8M10 3V15M3 12L8 17M8 17L13 12M8 17L8 5M15 12L20 17M20 17L20 5M20 17L16 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: 'Smart Extraction',
+      description: 'Tables, charts, and data automatically parsed',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+          <path d="M9 17V7M9 17H3M9 17H15M9 7H3M9 7H15M15 17V7M15 17H21M15 7H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+    {
+      title: 'Secure Processing',
+      description: 'Your documents are never stored',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+          <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+    },
+  ];
 
-function TargetIcon() {
   return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
-      <circle cx="12" cy="12" r="2" fill="currentColor"/>
-    </svg>
-  );
-}
-
-function SparklesIcon() {
-  return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M6 3L6.5 5L8.5 5.5L6.5 6L6 8L5.5 6L3.5 5.5L5.5 5L6 3Z" fill="currentColor"/>
-      <path d="M18 16L18.5 18L20.5 18.5L18.5 19L18 21L17.5 19L15.5 18.5L17.5 18L18 16Z" fill="currentColor"/>
-    </svg>
-  );
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      className="w-full max-w-5xl mx-auto"
+    >
+      <div className="grid md:grid-cols-3 gap-6">
+        {capabilities.map((capability, index) => (
+          <motion.div
+            key={capability.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 * index }}
+            className="bg-white rounded-xl border-2 border-slate-200 p-6 hover:border-[#009de0]/50 hover:shadow-lg transition-all duration-300"
+          >
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#009de0]/10 to-[#7c3aed]/10 flex items-center justify-center mb-4 text-[#009de0]">
+              {capability.icon}
+            </div>
+            <h4 className="font-bold text-slate-900 mb-2">{capability.title}</h4>
+            <p className="text-sm text-slate-600">{capability.description}</p>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
   );
 }
 
 export function ProofWall() {
   return (
-    <section 
-      data-header-theme="light" 
-      aria-label="Customer success stories and case studies" 
-      className="relative py-32 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50"
+    <section
+      data-header-theme="light"
+      aria-label="Product speed and capabilities demonstration"
+      className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50"
     >
-      {/* Enhanced Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute -top-24 -left-24 w-96 h-96 bg-[#009de0]/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, -90, 0],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
-          className="absolute -bottom-24 -right-24 w-[600px] h-[600px] bg-gradient-to-br from-[#009de0]/15 to-[#7c3aed]/20 rounded-full blur-3xl"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,157,224,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,157,224,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      {/* Simple Background */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#009de0]/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 w-[600px] h-[600px] bg-gradient-to-br from-[#009de0]/5 to-[#7c3aed]/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -260,404 +269,96 @@ export function ProofWall() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-block mb-4"
-          >
-            <span className="px-4 py-2 bg-[#009de0]/10 text-[#009de0] text-sm font-semibold rounded-full border border-[#009de0]/20">
-              Real Results · Real Impact
-            </span>
-          </motion.div>
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-            Proven Success Stories from{' '}
-            <span className="text-gradient">Industry Leaders</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+            Lightning Fast.{' '}
+            <span className="text-gradient">Incredibly Powerful.</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            See how professionals are saving thousands of hours and transforming their workflows with measurable results
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            Process hundreds of pages in seconds. Extract insights instantly.
           </p>
         </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20 max-w-6xl mx-auto">
-          {stats.map((stat, index) => {
-            const { count, ref } = useCountUp(stat.value);
-            return (
-              <motion.div
-                key={index}
-                ref={ref}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative group"
-              >
-                <div className="relative bg-white border-2 border-slate-200 rounded-2xl p-8 text-center hover:border-[#009de0]/50 transition-all duration-300 hover:shadow-xl overflow-hidden">
-                  {/* Background glow on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#009de0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="relative z-10">
-                    <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-                      {stat.prefix}{count.toLocaleString()}{stat.suffix}
-                    </div>
-                    <div className="text-sm md:text-base text-slate-600 font-medium">
-                      {stat.label}
-                    </div>
-                  </div>
-
-                  {/* Accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#009de0] to-[#7c3aed] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Featured Case Studies */}
-        <div className="space-y-8 mb-12">
-          {caseStudies.filter(cs => cs.featured).map((caseStudy, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.2,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="group"
-            >
-              <div className="relative bg-white border-2 border-slate-200 rounded-3xl overflow-hidden hover:border-[#009de0]/50 transition-all duration-500 hover:shadow-2xl">
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#009de0]/5 via-transparent to-[#7c3aed]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10 p-8 lg:p-12">
-                  <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Left Column - Person & Company Info */}
-                    <div className="lg:col-span-1 flex flex-col">
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#009de0] to-[#0088c7] text-white flex items-center justify-center text-xl font-bold shadow-lg">
-                          {caseStudy.avatar}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900 mb-1">
-                            {caseStudy.name}
-                          </h3>
-                          <p className="text-sm text-slate-600 mb-1">
-                            {caseStudy.role}
-                          </p>
-                          <p className="text-sm font-semibold text-[#009de0]">
-                            {caseStudy.company}
-                          </p>
-                          <span className="inline-block mt-2 px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">
-                            {caseStudy.industry}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Challenge */}
-                      <div className="mb-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <TargetIcon />
-                          <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
-                            The Challenge
-                          </h4>
-                        </div>
-                        <p className="text-slate-700 leading-relaxed">
-                          {caseStudy.challenge}
-                        </p>
-                      </div>
-
-                      {/* Solution */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-3">
-                          <SparklesIcon />
-                          <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
-                            The Solution
-                          </h4>
-                        </div>
-                        <p className="text-slate-700 leading-relaxed">
-                          {caseStudy.solution}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Middle Column - Before/After & Results */}
-                    <div className="lg:col-span-1 flex flex-col justify-center">
-                      {/* Before/After Comparison */}
-                      <div className="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl p-6 mb-6">
-                        <div className="flex items-center gap-2 mb-4">
-                          <ClockIcon />
-                          <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
-                            Time Impact
-                          </h4>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          {/* Before */}
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-600 font-medium">Before:</span>
-                            <span className="text-lg font-bold text-slate-400 line-through">
-                              {caseStudy.results.timeBefore}
-                            </span>
-                          </div>
-                          
-                          {/* Arrow */}
-                          <div className="flex justify-center">
-                            <div className="text-[#009de0]">
-                              <ArrowRightIcon />
-                            </div>
-                          </div>
-                          
-                          {/* After */}
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-600 font-medium">After:</span>
-                            <span className="text-2xl font-bold text-[#009de0]">
-                              {caseStudy.results.timeAfter}
-                            </span>
-                          </div>
-
-                          {/* Efficiency Badge */}
-                          <div className="pt-4 border-t border-slate-200">
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm text-slate-600 font-medium">Efficiency Gain:</span>
-                              <span className="px-3 py-1 bg-gradient-to-r from-[#009de0] to-[#7c3aed] text-white text-sm font-bold rounded-full">
-                                {caseStudy.results.efficiency}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Key Metrics */}
-                      <div className="grid grid-cols-3 gap-3">
-                        <div className="bg-[#009de0]/10 rounded-xl p-4 text-center border border-[#009de0]/20">
-                          <div className="text-2xl font-bold text-[#009de0] mb-1">
-                            {caseStudy.metrics.documents}
-                          </div>
-                          <div className="text-xs text-slate-600 font-medium">
-                            Documents
-                          </div>
-                        </div>
-                        <div className="bg-[#009de0]/10 rounded-xl p-4 text-center border border-[#009de0]/20">
-                          <div className="text-2xl font-bold text-[#009de0] mb-1">
-                            {caseStudy.metrics.hoursSaved.toLocaleString()}
-                          </div>
-                          <div className="text-xs text-slate-600 font-medium">
-                            Hours Saved
-                          </div>
-                        </div>
-                        <div className="bg-gradient-to-br from-[#009de0]/10 to-[#7c3aed]/10 rounded-xl p-4 text-center border border-[#009de0]/20">
-                          <div className="text-2xl font-bold bg-gradient-to-r from-[#009de0] to-[#7c3aed] bg-clip-text text-transparent mb-1">
-                            {caseStudy.metrics.roi}
-                          </div>
-                          <div className="text-xs text-slate-600 font-medium">
-                            ROI
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Column - Quote & Impact */}
-                    <div className="lg:col-span-1 flex flex-col justify-center">
-                      <div className="relative">
-                        {/* Quote marks */}
-                        <div className="absolute -top-4 -left-2 text-6xl text-[#009de0]/20 font-serif leading-none">
-                          "
-                        </div>
-                        
-                        <blockquote className="relative text-slate-700 text-lg leading-relaxed mb-6 pl-6">
-                          {caseStudy.quote}
-                        </blockquote>
-
-                        {/* Impact Highlight */}
-                        <div className="bg-gradient-to-br from-[#009de0]/5 to-[#7c3aed]/5 rounded-xl p-6 border border-[#009de0]/20">
-                          <div className="flex items-center gap-2 mb-3">
-                            <TrendingUpIcon />
-                            <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
-                              Total Impact
-                            </h4>
-                          </div>
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-slate-600">Time Saved per Task:</span>
-                              <span className="text-base font-bold text-[#009de0]">
-                                {caseStudy.results.timeSaved}
-                              </span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm text-slate-600">Total Hours Saved:</span>
-                              <span className="text-base font-bold text-[#009de0]">
-                                {caseStudy.metrics.hoursSaved.toLocaleString()}h
-                              </span>
-                            </div>
-                            <div className="pt-3 mt-3 border-t border-slate-200">
-                              <div className="text-xs text-slate-500 text-center">
-                                Based on {caseStudy.metrics.documents} documents processed
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Featured badge */}
-                <div className="absolute top-6 right-6">
-                  <span className="px-3 py-1 bg-gradient-to-r from-[#009de0] to-[#7c3aed] text-white text-xs font-bold rounded-full shadow-lg">
-                    FEATURED
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Case Studies - Compact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto mb-16">
-          {caseStudies.filter(cs => !cs.featured).map((caseStudy, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="group"
-            >
-              <div className="relative bg-white border border-slate-200 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden h-full flex flex-col">
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#009de0]/5 via-transparent to-[#7c3aed]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Header with avatar and info */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#009de0] to-[#7c3aed] text-white flex items-center justify-center text-lg font-bold shadow-lg">
-                      {caseStudy.avatar}
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg font-bold text-slate-900 mb-1">
-                        {caseStudy.name}
-                      </h3>
-                      <p className="text-sm text-slate-600">
-                        {caseStudy.role}
-                      </p>
-                      <p className="text-sm text-[#009de0] font-semibold">
-                        {caseStudy.company}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Results highlight */}
-                  <div className="bg-gradient-to-r from-[#009de0]/10 to-[#7c3aed]/10 rounded-xl p-4 mb-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <div className="text-xs text-slate-600 mb-1">Time Before</div>
-                        <div className="text-lg font-bold text-slate-400 line-through">
-                          {caseStudy.results.timeBefore}
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-xs text-slate-600 mb-1">Time After</div>
-                        <div className="text-lg font-bold text-[#009de0]">
-                          {caseStudy.results.timeAfter}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-3 pt-3 border-t border-white/50 flex justify-between items-center">
-                      <span className="text-xs text-slate-600">Efficiency:</span>
-                      <span className="px-3 py-1 bg-white text-[#009de0] text-xs font-bold rounded-full">
-                        {caseStudy.results.efficiency}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Quote */}
-                  <blockquote className="text-slate-700 text-base leading-relaxed mb-6 flex-grow">
-                    "{caseStudy.quote}"
-                  </blockquote>
-
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-200">
-                    <div className="text-center">
-                      <div className="text-xl font-bold text-slate-900 mb-1">
-                        {caseStudy.metrics.documents}
-                      </div>
-                      <div className="text-xs text-slate-600">
-                        Docs
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xl font-bold text-[#009de0] mb-1">
-                        {caseStudy.metrics.hoursSaved.toLocaleString()}h
-                      </div>
-                      <div className="text-xs text-slate-600">
-                        Saved
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xl font-bold bg-gradient-to-r from-[#009de0] to-[#7c3aed] bg-clip-text text-transparent mb-1">
-                        {caseStudy.metrics.roi}
-                      </div>
-                      <div className="text-xs text-slate-600">
-                        ROI
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Hover accent border */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-[#009de0] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom CTA with emphasis */}
+        {/* Trusted By - Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-20"
+        >
+          <p className="text-center text-sm font-semibold text-slate-500 uppercase tracking-wider mb-8">
+            Trusted by Teams at Leading Companies
+          </p>
+
+          <div className="relative overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+
+            <div className="flex overflow-hidden">
+              <div className="flex animate-marquee hover:[animation-play-state:paused]">
+                {companyLogos.map((company, index) => (
+                  <div
+                    key={`logo-1-${index}`}
+                    className="flex-shrink-0 mx-4 md:mx-6 w-28 md:w-32 h-16 md:h-20 flex items-center justify-center rounded-xl border-2 border-slate-200 bg-white hover:border-[#009de0]/50 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    title={company.name}
+                  >
+                    <span className="text-lg md:text-xl font-bold text-slate-400 hover:text-[#009de0] transition-colors duration-300">
+                      {company.initials}
+                    </span>
+                  </div>
+                ))}
+                {companyLogos.map((company, index) => (
+                  <div
+                    key={`logo-2-${index}`}
+                    className="flex-shrink-0 mx-4 md:mx-6 w-28 md:w-32 h-16 md:h-20 flex items-center justify-center rounded-xl border-2 border-slate-200 bg-white hover:border-[#009de0]/50 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    title={company.name}
+                  >
+                    <span className="text-lg md:text-xl font-bold text-slate-400 hover:text-[#009de0] transition-colors duration-300">
+                      {company.initials}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Speed Demo */}
+        <div className="mb-20">
+          <SpeedDemo />
+        </div>
+
+        {/* Document Types Grid */}
+        <div className="mb-20">
+          <DocumentTypesGrid />
+        </div>
+
+        {/* Capabilities Grid */}
+        <div className="mb-16">
+          <CapabilitiesGrid />
+        </div>
+
+        {/* Simple CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex flex-col items-center gap-6 p-10 bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-3xl shadow-xl max-w-2xl">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#009de0] to-[#7c3aed] rounded-2xl flex items-center justify-center shadow-lg">
-              <SparklesIcon />
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-slate-900 mb-3">
-                Ready to Write Your Success Story?
-              </p>
-              <p className="text-lg text-slate-600 mb-2">
-                Join 15,000+ professionals saving thousands of hours
-              </p>
-              <p className="text-sm text-slate-500">
-                Average time savings: <span className="text-[#009de0] font-bold">23.5 hours per week</span>
-              </p>
-            </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-[#009de0] to-[#0088c7] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-            >
-              Start Your Free Trial
-              <ArrowRightIcon />
-            </motion.button>
-            <p className="text-xs text-slate-500">
-              No credit card required • 14-day free trial • Cancel anytime
-            </p>
-          </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-4 bg-gradient-to-r from-[#009de0] to-[#0088c7] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto"
+          >
+            <span>See It in Action</span>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.button>
         </motion.div>
       </div>
     </section>
